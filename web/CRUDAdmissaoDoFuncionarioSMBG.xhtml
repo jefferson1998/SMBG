@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>SMBG</title>
+    </h:head>
+    <h:body>
+        <h2 style="margin-top: 0px"> ADMISSÃO FUNCIONÁRIO </h2>
+        
+        <br/><br/><br/>
+        
+        <h:form>
+            
+            <h3 style="margin-top: 0px"> DADOS DA ADMISSÃO </h3>
+      
+            <br></br><br></br>
+            <p:outputLabel value="Data: " for="DataDaAdmissaoDoFuncionario" />
+            <br></br>
+            <p:inputText id="DataDaAdmissaoDoFuncionario" value="#{Admissao.dataAdmissao}"/>
+            <br></br><br></br>
+            
+            <p:outputLabel value="Valor do Salário: " for="ValorSalarioDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputNumber id="ValorSalarioDaAdmissaoDoFuncionario" value="#{Admissao.valorSalario}"/>
+            <br></br><br></br>
+            
+            <p:outputLabel value="Função do Funcionário: " for="FuncaoDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputText id="FuncaoDaAdmissaoDoFuncionario" value="#{Admissao.funcao}"/>
+            <br></br><br></br>
+            
+            <p:outputLabel value="Horas de trabalho: " for="HorasDeTrabalhoDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputNumber id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{Admissao.horas}"/>
+            <br></br><br></br>
+            
+            <p:outputLabel value="Instrução do Funcionário: " for="InstrucaoDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputText id="InstrucaoDaAdmissaoDoFuncionario" value="#{Admissao.instrucao}"/>
+            <br></br><br></br>
+            
+            <p:outputLabel value="Número de filhos: " for="NumeroDeFilhosDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputNumber id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{Admissao.numeroDeFilhos}"/>
+            <br></br><br></br><br></br>
+            
+            <h3 style="margin-top: 0px"> DADOS DA CONTA </h3>
+        
+            <br></br><br></br>
+
+            <p:outputLabel value="Número Agência: " for="ContaAgenciaDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputText id="ContaAgenciaDaAdmissaoDoFuncionario" value="#{Conta.numeroAgencia}"/>
+            <br></br><br></br>
+            
+            
+            <p:outputLabel value="Número Conta: " for="ContaNumeroContaDaAdmissaoDoFuncionario"/>
+            <br></br>
+            <p:inputText id="ContaNumeroContaDaAdmissaoDoFuncionario" value="#{Conta.numeroConta}"/>
+            <br></br><br></br>
+            
+         
+            <p:commandButton value="Cadastrar" id="cadastrarAdmissaoDoFuncionario"/>
+        </h:form>
+            
+            
+    </h:body>
+</html>
+
