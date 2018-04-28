@@ -8,11 +8,11 @@
         <title>SMBG</title>
     </h:head>
     <h:body>
-        <h2 style="margin-top: 0px"> CADASTRO DO ÔNIBUS </h2>
+        <h2> CADASTRO DO ÔNIBUS </h2>
         <br/><br/><br/>
         
         <h:form>
-            <h3 style="margin-top: 0px"> DADOS DO ÔNIBUS </h3>
+            <h3> DADOS DO ÔNIBUS </h3>
      
             <br></br><br></br>
             <p:outputLabel value="Código Renavam: " for="CodigoRenavamDoOnibus" />
@@ -32,7 +32,7 @@
             
             <p:outputLabel value="Ano: " for="AnoDoOnibus" />
             <br></br>
-            <p:inputNumber id="AnoDoOnibus" value="#{Onibus.ano}"/>
+            <p:inputText id="AnoDoOnibus" value="#{Onibus.ano}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Modelo: " for="ModeloDoOnibus" />
@@ -52,25 +52,25 @@
             
             <p:outputLabel value="Combustivel: " for="CombustivelDoOnibus" />
             <br></br>
-            <p:inputNumber id="CombustivelDoOnibus" value="#{Onibus.combustivel}"/>
+            <p:inputText id="CombustivelDoOnibus" value="#{Onibus.combustivel}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Número de portas: " for="NumeroDePortasDoOnibus" />
             <br></br>
-            <p:inputNumber id="NumeroDePortasDoOnibus" value="#{Onibus.numeroDePortas}"/>
+            <p:inputText id="NumeroDePortasDoOnibus" value="#{Onibus.numeroDePortas}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Número de eixos:  " for="NumeroDeEixosDoOnibus" />
             <br></br>
-            <p:inputNumber id="NumeroDeEixosDoOnibus" value="#{Onibus.numeroDeEixos}"/>
+            <p:inputText id="NumeroDeEixosDoOnibus" value="#{Onibus.numeroDeEixos}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Capacidade " for="CapacidadeDoOnibus" />
             <br></br>
-            <p:inputNumber id="CapacidadeDoOnibus" value="#{Onibus.capacidade}"/>
+            <p:inputText id="CapacidadeDoOnibus" value="#{Onibus.capacidade}"/>
             <br></br><br></br><br></br>
             
-            <h3 style="margin-top: 0px"> Opcionais </h3>
+            <h3> Opcionais </h3>
                 
             <p:selectManyCheckbox id="opcionaisOnibus" value= "#{Onibus}" layout="grid" columns="3">
                 <f:selectItem value="#{Onibus.arCondicionado}" itemLabel="#{Onibus.arCondicionado}" itemValue="true" />

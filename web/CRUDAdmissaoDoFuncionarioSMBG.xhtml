@@ -7,13 +7,13 @@
         <title>SMBG</title>
     </h:head>
     <h:body>
-        <h2 style="margin-top: 0px"> ADMISSÃO FUNCIONÁRIO </h2>
+        <h2> ADMISSÃO FUNCIONÁRIO </h2>
         
         <br/><br/><br/>
         
         <h:form>
             
-            <h3 style="margin-top: 0px"> DADOS DA ADMISSÃO </h3>
+            <h3> DADOS DA ADMISSÃO </h3>
       
             <br></br><br></br>
             <p:outputLabel value="Data: " for="DataDaAdmissaoDoFuncionario" />
@@ -23,7 +23,7 @@
             
             <p:outputLabel value="Valor do Salário: " for="ValorSalarioDaAdmissaoDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="ValorSalarioDaAdmissaoDoFuncionario" value="#{Admissao.valorSalario}"/>
+            <p:inputText id="ValorSalarioDaAdmissaoDoFuncionario" value="#{Admissao.valorSalario}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Função do Funcionário: " for="FuncaoDaAdmissaoDoFuncionario"/>
@@ -33,7 +33,7 @@
             
             <p:outputLabel value="Horas de trabalho: " for="HorasDeTrabalhoDaAdmissaoDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{Admissao.horas}"/>
+            <p:inputText id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{Admissao.horas}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Instrução do Funcionário: " for="InstrucaoDaAdmissaoDoFuncionario"/>
@@ -43,10 +43,10 @@
             
             <p:outputLabel value="Número de filhos: " for="NumeroDeFilhosDaAdmissaoDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{Admissao.numeroDeFilhos}"/>
+            <p:inputText id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{Admissao.numeroDeFilhos}"/>
             <br></br><br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS DA CONTA </h3>
+            <h3> DADOS DA CONTA </h3>
         
             <br></br><br></br>
 

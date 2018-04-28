@@ -7,13 +7,13 @@
         <title>SMBG</title>
     </h:head>
     <h:body>
-        <h2 style="margin-top: 0px"> CADASTRO FUNCIONÁRIO </h2>
+        <h2> CADASTRO FUNCIONÁRIO </h2>
         
         <br/><br/><br/>
         <h:form>
 <!--            <p:outputLabel value="Campos Obrigatórios"/> 
             <br></br><br></br>-->
-            <h3 style="margin-top: 0px"> DADOS DO RG </h3>
+            <h3> DADOS DO RG </h3>
 
             <br></br><br></br>
             <p:outputLabel value="Nome:" for="nomeIdentidadeFuncionario" />
@@ -61,7 +61,7 @@
             <p:inputText id="CPFDoFuncionario" value="#{Funcionario.cpf}"/>
             <br></br><br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS DO ENDEREÇO </h3>
+            <h3> DADOS DO ENDEREÇO </h3>
             
             <br></br><br></br>
 
@@ -72,7 +72,7 @@
             
             <p:outputLabel value="Número do logradouro: " for="NumeroEnderecoDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="NumeroEnderecoDoFuncionario" value="#{Endereco.numero}"/>
+            <p:inputText id="NumeroEnderecoDoFuncionario" value="#{Endereco.numero}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Bairro: " for="BairroEnderecoDoFuncionario"/>
@@ -85,7 +85,7 @@
             <p:inputText id="CEPEnderecoDoFuncionario" value="#{Endereco.cep}"/>
             <br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS DA CNH </h3>
+            <h3> DADOS DA CNH </h3>
 
             <br></br><br></br>
             
@@ -107,7 +107,7 @@
             <p:inputText id="NumeroDoPISDoFuncionario" value="#{Funcionario.pis}"/>
             <br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS DO TÍTULO </h3>
+            <h3> DADOS DO TÍTULO </h3>
          
             <br></br><br></br>
             
@@ -118,48 +118,48 @@
             
             <p:outputLabel value="Zona: " for="NumeroDaZonaDoTituloDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="NumeroDaZonaDoTituloDoFuncionario" value="#{Titulo.zona}"/>
+            <p:inputText id="NumeroDaZonaDoTituloDoFuncionario" value="#{Titulo.zona}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Seção: " for="SecaoDoTituloDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="SecaoDoTituloDoFuncionario" value="#{Titulo.secao}"/>
+            <p:inputText id="SecaoDoTituloDoFuncionario" value="#{Titulo.secao}"/>
             <br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS DO CTPS </h3>
+            <h3> DADOS DO CTPS </h3>
             
             <br></br><br></br>
             
             <p:outputLabel value="Número: " for="numeroDoCTPSDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="numeroDoCTPSDoFuncionario" value="#{CTPS.numeroCTPS}"/>
+            <p:inputText id="numeroDoCTPSDoFuncionario" value="#{CTPS.numeroCTPS}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Série: " for="serieDoCTPSDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="serieDoCTPSDoFuncionario" value="#{CTPS.serieCTPS}"/>
+            <p:inputText id="serieDoCTPSDoFuncionario" value="#{CTPS.serieCTPS}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Estado: " for="estadoDoCTPSDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="estadoDoCTPSDoFuncionario" value="#{CTPS.estadoCTPS}"/>
+            <p:inputText id="estadoDoCTPSDoFuncionario" value="#{CTPS.estadoCTPS}"/>
             <br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS DA RESERVISTA </h3>
+            <h3> DADOS DA RESERVISTA </h3>
             
             <p:outputLabel value="Número: " for="NumeroReservistaDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="NumeroReservistaDoFuncionario" value="#{Reservista.numeroReservista}"/>
+            <p:inputText id="NumeroReservistaDoFuncionario" value="#{Reservista.numeroReservista}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Série: " for="SerieReservistaDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="SerieReservistaDoFuncionario" value="#{Reservista.serieReservista}"/>
+            <p:inputText id="SerieReservistaDoFuncionario" value="#{Reservista.serieReservista}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Categoria: " for="CategoriaReservistaDoFuncionario"/>
             <br></br>
-            <p:inputNumber id="CategoriaReservistaDoFuncionario" value="#{Reservista.categoriaReservista}"/>
+            <p:inputText id="CategoriaReservistaDoFuncionario" value="#{Reservista.categoriaReservista}"/>
             <br></br><br></br>
             
             

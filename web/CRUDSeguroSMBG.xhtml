@@ -9,7 +9,7 @@
     <h:body>
         
         <h:form>
-            <h3 style="margin-top: 0px"> DADOS CORRETOR </h3>
+            <h3> DADOS CORRETOR </h3>
              
             <p:outputLabel value="Nome do Corretor: " for="TelefoneDoSegurado" />
             <br></br>
@@ -19,12 +19,12 @@
             <br></br>
             <p:outputLabel value="Código Susep do Corretor: " for="CodigoSusepDoCorretor" />
             <br></br>
-            <p:inputNumber id="CodigoSusepDoCorretor" value="#{SeguroOnibus.codigoSusepDoCorretor}"/>
+            <p:inputText id="CodigoSusepDoCorretor" value="#{SeguroOnibus.codigoSusepDoCorretor}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Código CPD do Corretor: " for="CodigoCPDDoCorretor" />
             <br></br>
-            <p:inputNumber id="CodigoCPDDoCorretor" value="#{SeguroOnibus.codigoCpdDoCorretor}"/>
+            <p:inputText id="CodigoCPDDoCorretor" value="#{SeguroOnibus.codigoCpdDoCorretor}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Sucursal Corretor: " for="SucursalDoCorretor" />
@@ -37,7 +37,7 @@
             <p:inputText id="InspetoriaDoCorretor" value="#{SeguroOnibus.inspetoriaDoCorretor}"/>
             <br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS SEGURO </h3>
+            <h3> DADOS SEGURO </h3>
             
             <p:outputLabel value="Proposta: " for="PropostaDoSeguro" />
             <br></br>
@@ -66,7 +66,7 @@
             
             <p:outputLabel value="Código Susep: " for="CodigoSusepDoSeguro" />
             <br></br>
-            <p:inputNumber id="CodigoSusepDoSeguro" value="#{SeguroOnibus.codigoSusep}"/>
+            <p:inputText id="CodigoSusepDoSeguro" value="#{SeguroOnibus.codigoSusep}"/>
             <br></br><br></br>
             
             <p:outputLabel value="CPNJ da seguradora: " for="CNPJdaSeguradora" />
@@ -92,7 +92,7 @@
             
             <p:outputLabel value="Numero do Endosso: " for="NumeroEndossoSeguro"/>
             <br></br>
-            <p:inputNumber id="NumeroEndossoSeguro" value="#{SeguroOnibus.numeroEndosso}"/>
+            <p:inputText id="NumeroEndossoSeguro" value="#{SeguroOnibus.numeroEndosso}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Ramo: " for="RamoSeguradora" />
@@ -100,7 +100,7 @@
             <p:inputText id="RamoSeguradora" value="#{SeguroOnibus.ramo}"/>
             <br></br><br></br>
             
-            <h3 style="margin-top: 0px"> DADOS SEGURADO </h3>
+            <h3> DADOS SEGURADO </h3>
             
             <p:outputLabel value="Telefone da segurado: " for="TelefoneDoSegurado" />
             <br></br>
@@ -119,7 +119,7 @@
             
             <p:outputLabel value="Número do logradouro: " for="NumeroEnderecoDoSegurado"/>
             <br></br>
-            <p:inputNumber id="NumeroEnderecoDoSegurado" value="#{Endereco.numero}"/>
+            <p:inputText id="NumeroEnderecoDoSegurado" value="#{Endereco.numero}"/>
             <br></br><br></br>
             
             <p:outputLabel value="Bairro: " for="BairroEnderecoDoSegurado"/>
