@@ -2,173 +2,186 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      >
     <h:head>
         <title>SMBG</title>
-        <h:outputStylesheet library="css" name="newcss.css" />
+        
+        <h:outputStylesheet library="css" name="Css.css" />
+       
+
     </h:head>
     <h:body>
-        <h2> CADASTRO FUNCIONÁRIO </h2>
+      <div id="faixa">
+	<h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
+	</div>
         
-        <br/><br/><br/>
-        <h:form>
-<!--            <p:outputLabel value="Campos Obrigatórios"/> 
-            <br></br><br></br>-->
-            <h3> DADOS DO RG </h3>
-
-            <br></br><br></br>
-            <p:outputLabel value="Nome:" for="nomeIdentidadeFuncionario" />
-            <br></br>
-            <p:inputText id="nomeIdentidadeFuncionario" value="#{Identidade.nome}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número RG: " for="numeroIdentidadeFuncionario"/>
-            <br></br>
-            <p:inputText id="numeroIdentidadeFuncionario" value="#{Identidade.numeroIdentidade}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Data de Emissão: " for="dataEmissaoIdentidadeFuncionario"/>
-            <br></br>
-            <p:inputText id="dataEmissaoIdentidadeFuncionario" value="#{Identidade.dataEmissao}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Nome do pai: " for="nomeDoPaiIdentidadeFuncionario"/>
-            <br></br>
-            <p:inputText id="nomeDoPaiIdentidadeFuncionario" value="#{Identidade.nomeDoPai}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Nome da mãe: " for="nomeDoMaeIdentidadeFuncionario"/>
-            <br></br>
-            <p:inputText id="nomeDoMaeIdentidadeFuncionario" value="#{Identidade.nomeDaMae}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Naturalidade: " for="naturalidadeIdentidadeFuncionario"/>
-            <br></br>
-            <p:inputText id="naturalidadeIdentidadeFuncionario" value="#{Identidade.naturalidade}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Data de Nascimento: " for="dataDeNascimentoIdentidadeFuncionario"/>
-            <br></br>
-            <p:inputText id="dataDeNascimentoIdentidadeFuncionario" value="#{Identidade.dataDeNascimento}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="UF da identidade: " for="uFIdentidadeDoFuncionario"/>
-            <br></br>
-            <p:inputText id="uFIdentidadeDoFuncionario" value="#{Identidade.uFIdentidade}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número do CPF: " for="CPFDoFuncionario"/>
-            <br></br>
-            <p:inputText id="CPFDoFuncionario" value="#{Funcionario.cpf}"/>
-            <br></br><br></br><br></br>
-            
-            <h3> DADOS DO ENDEREÇO </h3>
-            
-            <br></br><br></br>
-
-            <p:outputLabel value="Rua: " for="RuaEnderecoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="RuaEnderecoDoFuncionario" value="#{Endereco.rua}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número do logradouro: " for="NumeroEnderecoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroEnderecoDoFuncionario" value="#{Endereco.numero}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Bairro: " for="BairroEnderecoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="BairroEnderecoDoFuncionario" value="#{Endereco.bairro}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="CEP: " for="CEPEnderecoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="CEPEnderecoDoFuncionario" value="#{Endereco.cep}"/>
-            <br></br><br></br>
-            
-            <h3> DADOS DA CNH </h3>
-
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número: " for="NumeroCNHDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroCNHDoFuncionario" value="#{CNH.numeroCNH}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Categoria: " for="CategoriaCNHDoFuncionario"/>
-            <br></br>
-            <p:inputText id="CategoriaCNHDoFuncionario" value="#{CNH.categoriaCNH}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="DADOS DO PIS"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número: " for="NumeroDoPISDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroDoPISDoFuncionario" value="#{Funcionario.pis}"/>
-            <br></br><br></br>
-            
-            <h3> DADOS DO TÍTULO </h3>
+          
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+     
+        <div id="botoes">
+<!--            colocar os butões-->
+        </div>
          
-            <br></br><br></br>
+     
+        <div id="divTexto"> 
+		<div id="titulo"> CADASTRO FUNCIONARIO </div>
+                <div id="formularioFuncionario">
+                    <h:form>
+                    <h3> DADOS DO RG </h3>
+
+                        <br></br><br></br>
+                        <p:outputLabel value="Nome:" for="nomeIdentidadeFuncionario" />
+                        <br></br>
+                        <p:inputText id="nomeIdentidadeFuncionario" value="#{Identidade.nome}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número RG: " for="numeroIdentidadeFuncionario"/>
+                        <br></br>
+                        <p:inputText id="numeroIdentidadeFuncionario" value="#{Identidade.numeroIdentidade}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Data de Emissão: " for="dataEmissaoIdentidadeFuncionario"/>
+                        <br></br>
+                        <p:inputText id="dataEmissaoIdentidadeFuncionario" value="#{Identidade.dataEmissao}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Nome do pai: " for="nomeDoPaiIdentidadeFuncionario"/>
+                        <br></br>
+                        <p:inputText id="nomeDoPaiIdentidadeFuncionario" value="#{Identidade.nomeDoPai}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Nome da mãe: " for="nomeDoMaeIdentidadeFuncionario"/>
+                        <br></br>
+                        <p:inputText id="nomeDoMaeIdentidadeFuncionario" value="#{Identidade.nomeDaMae}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Naturalidade: " for="naturalidadeIdentidadeFuncionario"/>
+                        <br></br>
+                        <p:inputText id="naturalidadeIdentidadeFuncionario" value="#{Identidade.naturalidade}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Data de Nascimento: " for="dataDeNascimentoIdentidadeFuncionario"/>
+                        <br></br>
+                        <p:inputText id="dataDeNascimentoIdentidadeFuncionario" value="#{Identidade.dataDeNascimento}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="UF da identidade: " for="uFIdentidadeDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="uFIdentidadeDoFuncionario" value="#{Identidade.uFIdentidade}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número do CPF: " for="CPFDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="CPFDoFuncionario" value="#{Funcionario.cpf}"/>
+                        <br></br><br></br><br></br>
+
+                        <h3> DADOS DO ENDEREÇO </h3>
+
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Rua: " for="RuaEnderecoDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="RuaEnderecoDoFuncionario" value="#{Endereco.rua}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número do logradouro: " for="NumeroEnderecoDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="NumeroEnderecoDoFuncionario" value="#{Endereco.numero}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Bairro: " for="BairroEnderecoDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="BairroEnderecoDoFuncionario" value="#{Endereco.bairro}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="CEP: " for="CEPEnderecoDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="CEPEnderecoDoFuncionario" value="#{Endereco.cep}"/>
+                        <br></br><br></br>
+
+                        <h3> DADOS DA CNH </h3>
+
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número: " for="NumeroCNHDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="NumeroCNHDoFuncionario" value="#{CNH.numeroCNH}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Categoria: " for="CategoriaCNHDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="CategoriaCNHDoFuncionario" value="#{CNH.categoriaCNH}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="DADOS DO PIS"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número: " for="NumeroDoPISDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="NumeroDoPISDoFuncionario" value="#{Funcionario.pis}"/>
+                        <br></br><br></br>
+
+                        <h3> DADOS DO TÍTULO </h3>
+
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número: " for="NumeroDoTituloDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="NumeroDoTituloDoFuncionario" value="#{Titulo.numeroTitulo}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Zona: " for="NumeroDaZonaDoTituloDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="NumeroDaZonaDoTituloDoFuncionario" value="#{Titulo.zona}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Seção: " for="SecaoDoTituloDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="SecaoDoTituloDoFuncionario" value="#{Titulo.secao}"/>
+                        <br></br><br></br>
+
+                        <h3> DADOS DO CTPS </h3>
+
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número: " for="numeroDoCTPSDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="numeroDoCTPSDoFuncionario" value="#{CTPS.numeroCTPS}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Série: " for="serieDoCTPSDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="serieDoCTPSDoFuncionario" value="#{CTPS.serieCTPS}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Estado: " for="estadoDoCTPSDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="estadoDoCTPSDoFuncionario" value="#{CTPS.estadoCTPS}"/>
+                        <br></br><br></br>
+
+                        <h3> DADOS DA RESERVISTA </h3>
+
+                        <p:outputLabel value="Número: " for="NumeroReservistaDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="NumeroReservistaDoFuncionario" value="#{Reservista.numeroReservista}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Série: " for="SerieReservistaDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="SerieReservistaDoFuncionario" value="#{Reservista.serieReservista}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Categoria: " for="CategoriaReservistaDoFuncionario"/>
+                        <br></br>
+                        <p:inputText id="CategoriaReservistaDoFuncionario" value="#{Reservista.categoriaReservista}"/>
+                        <br></br><br></br>
+
+                        <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarFuncionario"/>
             
-            <p:outputLabel value="Número: " for="NumeroDoTituloDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroDoTituloDoFuncionario" value="#{Titulo.numeroTitulo}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Zona: " for="NumeroDaZonaDoTituloDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroDaZonaDoTituloDoFuncionario" value="#{Titulo.zona}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Seção: " for="SecaoDoTituloDoFuncionario"/>
-            <br></br>
-            <p:inputText id="SecaoDoTituloDoFuncionario" value="#{Titulo.secao}"/>
-            <br></br><br></br>
-            
-            <h3> DADOS DO CTPS </h3>
-            
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número: " for="numeroDoCTPSDoFuncionario"/>
-            <br></br>
-            <p:inputText id="numeroDoCTPSDoFuncionario" value="#{CTPS.numeroCTPS}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Série: " for="serieDoCTPSDoFuncionario"/>
-            <br></br>
-            <p:inputText id="serieDoCTPSDoFuncionario" value="#{CTPS.serieCTPS}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Estado: " for="estadoDoCTPSDoFuncionario"/>
-            <br></br>
-            <p:inputText id="estadoDoCTPSDoFuncionario" value="#{CTPS.estadoCTPS}"/>
-            <br></br><br></br>
-            
-            <h3> DADOS DA RESERVISTA </h3>
-            
-            <p:outputLabel value="Número: " for="NumeroReservistaDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroReservistaDoFuncionario" value="#{Reservista.numeroReservista}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Série: " for="SerieReservistaDoFuncionario"/>
-            <br></br>
-            <p:inputText id="SerieReservistaDoFuncionario" value="#{Reservista.serieReservista}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Categoria: " for="CategoriaReservistaDoFuncionario"/>
-            <br></br>
-            <p:inputText id="CategoriaReservistaDoFuncionario" value="#{Reservista.categoriaReservista}"/>
-            <br></br><br></br>
-            
-            
-            
-            
-           
-            <p:commandButton value="Cadastrar" id="cadastrarFuncionario"/> 
-        </h:form>
+             </h:form>   
+           </div>
+        </div>
             
             
     </h:body>

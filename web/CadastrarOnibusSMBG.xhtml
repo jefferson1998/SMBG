@@ -6,85 +6,101 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>SMBG</title>
+        <h:outputStylesheet library="css" name="Css.css" />
     </h:head>
     <h:body>
-        <h2> CADASTRO DO ÔNIBUS </h2>
-        <br/><br/><br/>
+        <div id="faixa">
+	<h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
+	</div>
         
-        <h:form>
-            <h3> DADOS DO ÔNIBUS </h3>
+          
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
      
-            <br></br><br></br>
-            <p:outputLabel value="Código Renavam: " for="CodigoRenavamDoOnibus" />
-            <br></br>
-            <p:inputText id="CodigoRenavamDoOnibus" value="#{Onibus.codigoRenavam}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Chassis: " for="ChassisDoOnibus" />
-            <br></br>
-            <p:inputText id="ChassisDoOnibus" value="#{Onibus.chassi}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Placa: " for="PlacaDoOnibus" />
-            <br></br>
-            <p:inputText id="PlacaDoOnibus" value="#{Onibus.placa}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Ano: " for="AnoDoOnibus" />
-            <br></br>
-            <p:inputText id="AnoDoOnibus" value="#{Onibus.ano}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Modelo: " for="ModeloDoOnibus" />
-            <br></br>
-            <p:inputText id="ModeloDoOnibus" value="#{Onibus.modelo}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Marca: " for="MarcaDoOnibus" />
-            <br></br>
-            <p:inputText id="MarcaDoOnibus" value="#{Onibus.marca}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Tipo: " for="TipoDoOnibus" />
-            <br></br>
-            <p:inputText id="TipoDoOnibus" value="#{Onibus.tipo}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Combustivel: " for="CombustivelDoOnibus" />
-            <br></br>
-            <p:inputText id="CombustivelDoOnibus" value="#{Onibus.combustivel}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número de portas: " for="NumeroDePortasDoOnibus" />
-            <br></br>
-            <p:inputText id="NumeroDePortasDoOnibus" value="#{Onibus.numeroDePortas}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número de eixos:  " for="NumeroDeEixosDoOnibus" />
-            <br></br>
-            <p:inputText id="NumeroDeEixosDoOnibus" value="#{Onibus.numeroDeEixos}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Capacidade " for="CapacidadeDoOnibus" />
-            <br></br>
-            <p:inputText id="CapacidadeDoOnibus" value="#{Onibus.capacidade}"/>
-            <br></br><br></br><br></br>
-            
-            <h3> Opcionais </h3>
-                
-            <p:selectManyCheckbox id="opcionaisOnibus" value= "#{Onibus}" layout="grid" columns="3">
-                <f:selectItem value="#{Onibus.arCondicionado}" itemLabel="#{Onibus.arCondicionado}" itemValue="true" />
-                <f:selectItem value="#{Onibus.direcaoHidraulica}"itemLabel="#{Onibus.direcaoHidraulica}" itemValue="true"/>
-                <f:selectItem value="#{Onibus.direcaoEletrica}" itemLabel="#{Onibus.direcaoEletrica}" itemValue="true"/>
-                <f:selectItem value="#{Onibus.freioABS}" itemLabel="#{Onibus.freioABS}" itemValue="true"/>
-                <f:selectItem value="#{Onibus.cambioAutomatico}" itemLabel="#{Onibus.cambioAutomatico}" itemValue="true"/>  
-            </p:selectManyCheckbox>
-            
-       
-            <p:commandButton value="Cadastrar" id="cadastrarRota"/>
-        </h:form>
-            
-            
+        <div id="botoes">
+<!--            colocar os butões-->
+        </div>
+        
+        <div id="divTexto"> 
+		<div id="titulo"> CADASTRO DO ÔNIBUS </div>
+                <div id="formularioOnibus">
+                    
+                    <h:form>
+                        <h3> DADOS DO ÔNIBUS </h3>
+
+                        <br></br><br></br>
+                        <p:outputLabel value="Código Renavam: " for="CodigoRenavamDoOnibus" />
+                        <br></br>
+                        <p:inputText id="CodigoRenavamDoOnibus" value="#{Onibus.codigoRenavam}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Chassis: " for="ChassisDoOnibus" />
+                        <br></br>
+                        <p:inputText id="ChassisDoOnibus" value="#{Onibus.chassi}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Placa: " for="PlacaDoOnibus" />
+                        <br></br>
+                        <p:inputText id="PlacaDoOnibus" value="#{Onibus.placa}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Ano: " for="AnoDoOnibus" />
+                        <br></br>
+                        <p:inputText id="AnoDoOnibus" value="#{Onibus.ano}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Modelo: " for="ModeloDoOnibus" />
+                        <br></br>
+                        <p:inputText id="ModeloDoOnibus" value="#{Onibus.modelo}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Marca: " for="MarcaDoOnibus" />
+                        <br></br>
+                        <p:inputText id="MarcaDoOnibus" value="#{Onibus.marca}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Tipo: " for="TipoDoOnibus" />
+                        <br></br>
+                        <p:inputText id="TipoDoOnibus" value="#{Onibus.tipo}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Combustivel: " for="CombustivelDoOnibus" />
+                        <br></br>
+                        <p:inputText id="CombustivelDoOnibus" value="#{Onibus.combustivel}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número de portas: " for="NumeroDePortasDoOnibus" />
+                        <br></br>
+                        <p:inputText id="NumeroDePortasDoOnibus" value="#{Onibus.numeroDePortas}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Número de eixos:  " for="NumeroDeEixosDoOnibus" />
+                        <br></br>
+                        <p:inputText id="NumeroDeEixosDoOnibus" value="#{Onibus.numeroDeEixos}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Capacidade " for="CapacidadeDoOnibus" />
+                        <br></br>
+                        <p:inputText id="CapacidadeDoOnibus" value="#{Onibus.capacidade}"/>
+                        <br></br><br></br><br></br>
+
+                        <h3> Opcionais </h3>
+
+                        <p:selectManyCheckbox id="opcionaisOnibus" value= "#{Onibus}" layout="grid" columns="3">
+            <!--                <f:selectItem value="#{Onibus.arCondicionado}" itemLabel="#{Onibus.arCondicionado}" itemValue="true" />
+                            <f:selectItem value="#{Onibus.direcaoHidraulica}"itemLabel="#{Onibus.direcaoHidraulica}" itemValue="true"/>
+                            <f:selectItem value="#{Onibus.direcaoEletrica}" itemLabel="#{Onibus.direcaoEletrica}" itemValue="true"/>
+                            <f:selectItem value="#{Onibus.freioABS}" itemLabel="#{Onibus.freioABS}" itemValue="true"/>
+                            <f:selectItem value="#{Onibus.cambioAutomatico}" itemLabel="#{Onibus.cambioAutomatico}" itemValue="true"/>  -->
+                        </p:selectManyCheckbox>
+
+
+                        <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarOnibus"/>
+                     </h:form>
+                    
+                </div>
+        </div>
+        
+           
     </h:body>
 </html>
 

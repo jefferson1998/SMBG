@@ -5,67 +5,85 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>SMBG</title>
+        <h:outputStylesheet library="css" name="Css.css" />
+        
     </h:head>
+    
     <h:body>
-        <h2> ADMISSÃO FUNCIONÁRIO </h2>
         
-        <br/><br/><br/>
+        <div id="faixa">
+	<h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
+	</div>
         
-        <h:form>
-            
-            <h3> DADOS DA ADMISSÃO </h3>
-      
-            <br></br><br></br>
-            <p:outputLabel value="Data: " for="DataDaAdmissaoDoFuncionario" />
-            <br></br>
-            <p:inputText id="DataDaAdmissaoDoFuncionario" value="#{Admissao.dataAdmissao}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Valor do Salário: " for="ValorSalarioDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="ValorSalarioDaAdmissaoDoFuncionario" value="#{Admissao.valorSalario}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Função do Funcionário: " for="FuncaoDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="FuncaoDaAdmissaoDoFuncionario" value="#{Admissao.funcao}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Horas de trabalho: " for="HorasDeTrabalhoDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{Admissao.horas}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Instrução do Funcionário: " for="InstrucaoDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="InstrucaoDaAdmissaoDoFuncionario" value="#{Admissao.instrucao}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número de filhos: " for="NumeroDeFilhosDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{Admissao.numeroDeFilhos}"/>
-            <br></br><br></br><br></br>
-            
-            <h3> DADOS DA CONTA </h3>
+          
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+     
+        <div id="botoes">
+<!--            colocar os butões-->
+        </div>
         
-            <br></br><br></br>
+        <div id="divTexto"> 
+		<div id="titulo"> ADMISSÃO FUNCIONÁRIO </div>
+                <div id="formularioAdmissao">
+                    
+                    <br/><br/><br/>
+        
+                <h:form>
+        
+                    <h3> DADOS DA ADMISSÃO </h3>
+                               <br></br><br></br>
+                    <p:outputLabel value="Data: " for="DataDaAdmissaoDoFuncionario" />
+                    <br></br>
+                    <p:inputText id="DataDaAdmissaoDoFuncionario" value="#{Admissao.dataAdmissao}"/>
+                    <br></br><br></br>
 
-            <p:outputLabel value="Número Agência: " for="ContaAgenciaDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="ContaAgenciaDaAdmissaoDoFuncionario" value="#{Conta.numeroAgencia}"/>
-            <br></br><br></br>
-            
-            
-            <p:outputLabel value="Número Conta: " for="ContaNumeroContaDaAdmissaoDoFuncionario"/>
-            <br></br>
-            <p:inputText id="ContaNumeroContaDaAdmissaoDoFuncionario" value="#{Conta.numeroConta}"/>
-            <br></br><br></br>
-            
+                    <p:outputLabel value="Valor do Salário: " for="ValorSalarioDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="ValorSalarioDaAdmissaoDoFuncionario" value="#{Admissao.valorSalario}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Função do Funcionário: " for="FuncaoDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="FuncaoDaAdmissaoDoFuncionario" value="#{Admissao.funcao}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Horas de trabalho: " for="HorasDeTrabalhoDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{Admissao.horas}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Instrução do Funcionário: " for="InstrucaoDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="InstrucaoDaAdmissaoDoFuncionario" value="#{Admissao.instrucao}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Número de filhos: " for="NumeroDeFilhosDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{Admissao.numeroDeFilhos}"/>
+                    <br></br><br></br><br></br>
+
+                    <h3> DADOS DA CONTA </h3>
+
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Número Agência: " for="ContaAgenciaDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="ContaAgenciaDaAdmissaoDoFuncionario" value="#{Conta.numeroAgencia}"/>
+                    <br></br><br></br>
+
+
+                    <p:outputLabel value="Número Conta: " for="ContaNumeroContaDaAdmissaoDoFuncionario"/>
+                    <br></br>
+                    <p:inputText id="ContaNumeroContaDaAdmissaoDoFuncionario" value="#{Conta.numeroConta}"/>
+                    <br></br><br></br>
+
+
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarAdmissaoDoFuncionario"/>
+                </h:form>
+
+           </div>
+        </div>
          
-            <p:commandButton value="Cadastrar" id="cadastrarAdmissaoDoFuncionario"/>
-        </h:form>
-            
-            
     </h:body>
 </html>
 
