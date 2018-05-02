@@ -1,3 +1,105 @@
+#loginNome{
+    height: 25px;
+    left: 35px;
+    top: 95px;
+    float: left;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    font-family:serif;
+}
+
+#senhaNome{
+    height: 25px;
+    left: 35px;
+    top: 170px;
+    float: left;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    font-family:serif;
+}
+
+#inputSenha{
+	height: 25px;
+	left: 35px;
+	top: 200px;
+	float: left;
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+}
+
+#inputLogin{
+	height: 25px;
+	left: 35px;
+	top: 130px;
+	float: left;
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+}
+
+#menuDoLogin{
+	left: 55px;
+	top: 140px;
+	height: 55%;
+	width: 260px;
+	float: left;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+}
+
+#textoLoginDeDentroDiv2{
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	left: 10px;
+	top: 55px;
+	position: absolute;
+	font-style: initial;
+	font-weight: 30;
+}
+
+#textoLoginDaDiv2{
+	left: 80px;
+	position: absolute;
+	font-family: sans-serif;
+	color: white;
+}
+
+#divTexto{
+	left: 80px;
+	position: absolute;
+	top: 250px;
+	width: 50%;
+	height: 70%;
+	z-index: -1;
+}
+
+#loginSenha{
+	background: white;
+	position: relative;
+	right: -200px;
+	top: -100px;
+	width: 550px;
+	height: 390px;
+	border: 0px solid ;	
+	z-index: -1;
+}
+
+#apresentacaoLogin{
+	background: #6d6868;
+	position: absolute;
+	right: -270px;
+	top: -100px;
+	width: 350px;
+	height: 390px;
+	border: 0px solid;	
+	z-index: -1;
+}
+
 
 #formularioFuncionario{
 	position: relative;
@@ -63,6 +165,18 @@ body{
 	margin: 0px;
 }
 
+#textoLogin{
+	left: 35px;
+	position: absolute;
+	font-family: sans-serif;
+}
+#textoDentroLogin{
+	color: #c1b2b2;
+	left: 35px;
+	top: 35px;
+	position: absolute;
+	font-family: initial;
+}
 #faixa{
 	position: absolute;
 	width: 98.8%;

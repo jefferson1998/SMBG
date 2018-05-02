@@ -5,146 +5,163 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>SMBG</title>
+        <h:outputStylesheet library="css" name="Css.css" />
     </h:head>
     <h:body>
+        <div id="faixa">
+	<h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
+	</div>
         
-        <h:form>
-            <h3> DADOS CORRETOR </h3>
-             
-            <p:outputLabel value="Nome do Corretor: " for="TelefoneDoSegurado" />
-            <br></br>
-            <p:inputText id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
-            <br></br><br></br>
-         
-            <br></br>
-            <p:outputLabel value="Código Susep do Corretor: " for="CodigoSusepDoCorretor" />
-            <br></br>
-            <p:inputText id="CodigoSusepDoCorretor" value="#{SeguroOnibus.codigoSusepDoCorretor}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Código CPD do Corretor: " for="CodigoCPDDoCorretor" />
-            <br></br>
-            <p:inputText id="CodigoCPDDoCorretor" value="#{SeguroOnibus.codigoCpdDoCorretor}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Sucursal Corretor: " for="SucursalDoCorretor" />
-            <br></br>
-            <p:inputText id="SucursalDoCorretor" value="#{SeguroOnibus.sucursalCorretor}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Inspetoria Corretor: " for="InspetoriaDoCorretor" />
-            <br></br>
-            <p:inputText id="InspetoriaDoCorretor" value="#{SeguroOnibus.inspetoriaDoCorretor}"/>
-            <br></br><br></br>
-            
-            <h3> DADOS SEGURO </h3>
-            
-            <p:outputLabel value="Proposta: " for="PropostaDoSeguro" />
-            <br></br>
-            <p:inputText id="PropostaDoSeguro" value="#{SeguroOnibus.proposta}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Data Emissão: " for="DataEmissaoDoSeguro" />
-            <br></br>
-            <p:inputText id="DataEmissaoDoSeguro" value="#{SeguroOnibus.dataEmissao}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Apolice: " for="ApoliceDoSeguro" />
-            <br></br>
-            <p:inputText id="ApoliceDoSeguro" value="#{SeguroOnibus.apolice}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Sucursal " for="SucursalDoSeguro" />
-            <br></br>
-            <p:inputText id="SucursalDoSeguro" value="#{SeguroOnibus.sucursal}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Processo Susep: " for="ProcessoSusepDoSeguro" />
-            <br></br>
-            <p:inputText id="ProcessoSusepDoSeguro" value="#{SeguroOnibus.processoSusep}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Código Susep: " for="CodigoSusepDoSeguro" />
-            <br></br>
-            <p:inputText id="CodigoSusepDoSeguro" value="#{SeguroOnibus.codigoSusep}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="CPNJ da seguradora: " for="CNPJdaSeguradora" />
-            <br></br>
-            <p:inputText id="CNPJdaSeguradora" value="#{SeguroOnibus.cnpj}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Nome da seguradora: " for="NomedaSeguradora" />
-            <br></br>
-            <p:inputText id="NomedaSeguradora" value="#{SeguroOnibus.nomeSeguradora}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Data Inicio da Vigência: " for="DataInicioDaVigencia" />
-            <br></br>
-            <p:inputText id="DataInicioDaVigencia" value="#{SeguroOnibus.dataInicioDaVigencia}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Data Final da Vigência: " for="DataFinalDaVigencia" />
-            <br></br>
-            <p:inputText id="DataFinalDaVigencia" value="#{SeguroOnibus.dataFinalDaVigencia}"/>
-            <br></br><br></br>
-            
-            
-            <p:outputLabel value="Numero do Endosso: " for="NumeroEndossoSeguro"/>
-            <br></br>
-            <p:inputText id="NumeroEndossoSeguro" value="#{SeguroOnibus.numeroEndosso}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Ramo: " for="RamoSeguradora" />
-            <br></br>
-            <p:inputText id="RamoSeguradora" value="#{SeguroOnibus.ramo}"/>
-            <br></br><br></br>
-            
-            <h3> DADOS SEGURADO </h3>
-            
-            <p:outputLabel value="Telefone da segurado: " for="TelefoneDoSegurado" />
-            <br></br>
-            <p:inputText id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Telefone da segurado: " for="TelefoneDoSegurado" />
-            <br></br>
-            <p:inputText id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Rua: " for="RuaEnderecoDoSegurado"/>
-            <br></br>
-            <p:inputText id="RuaEnderecoDoSegurado" value="#{Endereco.rua}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Número do logradouro: " for="NumeroEnderecoDoSegurado"/>
-            <br></br>
-            <p:inputText id="NumeroEnderecoDoSegurado" value="#{Endereco.numero}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Bairro: " for="BairroEnderecoDoSegurado"/>
-            <br></br>
-            <p:inputText id="BairroEnderecoDoSegurado" value="#{Endereco.bairro}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="CEP: " for="CEPEnderecoDoSegurado"/>
-            <br></br>
-            <p:inputText id="CEPEnderecoDoSegurado" value="#{Endereco.cep}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Cpf/Cnpj Do Segurado: " for="CpfOuCnpjDoSegurado" />
-           <br></br>
-            <p:inputText id="CpfOuCnpjDoSegurado" value="#{SeguroOnibus.cpfOuCnpjDoSegurado}"/>
-            <br></br><br></br>
-            
-            <p:outputLabel value="Nome Do Segurado: " for="NomeDoSegurado" />
-            <br></br>
-            <p:inputText id="NomeDoSegurado" value="#{SeguroOnibus.nomeDoSegurado}"/>
-            <br></br><br></br>
           
-             
-            <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarSeguro"/>
-        </h:form>
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+     
+        <div id="botoes">
+<!--            colocar os butões-->
+        </div>
+        
+        <div id="divTexto"> 
+		<div id="titulo"> CADASTRO DO ROTA </div>
+                <div id="formularioSeguro">
+        
+                <h:form>
+                    <h3> DADOS CORRETOR </h3>
+
+                    <p:outputLabel value="Nome do Corretor: " for="TelefoneDoSegurado" />
+                    <br></br>
+                    <p:inputText id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                    <br></br><br></br>
+
+                    <br></br>
+                    <p:outputLabel value="Código Susep do Corretor: " for="CodigoSusepDoCorretor" />
+                    <br></br>
+                    <p:inputText id="CodigoSusepDoCorretor" value="#{SeguroOnibus.codigoSusepDoCorretor}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Código CPD do Corretor: " for="CodigoCPDDoCorretor" />
+                    <br></br>
+                    <p:inputText id="CodigoCPDDoCorretor" value="#{SeguroOnibus.codigoCpdDoCorretor}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Sucursal Corretor: " for="SucursalDoCorretor" />
+                    <br></br>
+                    <p:inputText id="SucursalDoCorretor" value="#{SeguroOnibus.sucursalCorretor}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Inspetoria Corretor: " for="InspetoriaDoCorretor" />
+                    <br></br>
+                    <p:inputText id="InspetoriaDoCorretor" value="#{SeguroOnibus.inspetoriaDoCorretor}"/>
+                    <br></br><br></br>
+
+                    <h3> DADOS SEGURO </h3>
+
+                    <p:outputLabel value="Proposta: " for="PropostaDoSeguro" />
+                    <br></br>
+                    <p:inputText id="PropostaDoSeguro" value="#{SeguroOnibus.proposta}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Data Emissão: " for="DataEmissaoDoSeguro" />
+                    <br></br>
+                    <p:inputText id="DataEmissaoDoSeguro" value="#{SeguroOnibus.dataEmissao}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Apolice: " for="ApoliceDoSeguro" />
+                    <br></br>
+                    <p:inputText id="ApoliceDoSeguro" value="#{SeguroOnibus.apolice}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Sucursal " for="SucursalDoSeguro" />
+                    <br></br>
+                    <p:inputText id="SucursalDoSeguro" value="#{SeguroOnibus.sucursal}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Processo Susep: " for="ProcessoSusepDoSeguro" />
+                    <br></br>
+                    <p:inputText id="ProcessoSusepDoSeguro" value="#{SeguroOnibus.processoSusep}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Código Susep: " for="CodigoSusepDoSeguro" />
+                    <br></br>
+                    <p:inputText id="CodigoSusepDoSeguro" value="#{SeguroOnibus.codigoSusep}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="CPNJ da seguradora: " for="CNPJdaSeguradora" />
+                    <br></br>
+                    <p:inputText id="CNPJdaSeguradora" value="#{SeguroOnibus.cnpj}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Nome da seguradora: " for="NomedaSeguradora" />
+                    <br></br>
+                    <p:inputText id="NomedaSeguradora" value="#{SeguroOnibus.nomeSeguradora}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Data Inicio da Vigência: " for="DataInicioDaVigencia" />
+                    <br></br>
+                    <p:inputText id="DataInicioDaVigencia" value="#{SeguroOnibus.dataInicioDaVigencia}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Data Final da Vigência: " for="DataFinalDaVigencia" />
+                    <br></br>
+                    <p:inputText id="DataFinalDaVigencia" value="#{SeguroOnibus.dataFinalDaVigencia}"/>
+                    <br></br><br></br>
+
+
+                    <p:outputLabel value="Numero do Endosso: " for="NumeroEndossoSeguro"/>
+                    <br></br>
+                    <p:inputText id="NumeroEndossoSeguro" value="#{SeguroOnibus.numeroEndosso}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Ramo: " for="RamoSeguradora" />
+                    <br></br>
+                    <p:inputText id="RamoSeguradora" value="#{SeguroOnibus.ramo}"/>
+                    <br></br><br></br>
+
+                    <h3> DADOS SEGURADO </h3>
+
+                    <p:outputLabel value="Telefone da segurado: " for="TelefoneDoSegurado" />
+                    <br></br>
+                    <p:inputText id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Telefone da segurado: " for="TelefoneDoSegurado" />
+                    <br></br>
+                    <p:inputText id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Rua: " for="RuaEnderecoDoSegurado"/>
+                    <br></br>
+                    <p:inputText id="RuaEnderecoDoSegurado" value="#{Endereco.rua}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Número do logradouro: " for="NumeroEnderecoDoSegurado"/>
+                    <br></br>
+                    <p:inputText id="NumeroEnderecoDoSegurado" value="#{Endereco.numero}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Bairro: " for="BairroEnderecoDoSegurado"/>
+                    <br></br>
+                    <p:inputText id="BairroEnderecoDoSegurado" value="#{Endereco.bairro}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="CEP: " for="CEPEnderecoDoSegurado"/>
+                    <br></br>
+                    <p:inputText id="CEPEnderecoDoSegurado" value="#{Endereco.cep}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Cpf/Cnpj Do Segurado: " for="CpfOuCnpjDoSegurado" />
+                   <br></br>
+                    <p:inputText id="CpfOuCnpjDoSegurado" value="#{SeguroOnibus.cpfOuCnpjDoSegurado}"/>
+                    <br></br><br></br>
+
+                    <p:outputLabel value="Nome Do Segurado: " for="NomeDoSegurado" />
+                    <br></br>
+                    <p:inputText id="NomeDoSegurado" value="#{SeguroOnibus.nomeDoSegurado}"/>
+                    <br></br><br></br>
+
+
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarSeguro"/>
+                </h:form>
+                </div>
+            </div>
             
             
     </h:body>
