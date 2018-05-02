@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>TODO supply a title</title>
+        <title>LoginSMBG</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet library="css" name="Css.css" />
     </h:head>
@@ -15,23 +15,23 @@
 		<div id="loginSenha">
                     <h1 id="textoLogin"> Login </h1>
                     <h5 id="textoDentroLogin"> Seja bem-vindo ao SMBG</h5>
-                    <p:outputLabel id="loginNome" value="Login: "  />
+                    <p:outputLabel class="loginNome" value="Login: " for="NomeLogin" />
                     <br></br>
-                    <p:inputText id = "inputLogin"  value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                    <p:inputText class="inputLogin" id="NomeLogin" value="#{SeguroOnibus.telefoneDoSegurado}"/>
                     <br></br><br></br>
                     
-                    <p:outputLabel id="senhaNome" value="Senha: "  />
+                    <p:outputLabel class="senhaNome" value="Senha: " for="NomeSenha" />
                     <br></br>
-                    <p:inputText id = "inputSenha"  value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                    <p:inputText class="inputSenha" id= "NomeSenha" value="#{SeguroOnibus.telefoneDoSegurado}"/>
                     <br></br><br></br>
 	
 		</div>
+            <link href="resources/css/Css.css" rel="stylesheet" type="text/css"/>
 		<div id="apresentacaoLogin">
                         <h:graphicImage id="menuDoLogin" library="imagem" name="imgMenu.png"/>
 			<h2 id="textoLoginDaDiv2"> Seja Bem-Vindo!</h2>
 			<h5 id="textoLoginDeDentroDiv2">O Sistema de Monitoramento de Busão de Garanhuns agradece o seu login em nosso sistema!</h5>	
-
-
+                         <p:commandButton class="butaoLogin" value="Logar" id="cadastrarSeguro"/>
 		</div>
 	</div>
     </h:body>

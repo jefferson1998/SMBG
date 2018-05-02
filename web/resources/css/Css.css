@@ -1,4 +1,16 @@
-#loginNome{
+.butaoLogin{
+    
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    top: 60px;
+    right: 357px;
+    width: 120px;
+    height: 33px;
+    
+}
+
+.loginNome{
     height: 25px;
     left: 35px;
     top: 95px;
@@ -9,10 +21,10 @@
     font-family:serif;
 }
 
-#senhaNome{
+.senhaNome{
     height: 25px;
     left: 35px;
-    top: 170px;
+    top: 175px;
     float: left;
     position: absolute;
     padding: 0px;
@@ -20,17 +32,17 @@
     font-family:serif;
 }
 
-#inputSenha{
+.inputSenha{
 	height: 25px;
 	left: 35px;
-	top: 200px;
+	top: 210px;
 	float: left;
 	position: absolute;
 	padding: 0px;
 	margin: 0px;
 }
 
-#inputLogin{
+.inputLogin{
 	height: 25px;
 	left: 35px;
 	top: 130px;

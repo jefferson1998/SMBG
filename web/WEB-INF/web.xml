@@ -19,6 +19,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/CadastrarFuncionarioSMBG.xhtml</welcome-file>
+        <welcome-file>faces/PaginaLoginSMBG.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
