@@ -4,61 +4,66 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>SMBG</title>
+        <title>SMBG - Rota</title>
         <h:outputStylesheet library="css" name="Css.css" />
     </h:head>
     <h:body>
-        
+
         <div id="faixa">
-	<h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
-	</div>
-        
-          
+            <h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
+        </div>
+
+
         <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
-     
+
         <div id="botoes">
-<!--            colocar os butões-->
+            <!--            colocar os butões-->
         </div>
-        
+
         <div id="divTexto"> 
-		<div id="titulo"> CADASTRO DO ROTA </div>
-                <div id="formularioRotas">
+            <div id="titulo"> CADASTRO DA ROTA </div>
+            <div id="formulario">
+
+                <br/>
+                <h:outputText value="Campos Obrigatórios:*" id="msgCampoObrigatorio"/>
+                <br/>
+
                 <h:form>
-                        <h3> DADOS DA ROTA </h3>
+                    <h3> DADOS DA ROTA </h3>
 
-                        <br></br>
-                        <p:outputLabel value="Origem da rota: " for="OrigemDaRota" />
-                         <br></br>
-                        <p:inputText id="OrigemDaRota" value="#{Rota.origem}"/>
-                        <br></br><br></br>
+                    <br></br>
+                    <p:outputLabel value="Origem da rota:*" for="OrigemDaRota" />
+                    <br></br>
+                    <p:inputText id="OrigemDaRota" value="#{Rota.origem}"/>
+                    <br></br><br></br>
 
-                        <p:outputLabel value="Destino da rota: " for="DestinoDaRota" />
-                         <br></br>
-                        <p:inputText id="DestinoDaRota" value="#{Rota.destino}"/>
-                        <br></br><br></br>
+                    <p:outputLabel value="Destino da rota:*" for="DestinoDaRota" />
+                    <br></br>
+                    <p:inputText id="DestinoDaRota" value="#{Rota.destino}"/>
+                    <br></br><br></br>
 
-                        <p:outputLabel value="Hórario de Saída: " for="HorarioDeSaidaDaRota" />
-                         <br></br>
-                        <p:inputText id="HorarioDeSaidaDaRota" value="#{Rota.horarioSaida}"/>
-                        <br></br><br></br>
+                    <p:outputLabel value="Hórario de Saída:*" for="HorarioDeSaidaDaRota" />
+                    <br></br>
+                    <p:inputText id="HorarioDeSaidaDaRota" value="#{Rota.horarioSaida}"/>
+                    <br></br><br></br>
 
-                        <p:outputLabel value="Hórario de Previsto: " for="HorarioPrevistoDeChegadaDaDaRota" />
-                         <br></br>
-                        <p:inputText id="HorarioPrevistoDeChegadaDaDaRota" value="#{Rota.horarioPrevistoDeChegada}"/>
-                        <br></br><br></br>
+                    <p:outputLabel value="Hórario de Previsto:*" for="HorarioPrevistoDeChegadaDaDaRota" />
+                    <br></br>
+                    <p:inputText id="HorarioPrevistoDeChegadaDaDaRota" value="#{Rota.horarioPrevistoDeChegada}"/>
+                    <br></br><br></br>
 
 
 
-                        <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarRota"/>
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarRota"/>
                 </h:form>
-            
-                </div>
+
+            </div>
         </div>
-      
-      
-        
-       
-            
+
+
+
+
+
     </h:body>
 </html>
 
