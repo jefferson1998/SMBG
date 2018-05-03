@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>SMBG Contas</title>
+        <h:outputStylesheet library="css" name="Css.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div id="faixa">
+                <h1 style="color: #cccccc; font-size: 150px; position: absolute;right: 200px;top: -100px">SMBG</h1>
+            </div>
+
+
+            <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+
+            <div id="botoes">
+                <!--            colocar os butões-->
+            </div>
+
+            <div id="divTexto"> 
+                <div id="titulo"> CADASTRO DA ROTA </div>
+                <div id="formulario">
+
+                    <br/>
+                    <h:outputText value="Campos Obrigatórios:*" id="msgCampoObrigatorio"/>
+                    <br/>
+
+                    <h:form>
+                        <h3> PRESTAÇÃO DE CONTAS </h3>
+
+                        <br></br>
+                        <p:outputLabel value="Arrecadação total diária:*" for="ArrecadaçãoDiaria" />
+                        <br></br>
+                        <p:inputText id="ArrecadaçãoDiaria" value="#{PrestacaoDeConta.valorTotalArrecadadoNoDia}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Arrecadação com descontos:*" for="ArrecadaçãoDiariaComDescontos" />
+                        <br></br>
+                        <p:inputText id="ArrecadaçãoDiariaComDescontos" value="#{PrestacaoDeConta.valorArrecadadoDescontado}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Valor total combustível:*" for="ValorTotalDoCombustivel" />
+                        <br></br>
+                        <p:inputText id="ValorTotalDoCombustivel" value="#{PrestacaoDeConta.valorTotalDoCombustivel}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel value="Valor litro do ombustível:*" for="ValorDoLitroDeCombustivel" />
+                        <br></br>
+                        <p:inputText id="ValorDoLitroDeCombustivel" value="#{PrestacaoDeConta.valorDoLitroDeCombustivel}"/>
+                        <br></br><br></br>
+                        
+                        <p:outputLabel value="Litros abastecido:*" for="QuantidadeDeLitrosAbastecido" />
+                        <br></br>
+                        <p:inputText id="QuantidadeDeLitrosAbastecido" value="#{PrestacaoDeConta.quantidadeDeLitrosAbastecido}"/>
+                        <br></br><br></br>
+                        
+                        <p:outputLabel value="Valor em troco:*" for="ValorDoTroco" />
+                        <br></br>
+                        <p:inputText id="ValorDoTroco" value="#{PrestacaoDeConta.valorTroco}"/>
+                        <br></br><br></br>
+                        
+                        <p:outputLabel value="Salário dia do cobrador:*" for="SalarioDoCobrador" />
+                        <br></br>
+                        <p:inputText id="SalarioDoCobrador" value="#{PrestacaoDeConta.salarioDoCobrador}"/>
+                        <br></br><br></br>
+                        
+                        <p:outputLabel value="Salário dia do motorista:*" for="SalarioDoMotorista" />
+                        <br></br>
+                        <p:inputText id="SalarioDoMotorista" value="#{PrestacaoDeConta.salarioDoMotorista}"/>
+                        <br></br><br></br>
+
+
+                        <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarRota"/>
+                    </h:form>
+
+                </div>
+            </div>
+    </h:body>
+</html>
