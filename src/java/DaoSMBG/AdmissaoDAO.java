@@ -1,4 +1,6 @@
-package modelSMBG;
+package DaoSMBG;
+
+import modelSMBG.Admissao;
 
 public interface AdmissaoDAO extends DAO<Admissao> {
 	

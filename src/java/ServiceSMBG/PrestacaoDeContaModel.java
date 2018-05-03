@@ -1,6 +1,10 @@
-package modelSMBG;
+package ServiceSMBG;
 
+import DaoHibernate.PrestacaoDeContaHibernate;
+import DaoSMBG.PrestacaoDeContaDAO;
 import java.util.List;
+import DaoSMBG.DAO;
+import modelSMBG.PrestacaoDeConta;
 
 public class PrestacaoDeContaModel {
 	

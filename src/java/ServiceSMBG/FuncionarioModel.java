@@ -1,6 +1,10 @@
-package modelSMBG;
+package ServiceSMBG;
 
 import java.util.List;
+import DaoSMBG.DAO;
+import modelSMBG.Funcionario;
+import DaoSMBG.FuncionarioDAO;
+import DaoHibernate.FuncionarioHibernate;
 
 public class FuncionarioModel {
 

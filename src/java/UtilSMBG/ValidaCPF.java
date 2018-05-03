@@ -1,4 +1,4 @@
-package modelSMBG;
+package UtilSMBG;
 
 import java.util.InputMismatchException;
 

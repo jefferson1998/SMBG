@@ -1,6 +1,10 @@
-package modelSMBG;
+package ServiceSMBG;
 
 import java.util.List;
+import modelSMBG.Admissao;
+import DaoSMBG.AdmissaoDAO;
+import DaoHibernate.AdmissaoHibernate;
+import DaoSMBG.DAO;
 
 public class AdmissaoModel {
 	private DAO<Admissao> daoAdmissao = new AdmissaoHibernate();

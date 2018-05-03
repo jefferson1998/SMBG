@@ -1,6 +1,10 @@
-package modelSMBG;
+package ServiceSMBG;
 
+import DaoHibernate.RotaHibernate;
+import DaoSMBG.RotaDAO;
 import java.util.List;
+import DaoSMBG.DAO;
+import modelSMBG.Rota;
 
 public class RotaModel {
 	

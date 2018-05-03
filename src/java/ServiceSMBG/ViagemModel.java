@@ -1,4 +1,4 @@
-package modelSMBG;
+package ServiceSMBG;
 
 
 public class ViagemModel {

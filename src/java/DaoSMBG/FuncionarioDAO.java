@@ -1,4 +1,6 @@
-package modelSMBG;
+package DaoSMBG;
+
+import modelSMBG.Funcionario;
 
 public interface FuncionarioDAO extends DAO<Funcionario> {
 

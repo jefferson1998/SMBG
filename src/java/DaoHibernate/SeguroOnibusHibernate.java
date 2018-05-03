@@ -1,6 +1,8 @@
-package modelSMBG;
+package DaoHibernate;
 
+import DaoSMBG.SeguroDAO;
 import java.util.List;
+import modelSMBG.SeguroOnibus;
 
 public class SeguroOnibusHibernate implements SeguroDAO {
 

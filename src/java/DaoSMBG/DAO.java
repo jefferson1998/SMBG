@@ -1,4 +1,4 @@
-package modelSMBG;
+package DaoSMBG;
 
 import java.util.List;
 

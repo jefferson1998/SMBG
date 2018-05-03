@@ -1,6 +1,8 @@
-package modelSMBG;
+package DaoHibernate;
 
+import DaoSMBG.RotaDAO;
 import java.util.List;
+import modelSMBG.Rota;
 
 public class RotaHibernate implements RotaDAO{
 
@@ -28,7 +30,6 @@ public class RotaHibernate implements RotaDAO{
 		return null;
 	}
 
-	@Override
 	public List<Rota> buscarPelaOrigem(String origem) {
 		// TODO Auto-generated method stub
 		return null;

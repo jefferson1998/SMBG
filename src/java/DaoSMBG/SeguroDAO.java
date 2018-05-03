@@ -1,4 +1,6 @@
-package modelSMBG;
+package DaoSMBG;
+
+import modelSMBG.SeguroOnibus;
 
 public interface SeguroDAO extends DAO<SeguroOnibus> {
 	

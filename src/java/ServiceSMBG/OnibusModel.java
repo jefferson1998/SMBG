@@ -1,6 +1,10 @@
-package modelSMBG;
+package ServiceSMBG;
 
+import DaoHibernate.OnibusHibernate;
+import DaoSMBG.OnibusDAO;
 import java.util.List;
+import DaoSMBG.DAO;
+import modelSMBG.Onibus;
 
 public class OnibusModel {
 	

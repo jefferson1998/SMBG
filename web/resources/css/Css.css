@@ -3,17 +3,17 @@
     position: absolute;
     padding: 0px;
     margin: 0px;
-    top: 60px;
-    right: 357px;
-    width: 120px;
-    height: 33px;
+    top: 70%;
+    right: 167%;
+    width: 35%;
+    height: 9%;
 
 }
 
 .loginNome{
-    height: 25px;
-    left: 35px;
-    top: 95px;
+    height: 10%;
+    left: 6.5%;
+    top: 24%;
     float: left;
     position: absolute;
     padding: 0px;
@@ -22,9 +22,9 @@
 }
 
 .senhaNome{
-    height: 25px;
-    left: 35px;
-    top: 175px;
+    height: 10%;
+    left: 6.5%;
+    top: 45%;
     float: left;
     position: absolute;
     padding: 0px;
@@ -33,9 +33,9 @@
 }
 
 .inputSenha{
-    height: 25px;
-    left: 35px;
-    top: 210px;
+    height: 7.5%;
+    left: 6.5%;
+    top: 54%;
     float: left;
     position: absolute;
     padding: 0px;
@@ -43,9 +43,9 @@
 }
 
 .inputLogin{
-    height: 25px;
-    left: 35px;
-    top: 130px;
+    height: 7.5%;
+    left: 6.5%;
+    top: 33%;
     float: left;
     position: absolute;
     padding: 0px;
@@ -95,8 +95,8 @@
     position: relative;
     right: -200px;
     top: -100px;
-    width: 550px;
-    height: 390px;
+    width: 80%;
+    height: 84%;
     border: 0px solid ;	
     z-index: -1;
 }
@@ -106,8 +106,8 @@
     position: absolute;
     right: -270px;
     top: -100px;
-    width: 350px;
-    height: 390px;
+    width: 52%;
+    height: 84%;
     border: 0px solid;	
     z-index: -1;
 }

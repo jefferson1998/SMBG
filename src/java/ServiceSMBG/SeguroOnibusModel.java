@@ -1,6 +1,10 @@
-package modelSMBG;
+package ServiceSMBG;
 
+import DaoSMBG.SeguroDAO;
 import java.util.List;
+import DaoSMBG.DAO;
+import modelSMBG.SeguroOnibus;
+import DaoHibernate.SeguroOnibusHibernate;
 
 public class SeguroOnibusModel {
 	

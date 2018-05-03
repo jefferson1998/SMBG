@@ -1,6 +1,7 @@
-package modelSMBG;
+package DaoSMBG;
 
 import java.util.List;
+import modelSMBG.Rota;
 
 public interface RotaDAO extends DAO<Rota> {
 	

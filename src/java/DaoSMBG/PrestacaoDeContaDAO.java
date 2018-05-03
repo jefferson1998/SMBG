@@ -1,4 +1,6 @@
-package modelSMBG;
+package DaoSMBG;
+
+import modelSMBG.PrestacaoDeConta;
 
 public interface PrestacaoDeContaDAO extends DAO<PrestacaoDeConta> {
 

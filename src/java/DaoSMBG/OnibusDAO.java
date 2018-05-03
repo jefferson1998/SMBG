@@ -1,4 +1,6 @@
-package modelSMBG;
+package DaoSMBG;
+
+import modelSMBG.Onibus;
 
 public interface OnibusDAO extends DAO<Onibus> {
 
