@@ -15,7 +15,7 @@
     left: 6.5%;
     top: 24%;
     float: left;
-    position: absolute;
+    position: relative;
     padding: 0px;
     margin: 0px;
     font-family:serif;
@@ -35,19 +35,19 @@
 .inputSenha{
     height: 7.5%;
     left: 6.5%;
-    top: 54%;
+    top: 36%;
     float: left;
-    position: absolute;
+    position: relative;
     padding: 0px;
     margin: 0px;
 }
 
 .inputLogin{
     height: 7.5%;
-    left: 6.5%;
-    top: 33%;
+    left: -2.3%;
+    top: 30%;
     float: left;
-    position: absolute;
+    position: relative;
     padding: 0px;
     margin: 0px;
 }
@@ -120,6 +120,7 @@
     border-radius: 10px;
     align-items: center;
 }
+
 
 body{
     margin-top: 0px;
