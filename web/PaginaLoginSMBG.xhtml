@@ -10,29 +10,28 @@
         <h:outputStylesheet library="css" name="Css.css" />
     </h:head>
     <h:body>
-       
-	<div id="divTexto"> 
-		<div id="loginSenha">
-                    <h1 id="textoLogin"> Login </h1>
-                    <h5 id="textoDentroLogin"> Seja bem-vindo ao SMBG</h5>
-                    <p:outputLabel class="loginNome" value="Login: " for="NomeLogin" />
-                    <br></br>
-                    <p:inputText class="inputLogin" id="NomeLogin" value="#{SeguroOnibus.telefoneDoSegurado}"/>
-                    <br></br><br></br>
-                    
-                    <p:outputLabel class="senhaNome" value="Senha: " for="NomeSenha" />
-                    <br></br>
-                    <p:inputText class="inputSenha" id= "NomeSenha" value="#{SeguroOnibus.telefoneDoSegurado}"/>
-                    <br></br><br></br>
-	
-		</div>
+        <div id="divTexto"> 
+            <div id="loginSenha">
+                <h1 id="textoLogin"> Login </h1>
+                <h5 id="textoDentroLogin"> Seja bem-vindo ao SMBG</h5>
+                <p:outputLabel class="loginNome" value="Login: " for="NomeLogin" />
+                <br></br>
+                <p:inputText class="inputLogin" id="NomeLogin" value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                <br></br><br></br>
+
+                <p:outputLabel class="senhaNome" value="Senha: " for="NomeSenha" />
+                <br></br>
+                <p:password class="inputSenha" id= "NomeSenha" value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                <br></br><br></br>
+
+            </div>
             <link href="resources/css/Css.css" rel="stylesheet" type="text/css"/>
-		<div id="apresentacaoLogin">
-                        <h:graphicImage id="menuDoLogin" library="imagem" name="imgMenu.png"/>
-			<h2 id="textoLoginDaDiv2"> Seja Bem-Vindo!</h2>
-			<h5 id="textoLoginDeDentroDiv2">O Sistema de Monitoramento de Busão de Garanhuns agradece o seu login em nosso sistema!</h5>	
-                        <p:commandButton class="butaoLogin" value="Logar" id="cadastrarSeguro"/>
-		</div>
-	</div>
+            <div id="apresentacaoLogin">
+                <h:graphicImage id="menuDoLogin" library="imagem" name="imgMenu.png"/>
+                <h2 id="textoLoginDaDiv2"> Seja Bem-Vindo!</h2>
+                <h5 id="textoLoginDeDentroDiv2">O Sistema de Monitoramento de Busão de Garanhuns agradece o seu login em nosso sistema!</h5>	
+                <p:commandButton class="butaoLogin" value="Logar" id="cadastrarSeguro"/>
+            </div>
+        </div>
     </h:body>
 </html>

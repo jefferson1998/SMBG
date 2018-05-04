@@ -155,6 +155,18 @@ body{
     z-index: -1;
 }
 
+#textoFaixa{
+    color: #cccccc; 
+    font-size: 150px; 
+    position: absolute;
+    right: 200px;
+    top: -100px
+}
+
+.camposFormulario{
+    width: 98.5%; 
+}
+
 .menuBT{
     color: #cccccc;
     font-size: 18px;
@@ -243,7 +255,6 @@ body{
 
 .menuCadastrar{
     color: white;
-    top: -62px;
     background: #565656;
     height: 60px;
     padding: 15px 35px;
