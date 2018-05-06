@@ -114,7 +114,7 @@
 
 #formulario{
     position: relative;
-    right: -200px;
+    left: 250px;
     top: 50px;
     border: 3px solid #6d6868;	
     border-radius: 10px;
@@ -198,10 +198,9 @@ body{
 
 #titulo{
     position: relative;
-    right: -470px;
+    left: 400px;
     top: 50px;
     font-size: 30px;
-    font-style: arial;
     color: black;
 
 }
@@ -260,7 +259,7 @@ body{
     height: 60px;
     padding: 15px 35px;
     position: relative;
-    float: right;
+    left: 40%;
     border: 1px solid #565656;
 }
 

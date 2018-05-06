@@ -10,197 +10,122 @@
 
         <h:outputStylesheet library="css" name="Css.css" />
 
-
     </h:head>
     <h:body>
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
         </div>
 
-
         <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
 
-        <div id="botoes">
-            <!--            colocar os butões-->
-        </div>
-
-
         <div id="divTexto"> 
-            <div id="titulo"> CADASTRO FUNCIONARIO </div>
-            <h:form>
+            <div id="titulo"> CADASTRO FUNCIONÁRIO </div>
+            <div id="formulario">
 
-                    
-                    <h:outputText value="Campos Obrigatórios:*" id="msgCampoObrigatorio"/>
-                    
+                <br/>
+                <h:outputText value="Campos Obrigatórios:*" id="msgCampoObrigatorio"/>
 
+                <h:form>
 
                     <h3> DADOS DO RG </h3>
 
-                    <p:panelGrid columns="2">
-                    
-                    <p:outputLabel value="Nome:*" for="nomeIdentidadeFuncionario" />
-                    
-                    <p:inputText class="camposFormulario" id="nomeIdentidadeFuncionario" value="#{Identidade.nome}"/>
-                    
+                    <p:outputLabel value="Nome:*" for="NomeIdentidadeFuncionario" />
+                    <p:inputText class="camposFormulario" id="NomeIdentidadeFuncionario" value="#{Identidade.nome}"/>
 
-                    <p:outputLabel value="Número RG:*" for="numeroIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="numeroIdentidadeFuncionario" value="#{Identidade.numeroIdentidade}"/>
-                    
+                    <p:outputLabel value="Número RG:*" for="NumeroIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="NumeroIdentidadeFuncionario" value="#{Identidade.numeroIdentidade}"/>
 
-                    <p:outputLabel value="Órgão Emissor:*" for="orgaoEmissorIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="orgaoEmissorIdentidadeFuncionario" value="#{Identidade.orgaoEmissor}"/>
-                    
+                    <p:outputLabel value="Órgão Emissor:*" for="OrgaoEmissorIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="OrgaoEmissorIdentidadeFuncionario" value="#{Identidade.orgaoEmissor}"/>
 
-                    <p:outputLabel value="Data de Emissão:*" for="dataEmissaoIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="dataEmissaoIdentidadeFuncionario" value="#{Identidade.dataEmissao}"/>
-                    
+                    <p:outputLabel value="Data de Emissão:*" for="DataEmissaoIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="DataEmissaoIdentidadeFuncionario" value="#{Identidade.dataEmissao}"/>
 
-                    <p:outputLabel value="Nome do pai: " for="nomeDoPaiIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="nomeDoPaiIdentidadeFuncionario" value="#{Identidade.nomeDoPai}"/>
-                    
+                    <p:outputLabel value="Nome do pai: " for="NomeDoPaiIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="NomeDoPaiIdentidadeFuncionario" value="#{Identidade.nomeDoPai}"/>
 
-                    <p:outputLabel value="Nome da mãe:*" for="nomeDoMaeIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="nomeDoMaeIdentidadeFuncionario" value="#{Identidade.nomeDaMae}"/>
-                    
+                    <p:outputLabel value="Nome da mãe:*" for="NomeDoMaeIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="NomeDoMaeIdentidadeFuncionario" value="#{Identidade.nomeDaMae}"/>
 
-                    <p:outputLabel value="Naturalidade: " for="naturalidadeIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="naturalidadeIdentidadeFuncionario" value="#{Identidade.naturalidade}"/>
-                    
+                    <p:outputLabel value="Naturalidade: " for="NaturalidadeIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="NaturalidadeIdentidadeFuncionario" value="#{Identidade.naturalidade}"/>
 
-                    <p:outputLabel value="Data de Nascimento: " for="dataDeNascimentoIdentidadeFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="dataDeNascimentoIdentidadeFuncionario" value="#{Identidade.dataDeNascimento}"/>
-                    
+                    <p:outputLabel value="Data de Nascimento: " for="DataDeNascimentoIdentidadeFuncionario"/>
+                    <p:inputText class="camposFormulario" id="DataDeNascimentoIdentidadeFuncionario" value="#{Identidade.dataDeNascimento}"/>
 
-                    <p:outputLabel value="UF da identidade:*" for="uFIdentidadeDoFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="uFIdentidadeDoFuncionario" value="#{Identidade.uFIdentidade}"/>
-                    
+                    <p:outputLabel value="UF da identidade:*" for="UFIdentidadeDoFuncionario"/>
+                    <p:inputText class="camposFormulario" id="UFIdentidadeDoFuncionario" value="#{Identidade.uFIdentidade}"/>
 
                     <p:outputLabel value="Número do CPF:*" for="CPFDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="CPFDoFuncionario" value="#{Funcionario.cpf}"/>
-                    </p:panelGrid>
-                    
+
                     <h3> DADOS DO ENDEREÇO </h3>
 
-                    <p:panelGrid columns="2">
-
                     <p:outputLabel value="Rua:*" for="RuaEnderecoDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="RuaEnderecoDoFuncionario" value="#{Endereco.rua}"/>
-                    
 
                     <p:outputLabel value="Número do logradouro:*" for="NumeroEnderecoDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="NumeroEnderecoDoFuncionario" value="#{Endereco.numero}"/>
-                    
 
                     <p:outputLabel value="Bairro:*" for="BairroEnderecoDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="BairroEnderecoDoFuncionario" value="#{Endereco.bairro}"/>
-                    
 
                     <p:outputLabel value="CEP:*" for="CEPEnderecoDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="CEPEnderecoDoFuncionario" value="#{Endereco.cep}"/>
-                    
-                    </p:panelGrid>
+
                     <h3> DADOS DA CNH </h3>
 
-                    <p:panelGrid columns="2">
-
                     <p:outputLabel value="Número: " for="NumeroCNHDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="NumeroCNHDoFuncionario" value="#{CNH.numeroCNH}"/>
-                    
 
                     <p:outputLabel value="Categoria: " for="CategoriaCNHDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="CategoriaCNHDoFuncionario" value="#{CNH.categoriaCNH}"/>
-                    </p:panelGrid>
 
                     <h3> DADOS DO PIS </h3>
-                    
-                    <p:panelGrid columns="2">
 
                     <p:outputLabel value="Número: " for="NumeroDoPISDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="NumeroDoPISDoFuncionario" value="#{Funcionario.pis}"/>
-                    
-                    </p:panelGrid>
+
                     <h3> DADOS DO TÍTULO </h3>
 
-                    <p:panelGrid columns="2">
-
                     <p:outputLabel value="Número: " for="NumeroDoTituloDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="NumeroDoTituloDoFuncionario" value="#{Titulo.numeroTitulo}"/>
-                    
 
                     <p:outputLabel value="Zona: " for="NumeroDaZonaDoTituloDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="NumeroDaZonaDoTituloDoFuncionario" value="#{Titulo.zona}"/>
-                    
 
                     <p:outputLabel value="Seção: " for="SecaoDoTituloDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="SecaoDoTituloDoFuncionario" value="#{Titulo.secao}"/>
-                    
-                    </p:panelGrid>
+
                     <h3> DADOS DO CTPS </h3>
 
-                    <p:panelGrid columns="2">
+                    <p:outputLabel value="Número: " for="NumeroDoCTPSDoFuncionario"/>
+                    <p:inputText class="camposFormulario" id="NumeroDoCTPSDoFuncionario" value="#{CTPS.numeroCTPS}"/>
 
-                    <p:outputLabel value="Número: " for="numeroDoCTPSDoFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="numeroDoCTPSDoFuncionario" value="#{CTPS.numeroCTPS}"/>
-                    
+                    <p:outputLabel value="Série: " for="SerieDoCTPSDoFuncionario"/>
+                    <p:inputText class="camposFormulario" id="SerieDoCTPSDoFuncionario" value="#{CTPS.serieCTPS}"/>
 
-                    <p:outputLabel value="Série: " for="serieDoCTPSDoFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="serieDoCTPSDoFuncionario" value="#{CTPS.serieCTPS}"/>
-                    
-
-                    <p:outputLabel value="Estado: " for="estadoDoCTPSDoFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="estadoDoCTPSDoFuncionario" value="#{CTPS.estadoCTPS}"/>
-                    </p:panelGrid>
+                    <p:outputLabel value="Estado: " for="EstadoDoCTPSDoFuncionario"/>
+                    <p:inputText class="camposFormulario" id="EstadoDoCTPSDoFuncionario" value="#{CTPS.estadoCTPS}"/>
 
                     <h3> DADOS DA RESERVISTA </h3>
 
-                    <p:panelGrid columns="2">
                     <p:outputLabel value="Número: " for="NumeroReservistaDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="NumeroReservistaDoFuncionario" value="#{Reservista.numeroReservista}"/>
-                    
 
                     <p:outputLabel value="Série: " for="SerieReservistaDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="SerieReservistaDoFuncionario" value="#{Reservista.serieReservista}"/>
-                    
 
                     <p:outputLabel value="Categoria: " for="CategoriaReservistaDoFuncionario"/>
-                    
                     <p:inputText class="camposFormulario" id="CategoriaReservistaDoFuncionario" value="#{Reservista.categoriaReservista}"/>
-                    
 
-                    <p:outputLabel value="Estado Civil:*" for="estadoCivilDoFuncionario"/>
-                    
-                    <p:inputText class="camposFormulario" id="estadoCivilDoFuncionario" value="#{Funcionario.estadoCivil}"/>
-                    
-                    </p:panelGrid>
-                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="cadastrarFuncionario"/>
+                    <p:outputLabel value="Estado Civil:*" for="EstadoCivilDoFuncionario"/>
+                    <p:inputText class="camposFormulario" id="EstadoCivilDoFuncionario" value="#{Funcionario.estadoCivil}"/>
 
-                    
-                
-            </h:form> 
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarFuncionario"/>
+
+                </h:form> 
+            </div>
         </div>
 
 
