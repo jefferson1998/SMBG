@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html  xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>BUSCA ROTA</title>
+        <h:outputStylesheet library="css" name="Css.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </h:head>
+    <h:body>
+
+        <div id="faixa">
+            <h1 id="textoFaixa">SMBG</h1>
+        </div>
+
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+
+        <div id="divTexto"> 
+            <div id="titulo"> ROTA </div>
+            <div id="formulario">
+
+                <h:form>
+
+                    <h3> CAMPOS DE BUSCA </h3>
+
+                    <p:outputLabel value="Origem" for="BuscaRotaPelaOrigem" />
+                    <p:inputText class="camposFormulario" id="BuscaRotaPelaOrigem"/>
+
+                    <p:outputLabel value="Destino" for="BuscaRotaPelaDestino" />
+                    <p:inputText class="camposFormulario" id="BuscaRotaPelaDestino"/>
+
+                    <p:outputLabel value="Horário Saída" for="BuscaRotaPeloHorarioSaida" />
+                    <p:inputText class="camposFormulario" id="BuscaRotaPeloHorarioSaida"/>
+                    
+                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarOnibus"/>
+                </h:form>
+
+            </div>
+
+        </div>
+
+    </h:body>
+</html>
