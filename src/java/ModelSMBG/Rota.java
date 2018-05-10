@@ -3,59 +3,59 @@ package modelSMBG;
 import java.util.List;
 
 public class Rota {
-	
-	private String origem;
-	private String destino;
-	private String horarioSaida;
-	private String horarioPrevistoDeChegada;
-	private List<Endereco> pontosDeParada;
-	
-	public Rota(String origem, String destino, String horarioSaida, String horarioPrevistoDeChegada,
-			List<Endereco> pontosDeParada) {
-		this.origem = origem;
-		this.destino = destino;
-		this.horarioSaida = horarioSaida;
-		this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
-		this.pontosDeParada = pontosDeParada;
-	}
 
-	public String getOrigem() {
-		return origem;
-	}
+    private String origem;
+    private String destino;
+    private String horarioSaida;
+    private String horarioPrevistoDeChegada;
+    private List<Endereco> pontosDeParada;
 
-	public void setOrigem(String origem) {
-		this.origem = origem;
-	}
+    public Rota(String origem, String destino, String horarioSaida, String horarioPrevistoDeChegada,
+            List<Endereco> pontosDeParada) {
+        this.origem = origem;
+        this.destino = destino;
+        this.horarioSaida = horarioSaida;
+        this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
+        this.pontosDeParada = pontosDeParada;
+    }
 
-	public String getDestino() {
-		return destino;
-	}
+    public String getOrigem() {
+        return origem;
+    }
 
-	public void setDestino(String destino) {
-		this.destino = destino;
-	}
+    public void setOrigem(String origem) {
+        this.origem = origem;
+    }
 
-	public String getHorarioSaida() {
-		return horarioSaida;
-	}
+    public String getDestino() {
+        return destino;
+    }
 
-	public void setHorarioSaida(String horarioSaida) {
-		this.horarioSaida = horarioSaida;
-	}
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
 
-	public String getHorarioPrevistoDeChegada() {
-		return horarioPrevistoDeChegada;
-	}
+    public String getHorarioSaida() {
+        return horarioSaida;
+    }
 
-	public void setHorarioPrevistoDeChegada(String horarioPrevistoDeChegada) {
-		this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
-	}
+    public void setHorarioSaida(String horarioSaida) {
+        this.horarioSaida = horarioSaida;
+    }
 
-	public List<Endereco> getPontosDeParada() {
-		return pontosDeParada;
-	}
+    public String getHorarioPrevistoDeChegada() {
+        return horarioPrevistoDeChegada;
+    }
 
-	public void setPontosDeParada(List<Endereco> pontosDeParada) {
-		this.pontosDeParada = pontosDeParada;
-	} 
+    public void setHorarioPrevistoDeChegada(String horarioPrevistoDeChegada) {
+        this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
+    }
+
+    public List<Endereco> getPontosDeParada() {
+        return pontosDeParada;
+    }
+
+    public void setPontosDeParada(List<Endereco> pontosDeParada) {
+        this.pontosDeParada = pontosDeParada;
+    }
 }

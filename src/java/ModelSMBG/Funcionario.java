@@ -118,4 +118,18 @@ public class Funcionario {
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Funcionario)) {
+            return false;
+        }
+
+        Funcionario funcionario = (Funcionario) o;
+        return this.cpf.equals(funcionario.getCPF());
+    }
 }

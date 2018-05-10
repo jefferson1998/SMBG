@@ -2,233 +2,246 @@ package modelSMBG;
 
 public class SeguroOnibus {
 
-	private int codigoSusepDoCorretor;
-	private int codigoCpdDoCorretor;
-	private String sucursalCorretor;
-	private String inspetoriaDoCorretor;
-	private String proposta;
-	private String dataEmissao;
-	private String apolice;
-	private String sucursal;
-	private String processoSusep;
-	private int codigoSusep;
-	private String cnpj;
-	private String nomeSeguradora;
-	private String telefoneDoSegurado;
-	private Endereco enderecoDoSegurado;
-	private String nomeCorretor;
-	private String cpfOuCnpjDoSegurado;
-	private String nomeDoSegurado;
-	private String dataInicioDaVigencia;
-	private String dataFinalDaVigencia;
-	private int numeroEndosso;
-	private String ramo;
-	private Onibus onibus;
-	
-	public SeguroOnibus(int codigoSusepDoCorretor, int codigoCpdDoCorretor, String sucursalCorretor,
-			String inspetoriaDoCorretor, String proposta, String dataEmissao, String apolice, String sucursal,
-			String processoSusep, int codigoSusep, String cnpj, String nomeSeguradora, String telefoneDoSegurado,
-			Endereco enderecoDoSegurado, String nomeCorretor, String cpfOuCnpjDoSegurado, String nomeDoSegurado,
-			String dataInicioDaVigencia, String dataFinalDaVigencia, int numeroEndosso, String ramo, Onibus onibus) {
-		this.codigoSusepDoCorretor = codigoSusepDoCorretor;
-		this.codigoCpdDoCorretor = codigoCpdDoCorretor;
-		this.sucursalCorretor = sucursalCorretor;
-		this.inspetoriaDoCorretor = inspetoriaDoCorretor;
-		this.proposta = proposta;
-		this.dataEmissao = dataEmissao;
-		this.apolice = apolice;
-		this.sucursal = sucursal;
-		this.processoSusep = processoSusep;
-		this.codigoSusep = codigoSusep;
-		this.cnpj = cnpj;
-		this.nomeSeguradora = nomeSeguradora;
-		this.telefoneDoSegurado = telefoneDoSegurado;
-		this.enderecoDoSegurado = enderecoDoSegurado;
-		this.nomeCorretor = nomeCorretor;
-		this.cpfOuCnpjDoSegurado = cpfOuCnpjDoSegurado;
-		this.nomeDoSegurado = nomeDoSegurado;
-		this.dataInicioDaVigencia = dataInicioDaVigencia;
-		this.dataFinalDaVigencia = dataFinalDaVigencia;
-		this.numeroEndosso = numeroEndosso;
-		this.ramo = ramo;
-		this.onibus = onibus;
-	}
+    private int codigoSusepDoCorretor;
+    private int codigoCpdDoCorretor;
+    private String sucursalCorretor;
+    private String inspetoriaDoCorretor;
+    private String proposta;
+    private String dataEmissao;
+    private String apolice;
+    private String sucursal;
+    private String processoSusep;
+    private int codigoSusep;
+    private String cnpj;
+    private String nomeSeguradora;
+    private String telefoneDoSegurado;
+    private Endereco enderecoDoSegurado;
+    private String nomeCorretor;
+    private String cpfOuCnpjDoSegurado;
+    private String nomeDoSegurado;
+    private String dataInicioDaVigencia;
+    private String dataFinalDaVigencia;
+    private int numeroEndosso;
+    private String ramo;
+    private Onibus onibus;
 
-	public int getCodigoSusepDoCorretor() {
-		return codigoSusepDoCorretor;
-	}
+    public SeguroOnibus(int codigoSusepDoCorretor, int codigoCpdDoCorretor, String sucursalCorretor,
+            String inspetoriaDoCorretor, String proposta, String dataEmissao, String apolice, String sucursal,
+            String processoSusep, int codigoSusep, String cnpj, String nomeSeguradora, String telefoneDoSegurado,
+            Endereco enderecoDoSegurado, String nomeCorretor, String cpfOuCnpjDoSegurado, String nomeDoSegurado,
+            String dataInicioDaVigencia, String dataFinalDaVigencia, int numeroEndosso, String ramo, Onibus onibus) {
+        this.codigoSusepDoCorretor = codigoSusepDoCorretor;
+        this.codigoCpdDoCorretor = codigoCpdDoCorretor;
+        this.sucursalCorretor = sucursalCorretor;
+        this.inspetoriaDoCorretor = inspetoriaDoCorretor;
+        this.proposta = proposta;
+        this.dataEmissao = dataEmissao;
+        this.apolice = apolice;
+        this.sucursal = sucursal;
+        this.processoSusep = processoSusep;
+        this.codigoSusep = codigoSusep;
+        this.cnpj = cnpj;
+        this.nomeSeguradora = nomeSeguradora;
+        this.telefoneDoSegurado = telefoneDoSegurado;
+        this.enderecoDoSegurado = enderecoDoSegurado;
+        this.nomeCorretor = nomeCorretor;
+        this.cpfOuCnpjDoSegurado = cpfOuCnpjDoSegurado;
+        this.nomeDoSegurado = nomeDoSegurado;
+        this.dataInicioDaVigencia = dataInicioDaVigencia;
+        this.dataFinalDaVigencia = dataFinalDaVigencia;
+        this.numeroEndosso = numeroEndosso;
+        this.ramo = ramo;
+        this.onibus = onibus;
+    }
 
-	public void setCodigoSusepDoCorretor(int codigoSusepDoCorretor) {
-		this.codigoSusepDoCorretor = codigoSusepDoCorretor;
-	}
+    public int getCodigoSusepDoCorretor() {
+        return codigoSusepDoCorretor;
+    }
 
-	public int getCodigoCpdDoCorretor() {
-		return codigoCpdDoCorretor;
-	}
+    public void setCodigoSusepDoCorretor(int codigoSusepDoCorretor) {
+        this.codigoSusepDoCorretor = codigoSusepDoCorretor;
+    }
 
-	public void setCodigoCpdDoCorretor(int codigoCpdDoCorretor) {
-		this.codigoCpdDoCorretor = codigoCpdDoCorretor;
-	}
+    public int getCodigoCpdDoCorretor() {
+        return codigoCpdDoCorretor;
+    }
 
-	public String getSucursalCorretor() {
-		return sucursalCorretor;
-	}
+    public void setCodigoCpdDoCorretor(int codigoCpdDoCorretor) {
+        this.codigoCpdDoCorretor = codigoCpdDoCorretor;
+    }
 
-	public void setSucursalCorretor(String sucursalCorretor) {
-		this.sucursalCorretor = sucursalCorretor;
-	}
+    public String getSucursalCorretor() {
+        return sucursalCorretor;
+    }
 
-	public String getInspetoriaDoCorretor() {
-		return inspetoriaDoCorretor;
-	}
+    public void setSucursalCorretor(String sucursalCorretor) {
+        this.sucursalCorretor = sucursalCorretor;
+    }
 
-	public void setInspetoriaDoCorretor(String inspetoriaDoCorretor) {
-		this.inspetoriaDoCorretor = inspetoriaDoCorretor;
-	}
+    public String getInspetoriaDoCorretor() {
+        return inspetoriaDoCorretor;
+    }
 
-	public String getProposta() {
-		return proposta;
-	}
+    public void setInspetoriaDoCorretor(String inspetoriaDoCorretor) {
+        this.inspetoriaDoCorretor = inspetoriaDoCorretor;
+    }
 
-	public void setProposta(String proposta) {
-		this.proposta = proposta;
-	}
+    public String getProposta() {
+        return proposta;
+    }
 
-	public String getDataEmissao() {
-		return dataEmissao;
-	}
+    public void setProposta(String proposta) {
+        this.proposta = proposta;
+    }
 
-	public void setDataEmissao(String dataEmissao) {
-		this.dataEmissao = dataEmissao;
-	}
+    public String getDataEmissao() {
+        return dataEmissao;
+    }
 
-	public String getApolice() {
-		return apolice;
-	}
+    public void setDataEmissao(String dataEmissao) {
+        this.dataEmissao = dataEmissao;
+    }
 
-	public void setApolice(String apolice) {
-		this.apolice = apolice;
-	}
+    public String getApolice() {
+        return apolice;
+    }
 
-	public String getSucursal() {
-		return sucursal;
-	}
+    public void setApolice(String apolice) {
+        this.apolice = apolice;
+    }
 
-	public void setSucursal(String sucursal) {
-		this.sucursal = sucursal;
-	}
+    public String getSucursal() {
+        return sucursal;
+    }
 
-	public String getProcessoSusep() {
-		return processoSusep;
-	}
+    public void setSucursal(String sucursal) {
+        this.sucursal = sucursal;
+    }
 
-	public void setProcessoSusep(String processoSusep) {
-		this.processoSusep = processoSusep;
-	}
+    public String getProcessoSusep() {
+        return processoSusep;
+    }
 
-	public int getCodigoSusep() {
-		return codigoSusep;
-	}
+    public void setProcessoSusep(String processoSusep) {
+        this.processoSusep = processoSusep;
+    }
 
-	public void setCodigoSusep(int codigoSusep) {
-		this.codigoSusep = codigoSusep;
-	}
+    public int getCodigoSusep() {
+        return codigoSusep;
+    }
 
-	public String getCnpj() {
-		return cnpj;
-	}
+    public void setCodigoSusep(int codigoSusep) {
+        this.codigoSusep = codigoSusep;
+    }
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
+    public String getCnpj() {
+        return cnpj;
+    }
 
-	public String getNomeSeguradora() {
-		return nomeSeguradora;
-	}
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 
-	public void setNomeSeguradora(String nomeSeguradora) {
-		this.nomeSeguradora = nomeSeguradora;
-	}
+    public String getNomeSeguradora() {
+        return nomeSeguradora;
+    }
 
-	public String getTelefoneDoSegurado() {
-		return telefoneDoSegurado;
-	}
+    public void setNomeSeguradora(String nomeSeguradora) {
+        this.nomeSeguradora = nomeSeguradora;
+    }
 
-	public void setTelefoneDoSegurado(String telefoneDoSegurado) {
-		this.telefoneDoSegurado = telefoneDoSegurado;
-	}
+    public String getTelefoneDoSegurado() {
+        return telefoneDoSegurado;
+    }
 
-	public Endereco getEnderecoDoSegurado() {
-		return enderecoDoSegurado;
-	}
+    public void setTelefoneDoSegurado(String telefoneDoSegurado) {
+        this.telefoneDoSegurado = telefoneDoSegurado;
+    }
 
-	public void setEnderecoDoSegurado(Endereco enderecoDoSegurado) {
-		this.enderecoDoSegurado = enderecoDoSegurado;
-	}
+    public Endereco getEnderecoDoSegurado() {
+        return enderecoDoSegurado;
+    }
 
-	public String getNomeCorretor() {
-		return nomeCorretor;
-	}
+    public void setEnderecoDoSegurado(Endereco enderecoDoSegurado) {
+        this.enderecoDoSegurado = enderecoDoSegurado;
+    }
 
-	public void setNomeCorretor(String nomeCorretor) {
-		this.nomeCorretor = nomeCorretor;
-	}
+    public String getNomeCorretor() {
+        return nomeCorretor;
+    }
 
-	public String getCpfOuCnpjDoSegurado() {
-		return cpfOuCnpjDoSegurado;
-	}
+    public void setNomeCorretor(String nomeCorretor) {
+        this.nomeCorretor = nomeCorretor;
+    }
 
-	public void setCpfOuCnpjDoSegurado(String cpfOuCnpjDoSegurado) {
-		this.cpfOuCnpjDoSegurado = cpfOuCnpjDoSegurado;
-	}
+    public String getCpfOuCnpjDoSegurado() {
+        return cpfOuCnpjDoSegurado;
+    }
 
-	public String getNomeDoSegurado() {
-		return nomeDoSegurado;
-	}
+    public void setCpfOuCnpjDoSegurado(String cpfOuCnpjDoSegurado) {
+        this.cpfOuCnpjDoSegurado = cpfOuCnpjDoSegurado;
+    }
 
-	public void setNomeDoSegurado(String nomeDoSegurado) {
-		this.nomeDoSegurado = nomeDoSegurado;
-	}
+    public String getNomeDoSegurado() {
+        return nomeDoSegurado;
+    }
 
-	public String getDataInicioDaVigencia() {
-		return dataInicioDaVigencia;
-	}
+    public void setNomeDoSegurado(String nomeDoSegurado) {
+        this.nomeDoSegurado = nomeDoSegurado;
+    }
 
-	public void setDataInicioDaVigencia(String dataInicioDaVigencia) {
-		this.dataInicioDaVigencia = dataInicioDaVigencia;
-	}
+    public String getDataInicioDaVigencia() {
+        return dataInicioDaVigencia;
+    }
 
-	public String getDataFinalDaVigencia() {
-		return dataFinalDaVigencia;
-	}
+    public void setDataInicioDaVigencia(String dataInicioDaVigencia) {
+        this.dataInicioDaVigencia = dataInicioDaVigencia;
+    }
 
-	public void setDataFinalDaVigencia(String dataFinalDaVigencia) {
-		this.dataFinalDaVigencia = dataFinalDaVigencia;
-	}
+    public String getDataFinalDaVigencia() {
+        return dataFinalDaVigencia;
+    }
 
-	public int getNumeroEndosso() {
-		return numeroEndosso;
-	}
+    public void setDataFinalDaVigencia(String dataFinalDaVigencia) {
+        this.dataFinalDaVigencia = dataFinalDaVigencia;
+    }
 
-	public void setNumeroEndosso(int numeroEndosso) {
-		this.numeroEndosso = numeroEndosso;
-	}
+    public int getNumeroEndosso() {
+        return numeroEndosso;
+    }
 
-	public String getRamo() {
-		return ramo;
-	}
+    public void setNumeroEndosso(int numeroEndosso) {
+        this.numeroEndosso = numeroEndosso;
+    }
 
-	public void setRamo(String ramo) {
-		this.ramo = ramo;
-	}
+    public String getRamo() {
+        return ramo;
+    }
 
-	
-	public Onibus getOnibus() {
-		return onibus;
-	}
+    public void setRamo(String ramo) {
+        this.ramo = ramo;
+    }
 
-	
-	public void setOnibus(Onibus onibus) {
-		this.onibus = onibus;
-	}
+    public Onibus getOnibus() {
+        return onibus;
+    }
+
+    public void setOnibus(Onibus onibus) {
+        this.onibus = onibus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SeguroOnibus)) {
+            return false;
+        }
+        SeguroOnibus seguroOnibus = (SeguroOnibus) o;
+        return (this.onibus.equals(seguroOnibus.getOnibus()) && 
+                (this.codigoCpdDoCorretor == seguroOnibus.getCodigoCpdDoCorretor() 
+                || this.codigoSusep == seguroOnibus.getCodigoSusep() 
+                || this.codigoSusepDoCorretor == seguroOnibus.getCodigoSusepDoCorretor()));
+    }
 }

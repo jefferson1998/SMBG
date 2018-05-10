@@ -3,58 +3,58 @@ package modelSMBG;
 import java.util.List;
 
 public class Viagem {
-	
-	private Onibus onibus;
-	private Rota rota;
-	private List<Funcionario> listaDeFuncionarios;
-	private String data;
-	private String diaDaSemana;
-	
-	public Viagem(Onibus onibus, Rota rota, List<Funcionario> listaDeFuncionarios, String data, String diaDaSemana) {
-		this.onibus = onibus;
-		this.rota = rota;
-		this.listaDeFuncionarios = listaDeFuncionarios;
-		this.data = data;
-		this.diaDaSemana = diaDaSemana;
-	}
 
-	public Onibus getOnibus() {
-		return onibus;
-	}
+    private Onibus onibus;
+    private Rota rota;
+    private List<Funcionario> listaDeFuncionarios;
+    private String data;
+    private String diaDaSemana;
 
-	public void setOnibus(Onibus onibus) {
-		this.onibus = onibus;
-	}
+    public Viagem(Onibus onibus, Rota rota, List<Funcionario> listaDeFuncionarios, String data, String diaDaSemana) {
+        this.onibus = onibus;
+        this.rota = rota;
+        this.listaDeFuncionarios = listaDeFuncionarios;
+        this.data = data;
+        this.diaDaSemana = diaDaSemana;
+    }
 
-	public Rota getRota() {
-		return rota;
-	}
+    public Onibus getOnibus() {
+        return onibus;
+    }
 
-	public void setRota(Rota rota) {
-		this.rota = rota;
-	}
+    public void setOnibus(Onibus onibus) {
+        this.onibus = onibus;
+    }
 
-	public List<Funcionario> getListaDeFuncionarios() {
-		return listaDeFuncionarios;
-	}
+    public Rota getRota() {
+        return rota;
+    }
 
-	public void setListaDeFuncionarios(List<Funcionario> listaDeFuncionarios) {
-		this.listaDeFuncionarios = listaDeFuncionarios;
-	}
+    public void setRota(Rota rota) {
+        this.rota = rota;
+    }
 
-	public String getData() {
-		return data;
-	}
+    public List<Funcionario> getListaDeFuncionarios() {
+        return listaDeFuncionarios;
+    }
 
-	public void setData(String data) {
-		this.data = data;
-	}
+    public void setListaDeFuncionarios(List<Funcionario> listaDeFuncionarios) {
+        this.listaDeFuncionarios = listaDeFuncionarios;
+    }
 
-	public String getDiaDaSemana() {
-		return diaDaSemana;
-	}
+    public String getData() {
+        return data;
+    }
 
-	public void setDiaDaSemana(String diaDaSemana) {
-		this.diaDaSemana = diaDaSemana;
-	}
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getDiaDaSemana() {
+        return diaDaSemana;
+    }
+
+    public void setDiaDaSemana(String diaDaSemana) {
+        this.diaDaSemana = diaDaSemana;
+    }
 }
