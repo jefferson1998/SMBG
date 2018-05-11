@@ -58,4 +58,20 @@ public class Rota {
     public void setPontosDeParada(List<Endereco> pontosDeParada) {
         this.pontosDeParada = pontosDeParada;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        
+        if(!(obj instanceof Rota))
+            return false;
+        
+        Rota rota = (Rota) obj;
+        
+        return this.origem.equals(rota.origem) || this.destino.equals(rota.destino) || this.horarioSaida.equals(rota.horarioSaida);
+        
+    }
+    
+    
 }

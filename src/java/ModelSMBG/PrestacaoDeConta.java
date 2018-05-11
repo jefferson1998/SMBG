@@ -99,5 +99,21 @@ public class PrestacaoDeConta {
 	public void setSalarioDoMotorista(double salarioDoMotorista) {
 		this.salarioDoMotorista = salarioDoMotorista;
 	}
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == this)
+            return true;
+        if(!(obj instanceof PrestacaoDeConta))
+            return false;
+        
+        PrestacaoDeConta prestacaoDeConta = (PrestacaoDeConta) obj;
+        
+        return this.funcionario.getCPF().equals(prestacaoDeConta.funcionario.getCPF())
+                || this.funcionario.getFuncionarioIdentidade().equals(prestacaoDeConta.funcionario.getFuncionarioIdentidade()) 
+                || this.funcionario.getFuncionarioCNH().equals(prestacaoDeConta.funcionario.getFuncionarioCNH());
+    }
+        
+        
 	
 }

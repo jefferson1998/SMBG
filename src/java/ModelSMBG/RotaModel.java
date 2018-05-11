@@ -38,9 +38,4 @@ public class RotaModel {
 		return ((RotaDAO) rotaDAO).buscarPeloHorarioDeSaida(horarioDeSaida);
 	}
 
-
-	public Rota buscarPelaRota(String origem, String destino, String horarioDeSaida) {
-		return ((RotaDAO) rotaDAO).buscarPelaRota(origem, destino, horarioDeSaida);
-	}
-
 }

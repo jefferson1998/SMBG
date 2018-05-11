@@ -45,12 +45,4 @@ public class RotaHibernate implements RotaDAO{
 		return null;
 	}
 
-	@Override
-	public Rota buscarPelaRota(String origem, String destino, String horarioDeSaida) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-
 }

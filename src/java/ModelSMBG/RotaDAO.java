@@ -10,6 +10,5 @@ public interface RotaDAO extends DAO<Rota> {
 	
 	public List<Rota> buscarPeloHorarioDeSaida(String horarioDeSaida);
 	
-	public Rota buscarPelaRota(String origem, String destino, String horarioDeSaida);
 
 }

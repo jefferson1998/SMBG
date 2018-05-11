@@ -57,4 +57,24 @@ public class Viagem {
     public void setDiaDaSemana(String diaDaSemana) {
         this.diaDaSemana = diaDaSemana;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        
+        if(!(obj instanceof Viagem))
+            return false;
+        
+        Viagem viagem = (Viagem) obj;
+        
+        return this.data.equals(viagem.data) || this.diaDaSemana.equals(viagem.diaDaSemana)
+                || this.onibus.getPlaca().equals(viagem.onibus.getPlaca())
+                || this.onibus.getCodigoRenavam().equals(viagem.onibus.getCodigoRenavam())
+                || this.onibus.getChassi().equals(viagem.onibus.getChassi())
+                || this.rota.equals(viagem.rota);
+    }
+    
+    
+    
 }
