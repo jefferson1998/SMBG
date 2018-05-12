@@ -22,7 +22,7 @@ package ModelSMBG;
 public abstract class Persistivel {
     
     protected long id;
-
+    
     @Override
     public boolean equals(Object obj) {
         if(this == obj)

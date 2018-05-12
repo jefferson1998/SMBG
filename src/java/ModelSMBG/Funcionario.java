@@ -1,6 +1,8 @@
 package modelSMBG;
 
-public class Funcionario {
+import java.io.Serializable;
+
+public class Funcionario implements Serializable {
 
     private Identidade funcionarioIdentidade;
     private String cpf;
@@ -31,6 +33,10 @@ public class Funcionario {
         this.estadoCivil = estadoCivil;
     }
 
+    public Funcionario() {
+        
+    }
+    
     public Identidade getFuncionarioIdentidade() {
         return funcionarioIdentidade;
     }

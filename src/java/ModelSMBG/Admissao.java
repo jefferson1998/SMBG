@@ -1,6 +1,8 @@
 package modelSMBG;
 
-public class Admissao {
+import java.io.Serializable;
+
+public class Admissao implements Serializable {
 
     private String dataAdmissao;
     private double valorSalario;
@@ -23,6 +25,10 @@ public class Admissao {
         this.funcionario = funcionario;
     }
 
+    public Admissao() {
+        
+    }
+    
     public String getDataAdmissao() {
         return dataAdmissao;
     }
@@ -89,10 +95,12 @@ public class Admissao {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o)
+        if (this == o) {
             return true;
-        if(!(o instanceof Admissao))
+        }
+        if (!(o instanceof Admissao)) {
             return false;
+        }
         Admissao admissao = (Admissao) o;
         return this.funcionario.equals(admissao.getFuncionario());
     }

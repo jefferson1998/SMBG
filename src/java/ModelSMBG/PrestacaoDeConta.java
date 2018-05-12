@@ -1,6 +1,9 @@
 package modelSMBG;
 
-public class PrestacaoDeConta {
+import java.io.Serializable;
+import javax.persistence.PersistenceContext;
+
+public class PrestacaoDeConta extends Persistivel implements Serializable {
 	
 	private Funcionario funcionario;
 	private double valorTotalArrecadadoNoDia;
@@ -27,6 +30,10 @@ public class PrestacaoDeConta {
 		this.salarioDoCobrador = salarioDoCobrador;
 		this.salarioDoMotorista = salarioDoMotorista;
 	}
+        
+        public PrestacaoDeConta() {
+            
+        }
 
 	public Funcionario getFuncionario() {
 		return funcionario;
@@ -107,13 +114,7 @@ public class PrestacaoDeConta {
         if(!(obj instanceof PrestacaoDeConta))
             return false;
         
-        PrestacaoDeConta prestacaoDeConta = (PrestacaoDeConta) obj;
-        
-        return this.funcionario.getCPF().equals(prestacaoDeConta.funcionario.getCPF())
-                || this.funcionario.getFuncionarioIdentidade().equals(prestacaoDeConta.funcionario.getFuncionarioIdentidade()) 
-                || this.funcionario.getFuncionarioCNH().equals(prestacaoDeConta.funcionario.getFuncionarioCNH());
+        return this.equals(obj);
     }
         
-        
-	
 }

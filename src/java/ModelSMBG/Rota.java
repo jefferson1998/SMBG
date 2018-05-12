@@ -1,8 +1,9 @@
 package modelSMBG;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Rota {
+public class Rota implements Serializable {
 
     private String origem;
     private String destino;
@@ -19,6 +20,10 @@ public class Rota {
         this.pontosDeParada = pontosDeParada;
     }
 
+    public Rota() {
+        
+    }
+    
     public String getOrigem() {
         return origem;
     }
@@ -69,7 +74,7 @@ public class Rota {
         
         Rota rota = (Rota) obj;
         
-        return this.origem.equals(rota.origem) || this.destino.equals(rota.destino) || this.horarioSaida.equals(rota.horarioSaida);
+        return this.origem.equals(rota.origem) && this.destino.equals(rota.destino) && this.horarioSaida.equals(rota.horarioSaida);
         
     }
     
