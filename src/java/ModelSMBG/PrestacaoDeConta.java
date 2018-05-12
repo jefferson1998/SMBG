@@ -1,119 +1,117 @@
 package modelSMBG;
 
 public class PrestacaoDeConta {
-	
-	private Funcionario funcionario;
-	private double valorTotalArrecadadoNoDia;
-	private double valorArrecadadoDescontado;
-	private double valorTotalDoCombustivel;
-	private double valorDoLitroDeCombustivel;
-	private double quantidadeDeLitrosAbastecido;
-	private double valorTroco;
-	private double salarioDoCobrador;
-	private double salarioDoMotorista;
-	
-	//antes de fazer o construtor vamo pensar em uns nomes mais claros pra por aki
 
-	public PrestacaoDeConta(Funcionario funcionario, double valorTotalArrecadadoNoDia, double valorArrecadadoDescontado,
-			double valorTotalDoCombustivel, double valorDoLitroDeCombustivel, double quantidadeDeLitrosAbastecido,
-			double valorTroco, double salarioDoCobrador, double salarioDoMotorista) {
-		this.funcionario = funcionario;
-		this.valorTotalArrecadadoNoDia = valorTotalArrecadadoNoDia;
-		this.valorArrecadadoDescontado = valorArrecadadoDescontado;
-		this.valorTotalDoCombustivel = valorTotalDoCombustivel;
-		this.valorDoLitroDeCombustivel = valorDoLitroDeCombustivel;
-		this.quantidadeDeLitrosAbastecido = quantidadeDeLitrosAbastecido;
-		this.valorTroco = valorTroco;
-		this.salarioDoCobrador = salarioDoCobrador;
-		this.salarioDoMotorista = salarioDoMotorista;
-	}
+    private Funcionario funcionario;
+    private double valorTotalArrecadadoNoDia;
+    private double valorArrecadadoDescontado;
+    private double valorTotalDoCombustivel;
+    private double valorDoLitroDeCombustivel;
+    private double quantidadeDeLitrosAbastecido;
+    private double valorTroco;
+    private double salarioDoCobrador;
+    private double salarioDoMotorista;
 
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
+    public PrestacaoDeConta(Funcionario funcionario, double valorTotalArrecadadoNoDia, double valorArrecadadoDescontado,
+            double valorTotalDoCombustivel, double valorDoLitroDeCombustivel, double quantidadeDeLitrosAbastecido,
+            double valorTroco, double salarioDoCobrador, double salarioDoMotorista) {
+        this.funcionario = funcionario;
+        this.valorTotalArrecadadoNoDia = valorTotalArrecadadoNoDia;
+        this.valorArrecadadoDescontado = valorArrecadadoDescontado;
+        this.valorTotalDoCombustivel = valorTotalDoCombustivel;
+        this.valorDoLitroDeCombustivel = valorDoLitroDeCombustivel;
+        this.quantidadeDeLitrosAbastecido = quantidadeDeLitrosAbastecido;
+        this.valorTroco = valorTroco;
+        this.salarioDoCobrador = salarioDoCobrador;
+        this.salarioDoMotorista = salarioDoMotorista;
+    }
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
 
-	public double getValorTotalArrecadadoNoDia() {
-		return valorTotalArrecadadoNoDia;
-	}
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
 
-	public void setValorTotalArrecadadoNoDia(double valorTotalArrecadadoNoDia) {
-		this.valorTotalArrecadadoNoDia = valorTotalArrecadadoNoDia;
-	}
+    public double getValorTotalArrecadadoNoDia() {
+        return valorTotalArrecadadoNoDia;
+    }
 
-	public double getValorArrecadadoDescontado() {
-		return valorArrecadadoDescontado;
-	}
+    public void setValorTotalArrecadadoNoDia(double valorTotalArrecadadoNoDia) {
+        this.valorTotalArrecadadoNoDia = valorTotalArrecadadoNoDia;
+    }
 
-	public void setValorArrecadadoDescontado(double valorArrecadadoDescontado) {
-		this.valorArrecadadoDescontado = valorArrecadadoDescontado;
-	}
+    public double getValorArrecadadoDescontado() {
+        return valorArrecadadoDescontado;
+    }
 
-	public double getValorTotalDoCombustivel() {
-		return valorTotalDoCombustivel;
-	}
+    public void setValorArrecadadoDescontado(double valorArrecadadoDescontado) {
+        this.valorArrecadadoDescontado = valorArrecadadoDescontado;
+    }
 
-	public void setValorTotalDoCombustivel(double valorTotalDoCombustivel) {
-		this.valorTotalDoCombustivel = valorTotalDoCombustivel;
-	}
+    public double getValorTotalDoCombustivel() {
+        return valorTotalDoCombustivel;
+    }
 
-	public double getValorDoLitroDeCombustivel() {
-		return valorDoLitroDeCombustivel;
-	}
+    public void setValorTotalDoCombustivel(double valorTotalDoCombustivel) {
+        this.valorTotalDoCombustivel = valorTotalDoCombustivel;
+    }
 
-	public void setValorDoLitroDeCombustivel(double valorDoLitroDeCombustivel) {
-		this.valorDoLitroDeCombustivel = valorDoLitroDeCombustivel;
-	}
+    public double getValorDoLitroDeCombustivel() {
+        return valorDoLitroDeCombustivel;
+    }
 
-	public double getQuantidadeDeLitrosAbastecido() {
-		return quantidadeDeLitrosAbastecido;
-	}
+    public void setValorDoLitroDeCombustivel(double valorDoLitroDeCombustivel) {
+        this.valorDoLitroDeCombustivel = valorDoLitroDeCombustivel;
+    }
 
-	public void setQuantidadeDeLitrosAbastecido(double quantidadeDeLitrosAbastecido) {
-		this.quantidadeDeLitrosAbastecido = quantidadeDeLitrosAbastecido;
-	}
+    public double getQuantidadeDeLitrosAbastecido() {
+        return quantidadeDeLitrosAbastecido;
+    }
 
-	public double getValorTroco() {
-		return valorTroco;
-	}
+    public void setQuantidadeDeLitrosAbastecido(double quantidadeDeLitrosAbastecido) {
+        this.quantidadeDeLitrosAbastecido = quantidadeDeLitrosAbastecido;
+    }
 
-	public void setValorTroco(double valorTroco) {
-		this.valorTroco = valorTroco;
-	}
+    public double getValorTroco() {
+        return valorTroco;
+    }
 
-	public double getSalarioDoCobrador() {
-		return salarioDoCobrador;
-	}
+    public void setValorTroco(double valorTroco) {
+        this.valorTroco = valorTroco;
+    }
 
-	public void setSalarioDoCobrador(double salarioDoCobrador) {
-		this.salarioDoCobrador = salarioDoCobrador;
-	}
+    public double getSalarioDoCobrador() {
+        return salarioDoCobrador;
+    }
 
-	public double getSalarioDoMotorista() {
-		return salarioDoMotorista;
-	}
+    public void setSalarioDoCobrador(double salarioDoCobrador) {
+        this.salarioDoCobrador = salarioDoCobrador;
+    }
 
-	public void setSalarioDoMotorista(double salarioDoMotorista) {
-		this.salarioDoMotorista = salarioDoMotorista;
-	}
+    public double getSalarioDoMotorista() {
+        return salarioDoMotorista;
+    }
+
+    public void setSalarioDoMotorista(double salarioDoMotorista) {
+        this.salarioDoMotorista = salarioDoMotorista;
+    }
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == this)
+        if (obj == this) {
             return true;
-        if(!(obj instanceof PrestacaoDeConta))
+        }
+        if (!(obj instanceof PrestacaoDeConta)) {
             return false;
-        
+        }
+
         PrestacaoDeConta prestacaoDeConta = (PrestacaoDeConta) obj;
-        
+
         return this.funcionario.getCPF().equals(prestacaoDeConta.funcionario.getCPF())
-                || this.funcionario.getFuncionarioIdentidade().equals(prestacaoDeConta.funcionario.getFuncionarioIdentidade()) 
+                || this.funcionario.getFuncionarioIdentidade().equals(prestacaoDeConta.funcionario.getFuncionarioIdentidade())
                 || this.funcionario.getFuncionarioCNH().equals(prestacaoDeConta.funcionario.getFuncionarioCNH());
     }
-        
-        
-	
+
 }
