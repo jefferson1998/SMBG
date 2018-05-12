@@ -11,7 +11,7 @@ public abstract class Persistivel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected long id;
-
+    
     @Override
     public boolean equals(Object obj) {
         if(this == obj)

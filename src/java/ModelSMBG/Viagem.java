@@ -1,8 +1,9 @@
 package modelSMBG;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Viagem {
+public class Viagem extends Persistivel implements Serializable {
 
     private Onibus onibus;
     private Rota rota;
@@ -18,6 +19,10 @@ public class Viagem {
         this.diaDaSemana = diaDaSemana;
     }
 
+    public Viagem() {
+        
+    }
+    
     public Onibus getOnibus() {
         return onibus;
     }
@@ -68,13 +73,15 @@ public class Viagem {
         
         Viagem viagem = (Viagem) obj;
         
-        return this.data.equals(viagem.data) || this.diaDaSemana.equals(viagem.diaDaSemana)
-                || this.onibus.getPlaca().equals(viagem.onibus.getPlaca())
-                || this.onibus.getCodigoRenavam().equals(viagem.onibus.getCodigoRenavam())
-                || this.onibus.getChassi().equals(viagem.onibus.getChassi())
-                || this.rota.equals(viagem.rota);
+        for(int i = 0; i < this.listaDeFuncionarios.size(); i++) {
+            if(viagem.equals(listaDeFuncionarios.get(i).getCPF())){
+                return true;
+            }
+        }
+        
+        return this.data.equals(viagem.data)
+                && this.onibus.getPlaca().equals(viagem.onibus.getPlaca())
+                && this.rota.equals(viagem.rota);
     }
-    
-    
     
 }

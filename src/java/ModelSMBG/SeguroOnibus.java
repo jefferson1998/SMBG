@@ -1,6 +1,8 @@
 package modelSMBG;
 
-public class SeguroOnibus {
+import java.io.Serializable;
+
+public class SeguroOnibus implements Serializable {
 
     private int codigoSusepDoCorretor;
     private int codigoCpdDoCorretor;
@@ -54,6 +56,10 @@ public class SeguroOnibus {
         this.onibus = onibus;
     }
 
+    public SeguroOnibus() {
+        
+    }
+    
     public int getCodigoSusepDoCorretor() {
         return codigoSusepDoCorretor;
     }

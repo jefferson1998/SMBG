@@ -1,6 +1,8 @@
 package modelSMBG;
 
-public class Onibus {
+import java.io.Serializable;
+
+public class Onibus implements Serializable {
 
     private String codigoRenavam;
     private String chassi;
@@ -38,6 +40,10 @@ public class Onibus {
         this.freioABS = freioABS;
         this.cambioAutomatico = cambioAutomatico;
         this.direcaoEletrica = direcaoEletrica;
+    }
+    
+    public Onibus() {
+        
     }
 
     public String getCodigoRenavam() {
