@@ -1,14 +1,39 @@
 package modelSMBG;
 
+import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class Rota {
 
+@Entity
+@Table(name = "Rotas")
+public class Rota /*extends Persistivel*/ implements Serializable {
+
+    @Column(name = "Origem", length = 30, nullable = false)
     private String origem;
+    
+    @Column(name = "Destino", length = 30, nullable = false)
     private String destino;
+    
+    @Column(name = "horarioSaida", length = 5, nullable = false)
     private String horarioSaida;
+    
+    @Column(name = "horarioPrevisto", length = 5, nullable = false)
     private String horarioPrevistoDeChegada;
+    
+    @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
+    private Onibus OnibusQueFazEstaRota;
+    
+    
     private List<Endereco> pontosDeParada;
+
+    public Rota() {
+    }
 
     public Rota(String origem, String destino, String horarioSaida, String horarioPrevistoDeChegada,
             List<Endereco> pontosDeParada) {
@@ -72,6 +97,5 @@ public class Rota {
         return this.origem.equals(rota.origem) || this.destino.equals(rota.destino) || this.horarioSaida.equals(rota.horarioSaida);
         
     }
-    
-    
+
 }
