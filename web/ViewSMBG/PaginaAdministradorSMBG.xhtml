@@ -6,25 +6,56 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>SMBG Administrador</title>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet library="css" name="Css.css" />
-        
+
     </h:head>
     <h:body>
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
-	 </div>
+        </div>
 
-	 <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+        <!--
+                  <h:button class="menuBT" value="Cadastrar" id="cadastrarSeguro"/>
+                    <h:button class="menuBT" value="Atualizar" id="cadastrarSeguro"/>
+                    <h:button class="menuBT" value="Deletar" id="cadastrarSeguro"/>
+                    <h:button class="menuBT" value="Buscar" id="cadastrarSeguro"/>-->
+        <h:form>
+            <div id="botoes">
+                <p:menuButton value="Cadastrar">
+                    <p:menuitem value="Funcionário"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Ônibus"/>
+                </p:menuButton>
+                
+                <p:menuButton value="Atualizar">
+                    <p:menuitem value="Funcionário"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Ônibus"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Viagem"/>
+                    <p:menuitem value="Seguro"/>
+                </p:menuButton>
+                
+                <p:menuButton value="Buscar">
+                    <p:menuitem value="Funcionário"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Ônibus"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Viagem"/>
+                    <p:menuitem value="Seguro"/>
+                </p:menuButton>
 
-	<div id="botoes">
-            <h:button class="menuBT" value="Cadastrar" id="cadastrarSeguro"/>
-            <h:button class="menuBT" value="Atualizar" id="cadastrarSeguro"/>
-            <h:button class="menuBT" value="Deletar" id="cadastrarSeguro"/>
-            <h:button class="menuBT" value="Buscar" id="cadastrarSeguro"/>
-
-	</div>
-         
+                <p:menuButton value="Remover">
+                    <p:menuitem value="Funcionário"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Ônibus"/>
+                    <p:menuitem value="Rota"/>
+                    <p:menuitem value="Viagem"/>
+                </p:menuButton>
+            </div>
+        </h:form>
     </h:body>
 </html>
