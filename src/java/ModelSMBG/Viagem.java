@@ -2,13 +2,27 @@ package modelSMBG;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class Viagem extends Persistivel implements Serializable {
-
+@Entity
+@Table(name = "Viagem")
+public class Viagem /*extends Persistivel*/ implements Serializable {
+    @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
     private Onibus onibus;
+    
+    @Column(name = "Cod_Rota", nullable = false, table = "Rota")
     private Rota rota;
+    
     private List<Funcionario> listaDeFuncionarios;
+    
+    @Column(name = "dataViagem")
     private String data;
+    
+    @Column(name="diaDaSemana", length = 12)
     private String diaDaSemana;
 
     public Viagem(Onibus onibus, Rota rota, List<Funcionario> listaDeFuncionarios, String data, String diaDaSemana) {
