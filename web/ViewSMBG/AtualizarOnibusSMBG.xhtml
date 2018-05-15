@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>BUSCA ÔNIBUS</title>
+        <h:outputStylesheet library="css" name="Css.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    </h:head>
+    <h:body>
+
+        <div id="faixa">
+            <h1 id="textoFaixa">SMBG</h1>
+        </div>
+
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+
+        <div id="divTexto"> 
+            <div id="titulo"> ÔNIBUS </div>
+            <div id="formulario">
+
+                <h:form>
+
+                    <h3> CAMPOS DE BUSCA </h3>
+
+                    <p:outputLabel value="Código Renavam" for="BuscaOnibusPeloCodigoRenavam" />
+                    <p:inputText class="camposFormulario" id="BuscaOnibusPeloCodigoRenavam"/>
+
+                    <p:outputLabel value="Chassi" for="BuscarOnibusPeloChassis" />
+                    <p:inputText class="camposFormulario" id="BuscarOnibusPeloChassis"/>
+
+                    <p:outputLabel value="Placa" for="BuscarOnibusPelaPlaca" />
+                    <p:inputText class="camposFormulario" id="BuscarOnibusPelaPlaca"/>
+
+                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarOnibus"/>
+                </h:form>
+
+            </div>
+            
+            <br></br><br></br>
+            
+            <div id="formulario">
+
+                <br></br>
+                <h:outputText value="Campos Obrigatórios:*" id="msgCampoObrigatorio"/>
+
+                <h:form>
+
+                    <h3> DADOS DO ÔNIBUS </h3>
+
+                    <p:outputLabel value="Chassis:*" for="ChassisDoOnibus" />
+                    <p:inputText class="camposFormulario" id="ChassisDoOnibus" value="#{Onibus.chassi}"/>
+
+                    <p:outputLabel value="Placa:*" for="PlacaDoOnibus" />
+                    <p:inputText class="camposFormulario" id="PlacaDoOnibus" value="#{Onibus.placa}"/>
+
+                    <p:outputLabel value="Ano:*" for="AnoDoOnibus" />
+                    <p:inputText class="camposFormulario" id="AnoDoOnibus" value="#{Onibus.ano}"/>
+
+                    <p:outputLabel value="Modelo:*" for="ModeloDoOnibus" />
+                    <p:inputText class="camposFormulario" id="ModeloDoOnibus" value="#{Onibus.modelo}"/>
+
+                    <p:outputLabel value="Marca:*" for="MarcaDoOnibus" />
+                    <p:inputText class="camposFormulario" id="MarcaDoOnibus" value="#{Onibus.marca}"/>
+
+                    <p:outputLabel value="Tipo:*" for="TipoDoOnibus" />
+                    <p:inputText class="camposFormulario" id="TipoDoOnibus" value="#{Onibus.tipo}"/>
+
+                    <p:outputLabel value="Combustivel:*" for="CombustivelDoOnibus" />
+                    <p:inputText class="camposFormulario" id="CombustivelDoOnibus" value="#{Onibus.combustivel}"/>
+
+                    <p:outputLabel value="Número de portas:*" for="NumeroDePortasDoOnibus" />
+                    <p:inputText class="camposFormulario" id="NumeroDePortasDoOnibus" value="#{Onibus.numeroDePortas}"/>
+
+                    <p:outputLabel value="Número de eixos:*" for="NumeroDeEixosDoOnibus" />
+                    <p:inputText class="camposFormulario" id="NumeroDeEixosDoOnibus" value="#{Onibus.numeroDeEixos}"/>
+
+                    <p:outputLabel value="Capacidade:*" for="CapacidadeDoOnibus" />
+                    <p:inputText class="camposFormulario" id="CapacidadeDoOnibus" value="#{Onibus.capacidade}"/>
+
+                    <h3> Opcionais </h3>
+
+                    <p:selectManyCheckbox id="opcionaisOnibus" value= "#{Onibus}" layout="pageDirection">
+                        <f:selectItem value="#{Onibus.arCondicionado}" itemLabel="Ar Condicionado" itemValue="true" />
+                        <f:selectItem value="#{Onibus.direcaoHidraulica}" itemLabel="Direção Hidraulica" itemValue="true"/>
+                        <f:selectItem value="#{Onibus.direcaoEletrica}" itemLabel="Direção Elétrica" itemValue="true"/>
+                        <f:selectItem value="#{Onibus.freioABS}" itemLabel="Freios ABS" itemValue="true"/>
+                        <f:selectItem value="#{Onibus.cambioAutomatico}" itemLabel="Câmbio Automático" itemValue="true"/>
+                    </p:selectManyCheckbox>
+
+                    <p:commandButton class="menuCadastrar" value="Atualizar" id="CadastrarOnibus"/>
+                </h:form>
+            </div>
+
+        </div>
+
+    </h:body>
+</html>

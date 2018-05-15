@@ -79,7 +79,7 @@ public class SeguroOnibus implements Serializable {
     public String getSucursalCorretor() {
         return sucursalCorretor;
     }
-
+ 
     public void setSucursalCorretor(String sucursalCorretor) {
         this.sucursalCorretor = sucursalCorretor;
     }

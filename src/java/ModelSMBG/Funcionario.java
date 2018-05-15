@@ -15,7 +15,7 @@ public class Funcionario implements Serializable {
     private String emailFuncionario;
     private String numeroFuncionario;
     private String estadoCivil;
-
+ 
     public Funcionario(Identidade funcionarioIdentidade, String cpf,
             Endereco funcionarioEndereco, CNH funcionarioCNH, String pis,
             Titulo funcionarioTitulo, CTPS funcionarioCTPS, Reservista funcionarioReservista,

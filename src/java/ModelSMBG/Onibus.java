@@ -85,7 +85,7 @@ public class Onibus implements Serializable {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
+ 
     public String getMarca() {
         return marca;
     }

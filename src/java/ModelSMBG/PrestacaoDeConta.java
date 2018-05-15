@@ -13,7 +13,7 @@ public class PrestacaoDeConta extends Persistivel implements Serializable {
     private double valorTroco;
     private double salarioDoCobrador;
     private double salarioDoMotorista;
-
+ 
     public PrestacaoDeConta(Funcionario funcionario, double valorTotalArrecadadoNoDia, double valorArrecadadoDescontado,
             double valorTotalDoCombustivel, double valorDoLitroDeCombustivel, double quantidadeDeLitrosAbastecido,
             double valorTroco, double salarioDoCobrador, double salarioDoMotorista) {

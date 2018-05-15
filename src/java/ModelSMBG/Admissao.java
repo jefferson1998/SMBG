@@ -26,7 +26,7 @@ public class Admissao implements Serializable {
     }
 
     public Admissao() {
-        
+         
     }
     
     public String getDataAdmissao() {
