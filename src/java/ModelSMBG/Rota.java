@@ -5,26 +5,24 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-//@Entity
-//@Table(name = "Rotas")
+@Entity
+@Table(name = "Rotas")
 public class Rota /*extends Persistivel*/ implements Serializable {
-//
-//    @Column(name = "Origem", length = 30, nullable = false)
+
+    @Column(name = "Origem", length = 30, nullable = false)
     private String origem;
     
-//    @Column(name = "Destino", length = 30, nullable = false)
+    @Column(name = "Destino", length = 30, nullable = false)
     private String destino;
     
-//    @Column(name = "horarioSaida", length = 5, nullable = false)
+    @Column(name = "horarioSaida", length = 5, nullable = false)
     private String horarioSaida;
     
-//    @Column(name = "horarioPrevisto", length = 5, nullable = false)
+    @Column(name = "horarioPrevisto", length = 5, nullable = false)
     private String horarioPrevistoDeChegada;
     
-//    @Column(name = "Cod_onibus", nullable = false, table = "Onibus");
+    @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
     private Onibus OnibusQueFazEstaRota;
     
     
