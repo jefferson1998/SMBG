@@ -1,31 +1,30 @@
 package modelSMBG;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-//@Entity
-//@Table(name = "Viagem")
+@Entity
+@Table(name = "Viagem")
 public class Viagem /*extends Persistivel*/ implements Serializable {
-//    @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
+    @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
     private Onibus onibus;
     
-//    @Column(name = "Cod_Rota", nullable = false, table = "Rota")
+    @Column(name = "Cod_Rota", nullable = false, table = "Rota")
     private Rota rota;
     
     private List<Funcionario> listaDeFuncionarios;
     
-//    @Column(name = "dataViagem")
-    private String data;
-//    
-//    @Column(name="diaDaSemana", length = 12)
+    @Column(name = "dataViagem")
+    private Date data;
+    
+    @Column(name="diaDaSemana", length = 12)
     private String diaDaSemana;
 
-    public Viagem(Onibus onibus, Rota rota, List<Funcionario> listaDeFuncionarios, String data, String diaDaSemana) {
+    public Viagem(Onibus onibus, Rota rota, List<Funcionario> listaDeFuncionarios, Date data, String diaDaSemana) {
         this.onibus = onibus;
         this.rota = rota;
         this.listaDeFuncionarios = listaDeFuncionarios;
@@ -61,11 +60,11 @@ public class Viagem /*extends Persistivel*/ implements Serializable {
         this.listaDeFuncionarios = listaDeFuncionarios;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -88,7 +87,7 @@ public class Viagem /*extends Persistivel*/ implements Serializable {
         Viagem viagem = (Viagem) obj;
         
         for(int i = 0; i < this.listaDeFuncionarios.size(); i++) {
-            if(viagem.equals(listaDeFuncionarios.get(i).getCPF())){
+            if(this.listaDeFuncionarios.get(i).getCPF().equals(viagem.getListaDeFuncionarios().get(i).getCPF())){
                 return true;
             }
         }
