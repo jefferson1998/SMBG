@@ -13,21 +13,23 @@
         <div id="divTexto"> 
 
             <div id="loginSenha">
-                
-                <h1 id="textoLogin"> Login </h1>
-                <h5 id="textoDentroLogin"> Seja bem-vindo ao SMBG</h5>
-                
-                <p:outputLabel class="loginNome" value="Login: " for="NomeLogin" />
-                <br></br>
-                <p:inputText class="inputLogin" id="NomeLogin" value="#{loginSMBG.usuario()}" />
-                <br></br><br></br>
 
-                <p:outputLabel class="senhaNome" value="Senha: " for="NomeSenha" />
-                <br></br>
-                <p:password class="inputSenha" id= "NomeSenha" value="#{loginSMBG.senha}" />
-                <br></br><br></br>
-                
-                <p:commandButton class="butaoLogin" value="Logar" action="#{loginSMBG.logar()}"/>
+                <h:form>
+                        <h1 id="textoLogin"> Login </h1>
+                        <h5 id="textoDentroLogin"> Seja bem-vindo ao SMBG</h5>
+
+                        <p:outputLabel class="loginNome" value="Login: " for="NomeLogin" />
+                        <br></br>
+                        <p:inputText class="inputLogin" id="NomeLogin" value="#{controllerSessaoUsuario.login}"/>
+                        <br></br><br></br>
+
+                        <p:outputLabel class="senhaNome" value="Senha: " for="NomeSenha" />
+                        <br></br>
+                        <p:password class="inputSenha" id= "NomeSenha" value="#{controllerSessaoUsuario.senha}"/>
+                        <br></br><br></br>
+
+                        <p:commandButton class="butaoLogin" value="Logar" action="#{controllerSessaoUsuario.logar()}"/>
+                </h:form>
             </div>
 
             <div id="apresentacaoLogin">
@@ -37,7 +39,7 @@
                 <h5 id="textoLoginDeDentroDiv2">O Sistema de Monitoramento de Busão de Garanhuns agradece o seu login em nosso sistema!</h5>	
 
             </div>
-                
+
         </div>
     </h:body>
 </html>
