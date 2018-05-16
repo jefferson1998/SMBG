@@ -26,7 +26,7 @@
     left: 6.5%;
     top: 46%;
     float: left;
-    position: absolute;
+    position: relative;
     padding: 0px;
     margin: 0px;
     font-family:serif;
@@ -56,7 +56,7 @@
     left: 55px;
     top: 140px;
     height: 55%;
-    width: 260px;
+    width: 80%;
     float: left;
     position: relative;
     padding: 0px;
