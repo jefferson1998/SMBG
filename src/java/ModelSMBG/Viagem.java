@@ -6,10 +6,12 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.Temporal;
 
 @Entity
 @Table(name = "Viagem")
 public class Viagem /*extends Persistivel*/ implements Serializable {
+    
     @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
     private Onibus onibus;
     
@@ -19,6 +21,7 @@ public class Viagem /*extends Persistivel*/ implements Serializable {
     private List<Funcionario> listaDeFuncionarios;
     
     @Column(name = "dataViagem")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
     
     @Column(name="diaDaSemana", length = 12)
