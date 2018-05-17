@@ -1,37 +1,92 @@
 package modelSMBG;
 
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 
+@Entity
+@Table(name = "Seguro")
 public class SeguroOnibus implements Serializable {
 
-    private int codigoSusepDoCorretor;
-    private int codigoCpdDoCorretor;
+    @Column(name = "codigoSusepCorretor", nullable = false)
+    private String codigoSusepDoCorretor;
+    
+    @Column(name = "codigoCpdCorretor", nullable = false)
+    private String codigoCpdDoCorretor;
+    
+    @Column(name = "codigoSusepCorretor", nullable = false)
     private String sucursalCorretor;
+    
+    @Column(name = "inspetoriaCorretor", nullable = false)
     private String inspetoriaDoCorretor;
+    
+    @Column(name = "proposta", nullable = false)
     private String proposta;
-    private String dataEmissao;
+    
+    @Column(name = "dataEmissao", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataEmissao;
+    
+    @Column(name = "apolice", nullable = false)
     private String apolice;
+    
+    @Column(name = "apolice", nullable = false)
     private String sucursal;
+    
+    @Column(name = "processoSusep", nullable = false)
     private String processoSusep;
-    private int codigoSusep;
-    private String cnpj;
+    
+    @Column(name = "codigoSusep", nullable = false)
+    private String codigoSusep;
+    
+    @Column(name = "cnpjSeguradora", nullable = false)
+    private String cnpjSeguradora;
+    
+    @Column(name = "nomeSeguradora", nullable = false)
     private String nomeSeguradora;
+    
+    //tem que ver como faz esse telefone
     private String telefoneDoSegurado;
+    
+    @Embedded
     private Endereco enderecoDoSegurado;
+    
+    @Column(name = "nomeCorretor", nullable = false)
     private String nomeCorretor;
+    
+    @Column(name = "cpfOuCnpjSegurado", nullable = false)
     private String cpfOuCnpjDoSegurado;
+    
+    @Column(name = "nomeSegurado", nullable = false)
     private String nomeDoSegurado;
-    private String dataInicioDaVigencia;
-    private String dataFinalDaVigencia;
-    private int numeroEndosso;
+    
+    @Column(name = "inicioVigencia", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataInicioDaVigencia;
+    
+    @Column(name = "fimVigencia", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataFinalDaVigencia;
+    
+    @Column(name = "numeroEndosso", nullable = false)
+    private String numeroEndosso;
+    
+    @Column(name = "ramo", nullable = false)
     private String ramo;
+    
+    @JoinColumn(name = "Cod_onibus", referencedColumnName = "Cod_onibus")
     private Onibus onibus;
 
-    public SeguroOnibus(int codigoSusepDoCorretor, int codigoCpdDoCorretor, String sucursalCorretor,
-            String inspetoriaDoCorretor, String proposta, String dataEmissao, String apolice, String sucursal,
-            String processoSusep, int codigoSusep, String cnpj, String nomeSeguradora, String telefoneDoSegurado,
+    public SeguroOnibus(String codigoSusepDoCorretor, String codigoCpdDoCorretor, String sucursalCorretor,
+            String inspetoriaDoCorretor, String proposta, Date dataEmissao, String apolice, String sucursal,
+            String processoSusep, String codigoSusep, String cnpjSeguradora, String nomeSeguradora, String telefoneDoSegurado,
             Endereco enderecoDoSegurado, String nomeCorretor, String cpfOuCnpjDoSegurado, String nomeDoSegurado,
-            String dataInicioDaVigencia, String dataFinalDaVigencia, int numeroEndosso, String ramo, Onibus onibus) {
+            Date dataInicioDaVigencia, Date dataFinalDaVigencia, String numeroEndosso, String ramo, Onibus onibus) {
         this.codigoSusepDoCorretor = codigoSusepDoCorretor;
         this.codigoCpdDoCorretor = codigoCpdDoCorretor;
         this.sucursalCorretor = sucursalCorretor;
@@ -42,7 +97,7 @@ public class SeguroOnibus implements Serializable {
         this.sucursal = sucursal;
         this.processoSusep = processoSusep;
         this.codigoSusep = codigoSusep;
-        this.cnpj = cnpj;
+        this.cnpjSeguradora = cnpjSeguradora;
         this.nomeSeguradora = nomeSeguradora;
         this.telefoneDoSegurado = telefoneDoSegurado;
         this.enderecoDoSegurado = enderecoDoSegurado;
@@ -60,19 +115,19 @@ public class SeguroOnibus implements Serializable {
         
     }
     
-    public int getCodigoSusepDoCorretor() {
+    public String getCodigoSusepDoCorretor() {
         return codigoSusepDoCorretor;
     }
 
-    public void setCodigoSusepDoCorretor(int codigoSusepDoCorretor) {
+    public void setCodigoSusepDoCorretor(String codigoSusepDoCorretor) {
         this.codigoSusepDoCorretor = codigoSusepDoCorretor;
     }
 
-    public int getCodigoCpdDoCorretor() {
+    public String getCodigoCpdDoCorretor() {
         return codigoCpdDoCorretor;
     }
 
-    public void setCodigoCpdDoCorretor(int codigoCpdDoCorretor) {
+    public void setCodigoCpdDoCorretor(String codigoCpdDoCorretor) {
         this.codigoCpdDoCorretor = codigoCpdDoCorretor;
     }
 
@@ -100,11 +155,11 @@ public class SeguroOnibus implements Serializable {
         this.proposta = proposta;
     }
 
-    public String getDataEmissao() {
+    public Date getDataEmissao() {
         return dataEmissao;
     }
 
-    public void setDataEmissao(String dataEmissao) {
+    public void setDataEmissao(Date dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
 
@@ -132,20 +187,20 @@ public class SeguroOnibus implements Serializable {
         this.processoSusep = processoSusep;
     }
 
-    public int getCodigoSusep() {
+    public String getCodigoSusep() {
         return codigoSusep;
     }
 
-    public void setCodigoSusep(int codigoSusep) {
+    public void setCodigoSusep(String codigoSusep) {
         this.codigoSusep = codigoSusep;
     }
 
     public String getCnpj() {
-        return cnpj;
+        return cnpjSeguradora;
     }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+        this.cnpjSeguradora = cnpj;
     }
 
     public String getNomeSeguradora() {
@@ -196,27 +251,27 @@ public class SeguroOnibus implements Serializable {
         this.nomeDoSegurado = nomeDoSegurado;
     }
 
-    public String getDataInicioDaVigencia() {
+    public Date getDataInicioDaVigencia() {
         return dataInicioDaVigencia;
     }
 
-    public void setDataInicioDaVigencia(String dataInicioDaVigencia) {
+    public void setDataInicioDaVigencia(Date dataInicioDaVigencia) {
         this.dataInicioDaVigencia = dataInicioDaVigencia;
     }
 
-    public String getDataFinalDaVigencia() {
+    public Date getDataFinalDaVigencia() {
         return dataFinalDaVigencia;
     }
 
-    public void setDataFinalDaVigencia(String dataFinalDaVigencia) {
+    public void setDataFinalDaVigencia(Date dataFinalDaVigencia) {
         this.dataFinalDaVigencia = dataFinalDaVigencia;
     }
 
-    public int getNumeroEndosso() {
+    public String getNumeroEndosso() {
         return numeroEndosso;
     }
 
-    public void setNumeroEndosso(int numeroEndosso) {
+    public void setNumeroEndosso(String numeroEndosso) {
         this.numeroEndosso = numeroEndosso;
     }
 
@@ -245,9 +300,9 @@ public class SeguroOnibus implements Serializable {
             return false;
         }
         SeguroOnibus seguroOnibus = (SeguroOnibus) o;
-        return (this.onibus.equals(seguroOnibus.getOnibus()) && 
-                (this.codigoCpdDoCorretor == seguroOnibus.getCodigoCpdDoCorretor() 
-                || this.codigoSusep == seguroOnibus.getCodigoSusep() 
-                || this.codigoSusepDoCorretor == seguroOnibus.getCodigoSusepDoCorretor()));
+        return this.onibus.equals(seguroOnibus.getOnibus()) && 
+                (this.codigoSusep.equals(seguroOnibus.getCodigoSusep())
+                || this.codigoCpdDoCorretor.equals(seguroOnibus.getCodigoCpdDoCorretor())
+                || this.codigoSusepDoCorretor.equals(seguroOnibus.getCodigoSusepDoCorretor()));
     }
 }
