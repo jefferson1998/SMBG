@@ -1,10 +1,21 @@
 package modelSMBG;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Endereco {
-	
+    
+        @Column (name = "rua", nullable = false)
 	private String rua;
+        
+        @Column (name = "numero", nullable = false)
 	private int numero;
-	private String bairro;
+        
+        @Column (name = "bairro", nullable = false)
+ 	private String bairro;
+        
+        @Column (name = "cep", nullable = false, length = 9)
 	private String cep;
 	
 	public Endereco(String rua, int numero, String bairro, String cep) {

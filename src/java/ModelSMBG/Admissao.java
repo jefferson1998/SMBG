@@ -2,19 +2,43 @@ package modelSMBG;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Id;
 
 public class Admissao implements Serializable {
-  
+
+    @Id
+    private Long Cod_Admissao;
+
+    @Column(name = "dataAdmissao", nullable = false)
     private Date dataAdmissao;
+
+    @Column(name = "valorSalario", nullable = false)
     private double valorSalario;
+
+    @Column(name = "funcao", nullable = false)
     private String funcao;
+
+    @Column(name = "horas", nullable = false)
     private int horas;
+
+    @Column(name = "instrucao", nullable = false)
     private String instrucao;
+
+    @Column(name = "numeroFilhos", nullable = false)
     private int numeroDeFilhos;
+
+    @Embedded
     private Conta conta;
+
+    @Embedded
     private Funcionario funcionario;
 
-    public Admissao(String dataAdmissao, double valorSalario, String funcao, int horas, String instrucao,
+    public Admissao(Date dataAdmissao, double valorSalario, String funcao, int horas, String instrucao,
             int numeroDeFilhos, Conta conta, Funcionario funcionario) {
         this.dataAdmissao = dataAdmissao;
         this.valorSalario = valorSalario;
@@ -27,14 +51,14 @@ public class Admissao implements Serializable {
     }
 
     public Admissao() {
-         
-    }
-    
-    public String getDataAdmissao() {
+
+    } 
+
+    public Date getDataAdmissao() {
         return dataAdmissao;
     }
 
-    public void setDataAdmissao(String dataAdmissao) {
+    public void setDataAdmissao(Date dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
     }
 

@@ -1,15 +1,24 @@
 package modelSMBG;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Titulo {
 	
+        @Column (name = "numeroTitulo", nullable = true, length = 12)
 	private String numeroTitulo;
-	private int zona;
-	private int secao;
+        
+        @Column (name = "zonaTituloTitulo", nullable = true)
+	private int zonaTitulo;
+        
+        @Column (name = "zecaoTitulo", nullable = false)
+	private int secaoTitulo;
 	
-	public Titulo(String numeroTitulo, int zona, int secao) {
+	public Titulo(String numeroTitulo, int zonaTitulo, int secaoTitulo) {
 		this.numeroTitulo = numeroTitulo;
-		this.zona = zona;
-		this.secao = secao;
+		this.zonaTitulo = zonaTitulo;
+		this.secaoTitulo = secaoTitulo;
 	}
 
 	public String getNumeroTitulo() {
@@ -20,19 +29,19 @@ public class Titulo {
 		this.numeroTitulo = numeroTitulo;
 	}
 
-	public int getZona() {
-		return zona;
+	public int getZonaTitulo() {
+		return zonaTitulo;
 	}
 
-	public void setZona(int zona) {
-		this.zona = zona;
+	public void setZonaTitulo(int zonaTitulo) {
+		this.zonaTitulo = zonaTitulo;
 	}
 
-	public int getSecao() {
-		return secao;
+	public int getSecaoTitulo() {
+		return secaoTitulo;
 	}
 
-	public void setSecao(int secao) {
-		this.secao = secao;
+	public void setSecaoTitulo(int secaoTitulo) {
+		this.secaoTitulo = secaoTitulo;
 	}
 }

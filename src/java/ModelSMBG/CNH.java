@@ -1,7 +1,15 @@
 package modelSMBG;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class CNH {
+    
+        @Column (name = "numeroCNH", nullable = true)
 	private String numeroCNH;
+        
+        @Column (name = "categoriaCNH", nullable = true)
 	private String categoriaCNH;
 	
 	public CNH(String numeroCNH, String categoriaCNH) {

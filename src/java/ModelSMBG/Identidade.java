@@ -1,20 +1,42 @@
 package modelSMBG;
 
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Identidade {
-	
+    
+	@Column(name = "nome", nullable = false)
 	private String nome;
+        
+        @Column(name = "numeroIdentidade", nullable = false, length = 10)
 	private String numeroIdentidade;
+        
+        @Column(name = "orgaoEmissor", nullable = false, length = 5)
         private String orgaoEmissor;
-	private String dataDeEmissao;
+        
+        @Column (name = "dataEmissao", nullable = false)
+	private Date dataDeEmissao;
+        
+        @Column (name = "nomePai", nullable = true)
 	private String nomeDoPai;
+        
+        @Column (name = "nomeMae", nullable = false)
 	private String nomeDaMae;
+        
+        @Column (name = "naturalidade", nullable = true)
 	private String naturalidade;
-	private String dataDeNascimento;
+        
+        @Column (name = "dataNascimento", nullable = true)
+	private Date dataDeNascimento;
+        
+        @Column (name = "ufIdentidade", nullable = false, length = 2)
 	private String uFIdentidade;
 	
 	
-	public Identidade(String nome, String numeroIdentidade, String orgaoEmissor, String dataDeEmissao, String nomeDoPai,
-			String nomeDaMae, String naturalidade, String dataDeNascimento, String uFIdentidade) {
+	public Identidade(String nome, String numeroIdentidade, String orgaoEmissor, Date dataDeEmissao, String nomeDoPai,
+			String nomeDaMae, String naturalidade, Date dataDeNascimento, String uFIdentidade) {
 		this.nome = nome;
 		this.numeroIdentidade = numeroIdentidade;
                 this.orgaoEmissor = orgaoEmissor;
@@ -50,11 +72,11 @@ public class Identidade {
             this.orgaoEmissor = orgaoEmissor;
         }
 
-	public String getDataDeEmissao() {
+	public Date getDataDeEmissao() {
 		return dataDeEmissao;
 	}
 
-	public void setDataDeEmissao(String dataDeEmissao) {
+	public void setDataDeEmissao(Date dataDeEmissao) {
 		this.dataDeEmissao = dataDeEmissao;
 	}
 
@@ -82,13 +104,13 @@ public class Identidade {
 		this.naturalidade = naturalidade;
 	}
 
-	public String getDataDeNascimento() {
+	public Date getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
-	public void setDataDeNascimento(String dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
-	}
+	public void setDataDeNascimento(Date dataDeNascimento) {
+                this.dataDeNascimento = dataDeNascimento;
+        }
 
 	public String getuFIdentidade() {
 		return uFIdentidade;

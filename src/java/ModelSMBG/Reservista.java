@@ -1,9 +1,18 @@
 package modelSMBG;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Reservista {
 	
+        @Column (name = "numeroReservista", nullable = true, length = 6)
 	private String numeroReservista;
+        
+        @Column (name = "serieReservista", nullable = true, length = 1)
 	private String serieReservista;
+        
+        @Column (name = "categoriaReservista", nullable = true)
 	private String categoriaReservista;
 	
 	public Reservista(String numeroReservista, String serieReservista, String categoriaReservista) {

@@ -1,19 +1,52 @@
 package modelSMBG;
 
 import java.io.Serializable;
-
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+ 
+@Entity 
+@Table(name = "Funcionario")
 public class Funcionario implements Serializable {
-
+ 
+    @Id
+    private Long Cod_Funcionario;
+    
+    @Embedded
     private Identidade funcionarioIdentidade;
+    
+    @Column(name = "cpf", nullable = false, length = 11, unique = true)
     private String cpf;
+    
+    @Embedded
     private Endereco funcionarioEndereco;
+    
+    @Embedded
     private CNH funcionarioCNH;
+    
+    @Column(name = "pis", nullable = true, unique = false)
     private String pis;
+    
+    @Embedded
     private Titulo funcionarioTitulo;
+    
+    @Embedded
     private CTPS funcionarioCTPS;
+    
+    @Embedded
     private Reservista funcionarioReservista;
-    private String emailFuncionario;
-    private String numeroFuncionario;
+    
+    @OneToMany
+    private List<String> emailFuncionario;
+    
+    @OneToMany
+    private List<String> numeroFuncionario;
+    
+    @Column(name = "estadoCivil")
     private String estadoCivil;
  
     public Funcionario(Identidade funcionarioIdentidade, String cpf,
@@ -137,5 +170,13 @@ public class Funcionario implements Serializable {
 
         Funcionario funcionario = (Funcionario) o;
         return this.cpf.equals(funcionario.getCPF());
+    }
+
+    public Long getCod_Funcionario() {
+        return Cod_Funcionario;
+    }
+
+    public void setCod_Funcionario(Long Cod_Funcionario) {
+        this.Cod_Funcionario = Cod_Funcionario;
     }
 }
