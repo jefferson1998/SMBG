@@ -1,10 +1,11 @@
 package modelSMBG;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Admissao implements Serializable {
-
-    private String dataAdmissao;
+  
+    private Date dataAdmissao;
     private double valorSalario;
     private String funcao;
     private int horas;
