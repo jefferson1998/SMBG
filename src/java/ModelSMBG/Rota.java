@@ -8,8 +8,8 @@ import javax.persistence.Column;
 
 @Entity
 @Table(name = "Rotas")
-public class Rota /*extends Persistivel*/ implements Serializable {
-
+public class Rota extends Persistivel implements Serializable {
+    
     @Column(name = "Origem", length = 30, nullable = false)
     private String origem;
     
@@ -25,7 +25,7 @@ public class Rota /*extends Persistivel*/ implements Serializable {
     @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
     private Onibus OnibusQueFazEstaRota;
     
-    
+    //Falta mapear esses pontos de paradas
     private List<Endereco> pontosDeParada;
 
     public Rota(String origem, String destino, String horarioSaida, String horarioPrevistoDeChegada,
