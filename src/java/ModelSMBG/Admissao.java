@@ -3,16 +3,25 @@ package modelSMBG;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
-public class Admissao implements Serializable {
+public class Admissao extends Persistivel implements Serializable {
 
     @Id
-    private Long Cod_Admissao;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @JoinColumn(name = "Cod_Funcionario", referencedColumnName = "Cod_Funcionario")
+    @OneToOne(cascade = CascadeType.ALL)
+    private Funcionario funcionario;
 
     @Column(name = "dataAdmissao", nullable = false)
     private Date dataAdmissao;
@@ -34,9 +43,6 @@ public class Admissao implements Serializable {
 
     @Embedded
     private Conta conta;
-
-    @Embedded
-    private Funcionario funcionario;
 
     public Admissao(Date dataAdmissao, double valorSalario, String funcao, int horas, String instrucao,
             int numeroDeFilhos, Conta conta, Funcionario funcionario) {
