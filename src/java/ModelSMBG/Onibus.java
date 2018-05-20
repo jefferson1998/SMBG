@@ -1,24 +1,68 @@
 package modelSMBG;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+ 
 
-public class Onibus implements Serializable {
+public class Onibus extends Persistivel implements Serializable  {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @Column(name = "codigoRenavam", length = 11, nullable = false)
     private String codigoRenavam;
+    
+    @Column(name = "chassis", length = 20, nullable = false)
     private String chassi;
+    
+    @Column(name = "placa", length = 7, nullable = false)
     private String placa;
+    
+    @Column(name = "ano", nullable = false)
     private int ano;
+    
+    @Column(name = "modelo", length = 25, nullable = false)
     private String modelo;
+    
+    @Column(name = "marca", length = 25, nullable = false)
     private String marca;
+    
+    @Column(name = "tipo", length = 25, nullable = false)
     private String tipo;
+    //mudar lá para double
+    @Column(name = "combustivel", nullable = false)
     private double combustivel;
+    
+    @Column(name = "numeroPortas", nullable = false)
     private int numeroDePortas;
+    
+    @Column(name = "numeroEixos", nullable = false)
     private int numeroDeEixos;
+    
+    @Column(name = "capacidade", nullable = false)
     private int capacidade;
+    
+    @Column(name = "arCondicionado", nullable = true)
     private boolean arCondicionado;
+    
+    @Column(name = "direcaoHidra", nullable = true)
     private boolean direcaoHidraulica;
+    
+    @Column(name = "freioAbs", nullable = true)
     private boolean freioABS;
+    
+    @Column(name = "cambioAuto", nullable = true)
     private boolean cambioAutomatico;
+    
+    @Column(name = "direcaoEletrica", nullable = true)
     private boolean direcaoEletrica;
 
     public Onibus(String codigoRenavam, String chassi, String placa, int ano, String modelo, String marca, String tipo,
