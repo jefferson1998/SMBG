@@ -6,15 +6,23 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
  
 @Entity 
 @Table(name = "Funcionario")
-public class Funcionario implements Serializable {
+public class Funcionario extends Persistivel implements Serializable {
  
     @Id
-    private Long Cod_Funcionario;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @JoinColumn(name = "Cod_Viagem", referencedColumnName = "Viagem")
+    @ManyToOne
+    private Viagem viagem;
     
     @Embedded
     private Identidade funcionarioIdentidade;
@@ -172,11 +180,4 @@ public class Funcionario implements Serializable {
         return this.cpf.equals(funcionario.getCPF());
     }
 
-    public Long getCod_Funcionario() {
-        return Cod_Funcionario;
-    }
-
-    public void setCod_Funcionario(Long Cod_Funcionario) {
-        this.Cod_Funcionario = Cod_Funcionario;
-    }
 }
