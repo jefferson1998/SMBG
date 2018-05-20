@@ -11,7 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
  
-
+@Entity
+@Table(name = "Onibus")
 public class Onibus extends Persistivel implements Serializable  {
 
     @Id

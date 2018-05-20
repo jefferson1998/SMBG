@@ -6,13 +6,19 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
 
 @Entity
 @Table(name = "Viagem")
-public class Viagem /*extends Persistivel*/ implements Serializable {
+public class Viagem extends Persistivel implements Serializable {
     
-    @Column(name = "Cod_onibus", nullable = false, table = "Onibus")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @Column(name = "Cod_onibus", nullable = false, table = "Cod_Onibus")
     private Onibus onibus;
     
     @Column(name = "Cod_Rota", nullable = false, table = "Rota")

@@ -9,7 +9,7 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class Persistivel implements Serializable{
-    
+     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

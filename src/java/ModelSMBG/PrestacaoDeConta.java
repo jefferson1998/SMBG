@@ -1,17 +1,49 @@
 package modelSMBG;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "PrestConta")
 public class PrestacaoDeConta extends Persistivel implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @JoinColumn(name = "Cod_Funcionario", referencedColumnName = "Cod_Funcionario")
+    @OneToOne(cascade = CascadeType.ALL)
     private Funcionario funcionario;
+    
+    @Column(name = "valorBruto", nullable = false)
     private double valorTotalArrecadadoNoDia;
+    
+    @Column(name = "valorLiquido", nullable = false)
     private double valorArrecadadoDescontado;
+    
+    @Column(name = "valorTotalDoCombustivel", nullable = false)
     private double valorTotalDoCombustivel;
+    
+    @Column(name = "valorCombustivel", nullable = false)
     private double valorDoLitroDeCombustivel;
+    
+    @Column(name = "quantidadeLitros", nullable = false)
     private double quantidadeDeLitrosAbastecido;
+    
+    @Column(name = "valorTroco", nullable = false)
     private double valorTroco;
+    
+    @Column(name = "valorCobrador", nullable = false)
     private double salarioDoCobrador;
+    
+    @Column(name = "valorMotorista", nullable = false)
     private double salarioDoMotorista;
  
     public PrestacaoDeConta(Funcionario funcionario, double valorTotalArrecadadoNoDia, double valorArrecadadoDescontado,

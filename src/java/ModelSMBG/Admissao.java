@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+@Entity
+@Table(name = "Admissao")
 public class Admissao extends Persistivel implements Serializable {
 
     @Id
