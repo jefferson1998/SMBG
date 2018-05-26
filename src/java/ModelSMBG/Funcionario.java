@@ -49,10 +49,10 @@ public class Funcionario extends Persistivel implements Serializable {
     private Reservista funcionarioReservista;
     
     @OneToMany
-    private List<String> emailFuncionario;
+    private List<Email> emailFuncionario;
     
     @OneToMany
-    private List<String> numeroFuncionario;
+    private List<NumeroTelefoneFuncionario> numeroTelefoneFuncionario;
     
     @Column(name = "estadoCivil")
     private String estadoCivil;
@@ -70,7 +70,7 @@ public class Funcionario extends Persistivel implements Serializable {
         this.funcionarioCTPS = funcionarioCTPS;
         this.funcionarioReservista = funcionarioReservista;
         this.emailFuncionario = emailFuncionario;
-        this.numeroFuncionario = numeroFuncionario;
+        this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
         this.estadoCivil = estadoCivil;
     }
 
@@ -142,21 +142,22 @@ public class Funcionario extends Persistivel implements Serializable {
         return funcionarioReservista;
     }
 
-    public String getEmailFuncionario() {
+    public List<Email> getEmailFuncionario() {
         return emailFuncionario;
     }
 
-    public void setEmailFuncionario(String emailFuncionario) {
+    public void setEmailFuncionario(List<Email> emailFuncionario) {
         this.emailFuncionario = emailFuncionario;
     }
 
-    public String getNumeroFuncionario() {
-        return numeroFuncionario;
+     public List<NumeroTelefoneFuncionario> getNumeroTelefoneFuncionario() {
+        return numeroTelefoneFuncionario;
     }
 
-    public void setNumeroFuncionario(String numeroFuncionario) {
-        this.numeroFuncionario = numeroFuncionario;
+    public void setNumeroTelefoneFuncionario(List<NumeroTelefoneFuncionario> numeroTelefoneFuncionario) {
+        this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
     }
+
 
     public String getEstadoCivil() {
         return estadoCivil;
