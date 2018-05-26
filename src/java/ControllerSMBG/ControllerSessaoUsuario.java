@@ -15,8 +15,10 @@
  */
 package ControllerSMBG;
 
+import ModelSMBG.LoginSMBG;
 import ModelSMBG.Usuario;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -29,58 +31,21 @@ import javax.faces.context.FacesContext;
 @ManagedBean
 @SessionScoped
 public class ControllerSessaoUsuario {
-    
-    private Usuario usuario;
-    private String login;
+
+    private String usuario;
     private String senha;
-    
-    public ControllerSessaoUsuario(){
-    }
-    
-    public void logar(){
-        usuario = new Usuario(login, senha);
-        FacesContext context = FacesContext.getCurrentInstance();
-        
-        if(this.usuario.getLogin().equals("admin") && this.usuario.getSenha().equals("admin")) {
-            context.getExternalContext().getSessionMap().put("user", usuario.getLogin());
-            context.getExternalContext().getSessionMap().put("perfil", "administrador");
-            
-            try {
-                context.getExternalContext().redirect("CadastrarFuncionarioSMBG.xhtml");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            //fazer um if pra ver, já que não é adm, se é usuario comum
-            context.addMessage("", new FacesMessage("A autenticação falhou!!!"));
-        }
-    }
-    
-    public void deslogar() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        context.getExternalContext().invalidateSession();
-        
-        try {
-            context.getExternalContext().redirect("PaginaLoginSMBG.xhtml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+    public ControllerSessaoUsuario(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getSenha() {
@@ -90,7 +55,44 @@ public class ControllerSessaoUsuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    
-    
+
+    public ControllerSessaoUsuario() {
+    }
+
+    public void logar() throws IOException {
+        FacesContext context = FacesContext.getCurrentInstance();
+        LoginSMBG lg = new LoginSMBG();
+        Usuario session = lg.logar(usuario, senha);
+        if (session != null) {
+            context.getExternalContext().getSessionMap().put("usuarioID", session.getId());
+            context.getExternalContext().redirect("/SMBG/faces/ViewSMBG/PaginaAdministradorSMBG.xhtml");
+        } else {
+            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
+            context.getExternalContext().redirect("/SMBG/");
+        }
+    }
+
+    public boolean checarErro() {
+        boolean ret = false;
+        FacesContext context = FacesContext.getCurrentInstance();
+        if (context.getExternalContext().getSessionMap().get("erroLogin") != null) {
+            if (context.getExternalContext().getSessionMap().get("erroLogin").toString().equals("sim")) {
+                ret = true;
+                context.getExternalContext().getSessionMap().put("erroLogin", "nao");
+            }
+        }
+        return ret;
+    }
+
+    public void deslogar() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.getExternalContext().invalidateSession();
+
+        try {
+            context.getExternalContext().redirect("PaginaLoginSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+
 }
