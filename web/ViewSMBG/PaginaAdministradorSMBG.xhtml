@@ -12,8 +12,11 @@
 
     </h:head>
     <h:body>
+        #{controllerSessao.checkUsuarioSession()}
+        
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
+            <h5 id="bemVindoUsuario"> Seja Bem-Vindo #{controllerSessao.sessionUsuario.nome} </h5>
         </div>
 
         <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
@@ -49,6 +52,8 @@
                     <p:menuitem value="Rota" action="RemoverRotaSMBG.xhtml"/>
                     <p:menuitem value="Ônibus" action="RemoverOnibusSMBG.xhtml"/>
                 </p:menuButton>
+                
+                <p:commandButton value="Deslogar" action="#{controllerSessaoUsuario.deslogar()}"/>                    
             </div>
         </h:form>
     </h:body>
