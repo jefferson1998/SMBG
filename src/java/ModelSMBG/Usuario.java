@@ -15,6 +15,7 @@
  */
 package ModelSMBG;
 
+import java.util.Objects;
 import javax.persistence.Entity;
 
 /**
@@ -50,5 +51,28 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        
+        if(this == o)
+            return true;
+        
+        if(!(o instanceof Usuario))
+            return false;
+        
+        Usuario usuario = (Usuario) o;
+        return usuario.getLogin().equals(this.login) && usuario.getSenha().equals(this.senha);
+        
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.login, this.senha);
+    }
+
+    
+    
+    
     
 }

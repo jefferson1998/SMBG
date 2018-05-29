@@ -21,25 +21,25 @@
 
                     <h:panelGrid columns="2" style="left: 6%; top: 100px; position: relative">
 
-                        <p:outputLabel value="Login: " for="NomeLogin" />
+                        <h:outputLabel value="Login: " for="NomeLogin" />
                         <br></br>
-                        <p:inputText id="NomeLogin" value="#{controllerSessaoUsuario.usuario}"/>
+                        <h:inputText id="NomeLogin" value="#{controllerSessaoUsuario.usuario.login}"/>
                         <br></br><br></br>
 
-                        <p:outputLabel value="Senha: " for="NomeSenha" />
+                        <h:outputLabel value="Senha: " for="NomeSenha" />
                         <br></br>
-                        <p:password id= "NomeSenha" value="#{controllerSessaoUsuario.senha}"/>
+                        <h:inputSecret id= "NomeSenha" value="#{controllerSessaoUsuario.usuario.senha}"/>
                         <br></br><br></br>
 
-                        <p:commandButton value="Logar" action="#{controllerSessaoUsuario.logar()}"/>
+                        <h:commandButton value="Logar" action="#{controllerSessaoUsuario.logar()}"/>
 
-                        <c:choose>
+<!--                        <c:choose>
                             <c:when test="#{!controllerSessaoUsuario.checarErro()}">
                             </c:when>
                             <c:otherwise>
                                 <h3 style="position: relative; top: 50px; right: 130%;">Falha na autenticação</h3>
                             </c:otherwise>
-                        </c:choose>
+                        </c:choose>-->
 
                     </h:panelGrid>
                 </h:form>

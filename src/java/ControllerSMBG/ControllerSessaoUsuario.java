@@ -15,10 +15,8 @@
  */
 package ControllerSMBG;
 
-import ModelSMBG.LoginSMBG;
 import ModelSMBG.Usuario;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -32,67 +30,71 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class ControllerSessaoUsuario {
 
-    private String usuario;
-    private String senha;
+    private Usuario usuario;
 
-    public ControllerSessaoUsuario(String usuario, String senha) {
-        this.usuario = usuario;
-        this.senha = senha;
+    public ControllerSessaoUsuario() {
+        usuario = new Usuario();
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Usuario user) {
+        this.usuario = user;
     }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public ControllerSessaoUsuario() {
-    }
-
-    public void logar() throws IOException {
+    
+    public void logar() {
         FacesContext context = FacesContext.getCurrentInstance();
-        LoginSMBG lg = new LoginSMBG();
-        Usuario session = lg.logar(usuario, senha);
-        if (session != null) {
-            context.getExternalContext().getSessionMap().put("usuarioID", session.getId());
-            context.getExternalContext().redirect("/SMBG/faces/ViewSMBG/PaginaAdministradorSMBG.xhtml");
-        } else {
-            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
-            context.getExternalContext().redirect("/SMBG/");
-        }
-    }
 
-    public boolean checarErro() {
-        boolean ret = false;
-        FacesContext context = FacesContext.getCurrentInstance();
-        if (context.getExternalContext().getSessionMap().get("erroLogin") != null) {
-            if (context.getExternalContext().getSessionMap().get("erroLogin").toString().equals("sim")) {
-                ret = true;
-                context.getExternalContext().getSessionMap().put("erroLogin", "nao");
+        if (this.usuario.getLogin().equals("admin") && this.usuario.getSenha().equals("admin")) {
+
+            context.getExternalContext().getSessionMap().put("user", usuario);
+            context.getExternalContext().getSessionMap().put("perfil", "adm");
+            try {
+                context.getExternalContext().redirect("PaginaAdministradorSMBG.xhtml");
+
+            } catch (IOException e) {
+                
             }
+        } else {
+            context.addMessage(null, new FacesMessage("A autenticação falhou!!!"));
         }
-        return ret;
+       
     }
 
     public void deslogar() {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().invalidateSession();
-
+        
         try {
             context.getExternalContext().redirect("PaginaLoginSMBG.xhtml");
         } catch (IOException e) {
-
+            
         }
+    }
+
+//    public void logar() throws IOException {
+//        FacesContext context = FacesContext.getCurrentInstance();
+//        if (usuario != null) {
+//            context.getExternalContext().getSessionMap().put("usuarioID", session.getId());
+//            context.getExternalContext().redirect("/SMBG/faces/ViewSMBG/PaginaAdministradorSMBG.xhtml");
+//        } else {
+//            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
+//            context.getExternalContext().redirect("/SMBG/");
+//        }
+//    }
+
+    public boolean checarErro() {
+        boolean temErro = false;
+        FacesContext context = FacesContext.getCurrentInstance();
+        if (context.getExternalContext().getSessionMap().get("erroLogin") != null) {
+            if (context.getExternalContext().getSessionMap().get("erroLogin").toString().equals("sim")) {
+                temErro = true;
+                context.getExternalContext().getSessionMap().put("erroLogin", "nao");
+            }
+        }
+        return temErro;
     }
 
 }

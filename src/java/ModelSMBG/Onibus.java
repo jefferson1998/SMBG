@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
- 
+
 @Entity
 @Table(name = "Onibus")
 public class Onibus extends Persistivel implements Serializable  {
@@ -38,7 +38,7 @@ public class Onibus extends Persistivel implements Serializable  {
     
     @Column(name = "tipo", length = 25, nullable = false)
     private String tipo;
-    //mudar lá para double
+
     @Column(name = "combustivel", nullable = false)
     private double combustivel;
     
