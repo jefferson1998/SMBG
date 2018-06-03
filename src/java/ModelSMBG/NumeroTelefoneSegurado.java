@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 public class NumeroTelefoneSegurado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
+     
     @Column(name = "Telefone", nullable = false, unique = true)
     private String numeroTelefoneSegurado;
     
@@ -21,7 +21,7 @@ public class NumeroTelefoneSegurado {
     
     @JoinColumn(name = "Cod_Seguro", referencedColumnName = "Cod_Seguro")
     @OneToMany(cascade = CascadeType.ALL)
-    private SeguroOnibus seguroOnibus;
+    SeguroOnibus seguroOnibus;
     
     public NumeroTelefoneSegurado() {
         
@@ -53,7 +53,7 @@ public class NumeroTelefoneSegurado {
         if(obj == this)
             return true;
         
-        if(!(obj instanceof NumeroTelefoneFuncionario))
+        if(!(obj instanceof NumeroTelefoneSegurado))
         return false;
         
         NumeroTelefoneSegurado numeroTelefoneSegurado = (NumeroTelefoneSegurado) obj;

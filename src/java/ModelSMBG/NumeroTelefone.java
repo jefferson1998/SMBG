@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Telefone_Funcionario")
-public class NumeroTelefoneFuncionario extends Persistivel implements Serializable{
+public class NumeroTelefone extends Persistivel implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +25,11 @@ public class NumeroTelefoneFuncionario extends Persistivel implements Serializab
     @OneToMany(cascade = CascadeType.ALL)
     private Funcionario funcionario;
     
-    public NumeroTelefoneFuncionario() {
+    public NumeroTelefone() {
         
     }
     
-     public NumeroTelefoneFuncionario(String numeroTelefone, Funcionario funcionario) {
+     public NumeroTelefone(String numeroTelefone, Funcionario funcionario) {
         this.numeroTelefone = numeroTelefone;
         this.funcionario = funcionario;
     }
@@ -55,10 +55,10 @@ public class NumeroTelefoneFuncionario extends Persistivel implements Serializab
         if(obj == this)
             return true;
         
-        if(!(obj instanceof NumeroTelefoneFuncionario))
+        if(!(obj instanceof NumeroTelefone))
         return false;
         
-        NumeroTelefoneFuncionario numeroTelefone = (NumeroTelefoneFuncionario) obj;
+        NumeroTelefone numeroTelefone = (NumeroTelefone) obj;
         
         return this.getNumeroTelefone().equals(numeroTelefone.getNumeroTelefone());
     }

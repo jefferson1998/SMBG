@@ -52,7 +52,7 @@ public class Funcionario extends Persistivel implements Serializable {
     private List<Email> emailFuncionario;
     
     @OneToMany
-    private List<NumeroTelefoneFuncionario> numeroTelefoneFuncionario;
+    private List<NumeroTelefone> numeroTelefoneFuncionario;
     
     @Column(name = "estadoCivil")
     private String estadoCivil;
@@ -150,11 +150,11 @@ public class Funcionario extends Persistivel implements Serializable {
         this.emailFuncionario = emailFuncionario;
     }
 
-     public List<NumeroTelefoneFuncionario> getNumeroTelefoneFuncionario() {
+     public List<NumeroTelefone> getNumeroTelefoneFuncionario() {
         return numeroTelefoneFuncionario;
     }
 
-    public void setNumeroTelefoneFuncionario(List<NumeroTelefoneFuncionario> numeroTelefoneFuncionario) {
+    public void setNumeroTelefoneFuncionario(List<NumeroTelefone> numeroTelefoneFuncionario) {
         this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
     }
 
