@@ -9,13 +9,11 @@
     </h:head>
     <h:body>
         
-        #{controllerSessao.checkUsuarioSession()}
-        
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
              <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                 action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
+                                   action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
             </h:form>
         </div>
 
@@ -32,8 +30,8 @@
                 <h:form>
                     <h3> DADOS CORRETOR </h3>
 
-                    <p:outputLabel value="Nome do Corretor:*" for="TelefoneDoSegurado" />
-                    <p:inputText class="camposFormulario" id="TelefoneDoSegurado" value="#{SeguroOnibus.telefoneDoSegurado}"/>
+                    <p:outputLabel value="Nome do Corretor:*" for="NomeDoCorretor" />
+                    <p:inputText class="camposFormulario" id="NomeDoCorretor" value="#{SeguroOnibus.nomeCorretor}"/>
 
                     <p:outputLabel value="Código Susep do Corretor:*" for="CodigoSusepDoCorretor" />
                     <p:inputText class="camposFormulario" id="CodigoSusepDoCorretor" value="#{SeguroOnibus.codigoSusepDoCorretor}"/>

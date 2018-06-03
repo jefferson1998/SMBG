@@ -7,19 +7,16 @@
 
     <h:head>
         <title>SMBG - Funcionário</title>
-
         <h:outputStylesheet library="css" name="Css.css" />
 
     </h:head>
     <h:body>
         
-        #{controllerSessao.checkUsuarioSession()}
-        
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
             <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                 action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
+                                   action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/> 
             </h:form>
         </div>
 
@@ -129,9 +126,10 @@
                     <p:outputLabel value="Estado Civil:*" for="EstadoCivilDoFuncionario"/>
                     <p:inputText class="camposFormulario" id="EstadoCivilDoFuncionario" value="#{Funcionario.estadoCivil}"/>
 
-                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarFuncionario"/>
-
                 </h:form> 
+                <h:form>
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" action="#{controllerPaginaAdminitrador.irPaginaCadastrarAdmissaoDoFuncionario()}"/>
+                </h:form>
             </div>
         </div>
 

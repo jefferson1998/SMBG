@@ -10,14 +10,11 @@
     </h:head>
     <h:body>
         
-        #{controllerPaginaAdminitrador.checkUsuarioSession()}
-        
-        
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
              <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                 action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
+                                   action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
             </h:form>
         </div>
 
@@ -76,8 +73,12 @@
                         <f:selectItem value="#{Onibus.freioABS}" itemLabel="Freios ABS" itemValue="true"/>
                         <f:selectItem value="#{Onibus.cambioAutomatico}" itemLabel="Câmbio Automático" itemValue="true"/>
                     </p:selectManyCheckbox>
-
-                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarOnibus"/>
+                    
+                </h:form>
+                
+                <h:form>
+                    <p:commandButton class="menuCadastrar" value="Finalizar" />
+                    <p:commandButton class="menuCadastrar" value="Cadastrar Seguro" action="#{controllerPaginaAdminitrador.irPaginaCadastrarSeguroDoOnibus()}"/>
                 </h:form>
             </div>
         </div>

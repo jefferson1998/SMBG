@@ -12,11 +12,10 @@
 
     </h:head>
     <h:body>
-        #{controllerSessao.checkUsuarioSession()}
         
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
-            <h5 id="bemVindoUsuario"> Seja Bem-Vindo #{controllerSessao.sessionUsuario.nome} </h5>
+            <h5 id="bemVindoUsuario"> Seja Bem-Vindo </h5>
         </div>
 
         <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
@@ -24,33 +23,33 @@
         <h:form>
             <div id="botoes">
                 <p:menuButton value="Cadastrar">
-                    <p:menuitem value="Funcionário" action="CadastrarFuncionarioSMBG.xhtml"/>
-                    <p:menuitem value="Rota" action="CadastrarRotaSMBG.xhtml"/>
-                    <p:menuitem value="Ônibus" action="CadastrarOnibusSMBG.xhtml"/>
+                    <p:menuitem value="Funcionário" action="#{controllerPaginaAdminitrador.irPaginaCadastrarFuncionario()}"/>
+                    <p:menuitem value="Rota" action="#{controllerPaginaAdminitrador.irPaginaCadastrarRota()}"/>
+                    <p:menuitem value="Ônibus" action="#{controllerPaginaAdminitrador.irPaginaCadastrarOnibus()}"/>
                 </p:menuButton>
 
                 <p:menuButton value="Atualizar">
-                    <p:menuitem value="Funcionário" action="AtualizarFuncionarioSMBG.xhtml"/>
-                    <p:menuitem value="Admissão" action="AtualizarAdmissaoDoFuncionarioSMBG.xhtml"/>
-                    <p:menuitem value="Rota" action="AtualizarRotaSMBG.xhtml"/>
-                    <p:menuitem value="Ônibus" action="AtualizarOnibusSMBG.xhtml"/>
-                    <p:menuitem value="Viagem" action="AtualizarViagemSMBG.xhtml"/>
-                    <p:menuitem value="Seguro" action="AtualizarSeguroSMBG.xhtml"/>
+                    <p:menuitem value="Funcionário" action="#{controllerPaginaAdminitrador.irPaginaAtualizarFuncionario()}"/>
+                    <p:menuitem value="Admissão" action="#{controllerPaginaAdminitrador.irPaginaAtualizarAdmissaoDoFuncionario()}"/>
+                    <p:menuitem value="Rota" action="#{controllerPaginaAdminitrador.irPaginaAtualizarRota()}"/>
+                    <p:menuitem value="Ônibus" action="#{controllerPaginaAdminitrador.irPaginaAtualizarOnibus()}"/>
+                    <p:menuitem value="Viagem" action="#{controllerPaginaAdminitrador.irPaginaAtualizarViagem()}"/>
+                    <p:menuitem value="Seguro" action="#{controllerPaginaAdminitrador.irPaginaAtualizarSeguroDoOnibus()}"/>
                 </p:menuButton>
 
                 <p:menuButton value="Buscar">
-                    <p:menuitem value="Funcionário" action="BuscaFuncionarioSMBG.xhtml"/>
-                    <p:menuitem value="Admissão" action="BuscaAdmissaoDoFuncionarioSMBG.xhtml"/>
-                    <p:menuitem value="Ônibus" action="BuscaOnibusSMBG.xhtml"/>
-                    <p:menuitem value="Rota" action="BuscaRotaSMBG.xhtml"/>
-                    <p:menuitem value="Viagem" action="BuscaViagemSMBG.xhtml"/>
-                    <p:menuitem value="Seguro" action="BuscaSeguroSMBG.xhtml"/>
+                    <p:menuitem value="Funcionário" action="#{controllerPaginaAdminitrador.irPaginaBuscarFuncionario()}"/>
+                    <p:menuitem value="Admissão" action="#{controllerPaginaAdminitrador.irPaginaBuscarAdmissaoDoFuncionario()}"/>
+                    <p:menuitem value="Ônibus" action="#{controllerPaginaAdminitrador.irPaginaBuscarOnibus()}"/>
+                    <p:menuitem value="Rota" action="#{controllerPaginaAdminitrador.irPaginaBuscaRota()}"/>
+                    <p:menuitem value="Viagem" action="#{controllerPaginaAdminitrador.irPaginaBuscarViagem()}"/>
+                    <p:menuitem value="Seguro" action="#{controllerPaginaAdminitrador.irPaginaBuscarSeguroDoOnibus()}"/>
                 </p:menuButton>
 
                 <p:menuButton value="Remover" >
-                    <p:menuitem value="Funcionário" action="RemoverFuncionarioSMBG.xhtml"/>
-                    <p:menuitem value="Rota" action="RemoverRotaSMBG.xhtml"/>
-                    <p:menuitem value="Ônibus" action="RemoverOnibusSMBG.xhtml"/>
+                    <p:menuitem value="Funcionário" action="#{controllerPaginaAdminitrador.irPaginaRemoverFuncionario()}"/>
+                    <p:menuitem value="Rota" action="#{controllerPaginaAdminitrador.irPaginaRemoverRota()}"/>
+                    <p:menuitem value="Ônibus" action="#{controllerPaginaAdminitrador.irPaginaRemoverOnibus()}"/>
                 </p:menuButton>
                 
                 <p:commandButton value="Deslogar" action="#{controllerSessaoUsuario.deslogar()}"/>                    
