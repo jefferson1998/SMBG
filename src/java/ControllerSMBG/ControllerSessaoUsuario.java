@@ -21,6 +21,12 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -43,7 +49,7 @@ public class ControllerSessaoUsuario {
     public void setUsuario(Usuario user) {
         this.usuario = user;
     }
-    
+
     public void logar() {
         FacesContext context = FacesContext.getCurrentInstance();
 
@@ -51,26 +57,30 @@ public class ControllerSessaoUsuario {
 
             context.getExternalContext().getSessionMap().put("user", usuario);
             context.getExternalContext().getSessionMap().put("perfil", "adm");
+            context.getExternalContext().getSessionMap().put("erroLogin", "nao");
+
             try {
                 context.getExternalContext().redirect("PaginaAdministradorSMBG.xhtml");
 
             } catch (IOException e) {
-                
+
             }
         } else {
+            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
             context.addMessage(null, new FacesMessage("A autenticação falhou!!!"));
+
         }
-       
+
     }
 
     public void deslogar() {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().invalidateSession();
-        
+
         try {
             context.getExternalContext().redirect("PaginaLoginSMBG.xhtml");
         } catch (IOException e) {
-            
+
         }
     }
 
@@ -84,10 +94,11 @@ public class ControllerSessaoUsuario {
 //            context.getExternalContext().redirect("/SMBG/");
 //        }
 //    }
-
     public boolean checarErro() {
         boolean temErro = false;
+
         FacesContext context = FacesContext.getCurrentInstance();
+
         if (context.getExternalContext().getSessionMap().get("erroLogin") != null) {
             if (context.getExternalContext().getSessionMap().get("erroLogin").toString().equals("sim")) {
                 temErro = true;

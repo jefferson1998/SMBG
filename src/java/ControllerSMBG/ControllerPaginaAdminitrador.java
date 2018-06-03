@@ -31,17 +31,206 @@ public class ControllerPaginaAdminitrador {
 
         }
     }
+
+    public void irPaginaCadastrarFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("CadastrarFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
     
-    public void irAdmissao() {
+    public void irPaginaCadastrarAdmissaoDoFuncionario() {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
             context.getExternalContext().redirect("CadastrarAdmissaoDoFuncionarioSMBG.xhtml");
         } catch (IOException e) {
+        }
+    }
+    
+    public void irPaginaCadastrarRota() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("CadastrarRotaSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+     public void irPaginaCadastrarOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("CadastrarOnibusSMBG.xhtml");
+        } catch (IOException e) {
 
         }
     }
 
+    public void irPaginaCadastrarSeguroDoOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("CadastrarSeguroSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaAtualizarFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("AtualizarFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaAtualizarAdmissaoDoFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("AtualizarAdmissaoDoFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaAtualizarOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("AtualizarOnibusSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaAtualizarRota() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("AtualizarRotaSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaAtualizarSeguroDoOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("AtualizarSeguroSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaAtualizarViagem() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("AtualizarViagemSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaBuscarFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscarFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaBuscarAdmissaoDoFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscarAdmissaoDoFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaBuscarOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscarOnibusSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaBuscaRota() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscarRotaSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaBuscarSeguroDoOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscarSeguroSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaBuscarViagem() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscarViagemSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaRemoverFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("RemoverFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+   
+    public void irPaginaRemoverOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("RemoverOnibusSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaRemoverRota() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("RemoverRotaSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
     public Usuario getSessionUsuario() {
         return sessionUsuario;
     }
