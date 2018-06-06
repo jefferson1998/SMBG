@@ -2,6 +2,8 @@ package modelSMBG;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -56,8 +59,8 @@ public class SeguroOnibus extends Persistivel implements Serializable {
     @Column(name = "nomeSeguradora", nullable = false)
     private String nomeSeguradora;
     
-    //tem que ver como faz esse telefone
-    private String telefoneDoSegurado;
+    @OneToMany
+    private List<NumeroTelefoneSegurado> telefoneDoSegurado;
     
     @Embedded
     private Endereco enderecoDoSegurado;
@@ -116,7 +119,7 @@ public class SeguroOnibus extends Persistivel implements Serializable {
         this.ramo = ramo;
         this.onibus = onibus;
     }
-
+    
     public SeguroOnibus() {
         
     }
@@ -217,11 +220,11 @@ public class SeguroOnibus extends Persistivel implements Serializable {
         this.nomeSeguradora = nomeSeguradora;
     }
 
-    public String getTelefoneDoSegurado() {
+    public List<NumeroTelefoneSegurado> getTelefoneDoSegurado() {
         return telefoneDoSegurado;
     }
 
-    public void setTelefoneDoSegurado(String telefoneDoSegurado) {
+    public void setTelefoneDoSegurado(List<NumeroTelefoneSegurado> telefoneDoSegurado) {
         this.telefoneDoSegurado = telefoneDoSegurado;
     }
 
@@ -311,4 +314,13 @@ public class SeguroOnibus extends Persistivel implements Serializable {
                 || this.codigoCpdDoCorretor.equals(seguroOnibus.getCodigoCpdDoCorretor())
                 || this.codigoSusepDoCorretor.equals(seguroOnibus.getCodigoSusepDoCorretor()));
     }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigoSusepDoCorretor, codigoCpdDoCorretor, sucursalCorretor, inspetoriaDoCorretor,
+                proposta, dataEmissao, apolice, sucursal, processoSusep, codigoSusep, cnpjSeguradora, nomeSeguradora,
+                enderecoDoSegurado, nomeCorretor, cpfOuCnpjDoSegurado, nomeDoSegurado, dataInicioDaVigencia, dataFinalDaVigencia,
+                numeroEndosso, ramo, onibus);
+    }
+    
 }

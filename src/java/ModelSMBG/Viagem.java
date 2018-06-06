@@ -3,12 +3,14 @@ package modelSMBG;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
 @Entity
@@ -24,13 +26,14 @@ public class Viagem extends Persistivel implements Serializable {
     @Column(name = "Cod_Rota", nullable = false, table = "Rota")
     private Rota rota;
     
+    @OneToMany
     private List<Funcionario> listaDeFuncionarios;
     
-    @Column(name = "dataViagem")
+    @Column(name = "dataViagem", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
     
-    @Column(name="diaDaSemana", length = 12)
+    @Column(name="diaDaSemana", length = 12, nullable = false)
     private String diaDaSemana;
 
     public Viagem(Onibus onibus, Rota rota, List<Funcionario> listaDeFuncionarios, Date data, String diaDaSemana) {
@@ -40,7 +43,7 @@ public class Viagem extends Persistivel implements Serializable {
         this.data = data;
         this.diaDaSemana = diaDaSemana;
     }
-
+    
     public Viagem() {
         
     }
@@ -104,6 +107,11 @@ public class Viagem extends Persistivel implements Serializable {
         return this.data.equals(viagem.data)
                 && this.onibus.getPlaca().equals(viagem.onibus.getPlaca())
                 && this.rota.equals(viagem.rota);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(onibus, rota, data, diaDaSemana);
     }
     
 }

@@ -3,6 +3,7 @@ package modelSMBG;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -138,4 +139,10 @@ public class Admissao extends Persistivel implements Serializable {
         return this.funcionario.equals(admissao.getFuncionario());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataAdmissao, valorSalario, funcao, horas, instrucao, numeroDeFilhos, conta, funcionario);
+    }
+
+    
 }

@@ -2,6 +2,7 @@ package modelSMBG;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -230,4 +231,9 @@ public class Onibus extends Persistivel implements Serializable  {
         return this.chassi.equals(onibus.getChassi()) || this.placa.equals(onibus.getPlaca()) || this.codigoRenavam.equals(onibus.getCodigoRenavam());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigoRenavam, chassi, ano, placa, ano, modelo, marca, tipo, combustivel, 
+                numeroDePortas, numeroDeEixos, capacidade);
+    }
 }

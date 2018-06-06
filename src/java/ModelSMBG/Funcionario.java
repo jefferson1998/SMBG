@@ -2,6 +2,7 @@ package modelSMBG;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -158,7 +159,6 @@ public class Funcionario extends Persistivel implements Serializable {
         this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
     }
 
-
     public String getEstadoCivil() {
         return estadoCivil;
     }
@@ -181,4 +181,11 @@ public class Funcionario extends Persistivel implements Serializable {
         return this.cpf.equals(funcionario.getCPF());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(cpf, estadoCivil, funcionarioIdentidade.getNumeroIdentidade(), 
+                funcionarioIdentidade.getNome(), funcionarioIdentidade.getDataDeEmissao(), 
+                funcionarioIdentidade.getOrgaoEmissor(), funcionarioIdentidade.getNomeDaMae(),
+                funcionarioIdentidade.getuFIdentidade() ,funcionarioEndereco);
+    }
 }

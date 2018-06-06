@@ -1,6 +1,7 @@
 package modelSMBG;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -152,4 +153,10 @@ public class PrestacaoDeConta extends Persistivel implements Serializable {
                 || this.funcionario.getFuncionarioCNH().equals(prestacaoDeConta.funcionario.getFuncionarioCNH());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(funcionario, valorTotalArrecadadoNoDia, valorArrecadadoDescontado, valorDoLitroDeCombustivel,
+               quantidadeDeLitrosAbastecido, valorTroco, salarioDoCobrador, salarioDoMotorista);
+    }
+    
 }
