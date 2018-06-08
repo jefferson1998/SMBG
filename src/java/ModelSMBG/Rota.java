@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "Rotas")
 public class Rota extends Persistivel implements Serializable {
-    
+     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     

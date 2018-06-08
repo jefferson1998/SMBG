@@ -113,5 +113,5 @@ public class Viagem extends Persistivel implements Serializable {
     public int hashCode() {
         return Objects.hash(onibus, rota, data, diaDaSemana);
     }
-    
+     
 }

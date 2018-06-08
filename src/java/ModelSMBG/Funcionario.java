@@ -48,7 +48,7 @@ public class Funcionario extends Persistivel implements Serializable {
     
     @Embedded
     private Reservista funcionarioReservista;
-    
+     
     @OneToMany
     private List<Email> emailFuncionario;
     

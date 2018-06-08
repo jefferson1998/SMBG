@@ -145,7 +145,7 @@ public class ControllerPaginaAdminitrador {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("BuscarFuncionarioSMBG.xhtml");
+            context.getExternalContext().redirect("BuscaFuncionarioSMBG.xhtml");
         } catch (IOException e) {
 
         }
@@ -155,7 +155,7 @@ public class ControllerPaginaAdminitrador {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("BuscarAdmissaoDoFuncionarioSMBG.xhtml");
+            context.getExternalContext().redirect("BuscaAdmissaoDoFuncionarioSMBG.xhtml");
         } catch (IOException e) {
 
         }
@@ -165,7 +165,7 @@ public class ControllerPaginaAdminitrador {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("BuscarOnibusSMBG.xhtml");
+            context.getExternalContext().redirect("BuscaOnibusSMBG.xhtml");
         } catch (IOException e) {
 
         }
@@ -175,7 +175,7 @@ public class ControllerPaginaAdminitrador {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("BuscarRotaSMBG.xhtml");
+            context.getExternalContext().redirect("BuscaRotaSMBG.xhtml");
         } catch (IOException e) {
 
         }
@@ -185,7 +185,7 @@ public class ControllerPaginaAdminitrador {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("BuscarSeguroSMBG.xhtml");
+            context.getExternalContext().redirect("BuscaSeguroSMBG.xhtml");
         } catch (IOException e) {
 
         }
@@ -195,7 +195,7 @@ public class ControllerPaginaAdminitrador {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("BuscarViagemSMBG.xhtml");
+            context.getExternalContext().redirect("BuscaViagemSMBG.xhtml");
         } catch (IOException e) {
 
         }

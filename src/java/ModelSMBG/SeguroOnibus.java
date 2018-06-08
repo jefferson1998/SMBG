@@ -322,5 +322,5 @@ public class SeguroOnibus extends Persistivel implements Serializable {
                 enderecoDoSegurado, nomeCorretor, cpfOuCnpjDoSegurado, nomeDoSegurado, dataInicioDaVigencia, dataFinalDaVigencia,
                 numeroEndosso, ramo, onibus);
     }
-    
+     
 }

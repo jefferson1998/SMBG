@@ -229,8 +229,9 @@ public class Onibus extends Persistivel implements Serializable  {
         
         Onibus onibus = (Onibus) o;
         return this.chassi.equals(onibus.getChassi()) || this.placa.equals(onibus.getPlaca()) || this.codigoRenavam.equals(onibus.getCodigoRenavam());
-    }
 
+    }
+    
     @Override
     public int hashCode() {
         return Objects.hash(codigoRenavam, chassi, ano, placa, ano, modelo, marca, tipo, combustivel, 

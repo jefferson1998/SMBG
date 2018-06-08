@@ -159,4 +159,4 @@ public class PrestacaoDeConta extends Persistivel implements Serializable {
                quantidadeDeLitrosAbastecido, valorTroco, salarioDoCobrador, salarioDoMotorista);
     }
     
-}
+} 

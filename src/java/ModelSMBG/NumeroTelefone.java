@@ -44,8 +44,8 @@ public class NumeroTelefone extends Persistivel implements Serializable{
     
     public void setFuncionario(Funcionario funcionario){
         this.funcionario = funcionario;
-    }
-    
+    } 
+     
     public Funcionario getFuncionario() {
         return this.funcionario;
     }

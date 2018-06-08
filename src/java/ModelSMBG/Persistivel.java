@@ -14,7 +14,7 @@ public class Persistivel implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     protected Integer id;
-     
+      
     @Override
     public boolean equals(Object obj) {
         if(this == obj)

@@ -14,7 +14,7 @@ public class NumeroTelefoneSegurado {
      
     @Column(name = "Telefone", nullable = false, unique = true)
     private String numeroTelefoneSegurado;
-    
+      
     @JoinColumn(name = "Cod_Onibus", referencedColumnName = "Cod_Onibus")
     @OneToMany(cascade = CascadeType.ALL)
     private SeguroOnibus seguroOnibus;
