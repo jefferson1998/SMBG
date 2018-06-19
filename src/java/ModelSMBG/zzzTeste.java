@@ -57,6 +57,14 @@ public class zzzTeste {
             f.setFuncionarioEndereco(e);
             f.setAdmissao(ad);
             
+            List<String> emailFuncionario = new ArrayList<>();
+            emailFuncionario.add("jefferson1231");
+            f.setEmailFuncionario(emailFuncionario);
+            
+            List<String> telefoneFuncionario = new ArrayList<>();
+            telefoneFuncionario.add("(87) 9.8171-3359");
+            f.setNumeroTelefoneFuncionario(telefoneFuncionario);
+            
             em.getTransaction().begin();
             em.persist(f);
             em.getTransaction().commit();

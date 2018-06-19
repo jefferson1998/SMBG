@@ -63,7 +63,6 @@ public class ControllerFuncionarioSMBG {
     }
     
     public void removerFuncionario() {
-        
         funcionarioModel.removerFuncionario(funcionario);
         listaTodos();
         funcionario =  new Funcionario();

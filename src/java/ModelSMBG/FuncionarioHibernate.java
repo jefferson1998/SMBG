@@ -21,6 +21,7 @@ public class FuncionarioHibernate implements FuncionarioDAO {
         em.getTransaction().commit();
     }
 
+    @Override
     public void atualizar(Funcionario funcionario) {
         em.getTransaction().begin();
         em.merge(funcionario);
@@ -28,16 +29,19 @@ public class FuncionarioHibernate implements FuncionarioDAO {
 
     }
 
+    @Override
     public void deletar(Funcionario funcionario) {
         em.getTransaction().begin();
         em.remove(funcionario);
         em.getTransaction().commit();
     }
 
+    @Override
     public List<Funcionario> listarTodos() {
         return this.em.createQuery("from Funcionario").getResultList();
     }
 
+    @Override
     public Funcionario buscarPeloCpf(String cpf) {
         // TODO Auto-generated method stub
         return null;

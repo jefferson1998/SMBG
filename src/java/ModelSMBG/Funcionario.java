@@ -52,10 +52,12 @@ public class Funcionario extends Persistivel implements Serializable {
      
     @ElementCollection
     @CollectionTable(name="email_Funcionario", joinColumns = @JoinColumn(name="Cod_Funcionario"))
+    @Column (name = "email_funcionario")
     private List<String> emailFuncionario;
     
     @ElementCollection
     @CollectionTable(name="telefone_Funcionario", joinColumns = @JoinColumn(name="Cod_Funcionario"))
+    @Column (name = "telefone")
     private List<String> numeroTelefoneFuncionario;
     
     @Column(name = "estadoCivil")
