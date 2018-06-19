@@ -24,13 +24,11 @@ public class zzzTeste {
         EntityManager em = emf.createEntityManager();
 //        System.out.println("Está pegando!");
 //        Date d = Date.from(Instant.EPOCH);        
-//        Identidade i = new Identidade("José", "123", "SDS", d, "Eve", "Maria", "GUS", d, "PE");
+//        Identidade i = new Identidade();
 //        Endereco e = new Endereco("SP", 0, "Magano", "123");
 //        Funcionario f = new Funcionario();
-//        List<String> emails = new ArrayList<>();
-//        emails.add("E-mail");
+//  
 //        f.setCpf("125.225.945/70");
-//        f.setEmailFuncionario(emails);
 //        f.setFuncionarioIdentidade(i);
 //        f.setFuncionarioEndereco(e);
 //        

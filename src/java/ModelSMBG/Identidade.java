@@ -33,21 +33,10 @@ public class Identidade {
         
         @Column (name = "ufIdentidade", nullable = false, length = 2)
 	private String uFIdentidade;
-	
-	
-	public Identidade(String nome, String numeroIdentidade, String orgaoEmissor, Date dataDeEmissao, String nomeDoPai,
-			String nomeDaMae, String naturalidade, Date dataDeNascimento, String uFIdentidade) {
-		this.nome = nome;
-		this.numeroIdentidade = numeroIdentidade;
-                this.orgaoEmissor = orgaoEmissor;
-		this.dataDeEmissao = dataDeEmissao;
-		this.nomeDoPai = nomeDoPai;
-		this.nomeDaMae = nomeDaMae;
-		this.naturalidade = naturalidade;
-		this.dataDeNascimento = dataDeNascimento;
-                this.uFIdentidade = uFIdentidade;
-	}
 
+        public Identidade() {
+        }
+	
 	public String getNome() {
 		return nome;
 	}
