@@ -22,20 +22,48 @@ public class zzzTeste {
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
         EntityManager em = emf.createEntityManager();
-//        System.out.println("Está pegando!");
-//        Date d = Date.from(Instant.EPOCH);        
-//        Identidade i = new Identidade();
-//        Endereco e = new Endereco("SP", 0, "Magano", "123");
-//        Funcionario f = new Funcionario();
-//  
-//        f.setCpf("125.225.945/70");
-//        f.setFuncionarioIdentidade(i);
-//        f.setFuncionarioEndereco(e);
-//        
-//        em.getTransaction().begin();
-//        em.persist(f);
-//        em.getTransaction().commit();
-        System.out.println("ModelSMBG.zzzTeste.main()");
+
+            Admissao ad = new Admissao();
+            ad.setDataAdmissao("15/05/1998");
+            ad.setFuncao("Motorista");
+            ad.setHoras(12);
+            ad.setInstrucao("Zé");
+            ad.setNumeroDeFilhos(12);
+            ad.setValorSalario(1200);
+            
+            Conta c = new Conta();
+            c.setNumeroAgencia("12");
+            c.setNumeroConta("15");
+            ad.setConta(c);
+            
+            em.getTransaction().begin();
+            em.persist(ad);
+            em.getTransaction().commit();
+
+            System.out.println("Persistiu Admissao");
+            
+            Identidade i = new Identidade();
+            Endereco e = new Endereco("SP", 0, "Magano", "123");
+            Funcionario f = new Funcionario();
+
+            f.setCpf("125.225.945/70");
+            i.setNome("José");
+            i.setNumeroIdentidade("12");
+            i.setNomeDaMae("Maria");
+            i.setOrgaoEmissor("SDS");
+            i.setDataDeEmissao("12/05/1998");
+            i.setuFIdentidade("PE");
+            f.setFuncionarioIdentidade(i);
+            f.setFuncionarioEndereco(e);
+            f.setAdmissao(ad);
+            
+            em.getTransaction().begin();
+            em.persist(f);
+            em.getTransaction().commit();
+            
+       
+            System.out.println("Persistiu Funcionario");
+        
         
     }
 }

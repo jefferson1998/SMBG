@@ -1,12 +1,24 @@
 package ModelSMBG;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class AdmissaoHibernate implements AdmissaoDAO {
 
-	
+	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
+        private static EntityManager em;
+
+        public AdmissaoHibernate() {
+             em =  this.emf.createEntityManager();
+        }
+        
+        
 	public void inserir(Admissao admissao) {
-		// TODO Auto-generated method stub
+            em.getTransaction().begin();
+            em.persist(admissao);
+            em.getTransaction().commit();
 		
 	}
 	

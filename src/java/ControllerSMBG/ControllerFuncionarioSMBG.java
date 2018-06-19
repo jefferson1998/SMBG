@@ -5,6 +5,8 @@
  */
 package ControllerSMBG;
 
+import ModelSMBG.Admissao;
+import ModelSMBG.AdmissaoModel;
 import ModelSMBG.Funcionario;
 import ModelSMBG.FuncionarioModel;
 import javax.faces.bean.ManagedBean;
@@ -21,11 +23,15 @@ public class ControllerFuncionarioSMBG {
     
     Funcionario funcionario;
     FuncionarioModel funcionarioModel;
+    Admissao admissao;
+    AdmissaoModel admissaoModel;
     List<Funcionario> listaFuncionario;
     
      public ControllerFuncionarioSMBG() {
         funcionario =  new Funcionario();
         funcionarioModel = new FuncionarioModel();
+        admissao = new Admissao();
+        admissaoModel = new AdmissaoModel();
         
     }
 
@@ -36,10 +42,21 @@ public class ControllerFuncionarioSMBG {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
+
+    public Admissao getAdmissao() {
+        return admissao;
+    }
+
+    public void setAdmissao(Admissao admissao) {
+        this.admissao = admissao;
+    }
+    
     
     public void cadastrarFuncionario() {
-        
+        admissaoModel.cadastrarAdmissao(admissao);
         funcionarioModel.cadastrarFuncionario(funcionario);
+        listaTodos();
+        admissao =  new Admissao();
         listaTodos();
         funcionario =  new Funcionario();
         
@@ -58,6 +75,13 @@ public class ControllerFuncionarioSMBG {
         listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
         funcionario =  new Funcionario();
         return listaFuncionario;
+        
+    }
+    
+    
+    public void cadastrarAdmissao() {
+        
+      
         
     }
     

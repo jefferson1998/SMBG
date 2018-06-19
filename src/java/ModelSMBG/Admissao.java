@@ -25,8 +25,8 @@ import javax.persistence.Temporal;
 public class Admissao extends Persistivel implements Serializable {
 
     @Column(name = "dataAdmissao", nullable = false)
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataAdmissao;
+    //@Temporal(javax.persistence.TemporalType.DATE)
+    private String dataAdmissao;
 
     @Column(name = "valorSalario", nullable = false)
     private double valorSalario;
@@ -34,7 +34,7 @@ public class Admissao extends Persistivel implements Serializable {
     @Column(name = "funcao", nullable = false)
     private String funcao;
 
-    @Column(name = "horas", nullable = false)
+    @Column(name = "horario", nullable = false)
     private int horas;
 
     @Column(name = "instrucao", nullable = false)
@@ -50,11 +50,11 @@ public class Admissao extends Persistivel implements Serializable {
 
     } 
 
-    public Date getDataAdmissao() {
+    public String getDataAdmissao() {
         return dataAdmissao;
     }
 
-    public void setDataAdmissao(Date dataAdmissao) {
+    public void setDataAdmissao(String dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
     }
 

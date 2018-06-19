@@ -16,19 +16,20 @@ public class Identidade {
         @Column(name = "orgaoEmissor", nullable = false, length = 5)
         private String orgaoEmissor;
         
+        // rever
         @Column (name = "dataEmissao", nullable = false)
-	private Date dataDeEmissao;
+	private String dataDeEmissao;
         
-        @Column (name = "nomePai", nullable = true)
+        @Column (name = "nomePai")
 	private String nomeDoPai;
         
         @Column (name = "nomeMae", nullable = false)
 	private String nomeDaMae;
         
-        @Column (name = "naturalidade", nullable = true)
+        @Column (name = "naturalidade")
 	private String naturalidade;
         
-        @Column (name = "dataNascimento", nullable = true)
+        @Column (name = "dataNascimento")
 	private Date dataDeNascimento;
         
         @Column (name = "ufIdentidade", nullable = false, length = 2)
@@ -61,11 +62,11 @@ public class Identidade {
             this.orgaoEmissor = orgaoEmissor;
         }
 
-	public Date getDataDeEmissao() {
+	public String getDataDeEmissao() {
 		return dataDeEmissao;
 	}
 
-	public void setDataDeEmissao(Date dataDeEmissao) {
+	public void setDataDeEmissao(String dataDeEmissao) {
 		this.dataDeEmissao = dataDeEmissao;
 	}
 

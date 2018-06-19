@@ -13,10 +13,9 @@ public class Conta implements Serializable {
         @Column (name = "numeroConta", nullable = false, length = 10)
 	private String numeroConta;
 	
-	public Conta(String numeroAgencia, String numeroConta) {
-		this.numeroAgencia = numeroAgencia;
-		this.numeroConta = numeroConta;
-	}
+	public Conta(){
+            
+        }
 
 	public String getNumeroAgencia() {
 		return numeroAgencia;
