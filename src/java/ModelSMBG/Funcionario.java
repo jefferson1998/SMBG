@@ -200,6 +200,6 @@ public class Funcionario extends Persistivel implements Serializable {
         return Objects.hash(cpf, estadoCivil, funcionarioIdentidade.getNumeroIdentidade(), 
                 funcionarioIdentidade.getNome(), funcionarioIdentidade.getDataDeEmissao(), 
                 funcionarioIdentidade.getOrgaoEmissor(), funcionarioIdentidade.getNomeDaMae(),
-                funcionarioIdentidade.getuFIdentidade() ,funcionarioEndereco);
+                funcionarioIdentidade.getUFIdentidade() ,funcionarioEndereco);
     }
 }

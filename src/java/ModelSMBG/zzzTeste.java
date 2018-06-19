@@ -52,7 +52,7 @@ public class zzzTeste {
             i.setNomeDaMae("Maria");
             i.setOrgaoEmissor("SDS");
             i.setDataDeEmissao("12/05/1998");
-            i.setuFIdentidade("PE");
+            i.setUFIdentidade("PE");
             f.setFuncionarioIdentidade(i);
             f.setFuncionarioEndereco(e);
             f.setAdmissao(ad);

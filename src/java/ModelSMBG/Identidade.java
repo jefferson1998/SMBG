@@ -33,7 +33,7 @@ public class Identidade {
 	private Date dataDeNascimento;
         
         @Column (name = "ufIdentidade", nullable = false, length = 2)
-	private String uFIdentidade;
+	private String ufIdentidade;
 
         public Identidade() {
         }
@@ -102,12 +102,12 @@ public class Identidade {
                 this.dataDeNascimento = dataDeNascimento;
         }
 
-	public String getuFIdentidade() {
-		return uFIdentidade;
+	public String getUFIdentidade() {
+		return ufIdentidade;
 	}
 
-	public void setuFIdentidade(String uFIdentidade) {
-		this.uFIdentidade = uFIdentidade;
+	public void setUFIdentidade(String ufIdentidade) {
+		this.ufIdentidade = ufIdentidade;
 	}
 	
 	
