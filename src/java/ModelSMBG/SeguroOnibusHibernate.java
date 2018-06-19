@@ -1,31 +1,42 @@
 package ModelSMBG;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class SeguroOnibusHibernate implements SeguroOnibusDAO {
 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
+        EntityManager em = emf.createEntityManager();
+    
 	@Override
-	public void inserir(SeguroOnibus objeto) {
-		// TODO Auto-generated method stub
-		
+	public void inserir(SeguroOnibus seguroOnibus) {
+            em.getTransaction().begin();
+            em.persist(seguroOnibus);
+            em.getTransaction().commit();
+            em.close();
 	}
 
 	@Override
-	public void atualizar(SeguroOnibus objeto) {
-		// TODO Auto-generated method stub
-		
+	public void atualizar(SeguroOnibus seguroOnibus) {
+	    em.getTransaction().begin();
+            em.merge(seguroOnibus);
+            em.getTransaction().commit();
+            em.close();
 	}
 
 	@Override
-	public void deletar(SeguroOnibus objeto) {
-		// TODO Auto-generated method stub
-		
+	public void deletar(SeguroOnibus seguroOnibus) {
+            em.getTransaction().begin();
+            em.remove(seguroOnibus);
+            em.getTransaction().commit();
+            em.close();
 	}
 
 	@Override
 	public List<SeguroOnibus> listarTodos() {
-		// TODO Auto-generated method stub
-		return null;
+            return  this.em.createQuery("from SeguroOnibus").getResultList();
 	}
 
 	@Override

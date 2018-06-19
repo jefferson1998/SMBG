@@ -11,7 +11,7 @@ import javax.persistence.MappedSuperclass;
 public class Persistivel implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     protected Integer id;
       
@@ -26,4 +26,18 @@ public class Persistivel implements Serializable{
         Persistivel persistivel = (Persistivel) obj;
         return this.id == persistivel.id;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Persistivel() {
+        
+    }
+    
+    
 }

@@ -1,59 +1,62 @@
-package modelSMBG;
+package ModelSMBG;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Endereco {
-    
-        @Column (name = "rua", nullable = false)
-	private String rua;
-        
-        @Column (name = "numero", nullable = false)
-	private int numero;
-        
-        @Column (name = "bairro", nullable = false)
- 	private String bairro;
-        
-        @Column (name = "cep", nullable = false, length = 9)
-	private String cep;
-	
-	public Endereco(String rua, int numero, String bairro, String cep) {
-		this.rua = rua;
-		this.numero = numero;
-		this.bairro = bairro;
-		this.cep = cep;
-	}
 
-	public String getRua() {
-		return rua;
-	}
+    @Column(name = "rua", nullable = false)
+    private String rua;
 
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
+    @Column(name = "numero", nullable = false)
+    private int numero;
 
-	public int getNumero() {
-		return numero;
-	}
+    @Column(name = "bairro", nullable = false)
+    private String bairro;
 
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
+    @Column(name = "cep", nullable = false, length = 9)
+    private String cep;
 
-	public String getBairro() {
-		return bairro;
-	}
+    public Endereco() {
+    }
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
+    public Endereco(String rua, int numero, String bairro, String cep) {
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cep = cep;
+    }
 
-	public String getCep() {
-		return cep;
-	}
+    public String getRua() {
+        return rua;
+    }
 
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
 }

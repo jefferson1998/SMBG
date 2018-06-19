@@ -4,10 +4,10 @@ import java.util.List;
 
 public class FuncionarioModel {
 
-	private DAO<Funcionario> daoFuncionario = new FuncionarioHibernate();
+	private FuncionarioDAO daoFuncionario = new FuncionarioHibernate();
 
 	public void cadastrarFuncionario(Funcionario funcionario) {
-		daoFuncionario.inserir(funcionario);
+            daoFuncionario.inserir(funcionario);
 	}
 
 	public void atualizarFuncionario(Funcionario funcionario) {

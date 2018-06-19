@@ -1,9 +1,12 @@
-package modelSMBG;
+package ModelSMBG;
 
+import ModelSMBG.Conta;
+import ModelSMBG.Funcionario;
+import ModelSMBG.Persistivel;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
+import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -14,19 +17,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 
 @Entity
 @Table(name = "Admissao")
+@AttributeOverride(name = "id", column = @Column(name="Cod_Admissao"))
 public class Admissao extends Persistivel implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
-    @JoinColumn(name = "Cod_Funcionario", referencedColumnName = "Cod_Funcionario")
-    @OneToOne(cascade = CascadeType.ALL)
-    private Funcionario funcionario;
-
     @Column(name = "dataAdmissao", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataAdmissao;
 
     @Column(name = "valorSalario", nullable = false)
@@ -46,18 +45,6 @@ public class Admissao extends Persistivel implements Serializable {
 
     @Embedded
     private Conta conta;
-
-    public Admissao(Date dataAdmissao, double valorSalario, String funcao, int horas, String instrucao,
-            int numeroDeFilhos, Conta conta, Funcionario funcionario) {
-        this.dataAdmissao = dataAdmissao;
-        this.valorSalario = valorSalario;
-        this.funcao = funcao;
-        this.horas = horas;
-        this.instrucao = instrucao;
-        this.numeroDeFilhos = numeroDeFilhos;
-        this.conta = conta;
-        this.funcionario = funcionario;
-    }
 
     public Admissao() {
 
@@ -119,14 +106,6 @@ public class Admissao extends Persistivel implements Serializable {
         this.conta = conta;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -136,12 +115,12 @@ public class Admissao extends Persistivel implements Serializable {
             return false;
         }
         Admissao admissao = (Admissao) o;
-        return this.funcionario.equals(admissao.getFuncionario());
+        return this.id.equals(admissao.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataAdmissao, valorSalario, funcao, horas, instrucao, numeroDeFilhos, conta, funcionario);
+        return Objects.hash(dataAdmissao, valorSalario, funcao, horas, instrucao, numeroDeFilhos, conta);
     }
 
     

@@ -1,24 +1,17 @@
-package modelSMBG;
+package ModelSMBG;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
+import javax.persistence.AttributeOverride;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "Onibus")
+@AttributeOverride(name = "id", column = @Column(name = "Cod_Onibus"))
 public class Onibus extends Persistivel implements Serializable  {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     @Column(name = "codigoRenavam", length = 11, nullable = false)
     private String codigoRenavam;
     
@@ -66,30 +59,14 @@ public class Onibus extends Persistivel implements Serializable  {
     
     @Column(name = "direcaoEletrica", nullable = true)
     private boolean direcaoEletrica;
-
-    public Onibus(String codigoRenavam, String chassi, String placa, int ano, String modelo, String marca, String tipo,
-            double combustivel, int numeroDePortas, int numeroDeEixos, int capacidade, boolean arCondicionado,
-            boolean direcaoHidraulica, boolean freioABS, boolean cambioAutomatico, boolean direcaoEletrica) {
-        this.codigoRenavam = codigoRenavam;
-        this.chassi = chassi;
-        this.placa = placa;
-        this.ano = ano;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.tipo = tipo;
-        this.combustivel = combustivel;
-        this.numeroDePortas = numeroDePortas;
-        this.numeroDeEixos = numeroDeEixos;
-        this.capacidade = capacidade;
-        this.arCondicionado = arCondicionado;
-        this.direcaoHidraulica = direcaoHidraulica;
-        this.freioABS = freioABS;
-        this.cambioAutomatico = cambioAutomatico;
-        this.direcaoEletrica = direcaoEletrica;
-    }
     
     public Onibus() {
         
+    }
+
+    public Onibus(int i, String teste) {
+       id = i;
+       chassi = teste;
     }
 
     public String getCodigoRenavam() {

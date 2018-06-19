@@ -1,4 +1,4 @@
-package modelSMBG;
+package ModelSMBG;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

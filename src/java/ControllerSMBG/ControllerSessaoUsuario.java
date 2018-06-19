@@ -60,7 +60,7 @@ public class ControllerSessaoUsuario {
             context.getExternalContext().getSessionMap().put("erroLogin", "nao");
 
             try {
-                context.getExternalContext().redirect("PaginaAdministradorSMBG.xhtml");
+                context.getExternalContext().redirect("PaginaAdmin.xhtml");
 
             } catch (IOException e) {
 

@@ -1,7 +1,8 @@
-package modelSMBG;
+package ModelSMBG;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,12 +14,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PrestConta")
+@Table(name = "PrestacaoDeConta")
+@AttributeOverride(name = "id", column = @Column(name="Cod_Prestacacao"))
 public class PrestacaoDeConta extends Persistivel implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     @JoinColumn(name = "Cod_Funcionario", referencedColumnName = "Cod_Funcionario")
     @OneToOne(cascade = CascadeType.ALL)
     private Funcionario funcionario;

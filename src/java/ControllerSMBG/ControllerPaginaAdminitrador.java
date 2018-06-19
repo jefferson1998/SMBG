@@ -22,17 +22,48 @@ public class ControllerPaginaAdminitrador {
         }
     }
     
-    public void retornarPaginaAdministrador() {
+    
+    public void irPaginaOnibus() {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("PaginaAdministradorSMBG.xhtml");
+            context.getExternalContext().redirect("PaginaOnibus.xhtml");
         } catch (IOException e) {
 
         }
     }
+    
+     public void irPaginaAdmin() {
+        FacesContext context = FacesContext.getCurrentInstance();
 
-    public void irPaginaCadastrarFuncionario() {
+        try {
+            context.getExternalContext().redirect("PaginaAdmin.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irCadastrarOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("CadastrarOnibusSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irPaginaFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("PaginaFuncionario.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irCadastrarFuncionario() {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
@@ -42,16 +73,17 @@ public class ControllerPaginaAdminitrador {
         }
     }
     
-    public void irPaginaCadastrarAdmissaoDoFuncionario() {
+     public void irPaginaRota() {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
-            context.getExternalContext().redirect("CadastrarAdmissaoDoFuncionarioSMBG.xhtml");
+            context.getExternalContext().redirect("PaginaRota.xhtml");
         } catch (IOException e) {
+
         }
     }
     
-    public void irPaginaCadastrarRota() {
+    public void irCadastrarRota() {
         FacesContext context = FacesContext.getCurrentInstance();
 
         try {
@@ -60,176 +92,8 @@ public class ControllerPaginaAdminitrador {
 
         }
     }
-    
-     public void irPaginaCadastrarOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
 
-        try {
-            context.getExternalContext().redirect("CadastrarOnibusSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-
-    public void irPaginaCadastrarSeguroDoOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("CadastrarSeguroSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaAtualizarFuncionario() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("AtualizarFuncionarioSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaAtualizarAdmissaoDoFuncionario() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("AtualizarAdmissaoDoFuncionarioSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaAtualizarOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("AtualizarOnibusSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaAtualizarRota() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("AtualizarRotaSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaAtualizarSeguroDoOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("AtualizarSeguroSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaAtualizarViagem() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("AtualizarViagemSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaBuscarFuncionario() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("BuscaFuncionarioSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaBuscarAdmissaoDoFuncionario() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("BuscaAdmissaoDoFuncionarioSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaBuscarOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("BuscaOnibusSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaBuscaRota() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("BuscaRotaSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaBuscarSeguroDoOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("BuscaSeguroSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaBuscarViagem() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("BuscaViagemSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaRemoverFuncionario() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("RemoverFuncionarioSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
    
-    public void irPaginaRemoverOnibus() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("RemoverOnibusSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
-    
-    public void irPaginaRemoverRota() {
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        try {
-            context.getExternalContext().redirect("RemoverRotaSMBG.xhtml");
-        } catch (IOException e) {
-
-        }
-    }
     
     public Usuario getSessionUsuario() {
         return sessionUsuario;

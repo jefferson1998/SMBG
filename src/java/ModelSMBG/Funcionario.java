@@ -1,29 +1,30 @@
-package modelSMBG;
+package ModelSMBG;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 
 @Entity 
 @Table(name = "Funcionario")
+@AttributeOverride(name = "id", column = @Column(name="Cod_Funcionario"))
 public class Funcionario extends Persistivel implements Serializable {
- 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
-    @JoinColumn(name = "Cod_Viagem", referencedColumnName = "Viagem")
-    @ManyToOne
-    private Viagem viagem;
     
     @Embedded
     private Identidade funcionarioIdentidade;
@@ -49,31 +50,20 @@ public class Funcionario extends Persistivel implements Serializable {
     @Embedded
     private Reservista funcionarioReservista;
      
-    @OneToMany
-    private List<Email> emailFuncionario;
+    @ElementCollection
+    @CollectionTable(name="email_Funcionario", joinColumns = @JoinColumn(name="Cod_Funcionario"))
+    private List<String> emailFuncionario;
     
-    @OneToMany
-    private List<NumeroTelefone> numeroTelefoneFuncionario;
+    @ElementCollection
+    @CollectionTable(name="telefone_Funcionario", joinColumns = @JoinColumn(name="Cod_Funcionario"))
+    private List<String> numeroTelefoneFuncionario;
     
     @Column(name = "estadoCivil")
     private String estadoCivil;
- 
-    public Funcionario(Identidade funcionarioIdentidade, String cpf,
-            Endereco funcionarioEndereco, CNH funcionarioCNH, String pis,
-            Titulo funcionarioTitulo, CTPS funcionarioCTPS, Reservista funcionarioReservista,
-            String emailFuncionario, String numeroFuncionario, String estadoCivil) {
-        this.funcionarioIdentidade = funcionarioIdentidade;
-        this.cpf = cpf;
-        this.funcionarioEndereco = funcionarioEndereco;
-        this.funcionarioCNH = funcionarioCNH;
-        this.pis = pis;
-        this.funcionarioTitulo = funcionarioTitulo;
-        this.funcionarioCTPS = funcionarioCTPS;
-        this.funcionarioReservista = funcionarioReservista;
-        this.emailFuncionario = emailFuncionario;
-        this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
-        this.estadoCivil = estadoCivil;
-    }
+
+    @JoinColumn(name = "Cod_admissao", referencedColumnName = "Cod_Admissao")
+    @OneToOne(cascade = CascadeType.ALL)
+    private Admissao admissao;
 
     public Funcionario() {
         
@@ -143,19 +133,19 @@ public class Funcionario extends Persistivel implements Serializable {
         return funcionarioReservista;
     }
 
-    public List<Email> getEmailFuncionario() {
+    public List<String> getEmailFuncionario() {
         return emailFuncionario;
     }
 
-    public void setEmailFuncionario(List<Email> emailFuncionario) {
+    public void setEmailFuncionario(List<String> emailFuncionario) {
         this.emailFuncionario = emailFuncionario;
     }
 
-     public List<NumeroTelefone> getNumeroTelefoneFuncionario() {
+     public List<String> getNumeroTelefoneFuncionario() {
         return numeroTelefoneFuncionario;
     }
 
-    public void setNumeroTelefoneFuncionario(List<NumeroTelefone> numeroTelefoneFuncionario) {
+    public void setNumeroTelefoneFuncionario(List<String> numeroTelefoneFuncionario) {
         this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
     }
 
@@ -167,6 +157,30 @@ public class Funcionario extends Persistivel implements Serializable {
         this.estadoCivil = estadoCivil;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getPis() {
+        return pis;
+    }
+
+    public void setPis(String pis) {
+        this.pis = pis;
+    }
+
+    public Admissao getAdmissao() {
+        return admissao;
+    }
+
+    public void setAdmissao(Admissao admissao) {
+        this.admissao = admissao;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) {

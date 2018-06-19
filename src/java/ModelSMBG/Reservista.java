@@ -1,4 +1,4 @@
-package modelSMBG;
+package ModelSMBG;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -9,7 +9,7 @@ public class Reservista {
         @Column (name = "numeroReservista", nullable = true, length = 6)
 	private String numeroReservista;
         
-        @Column (name = "serieReservista", nullable = true, length = 1)
+        @Column (name = "serieReservista", nullable = true, length = 2)
 	private String serieReservista;
         
         @Column (name = "categoriaReservista", nullable = true)

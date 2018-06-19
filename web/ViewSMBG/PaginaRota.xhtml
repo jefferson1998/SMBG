@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>SMBG Onibus</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="Css.css" />
+
+    </h:head>
+    <h:body>
+        
+        <div id="faixa">
+            <h1 id="textoFaixa">SMBG</h1>
+            <h5 id="bemVindoUsuario"> Seja Bem-Vindo </h5>
+        </div>
+
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+
+        <h:form>
+            <div id="botoes">
+                <p:commandButton value="Cadastrar" action = "#{controllerPaginaAdminitrador.irCadastrarRota()}"/>
+
+                <p:commandButton value="Menu" action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/> 
+                
+                <p:commandButton value="Deslogar" action="#{controllerSessaoUsuario.deslogar()}"/>  
+                
+            </div>
+        </h:form>
+             
+    </h:body>
+</html>

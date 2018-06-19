@@ -1,13 +1,25 @@
 package ModelSMBG;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class RotaHibernate implements RotaDAO{
+    
+        private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
+        private static EntityManager em;
 
+        public RotaHibernate() {
+            em =  this.emf.createEntityManager();
+        }
+    
+    
 	@Override
 	public void inserir(Rota rota) {
-		// TODO Auto-generated method stub
-		
+            em.getTransaction().begin();
+            em.persist(rota);
+            em.getTransaction().commit();
 	}
 
 	@Override

@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>SMBG - Rota</title>
         <h:outputStylesheet library="css" name="Css.css" />
@@ -13,7 +14,7 @@
             <h1 id="textoFaixa">SMBG</h1>
              <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                   action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
+                                 action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/>                 
             </h:form>
         </div>
 
@@ -31,18 +32,33 @@
                     <h3> DADOS DA ROTA </h3>
 
                     <p:outputLabel value="Origem da rota:*" for="OrigemDaRota" />
-                    <p:inputText class="camposFormulario" id="OrigemDaRota" value="#{Rota.origem}"/>
+                    <p:inputText class="camposFormulario" id="OrigemDaRota" value="#{controllerRotaSMBG.rota.origem}"/>
 
                     <p:outputLabel value="Destino da rota:*" for="DestinoDaRota" />
-                    <p:inputText class="camposFormulario" id="DestinoDaRota" value="#{Rota.destino}"/>
+                    <p:inputText class="camposFormulario" id="DestinoDaRota" value="#{controllerRotaSMBG.rota.destino}"/>
 
                     <p:outputLabel value="Hórario de Saída:*" for="HorarioDeSaidaDaRota" />
-                    <p:inputText class="camposFormulario" id="HorarioDeSaidaDaRota" value="#{Rota.horarioSaida}"/>
+                    <p:inputMask class="camposFormulario" id="HorarioDeSaidaDaRota" value="#{controllerRotaSMBG.rota.horarioSaida}"  mask="99:99"/>
 
                     <p:outputLabel value="Hórario de Previsto:*" for="HorarioPrevistoDeChegadaDaDaRota" />
-                    <p:inputText class="camposFormulario" id="HorarioPrevistoDeChegadaDaDaRota" value="#{Rota.horarioPrevistoDeChegada}"/>
+                    <p:inputMask class="camposFormulario" id="HorarioPrevistoDeChegadaDaDaRota" value="#{controllerRotaSMBG.rota.horarioPrevistoDeChegada}" mask="99:99"/>
 
-                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarRota"/>
+                <br/><br/><br/><br/>
+                    <p:dataTable id="listaOnibus" value="#{controllerOnibusSMBG.listaTodos()}" var="onibus">
+
+                        <p:column headerText="Codigo Ônibus">
+                            <h:outputText value="#{onibus.id}" />
+                        </p:column>
+                        
+                        <p:column headerText="Placa">
+                            <h:outputText value="#{onibus.placa}" />
+                        </p:column>
+                        
+                        <p:column headerText="Modelo">
+                            <h:outputText value="#{onibus.modelo}" />
+                        </p:column>
+                    </p:dataTable>
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarRota" action="#{controllerRotaSMBG.cadastrarRota()}"/>
                 </h:form>
             </div>
         </div>

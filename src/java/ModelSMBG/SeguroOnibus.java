@@ -1,26 +1,32 @@
-package modelSMBG;
+package ModelSMBG;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.AttributeOverride;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 @Entity
 @Table(name = "Seguro")
+@AttributeOverride(name = "id", column = @Column(name = "Cod_Seguro"))
 public class SeguroOnibus extends Persistivel implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ManyToOne
+    @JoinColumn(name = "Cod_onibus", referencedColumnName = "Cod_Onibus")
+    private Onibus onibus;
     
     @Column(name = "codigoSusepCorretor", nullable = false)
     private String codigoSusepDoCorretor;
@@ -28,7 +34,7 @@ public class SeguroOnibus extends Persistivel implements Serializable {
     @Column(name = "codigoCpdCorretor", nullable = false)
     private String codigoCpdDoCorretor;
     
-    @Column(name = "codigoSusepCorretor", nullable = false)
+    @Column(name = "sucursalCorretor", nullable = false)
     private String sucursalCorretor;
     
     @Column(name = "inspetoriaCorretor", nullable = false)
@@ -44,7 +50,7 @@ public class SeguroOnibus extends Persistivel implements Serializable {
     @Column(name = "apolice", nullable = false)
     private String apolice;
     
-    @Column(name = "apolice", nullable = false)
+    @Column(name = "sucursal", nullable = false)
     private String sucursal;
     
     @Column(name = "processoSusep", nullable = false)
@@ -59,8 +65,9 @@ public class SeguroOnibus extends Persistivel implements Serializable {
     @Column(name = "nomeSeguradora", nullable = false)
     private String nomeSeguradora;
     
-    @OneToMany
-    private List<NumeroTelefoneSegurado> telefoneDoSegurado;
+    @ElementCollection
+    @CollectionTable(name="Telefone_Segurado", joinColumns = @JoinColumn(name="Cod_Seguro"))
+    private List<String> telefoneDoSegurado;
     
     @Embedded
     private Endereco enderecoDoSegurado;
@@ -87,38 +94,6 @@ public class SeguroOnibus extends Persistivel implements Serializable {
     
     @Column(name = "ramo", nullable = false)
     private String ramo;
-    
-    @JoinColumn(name = "Cod_onibus", referencedColumnName = "Cod_onibus")
-    private Onibus onibus;
-
-    public SeguroOnibus(String codigoSusepDoCorretor, String codigoCpdDoCorretor, String sucursalCorretor,
-            String inspetoriaDoCorretor, String proposta, Date dataEmissao, String apolice, String sucursal,
-            String processoSusep, String codigoSusep, String cnpjSeguradora, String nomeSeguradora, String telefoneDoSegurado,
-            Endereco enderecoDoSegurado, String nomeCorretor, String cpfOuCnpjDoSegurado, String nomeDoSegurado,
-            Date dataInicioDaVigencia, Date dataFinalDaVigencia, String numeroEndosso, String ramo, Onibus onibus) {
-        this.codigoSusepDoCorretor = codigoSusepDoCorretor;
-        this.codigoCpdDoCorretor = codigoCpdDoCorretor;
-        this.sucursalCorretor = sucursalCorretor;
-        this.inspetoriaDoCorretor = inspetoriaDoCorretor;
-        this.proposta = proposta;
-        this.dataEmissao = dataEmissao;
-        this.apolice = apolice;
-        this.sucursal = sucursal;
-        this.processoSusep = processoSusep;
-        this.codigoSusep = codigoSusep;
-        this.cnpjSeguradora = cnpjSeguradora;
-        this.nomeSeguradora = nomeSeguradora;
-        this.telefoneDoSegurado = telefoneDoSegurado;
-        this.enderecoDoSegurado = enderecoDoSegurado;
-        this.nomeCorretor = nomeCorretor;
-        this.cpfOuCnpjDoSegurado = cpfOuCnpjDoSegurado;
-        this.nomeDoSegurado = nomeDoSegurado;
-        this.dataInicioDaVigencia = dataInicioDaVigencia;
-        this.dataFinalDaVigencia = dataFinalDaVigencia;
-        this.numeroEndosso = numeroEndosso;
-        this.ramo = ramo;
-        this.onibus = onibus;
-    }
     
     public SeguroOnibus() {
         
@@ -220,11 +195,11 @@ public class SeguroOnibus extends Persistivel implements Serializable {
         this.nomeSeguradora = nomeSeguradora;
     }
 
-    public List<NumeroTelefoneSegurado> getTelefoneDoSegurado() {
+    public List<String> getTelefoneDoSegurado() {
         return telefoneDoSegurado;
     }
 
-    public void setTelefoneDoSegurado(List<NumeroTelefoneSegurado> telefoneDoSegurado) {
+    public void setTelefoneDoSegurado(List<String> telefoneDoSegurado) {
         this.telefoneDoSegurado = telefoneDoSegurado;
     }
 
@@ -320,7 +295,7 @@ public class SeguroOnibus extends Persistivel implements Serializable {
         return Objects.hash(codigoSusepDoCorretor, codigoCpdDoCorretor, sucursalCorretor, inspetoriaDoCorretor,
                 proposta, dataEmissao, apolice, sucursal, processoSusep, codigoSusep, cnpjSeguradora, nomeSeguradora,
                 enderecoDoSegurado, nomeCorretor, cpfOuCnpjDoSegurado, nomeDoSegurado, dataInicioDaVigencia, dataFinalDaVigencia,
-                numeroEndosso, ramo, onibus);
+                numeroEndosso, ramo);
     }
      
 }

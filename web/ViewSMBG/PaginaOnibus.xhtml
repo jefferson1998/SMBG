@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>SMBG Onibus</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="Css.css" />
+
+    </h:head>
+    <h:body>
+        
+        <div id="faixa">
+            <h1 id="textoFaixa">SMBG</h1>
+            <h5 id="bemVindoUsuario"> Seja Bem-Vindo </h5>
+        </div>
+
+        <h:graphicImage id="menu" library="imagem" name="imgMenu.png"/>
+
+        <h:form>
+            <div id="botoes">
+                <p:commandButton value="Cadastrar" action = "#{controllerPaginaAdminitrador.irCadastrarOnibus()}"/>
+                
+                <p:commandButton value="Menu" action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/> 
+
+                <p:commandButton value="Deslogar" action="#{controllerSessaoUsuario.deslogar()}"/> 
+                
+                 
+            </div>
+        </h:form>
+        
+        <h:form>
+        <p:dataTable id="listaOnibus" value="#{controllerOnibusSMBG.listaTodos()}" var="onibus">
+
+            <p:column headerText="Chassis">
+                <h:outputText value="#{onibus.chassi}" />
+            </p:column>
+
+            <p:column headerText="Código Renavam">
+                <h:outputText value="#{onibus.codigoRenavam}" />
+            </p:column>
+
+            <p:column headerText="Placa">
+                <h:outputText value="#{onibus.placa}" />
+            </p:column>
+            
+            <p:column headerText="Modelo">
+                 <h:outputText value="#{onibus.modelo}" />
+            </p:column>
+            
+            <p:column headerText="Marca">
+                <h:outputText value="#{onibus.marca}" />
+            </p:column>
+            
+            <p:column>
+                <f:facet name="header">
+                        <h:outputText value="Ações"/>
+                </f:facet>
+                <h:commandLink value="remover" action="#{controllerOnibusSMBG.removerOnibus()}"
+                        onclick="if(!confirm('Deseja realmente remover este produto?')) {return false;}">
+                    <f:setPropertyActionListener value="#{onibus}" target="#{controllerOnibusSMBG.onibus}"/>
+                </h:commandLink>
+            </p:column>
+            
+        </p:dataTable>
+        </h:form>
+    </h:body>
+</html>

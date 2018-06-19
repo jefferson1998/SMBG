@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>SMBG Administrador</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="Css.css" />
+
+    </h:head>
+    <h:body>
+        <h:form>  
+            <p:menubar>
+                <p:menuitem value="Seja bem vindo!" url="ViewSMBG/PaginaAdmin.xhtml">
+                    <h:graphicImage id="menu" library="imagem" name="imgMenu2.png" height="30"/>
+                </p:menuitem>
+                <p:menuitem value="Funcionarios" action="#{controllerPaginaAdminitrador.irPaginaFuncionario()}" />
+                <p:menuitem value="Onibus" action="#{controllerPaginaAdminitrador.irPaginaOnibus()}"/>
+                <p:menuitem value="Rotas" action="#{controllerPaginaAdminitrador.irPaginaRota()}"/>
+
+                <f:facet name="options">
+                    <p:inputText style="margin-right:10px" placeholder="Procurar"/>
+                    <p:commandButton type="button" value="Sair" action="#{controllerSessaoUsuario.deslogar()}" />
+                </f:facet>
+            </p:menubar>
+        </h:form>
+        
+    </h:body>
+</html>
