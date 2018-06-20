@@ -1,10 +1,11 @@
 package ModelSMBG;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Reservista {
+public class Reservista implements Serializable {
 	
         @Column (name = "numeroReservista", nullable = true, length = 6)
 	private String numeroReservista;
