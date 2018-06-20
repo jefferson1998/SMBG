@@ -7,41 +7,41 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Reservista implements Serializable {
 	
-        @Column (name = "numeroReservista", nullable = true, length = 6)
+        @Column (name = "numeroReservista", length = 6)
 	private String numeroReservista;
         
-        @Column (name = "serieReservista", nullable = true, length = 2)
+        @Column (name = "serieReservista", length = 2)
 	private String serieReservista;
         
-        @Column (name = "categoriaReservista", nullable = true)
+        @Column (name = "categoriaReservista")
 	private String categoriaReservista;
 	
         public Reservista() {
             
         }
-        
-	public String getNumeroReservista() {
-		return numeroReservista;
-	}
 
-	public void setNumeroReservista(String numeroReservista) {
-		this.numeroReservista = numeroReservista;
-	}
+        public String getNumeroReservista() {
+            return numeroReservista;
+        }
 
-	public String getSerieReservista() {
-		return serieReservista;
-	}
+        public void setNumeroReservista(String numeroReservista) {
+            this.numeroReservista = numeroReservista;
+        }
 
-	public void setSerieReservista(String serieReservista) {
-		this.serieReservista = serieReservista;
-	}
+        public String getSerieReservista() {
+            return serieReservista;
+        }
 
-	public String getCategoriaReservista() {
-		return categoriaReservista;
-	}
+        public void setSerieReservista(String serieReservista) {
+            this.serieReservista = serieReservista;
+        }
 
-	public void setCategoriaReservista(String categoriaReservista) {
-		this.categoriaReservista = categoriaReservista;
-	}
+        public String getCategoriaReservista() {
+            return categoriaReservista;
+        }
+
+        public void setCategoriaReservista(String categoriaReservista) {
+            this.categoriaReservista = categoriaReservista;
+        }
 	
 }

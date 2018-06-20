@@ -1,10 +1,11 @@
 package ModelSMBG;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class CTPS {
+public class CTPS implements Serializable {
 	
         @Column (name = "numeroCTPS", nullable = true, length = 7)
 	private String numeroCTPS;
