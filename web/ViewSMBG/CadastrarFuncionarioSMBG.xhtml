@@ -135,7 +135,15 @@
                     <p:inputText class="camposFormulario" id="ValorSalarioDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.valorSalario}"/>
 
                     <p:outputLabel value="Função do Funcionário:*" for="FuncaoDaAdmissaoDoFuncionario"/>
-                    <p:inputText class="camposFormulario" id="FuncaoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>
+                    <p:selectOneRadio id="FuncaoDaAdmissaoDoFuncionario">
+                        
+                        <f:selectItem itemLabel="Motorista" itemValue="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>
+                        <f:selectItem itemLabel="Cobrador" itemValue="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>
+                        
+                    </p:selectOneRadio>
+                    
+<!--                    <p:outputLabel value="Função do Funcionário:*" for="FuncaoDaAdmissaoDoFuncionario"/>
+                    <p:inputText class="camposFormulario" id="FuncaoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>-->
 
                     <p:outputLabel value="Horas de trabalho:*" for="HorasDeTrabalhoDaAdmissaoDoFuncionario"/>
                     <p:inputText class="camposFormulario" id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.horas}"/>

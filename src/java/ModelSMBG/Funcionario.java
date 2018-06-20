@@ -11,13 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
@@ -29,8 +23,8 @@ public class Funcionario extends Persistivel implements Serializable {
     @Embedded
     private Identidade funcionarioIdentidade;
     
-    @Column(name = "cpf", nullable = false, length = 11, unique = true)
-    private String cpf;
+    @Embedded
+    private CPF cpf;
     
     @Embedded
     private Endereco funcionarioEndereco;
@@ -75,6 +69,7 @@ public class Funcionario extends Persistivel implements Serializable {
         funcionarioTitulo = new Titulo();
         funcionarioCTPS = new CTPS();
         funcionarioReservista = new Reservista();
+        cpf = new CPF();
         admissao = new Admissao();
         
     }
@@ -87,12 +82,12 @@ public class Funcionario extends Persistivel implements Serializable {
         this.funcionarioIdentidade = funcionarioIdentidade;
     }
 
-    public String getCPF() {
+    public CPF getCPF() {
         return cpf;
     }
 
-    public void setCPF(String cPF) {
-        cpf = cPF;
+    public void setCPF(CPF cpf) {
+        this.cpf = cpf;
     }
 
     public Endereco getFuncionarioEndereco() {
@@ -165,14 +160,6 @@ public class Funcionario extends Persistivel implements Serializable {
 
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getPis() {

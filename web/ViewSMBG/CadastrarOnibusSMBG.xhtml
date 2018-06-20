@@ -9,12 +9,12 @@
         <h:outputStylesheet library="css" name="Css.css" />
     </h:head>
     <h:body>
-        
+
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
-             <h:form>
+            <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                   action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/>                 
+                                 action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/>                 
             </h:form>
         </div>
 
@@ -65,14 +65,14 @@
                     <p:inputText class="camposFormulario" id="CapacidadeDoOnibus" value="#{controllerOnibusSMBG.onibus.capacidade}"/>
 
                     <h3> Opcionais </h3>
-                        <p:selectManyCheckbox id="basic" >
-                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
-                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
-                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
-                            </p:selectManyCheckbox>
-                   
+                    <p:selectManyCheckbox id="basic" >
+                        <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                        <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                        <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                    </p:selectManyCheckbox>
+
                     <p:commandButton class="menuCadastrar" value="Finalizar" action="#{controllerOnibusSMBG.cadastrarOnibus()}" onclick="PF('dlg1').show();" />
-                    
+
                     <p:dialog header="Cadastro Onibus" widgetVar="dlg1" minHeight="100">
                         <h:outputText value="Cadastro Efetuado com Sucesso" />
                     </p:dialog>   
