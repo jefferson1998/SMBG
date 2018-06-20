@@ -47,7 +47,7 @@ public class Admissao extends Persistivel implements Serializable {
     private Conta conta;
 
     public Admissao() {
-
+        conta = new Conta();
     } 
 
     public String getDataAdmissao() {

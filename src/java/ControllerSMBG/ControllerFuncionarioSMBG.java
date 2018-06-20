@@ -23,16 +23,14 @@ public class ControllerFuncionarioSMBG {
     
     Funcionario funcionario;
     FuncionarioModel funcionarioModel;
-    Admissao admissao;
     AdmissaoModel admissaoModel;
+    Admissao admissao;
     List<Funcionario> listaFuncionario;
     
      public ControllerFuncionarioSMBG() {
         funcionario =  new Funcionario();
         funcionarioModel = new FuncionarioModel();
-        admissao = new Admissao();
-        admissaoModel = new AdmissaoModel();
-        
+        admissao = funcionario.getAdmissao();
     }
 
     public Funcionario getFuncionario() {
@@ -43,20 +41,10 @@ public class ControllerFuncionarioSMBG {
         this.funcionario = funcionario;
     }
 
-    public Admissao getAdmissao() {
-        return admissao;
-    }
-
-    public void setAdmissao(Admissao admissao) {
-        this.admissao = admissao;
-    }
-    
-    
     public void cadastrarFuncionario() {
-        admissaoModel.cadastrarAdmissao(admissao);
+        
         funcionarioModel.cadastrarFuncionario(funcionario);
-        listaTodos();
-        admissao =  new Admissao();
+        admissaoModel.cadastrarAdmissao(funcionario.getAdmissao());
         listaTodos();
         funcionario =  new Funcionario();
         

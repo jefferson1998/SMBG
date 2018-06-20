@@ -15,11 +15,9 @@ public class Titulo {
         @Column (name = "secaoTitulo", nullable = true)
 	private int secaoTitulo;
 	
-	public Titulo(String numeroTitulo, int zonaTitulo, int secaoTitulo) {
-		this.numeroTitulo = numeroTitulo;
-		this.zonaTitulo = zonaTitulo;
-		this.secaoTitulo = secaoTitulo;
-	}
+	public Titulo(){
+            
+        }
 
 	public String getNumeroTitulo() {
 		return numeroTitulo;

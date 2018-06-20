@@ -69,6 +69,14 @@ public class Funcionario extends Persistivel implements Serializable {
 
     public Funcionario() {
         
+        funcionarioIdentidade = new Identidade();
+        funcionarioEndereco = new Endereco();
+        funcionarioCNH = new CNH();
+        funcionarioTitulo = new Titulo();
+        funcionarioCTPS = new CTPS();
+        funcionarioReservista = new Reservista();
+        admissao = new Admissao();
+        
     }
     
     public Identidade getFuncionarioIdentidade() {

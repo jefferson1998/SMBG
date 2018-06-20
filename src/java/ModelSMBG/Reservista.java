@@ -15,12 +15,10 @@ public class Reservista {
         @Column (name = "categoriaReservista", nullable = true)
 	private String categoriaReservista;
 	
-	public Reservista(String numeroReservista, String serieReservista, String categoriaReservista) {
-		this.numeroReservista = numeroReservista;
-		this.serieReservista = serieReservista;
-		this.categoriaReservista = categoriaReservista;
-	}
-
+        public Reservista() {
+            
+        }
+        
 	public String getNumeroReservista() {
 		return numeroReservista;
 	}

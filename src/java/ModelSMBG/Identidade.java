@@ -36,6 +36,7 @@ public class Identidade {
 	private String ufIdentidade;
 
         public Identidade() {
+                
         }
 	
 	public String getNome() {

@@ -15,12 +15,10 @@ public class CTPS {
         @Column (name = "estadoCTPS", nullable = true, length = 2)
 	private String estadoCTPS;
 	
-	public CTPS(String numeroCTPS, String serieCTPS, String estadoCTPS) {
-		this.numeroCTPS = numeroCTPS;
-		this.serieCTPS = serieCTPS;
-		this.estadoCTPS = estadoCTPS;
-	}
-
+        public CTPS() {
+            
+        }
+        
 	public String getNumeroCTPS() {
 		return numeroCTPS;
 	}

@@ -12,11 +12,10 @@ public class CNH {
         @Column (name = "categoriaCNH", nullable = true)
 	private String categoriaCNH;
 	
-	public CNH(String numeroCNH, String categoriaCNH) {
-		this.numeroCNH = numeroCNH;
-		this.categoriaCNH = categoriaCNH;
-	}
-	
+        public CNH(){
+            
+        }
+        
 	public String getNumeroCNH() {
 		return numeroCNH;
 	}
