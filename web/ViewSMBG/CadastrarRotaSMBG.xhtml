@@ -57,7 +57,20 @@
                         <p:column headerText="Modelo">
                             <h:outputText value="#{onibus.modelo}" />
                         </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                    <h:outputText value="Ações"/>
+                            </f:facet>
+                            <h:commandLink value="Adicionar" action="#{controllerRotaSMBG.rota.setOnibusQueFazemEstaRota(onibus)}"
+                                    onclick="if(!confirm('Deseja realmente adicionar este Ônibus?')) {return false;}">
+                                <f:selectItem itemValue="#{onibus}" value="#{controllerRotaSMBG.rota.onibusQueFazemEstaRota}"/>
+                            </h:commandLink>
+                         </p:column>
+                
                     </p:dataTable>
+                    
+                <br/><br/>
                     <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarRota" action="#{controllerRotaSMBG.cadastrarRota()}"/>
                 </h:form>
             </div>

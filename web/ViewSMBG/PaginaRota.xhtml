@@ -31,6 +31,42 @@
                 
             </div>
         </h:form>
+        
+        <h:form>
+            <p:dataTable id="listaOnibus" value="#{controllerRotaSMBG.listaTodos()}" var="rota">
+
+            <p:column headerText="Origem">
+                <h:outputText value="#{rota.origem}" />
+            </p:column>
+
+            <p:column headerText="Destino">
+                <h:outputText value="#{rota.destino}" />
+            </p:column>
+
+            <p:column headerText="Horário Saida">
+                <h:outputText value="#{rota.horarioSaida}" />
+            </p:column>
+            
+            <p:column headerText="Horário Previsto">
+                <h:outputText value="#{rota.horarioPrevistoDeChegada}" />
+            </p:column>
+            
+            <p:column headerText="Ônibus">
+                <h:outputText value="#{rota.onibusQueFazemEstaRota.placa}" />
+            </p:column>
+            
+            <p:column>
+                <f:facet name="header">
+                        <h:outputText value="Ações"/>
+                </f:facet>
+                <h:commandLink value="remover" action="#{controllerRotaSMBG.removerRota()}"
+                        onclick="if(!confirm('Deseja realmente remover este produto?')) {return false;}">
+                    <f:setPropertyActionListener value="#{rota}" target="#{controllerRotaSMBG.rota}"/>
+                </h:commandLink>
+            </p:column>
+            
+        </p:dataTable>
+        </h:form>
              
     </h:body>
 </html>
