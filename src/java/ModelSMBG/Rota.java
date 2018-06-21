@@ -19,41 +19,32 @@ import javax.persistence.OneToMany;
 @Table(name = "Rotas")
 @AttributeOverride(name = "id", column = @Column(name = "Cod_Rota"))
 public class Rota extends Persistivel implements Serializable {
-     
+
     @Column(name = "Origem", length = 30, nullable = false)
     private String origem;
-    
+
     @Column(name = "Destino", length = 30, nullable = false)
     private String destino;
-    
+
     @Column(name = "horarioSaida", length = 5, nullable = false)
     private String horarioSaida;
-    
+
     @Column(name = "horarioPrevisto", length = 5, nullable = false)
     private String horarioPrevistoDeChegada;
-    
+
     @ManyToOne
     @JoinColumn(name = "Cod_onibus", referencedColumnName = "Cod_Onibus")
     private Onibus OnibusQueFazemEstaRota;
-    
-    //Falta mapear esses pontos de paradas
-//    @ElementCollection
-//    @CollectionTable(name="Pontos_de_parada", joinColumns = @JoinColumn(name="Cod_Rota"))
-//    private List<Endereco> pontosDeParada;
 
-//    public Rota(String origem, String destino, String horarioSaida, String horarioPrevistoDeChegada,
-//            List<Endereco> pontosDeParada) {
-//        this.origem = origem;
-//        this.destino = destino;
-//        this.horarioSaida = horarioSaida;
-//        this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
-//        this.pontosDeParada = pontosDeParada;
-//    }
+    //Falta mapear esses pontos de paradas
+    @ElementCollection
+    @CollectionTable(name = "Pontos_de_parada", joinColumns = @JoinColumn(name = "Cod_Rota"))
+    private List<Endereco> pontosDeParada;
 
     public Rota() {
-        
+
     }
-    
+
     public String getOrigem() {
         return origem;
     }
@@ -86,14 +77,13 @@ public class Rota extends Persistivel implements Serializable {
         this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
     }
 
-//    public List<Endereco> getPontosDeParada() {
-//        return pontosDeParada;
-//    }
-//
-//    public void setPontosDeParada(List<Endereco> pontosDeParada) {
-//        this.pontosDeParada = pontosDeParada;
-//    }
+    public List<Endereco> getPontosDeParada() {
+        return pontosDeParada;
+    }
 
+    public void setPontosDeParada(List<Endereco> pontosDeParada) {
+        this.pontosDeParada = pontosDeParada;
+    }
     public Onibus getOnibusQueFazemEstaRota() {
         return OnibusQueFazemEstaRota;
     }
@@ -102,19 +92,20 @@ public class Rota extends Persistivel implements Serializable {
         this.OnibusQueFazemEstaRota = OnibusQueFazemEstaRota;
     }
 
-    
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)
+        if (this == obj) {
             return true;
-        
-        if(!(obj instanceof Rota))
+        }
+
+        if (!(obj instanceof Rota)) {
             return false;
-        
+        }
+
         Rota rota = (Rota) obj;
-        
+
         return this.origem.equals(rota.origem) && this.destino.equals(rota.destino) && this.horarioSaida.equals(rota.horarioSaida);
-        
+
     }
 
 }

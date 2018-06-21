@@ -31,7 +31,7 @@ public class Identidade implements Serializable {
 	private String naturalidade;
         
         @Column (name = "dataNascimento")
-	private Date dataDeNascimento;
+	private String dataDeNascimento;
         
         @Column (name = "ufIdentidade", nullable = false, length = 2)
 	private String ufIdentidade;
@@ -96,11 +96,11 @@ public class Identidade implements Serializable {
 		this.naturalidade = naturalidade;
 	}
 
-	public Date getDataDeNascimento() {
+	public String getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
-	public void setDataDeNascimento(Date dataDeNascimento) {
+	public void setDataDeNascimento(String dataDeNascimento) {
                 this.dataDeNascimento = dataDeNascimento;
         }
 

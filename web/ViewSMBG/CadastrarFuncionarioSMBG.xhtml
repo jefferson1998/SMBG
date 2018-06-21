@@ -16,7 +16,7 @@
             <h1 id="textoFaixa">SMBG</h1>
             <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                   action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/> 
+                                 action="#{controllerPaginaAdminitrador.irPaginaFuncionario()}"/> 
             </h:form>
         </div>
 
@@ -61,7 +61,7 @@
                     <p:inputText class="camposFormulario" id="UFIdentidadeDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.UFIdentidade}"/>
 
                     <p:outputLabel value="Número do CPF:*" for="CPFDoFuncionario"/> 
-                    <p:inputMask class="camposFormulario" id="CPFDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.CPF}" mask="999.999.999-99"/>
+                    <p:inputMask class="camposFormulario" id="CPFDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" mask="999.999.999-99"/>
 
                     <h3> DADOS DO ENDEREÇO </h3>
 
@@ -135,16 +135,13 @@
                     <p:inputText class="camposFormulario" id="ValorSalarioDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.valorSalario}"/>
 
                     <p:outputLabel value="Função do Funcionário:*" for="FuncaoDaAdmissaoDoFuncionario"/>
-                    <p:selectOneRadio id="FuncaoDaAdmissaoDoFuncionario">
+                    <p:selectOneRadio id="FuncaoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}">
                         
-                        <f:selectItem itemLabel="Motorista" itemValue="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>
-                        <f:selectItem itemLabel="Cobrador" itemValue="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>
+                        <f:selectItem itemLabel="Motorista" itemValue="Motorista"/>
+                        <f:selectItem itemLabel="Cobrador" itemValue="Cobrador"/>
                         
                     </p:selectOneRadio>
                     
-<!--                    <p:outputLabel value="Função do Funcionário:*" for="FuncaoDaAdmissaoDoFuncionario"/>
-                    <p:inputText class="camposFormulario" id="FuncaoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}"/>-->
-
                     <p:outputLabel value="Horas de trabalho:*" for="HorasDeTrabalhoDaAdmissaoDoFuncionario"/>
                     <p:inputText class="camposFormulario" id="HorasDeTrabalhoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.horas}"/>
 
@@ -167,7 +164,6 @@
                 </h:form>
             </div>
         </div>
-
 
     </h:body>
 </html>

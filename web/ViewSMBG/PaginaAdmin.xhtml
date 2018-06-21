@@ -27,7 +27,63 @@
                     <p:commandButton type="button" value="Sair" action="#{controllerSessaoUsuario.deslogar()}" />
                 </f:facet>
             </p:menubar>
+
+            <div id="tableView">
+                <p:tab title="Funcionarios" >
+                    <h:panelGrid columns="2" cellpadding="4">
+                        <f:facet name="header">
+                            <p:graphicImage library="imagem" name="motorista.png"/>
+                        </f:facet>                    
+                        <h:outputText value="Quantidade: " style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" />
+
+                        <h:outputText value="Motoristas:" style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+
+                        <h:outputText value="Cobradores:" style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+                    </h:panelGrid>
+                </p:tab>
+            </div>
+            
+            <div id="tableView2">
+                <p:tab title="Ônibus" >
+                    <h:panelGrid columns="2" cellpadding="4">
+                        <f:facet name="header">
+                            <p:graphicImage library="imagem" name="onibus.png"/>
+                        </f:facet>                    
+                        <h:outputText value="Quantidade: " style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" />
+
+                        <h:outputText value="Motoristas:" style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+
+                        <h:outputText value="Cobradores:" style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+                    </h:panelGrid>
+                </p:tab>
+            </div>
+
+            <div id="tableView3">
+                <p:tab title="Ônibus" >
+                    <h:panelGrid columns="2" cellpadding="4">
+                        <f:facet name="header">
+                            <p:graphicImage library="imagem" name="rota.png"/>
+                        </f:facet>                    
+                        <h:outputText value="Quantidade: " style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" />
+
+                        <h:outputText value="Motoristas:" style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+
+                        <h:outputText value="Cobradores:" style="font-weight: bold"/>
+                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+                    </h:panelGrid>
+                </p:tab>
+            </div>
+
+
         </h:form>
-        
+
     </h:body>
 </html>

@@ -7,11 +7,11 @@ import javax.persistence.Persistence;
 
 public class OnibusHibernate implements OnibusDAO {
 
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
         private static EntityManager em;
+        private ConexaoBancoDeDados conexao;
         
         public OnibusHibernate() {
-            em =  this.emf.createEntityManager();
+           em = (EntityManager) ConexaoBancoDeDados.getConexao();
         }
         
 	public void inserir(Onibus onibus) {
