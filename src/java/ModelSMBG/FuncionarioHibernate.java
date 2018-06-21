@@ -2,16 +2,13 @@ package ModelSMBG;
 
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 public class FuncionarioHibernate implements FuncionarioDAO {
     
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
-    private static EntityManager em;
+    private final EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     public FuncionarioHibernate() {
-        em =  this.emf.createEntityManager();
+        
     }
     
     @Override

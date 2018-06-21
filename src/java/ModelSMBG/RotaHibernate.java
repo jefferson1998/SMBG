@@ -7,11 +7,10 @@ import javax.persistence.Persistence;
 
 public class RotaHibernate implements RotaDAO{
     
-        private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
-        private static EntityManager em;
+        private final EntityManager em = GeradorDeEntityManager.getEntityManager();
 
         public RotaHibernate() {
-            em =  this.emf.createEntityManager();
+
         }
     
     

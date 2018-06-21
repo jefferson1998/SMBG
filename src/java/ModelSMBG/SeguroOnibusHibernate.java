@@ -7,8 +7,7 @@ import javax.persistence.Persistence;
 
 public class SeguroOnibusHibernate implements SeguroOnibusDAO {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
-        EntityManager em = emf.createEntityManager();
+        private final EntityManager em = GeradorDeEntityManager.getEntityManager();
     
 	@Override
 	public void inserir(SeguroOnibus seguroOnibus) {

@@ -6,9 +6,6 @@ import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -46,21 +43,6 @@ public class PrestacaoDeConta extends Persistivel implements Serializable {
     @Column(name = "valorMotorista", nullable = false)
     private double salarioDoMotorista;
  
-    public PrestacaoDeConta(Funcionario funcionario, double valorTotalArrecadadoNoDia, double valorArrecadadoDescontado,
-            double valorTotalDoCombustivel, double valorDoLitroDeCombustivel, double quantidadeDeLitrosAbastecido,
-            double valorTroco, double salarioDoCobrador, double salarioDoMotorista) {
-
-        this.funcionario = funcionario;
-        this.valorTotalArrecadadoNoDia = valorTotalArrecadadoNoDia;
-        this.valorArrecadadoDescontado = valorArrecadadoDescontado;
-        this.valorTotalDoCombustivel = valorTotalDoCombustivel;
-        this.valorDoLitroDeCombustivel = valorDoLitroDeCombustivel;
-        this.quantidadeDeLitrosAbastecido = quantidadeDeLitrosAbastecido;
-        this.valorTroco = valorTroco;
-        this.salarioDoCobrador = salarioDoCobrador;
-        this.salarioDoMotorista = salarioDoMotorista;
-    }
-
     public PrestacaoDeConta() {
 
     }

@@ -7,8 +7,6 @@ package ModelSMBG;
 
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.util.ArrayList;
 
 /**
@@ -18,8 +16,7 @@ import java.util.ArrayList;
 public class zzzTeste {
     public static void main(String[] args) {
         
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TesteSMBG");
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = GeradorDeEntityManager.getEntityManager();
 
             Admissao ad = new Admissao();
             ad.setDataAdmissao("15/05/1998");
@@ -69,6 +66,7 @@ public class zzzTeste {
             
        
             System.out.println("Persistiu Funcionario");
+            
         
         
     }
