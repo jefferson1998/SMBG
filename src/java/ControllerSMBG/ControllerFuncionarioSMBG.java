@@ -21,16 +21,14 @@ import java.util.List;
 @SessionScoped
 public class ControllerFuncionarioSMBG {
     
-    Funcionario funcionario;
-    FuncionarioModel funcionarioModel;
-    AdmissaoModel admissaoModel;
-    Admissao admissao;
-    List<Funcionario> listaFuncionario;
+    private Funcionario funcionario;
+    private FuncionarioModel funcionarioModel;
+    private AdmissaoModel admissaoModel;
+    private List<Funcionario> listaFuncionario;
     
      public ControllerFuncionarioSMBG() {
         funcionario =  new Funcionario();
         funcionarioModel = new FuncionarioModel();
-        admissao = funcionario.getAdmissao();
     }
 
     public Funcionario getFuncionario() {
