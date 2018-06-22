@@ -15,14 +15,16 @@ import javax.persistence.Persistence;
  */
 public class GeradorDeEntityManager {
     
-    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TesteSMBG");
+    private static EntityManagerFactory entityManagerFactory;
     private static EntityManager entityManager;
     
     public static EntityManager getEntityManager() {
-        if(entityManager == null) {
-            entityManager = entityManagerFactory.createEntityManager();
+        if(entityManagerFactory == null) {
+            entityManagerFactory = Persistence.createEntityManagerFactory("TesteSMBG");
         }
-        return entityManager;
+        return entityManagerFactory.createEntityManager();
     }
+    
+    
 
 }

@@ -1,6 +1,7 @@
 package ModelSMBG;
 
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Objects;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.Column;
 @Entity
 @Table(name = "Onibus")
 @AttributeOverride(name = "id", column = @Column(name = "Cod_Onibus"))
-public class Onibus extends Persistivel implements Serializable  {
+public class Onibus extends Persistivel implements Serializable, Comparable<Onibus> {
 
     @Column(name = "codigoRenavam", length = 11, nullable = false)
     private String codigoRenavam;
@@ -196,6 +197,16 @@ public class Onibus extends Persistivel implements Serializable  {
     public void setDirecaoEletrica(boolean direcaoEletrica) {
         this.direcaoEletrica = direcaoEletrica;
     }
+    
+    @Override
+    public int compareTo(Onibus onibus) {
+        if(this.ano > onibus.ano) {
+            return 1;
+        } else if (this.ano < onibus.ano) {
+            return -1;
+        }
+        return 0;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -214,4 +225,5 @@ public class Onibus extends Persistivel implements Serializable  {
         return Objects.hash(codigoRenavam, chassi, ano, placa, ano, modelo, marca, tipo, combustivel, 
                 numeroDePortas, numeroDeEixos, capacidade);
     }
+
 }

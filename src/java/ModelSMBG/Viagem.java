@@ -2,7 +2,6 @@ package ModelSMBG;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Entity;
@@ -10,14 +9,13 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 @Entity
 @Table(name = "Viagem")
 @AttributeOverride(name = "id", column = @Column(name = "Cod_Viagem"))
-public class Viagem extends Persistivel implements Serializable {
+public class Viagem extends Persistivel implements Serializable, Comparable<Viagem> {
     
     @JoinColumn(name = "Cod_Motorista", referencedColumnName = "Cod_funcionario")
     @OneToOne(fetch = FetchType.EAGER)
@@ -118,8 +116,13 @@ public class Viagem extends Persistivel implements Serializable {
     }
     
     @Override
+    public int compareTo(Viagem viagem) {
+        return 0;
+    }
+    
+    @Override
     public int hashCode() {
         return Objects.hash(onibus, rota, data, diaDaSemana);
     }
-     
+
 }

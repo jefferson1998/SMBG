@@ -15,10 +15,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 
-@Entity 
+@Entity
 @Table(name = "Funcionario")
-@AttributeOverride(name = "id", column = @Column(name="Cod_Funcionario"))
-public class Funcionario extends Persistivel implements Serializable {
+@AttributeOverride(name = "id", column = @Column(name = "Cod_Funcionario"))
+public class Funcionario extends Persistivel implements Serializable, Comparable<Funcionario> {
     
     @Embedded
     private Identidade funcionarioIdentidade;
@@ -179,6 +179,17 @@ public class Funcionario extends Persistivel implements Serializable {
     }
     
     @Override
+    public int compareTo(Funcionario funcionario) {
+        if(this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome()) > 0) {
+            return 1;
+        } else if(this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome()) < 0) {
+            return -1;
+        }
+        
+        return 0;
+    }
+    
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -199,4 +210,6 @@ public class Funcionario extends Persistivel implements Serializable {
                 funcionarioIdentidade.getOrgaoEmissor(), funcionarioIdentidade.getNomeDaMae(),
                 funcionarioIdentidade.getUFIdentidade() ,funcionarioEndereco);
     }
+
+    
 }

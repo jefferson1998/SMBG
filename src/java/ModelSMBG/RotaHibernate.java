@@ -23,20 +23,22 @@ public class RotaHibernate implements RotaDAO{
 
 	@Override
 	public void atualizar(Rota rota) {
-		// TODO Auto-generated method stub
-		
+            em.getTransaction().begin();
+            em.merge(rota);
+            em.getTransaction().commit();
 	}
 
 	@Override
 	public void deletar(Rota rota) {
-		// TODO Auto-generated method stub
-		
+		em.getTransaction().begin();
+                em.remove(rota);
+                em.getTransaction().commit();
 	}
 
 	@Override
 	public List<Rota> listarTodos() {
-		// TODO Auto-generated method stub
-		return null;
+            
+		return em.createQuery("from Rota").getResultList();
 	}
 
 	public List<Rota> buscarPelaOrigem(String origem) {

@@ -22,7 +22,7 @@ import javax.persistence.Temporal;
 @Entity
 @Table(name = "Seguro")
 @AttributeOverride(name = "id", column = @Column(name = "Cod_Seguro"))
-public class SeguroOnibus extends Persistivel implements Serializable {
+public class SeguroOnibus extends Persistivel implements Serializable, Comparable<SeguroOnibus> {
 
     @ManyToOne
     @JoinColumn(name = "Cod_onibus", referencedColumnName = "Cod_Onibus")
@@ -273,6 +273,16 @@ public class SeguroOnibus extends Persistivel implements Serializable {
 
     public void setOnibus(Onibus onibus) {
         this.onibus = onibus;
+    }
+    
+    @Override
+    public int compareTo(SeguroOnibus seguroOnibus) {
+        if(this.nomeDoSegurado.compareTo(seguroOnibus.nomeDoSegurado) > 0) {
+            return 1;
+        } else if (this.nomeDoSegurado.compareTo(seguroOnibus.nomeDoSegurado) < 0) {
+            return -1;
+        }
+        return 0;
     }
 
     @Override

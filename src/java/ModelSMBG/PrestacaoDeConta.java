@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PrestacaoDeConta")
-@AttributeOverride(name = "id", column = @Column(name="Cod_Prestacacao"))
+@AttributeOverride(name = "id", column = @Column(name = "Cod_Prestacacao"))
 public class PrestacaoDeConta extends Persistivel implements Serializable {
 
     @JoinColumn(name = "Cod_Funcionario", referencedColumnName = "Cod_Funcionario")
