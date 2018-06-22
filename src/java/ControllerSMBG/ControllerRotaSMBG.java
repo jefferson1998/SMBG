@@ -7,6 +7,7 @@ package ControllerSMBG;
 
 import ModelSMBG.Rota;
 import ModelSMBG.RotaModel;
+import java.util.Collections;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
@@ -54,9 +55,18 @@ public class ControllerRotaSMBG {
         
     }
     
+    public void atualizarRota() {
+        
+       rotaModel.atualizarRota(rota);
+       listaTodos();
+       rota =  new Rota();
+        
+    }
+    
     public List<Rota> listaTodos() {
         rotaModel = new RotaModel();
         listaRota = rotaModel.listarTodasAsRotas();
+         Collections.sort(listaRota);
         return listaRota;
         
     }

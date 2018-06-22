@@ -3,6 +3,7 @@ package ControllerSMBG;
 import ModelSMBG.Onibus;
 import ModelSMBG.OnibusModel;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -35,16 +36,23 @@ public class ControllerOnibusSMBG {
         onibus = new Onibus();
     }
     
-    public List<Onibus> listaTodos(){
-        onibusModel = new OnibusModel();
-        listaOnibus = onibusModel.listarTodosOsOnibus();
-        return listaOnibus;
+    public void alterarOnibus() {
+        onibusModel.atualizarOnibus(onibus);
+        listaTodos();
+        onibus = new Onibus();
     }
     
     public void removerOnibus() {
         onibusModel.removerOnibus(onibus);
         listaTodos();
         onibus = new Onibus();
+    }
+    
+    public List<Onibus> listaTodos(){
+        onibusModel = new OnibusModel();
+        listaOnibus = onibusModel.listarTodosOsOnibus();
+        Collections.sort(listaOnibus);
+        return listaOnibus;
     }
     
     

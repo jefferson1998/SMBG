@@ -4,6 +4,7 @@ import ModelSMBG.Onibus;
 import ModelSMBG.OnibusModel;
 import ModelSMBG.SeguroOnibus;
 import ModelSMBG.SeguroOnibusModel;
+import java.util.Collections;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -41,6 +42,7 @@ public class ControllerSeguroOnibusSMBG {
     public List<SeguroOnibus> listaTodos(){
         seguroModel = new SeguroOnibusModel();
         listaSeguro = seguroModel.listarTodoOsSegurosDosOnibus();
+        Collections.sort(listaSeguro);
         return listaSeguro;
     }
     

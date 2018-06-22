@@ -5,10 +5,10 @@
  */
 package ControllerSMBG;
 
-import ModelSMBG.Admissao;
 import ModelSMBG.AdmissaoModel;
 import ModelSMBG.Funcionario;
 import ModelSMBG.FuncionarioModel;
+import java.util.Collections;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
@@ -58,16 +58,35 @@ public class ControllerFuncionarioSMBG {
     public List<Funcionario> listaTodos() {
         funcionarioModel = new FuncionarioModel();
         listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
+        Collections.sort(listaFuncionario);
         funcionario =  new Funcionario();
         return listaFuncionario;
         
     }
     
     
-    public void cadastrarAdmissao() {
-        
-      
-        
+    public int totalDeMotoristas() {
+        funcionarioModel = new FuncionarioModel();
+        listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
+        int contador = 0;
+        for(int i = 0; i < listaFuncionario.size(); i++) {
+            if(listaFuncionario.get(i).getAdmissao().getFuncao().equals("Motorista")) {
+                contador ++;
+            }
+        }
+        return contador;
+    }
+    
+    public int totalDeCobradores() {
+        funcionarioModel = new FuncionarioModel();
+        listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
+        int contador = 0;
+        for(int i = 0; i < listaFuncionario.size(); i++) {
+            if(listaFuncionario.get(i).getAdmissao().getFuncao().equals("Cobrador")) {
+                contador ++;
+            }
+        }
+        return contador;
     }
     
 }
