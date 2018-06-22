@@ -33,9 +33,13 @@
             </div>
         </h:form>
         
-        <h:form>
-        <p:dataTable id="listaOnibus" value="#{controllerOnibusSMBG.listaTodos()}" var="onibus">
+        <h:form id="listaOnibus">
+        <p:dataTable id="dtOnibus" value="#{controllerOnibusSMBG.listaTodos()}" var="onibus">
 
+            <p:column headerText="Ano">
+                <h:outputText value="#{onibus.ano}" />
+            </p:column>
+            
             <p:column headerText="Chassis">
                 <h:outputText value="#{onibus.chassi}" />
             </p:column>
@@ -60,13 +64,78 @@
                 <f:facet name="header">
                         <h:outputText value="Ações"/>
                 </f:facet>
-                <h:commandLink value="remover" action="#{controllerOnibusSMBG.removerOnibus()}"
+                <h:commandLink value="Remover" action="#{controllerOnibusSMBG.removerOnibus()}"
                         onclick="if(!confirm('Deseja realmente remover este produto?')) {return false;}">
                     <f:setPropertyActionListener value="#{onibus}" target="#{controllerOnibusSMBG.onibus}"/>
                 </h:commandLink>
+                
+            <br/>
+                <p:commandLink value="Editar" oncomplete="PF('alterarOnibusDialog').show()" update=":listaOnibus:dialogAlterar">
+                    <f:setPropertyActionListener value="#{onibus}" target="#{controllerOnibusSMBG.onibus}"/>
+                </p:commandLink>
             </p:column>
             
         </p:dataTable>
+            
+            <p:dialog id="dialogAlterar" header="Alterar Onibus" widgetVar="alterarOnibusDialog" modal="true" height="100">
+                        <h:panelGrid columns="2" >
+                            <h:outputLabel value="Código Renavam" for="codigoRenavam" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.codigoRenavam}" id="codigoRenavam" />
+                            
+                            <h:outputLabel value="Chassis" for="chassis" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.chassi}" id="chassis" />
+                            
+                            <h:outputLabel value="Ano" for="ano" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.ano}" id="ano" />
+                            
+                            <h:outputLabel value="Placa" for="placa" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.placa}" id="placa" />
+                            
+                            <h:outputLabel value="Marca" for="marca" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.marca}" id="marca" />
+                            
+                            <h:outputLabel value="Combustível" for="combustivel" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.combustivel}" id="combustivel" />
+                            
+                            <h:outputLabel value="Número de Eixos" for="numeroEixos" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.numeroDeEixos}" id="numeroEixos" />
+                            
+                            <h:outputLabel value="Número de Portas" for="numeroPortas" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.numeroDePortas}" id="numeroPortas" />
+                            
+                            <h:outputLabel value="Modelo" for="modelo" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.modelo}" id="modelo" />
+                            
+                            <h:outputLabel value="Capacidade" for="capacidade" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.capacidade}" id="capacidade" />
+                            
+                            <h:outputLabel value="Tipo" for="tipo" />
+                            <h:inputText value="#{controllerOnibusSMBG.onibus.tipo}" id="tipo" />
+                            
+                            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        
+                                <p:outputLabel for="@next" value="Ar-Condicionado: " />
+                                <p:selectBooleanCheckbox value="#{controllerOnibusSMBG.onibus.arCondicionado}" />
+
+                                <p:outputLabel for="@next" value="Cambio automatico: " />
+                                <p:selectBooleanCheckbox value="#{controllerOnibusSMBG.onibus.cambioAutomatico}" />
+
+                                <p:outputLabel for="@next" value="Direção Eletrica: " />
+                                <p:selectBooleanCheckbox value="#{controllerOnibusSMBG.onibus.direcaoEletrica}" />
+
+                                <p:outputLabel for="@next" value="Direção Hidráulica: " />
+                                <p:selectBooleanCheckbox value="#{controllerOnibusSMBG.onibus.direcaoHidraulica}" />
+
+                                <p:outputLabel for="@next" value="Freio ABS: " />
+                                <p:selectBooleanCheckbox value="#{controllerOnibusSMBG.onibus.freioABS}" />
+                        
+                            </h:panelGrid>
+                            
+                        </h:panelGrid>
+                
+                <h:commandButton value="Alterar" action="#{controllerOnibusSMBG.alterarOnibus()}" />
+                
+            </p:dialog>
         </h:form>
     </h:body>
 </html>

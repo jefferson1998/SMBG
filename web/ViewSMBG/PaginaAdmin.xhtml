@@ -35,13 +35,13 @@
                             <p:graphicImage library="imagem" name="motorista.png"/>
                         </f:facet>                    
                         <h:outputText value="Quantidade: " style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" />
+                        <p:outputLabel value="#{controllerFuncionarioSMBG.listaTodos().size()}" />
 
                         <h:outputText value="Motoristas:" style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+                        <h:outputLabel value="#{controllerFuncionarioSMBG.totalDeMotoristas()}" />
 
                         <h:outputText value="Cobradores:" style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
+                        <h:outputLabel value="#{controllerFuncionarioSMBG.totalDeCobradores()}" />
                     </h:panelGrid>
                 </p:tab>
             </div>
@@ -53,7 +53,7 @@
                             <p:graphicImage library="imagem" name="onibus.png"/>
                         </f:facet>                    
                         <h:outputText value="Quantidade: " style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" />
+                        <h:outputText value="#{controllerOnibusSMBG.listaTodos().size()}" />
 
                         <h:outputText value="Motoristas:" style="font-weight: bold"/>
                         <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
@@ -65,13 +65,13 @@
             </div>
 
             <div id="tableView3">
-                <p:tab title="Ônibus" >
+                <p:tab title="Rotas" >
                     <h:panelGrid columns="2" cellpadding="4">
                         <f:facet name="header">
                             <p:graphicImage library="imagem" name="rota.png"/>
                         </f:facet>                    
                         <h:outputText value="Quantidade: " style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.CPF.cpf}" />
+                        <h:outputText value="#{controllerRotaSMBG.listaTodos().size()}" />
 
                         <h:outputText value="Motoristas:" style="font-weight: bold"/>
                         <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
