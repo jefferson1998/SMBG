@@ -1,6 +1,9 @@
 package ModelSMBG;
 
+import java.sql.SQLException;
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 
 public class OnibusHibernate implements OnibusDAO {
@@ -12,24 +15,36 @@ public class OnibusHibernate implements OnibusDAO {
         }
         
         @Override
-	public void inserir(Onibus onibus) {
-            em.getTransaction().begin();
-            em.persist(onibus);
-            em.getTransaction().commit();
+	public void inserir(Onibus onibus){
+            FacesContext context = FacesContext.getCurrentInstance();
+            
+                em.getTransaction().begin();
+                em.persist(onibus);
+                em.getTransaction().commit();
+                context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
+                
 	}
 
         @Override
 	public void atualizar(Onibus onibus) {
+            FacesContext context = FacesContext.getCurrentInstance();
+            
             em.getTransaction().begin();
             em.merge(onibus);
             em.getTransaction().commit();
+            
+            context.addMessage(null, new FacesMessage("Alteração Efetuada!"));
 	}
 
 	@Override
 	public void deletar(Onibus onibus) {
+            FacesContext context = FacesContext.getCurrentInstance();
+            
             em.getTransaction().begin();
             em.remove(onibus);
             em.getTransaction().commit();
+            
+            context.addMessage(null, new FacesMessage("Remoção Efetuada!"));
 		
 	}
 

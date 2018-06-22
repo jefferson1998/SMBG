@@ -19,6 +19,12 @@ public class CTPS implements Serializable {
         public CTPS() {
             
         }
+
+        public CTPS(String numeroCTPS, String serieCTPS, String estadoCTPS) {
+            this.numeroCTPS = numeroCTPS;
+            this.serieCTPS = serieCTPS;
+            this.estadoCTPS = estadoCTPS;
+        }
         
 	public String getNumeroCTPS() {
 		return numeroCTPS;

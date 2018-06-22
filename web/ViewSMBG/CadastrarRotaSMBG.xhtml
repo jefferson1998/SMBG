@@ -29,19 +29,21 @@
                 <br/>
 
                 <h:form>
+                    <p:growl id="growl" showDetail="true" sticky="true" /> 
+                    
                     <h3> DADOS DA ROTA </h3>
 
                     <p:outputLabel value="Origem da rota:*" for="OrigemDaRota" />
-                    <p:inputText class="camposFormulario" id="OrigemDaRota" value="#{controllerRotaSMBG.rota.origem}"/>
+                    <p:inputText class="camposFormulario" id="OrigemDaRota" value="#{controllerRotaSMBG.rota.origem}" required="true"/>
 
                     <p:outputLabel value="Destino da rota:*" for="DestinoDaRota" />
-                    <p:inputText class="camposFormulario" id="DestinoDaRota" value="#{controllerRotaSMBG.rota.destino}"/>
+                    <p:inputText class="camposFormulario" id="DestinoDaRota" value="#{controllerRotaSMBG.rota.destino}" required="true"/>
 
                     <p:outputLabel value="Hórario de Saída:*" for="HorarioDeSaidaDaRota" />
-                    <p:inputMask class="camposFormulario" id="HorarioDeSaidaDaRota" value="#{controllerRotaSMBG.rota.horarioSaida}"  mask="99:99"/>
+                    <p:inputMask class="camposFormulario" id="HorarioDeSaidaDaRota" value="#{controllerRotaSMBG.rota.horarioSaida}"  mask="99:99" required="true" />
 
                     <p:outputLabel value="Hórario Previsto de Chegada:*" for="HorarioPrevistoDeChegadaDaDaRota" />
-                    <p:inputMask class="camposFormulario" id="HorarioPrevistoDeChegadaDaDaRota" value="#{controllerRotaSMBG.rota.horarioPrevistoDeChegada}" mask="99:99"/>
+                    <p:inputMask class="camposFormulario" id="HorarioPrevistoDeChegadaDaDaRota" value="#{controllerRotaSMBG.rota.horarioPrevistoDeChegada}" mask="99:99" required="true"/>
 
                 <br/><br/><br/><br/>
                     <p:dataTable id="listaOnibus" value="#{controllerOnibusSMBG.listaTodos()}" var="onibus">
@@ -62,7 +64,7 @@
                             <f:facet name="header">
                                     <h:outputText value="Ações"/>
                             </f:facet>
-                            <h:commandLink value="Adicionar" action="#{controllerRotaSMBG.rota.setOnibusQueFazemEstaRota(onibus)}"
+                            <h:commandLink value="Adicionar" action="#{controllerRotaSMBG.rota.setOnibusQueFazemEstaRota(onibus)}" 
                                     onclick="if(!confirm('Deseja realmente adicionar este Ônibus?')) {return false;}">
                                 <f:selectItem itemValue="#{onibus}" value="#{controllerRotaSMBG.rota.onibusQueFazemEstaRota}"/>
                             </h:commandLink>
@@ -71,7 +73,7 @@
                     </p:dataTable>
                     
                 <br/><br/>
-                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarRota" action="#{controllerRotaSMBG.cadastrarRota()}"/>
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarRota" actionListener="#{controllerRotaSMBG.cadastrarRota()}" update="growl"/>
                 </h:form>
             </div>
         </div>

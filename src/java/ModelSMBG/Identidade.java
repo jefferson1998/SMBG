@@ -39,6 +39,18 @@ public class Identidade implements Serializable {
         public Identidade() {
                 
         }
+
+        public Identidade(String nome, String numeroIdentidade, String orgaoEmissor, String dataDeEmissao, String nomeDoPai, String nomeDaMae, String naturalidade, String dataDeNascimento, String ufIdentidade) {
+            this.nome = nome;
+            this.numeroIdentidade = numeroIdentidade;
+            this.orgaoEmissor = orgaoEmissor;
+            this.dataDeEmissao = dataDeEmissao;
+            this.nomeDoPai = nomeDoPai;
+            this.nomeDaMae = nomeDaMae;
+            this.naturalidade = naturalidade;
+            this.dataDeNascimento = dataDeNascimento;
+            this.ufIdentidade = ufIdentidade;
+        }
 	
 	public String getNome() {
 		return nome;

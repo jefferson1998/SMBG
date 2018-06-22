@@ -33,6 +33,9 @@
         </h:form>
 
         <h:form id="listaRota">
+            
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
+            
             <p:dataTable id="dtRota" value="#{controllerRotaSMBG.listaTodos()}" var="rota">
 
                 <p:column headerText="Origem">
@@ -93,7 +96,7 @@
                             <h:inputText value="#{controllerRotaSMBG.rota.horarioPrevistoDeChegada}" id="horarioPrevistoDeChegada" />
                             
                         </h:panelGrid>
-                    <h:commandButton value="Alterar" action="#{controllerRotaSMBG.atualizarRota()}" />
+                    <h:commandButton value="Alterar" actionListener="#{controllerRotaSMBG.atualizarRota()}" />
                 </p:dialog>
             
         </h:form>

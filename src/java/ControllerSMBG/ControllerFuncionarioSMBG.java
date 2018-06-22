@@ -23,7 +23,6 @@ public class ControllerFuncionarioSMBG {
     
     private Funcionario funcionario;
     private FuncionarioModel funcionarioModel;
-    private AdmissaoModel admissaoModel;
     private List<Funcionario> listaFuncionario;
     
      public ControllerFuncionarioSMBG() {
@@ -42,7 +41,6 @@ public class ControllerFuncionarioSMBG {
     public void cadastrarFuncionario() {
         
         funcionarioModel.cadastrarFuncionario(funcionario);
-        admissaoModel.cadastrarAdmissao(funcionario.getAdmissao());
         listaTodos();
         funcionario =  new Funcionario();
         

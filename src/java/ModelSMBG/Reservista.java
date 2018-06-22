@@ -15,7 +15,13 @@ public class Reservista implements Serializable {
         
         @Column (name = "categoriaReservista")
 	private String categoriaReservista;
-	
+
+        public Reservista(String numeroReservista, String serieReservista, String categoriaReservista) {
+            this.numeroReservista = numeroReservista;
+            this.serieReservista = serieReservista;
+            this.categoriaReservista = categoriaReservista;
+        }
+        
         public Reservista() {
             
         }

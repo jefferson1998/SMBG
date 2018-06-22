@@ -30,7 +30,12 @@ public class PontosDeParada extends Persistivel implements Serializable{
 
     @ManyToMany(mappedBy = "pontosDeParada")
     private List<Rota> rotas;
-    
+
+    public PontosDeParada(String rua, String bairro, List<Rota> rotas) {
+        this.rua = rua;
+        this.bairro = bairro;
+        this.rotas = rotas;
+    }
     
     public PontosDeParada() {
     }

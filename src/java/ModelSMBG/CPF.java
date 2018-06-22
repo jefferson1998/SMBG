@@ -25,6 +25,10 @@ public class CPF implements Serializable{
         
     }
 
+    public CPF(String cpf) {
+        this.cpf = cpf;
+    }
+    
     public String getCpf() {
         return cpf;
     }

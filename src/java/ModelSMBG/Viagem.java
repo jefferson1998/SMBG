@@ -40,6 +40,15 @@ public class Viagem extends Persistivel implements Serializable, Comparable<Viag
     @Column(name="diaDaSemana", length = 12, nullable = false)
     private String diaDaSemana;
 
+    public Viagem(Funcionario funcionarioMotorista, Funcionario funcionarioCobrador, Onibus onibus, Rota rota, Date data, String diaDaSemana) {
+        this.funcionarioMotorista = funcionarioMotorista;
+        this.funcionarioCobrador = funcionarioCobrador;
+        this.onibus = onibus;
+        this.rota = rota;
+        this.data = data;
+        this.diaDaSemana = diaDaSemana;
+    }
+
     public Viagem() {
         
     }
@@ -104,11 +113,9 @@ public class Viagem extends Persistivel implements Serializable, Comparable<Viag
         
         Viagem viagem = (Viagem) obj;
         
-//        for(int i = 0; i < this.listaDeFuncionarios.size(); i++) {
-//            if(this.listaDeFuncionarios.get(i).getCPF().equals(viagem.getListaDeFuncionarios().get(i).getCPF())){
-//                return true;
-//            }
-//        }
+        if(this.funcionarioMotorista.getCPF().equals(viagem.funcionarioMotorista.getCPF())){
+                return true;
+        }
         
         return this.data.equals(viagem.data)
                 && this.onibus.getPlaca().equals(viagem.onibus.getPlaca())

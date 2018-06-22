@@ -16,6 +16,11 @@ public class CNH implements Serializable {
         public CNH(){
             
         }
+
+        public CNH(String numeroCNH, String categoriaCNH) {
+            this.numeroCNH = numeroCNH;
+            this.categoriaCNH = categoriaCNH;
+        }
         
 	public String getNumeroCNH() {
 		return numeroCNH;

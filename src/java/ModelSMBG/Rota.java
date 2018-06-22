@@ -44,6 +44,15 @@ public class Rota extends Persistivel implements Serializable, Comparable<Rota> 
 
     }
 
+    public Rota(String origem, String destino, String horarioSaida, String horarioPrevistoDeChegada, Onibus OnibusQueFazemEstaRota, List<PontosDeParada> pontosDeParada) {
+        this.origem = origem;
+        this.destino = destino;
+        this.horarioSaida = horarioSaida;
+        this.horarioPrevistoDeChegada = horarioPrevistoDeChegada;
+        this.OnibusQueFazemEstaRota = OnibusQueFazemEstaRota;
+        this.pontosDeParada = pontosDeParada;
+    }
+    
     public String getOrigem() {
         return origem;
     }

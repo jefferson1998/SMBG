@@ -73,6 +73,21 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         admissao = new Admissao();
         
     }
+
+    public Funcionario(Identidade funcionarioIdentidade, CPF cpf, Endereco funcionarioEndereco, CNH funcionarioCNH, String pis, Titulo funcionarioTitulo, CTPS funcionarioCTPS, Reservista funcionarioReservista, List<String> emailFuncionario, List<String> numeroTelefoneFuncionario, String estadoCivil, Admissao admissao) {
+        this.funcionarioIdentidade = funcionarioIdentidade;
+        this.cpf = cpf;
+        this.funcionarioEndereco = funcionarioEndereco;
+        this.funcionarioCNH = funcionarioCNH;
+        this.pis = pis;
+        this.funcionarioTitulo = funcionarioTitulo;
+        this.funcionarioCTPS = funcionarioCTPS;
+        this.funcionarioReservista = funcionarioReservista;
+        this.emailFuncionario = emailFuncionario;
+        this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
+        this.estadoCivil = estadoCivil;
+        this.admissao = admissao;
+    }
     
     public Identidade getFuncionarioIdentidade() {
         return funcionarioIdentidade;

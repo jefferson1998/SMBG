@@ -15,7 +15,13 @@ public class Titulo implements Serializable {
         
         @Column (name = "secaoTitulo", nullable = true)
 	private int secaoTitulo;
-	
+
+        public Titulo(String numeroTitulo, int zonaTitulo, int secaoTitulo) {
+            this.numeroTitulo = numeroTitulo;
+            this.zonaTitulo = zonaTitulo;
+            this.secaoTitulo = secaoTitulo;
+        }
+        
 	public Titulo(){
             
         }

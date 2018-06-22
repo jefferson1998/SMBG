@@ -17,6 +17,11 @@ public class Conta implements Serializable {
             
         }
 
+        public Conta(String numeroAgencia, String numeroConta) {
+            this.numeroAgencia = numeroAgencia;
+            this.numeroConta = numeroConta;
+        }
+
 	public String getNumeroAgencia() {
 		return numeroAgencia;
 	}

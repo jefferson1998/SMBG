@@ -34,6 +34,7 @@
         </h:form>
         
         <h:form id="listaOnibus">
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
         <p:dataTable id="dtOnibus" value="#{controllerOnibusSMBG.listaTodos()}" var="onibus">
 
             <p:column headerText="Ano">
@@ -133,7 +134,7 @@
                             
                         </h:panelGrid>
                 
-                <h:commandButton value="Alterar" action="#{controllerOnibusSMBG.alterarOnibus()}" />
+                <h:commandButton value="Alterar" actionListener="#{controllerOnibusSMBG.alterarOnibus()}" />
                 
             </p:dialog>
         </h:form>

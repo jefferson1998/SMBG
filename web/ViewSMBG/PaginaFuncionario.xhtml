@@ -33,6 +33,8 @@
         </h:form>
         
         <h:form>
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
+            
             <p:dataTable id="listaOnibus" value="#{controllerFuncionarioSMBG.listaTodos()}" var="funcionario">
             <p:column headerText="Nome">
                 <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
