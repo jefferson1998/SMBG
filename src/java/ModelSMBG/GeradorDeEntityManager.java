@@ -25,6 +25,8 @@ public class GeradorDeEntityManager {
         return entityManagerFactory.createEntityManager();
     }
     
-    
+    public static void fecharEntityManager(EntityManager em) {
+        em.close();
+    }
 
 }

@@ -65,25 +65,6 @@ public class Onibus extends Persistivel implements Serializable, Comparable<Onib
         
     }
 
-    public Onibus(String codigoRenavam, String chassi, String placa, int ano, String modelo, String marca, String tipo, double combustivel, int numeroDePortas, int numeroDeEixos, int capacidade, boolean arCondicionado, boolean direcaoHidraulica, boolean freioABS, boolean cambioAutomatico, boolean direcaoEletrica) {
-        this.codigoRenavam = codigoRenavam;
-        this.chassi = chassi;
-        this.placa = placa;
-        this.ano = ano;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.tipo = tipo;
-        this.combustivel = combustivel;
-        this.numeroDePortas = numeroDePortas;
-        this.numeroDeEixos = numeroDeEixos;
-        this.capacidade = capacidade;
-        this.arCondicionado = arCondicionado;
-        this.direcaoHidraulica = direcaoHidraulica;
-        this.freioABS = freioABS;
-        this.cambioAutomatico = cambioAutomatico;
-        this.direcaoEletrica = direcaoEletrica;
-    }
-
     public Onibus(int i, String teste) {
        id = i;
        chassi = teste;

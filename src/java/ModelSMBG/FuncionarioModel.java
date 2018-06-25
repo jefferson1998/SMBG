@@ -1,10 +1,15 @@
 package ModelSMBG;
 
 import java.util.List;
+import javax.persistence.EntityManager;
 
 public class FuncionarioModel {
 
-	private FuncionarioDAO daoFuncionario = new FuncionarioHibernate();
+	private FuncionarioDAO daoFuncionario;
+        
+        public FuncionarioModel(EntityManager em){
+            this.daoFuncionario = new FuncionarioHibernate(em);
+        }
 
 	public void cadastrarFuncionario(Funcionario funcionario) {
             daoFuncionario.inserir(funcionario);

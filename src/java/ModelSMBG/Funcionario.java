@@ -14,46 +14,45 @@ import javax.persistence.Embedded;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-
 @Entity
 @Table(name = "Funcionario")
 @AttributeOverride(name = "id", column = @Column(name = "Cod_Funcionario"))
 public class Funcionario extends Persistivel implements Serializable, Comparable<Funcionario> {
-    
+
     @Embedded
     private Identidade funcionarioIdentidade;
-    
+
     @Embedded
     private CPF cpf;
-    
+
     @Embedded
     private Endereco funcionarioEndereco;
-    
+
     @Embedded
     private CNH funcionarioCNH;
-    
+
     @Column(name = "pis", nullable = true, unique = false)
     private String pis;
-    
+
     @Embedded
     private Titulo funcionarioTitulo;
-    
+
     @Embedded
     private CTPS funcionarioCTPS;
-    
+
     @Embedded
     private Reservista funcionarioReservista;
-     
+
     @ElementCollection
-    @CollectionTable(name="email_Funcionario", joinColumns = @JoinColumn(name="Cod_Funcionario"))
-    @Column (name = "email_funcionario")
+    @CollectionTable(name = "email_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
+    @Column(name = "email_funcionario")
     private List<String> emailFuncionario;
-    
+
     @ElementCollection
-    @CollectionTable(name="telefone_Funcionario", joinColumns = @JoinColumn(name="Cod_Funcionario"))
-    @Column (name = "telefone")
+    @CollectionTable(name = "telefone_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
+    @Column(name = "telefone")
     private List<String> numeroTelefoneFuncionario;
-    
+
     @Column(name = "estadoCivil")
     private String estadoCivil;
 
@@ -62,7 +61,7 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
     private Admissao admissao;
 
     public Funcionario() {
-        
+
         funcionarioIdentidade = new Identidade();
         funcionarioEndereco = new Endereco();
         funcionarioCNH = new CNH();
@@ -71,24 +70,9 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         funcionarioReservista = new Reservista();
         cpf = new CPF();
         admissao = new Admissao();
-        
+
     }
 
-    public Funcionario(Identidade funcionarioIdentidade, CPF cpf, Endereco funcionarioEndereco, CNH funcionarioCNH, String pis, Titulo funcionarioTitulo, CTPS funcionarioCTPS, Reservista funcionarioReservista, List<String> emailFuncionario, List<String> numeroTelefoneFuncionario, String estadoCivil, Admissao admissao) {
-        this.funcionarioIdentidade = funcionarioIdentidade;
-        this.cpf = cpf;
-        this.funcionarioEndereco = funcionarioEndereco;
-        this.funcionarioCNH = funcionarioCNH;
-        this.pis = pis;
-        this.funcionarioTitulo = funcionarioTitulo;
-        this.funcionarioCTPS = funcionarioCTPS;
-        this.funcionarioReservista = funcionarioReservista;
-        this.emailFuncionario = emailFuncionario;
-        this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
-        this.estadoCivil = estadoCivil;
-        this.admissao = admissao;
-    }
-    
     public Identidade getFuncionarioIdentidade() {
         return funcionarioIdentidade;
     }
@@ -161,7 +145,7 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         this.emailFuncionario = emailFuncionario;
     }
 
-     public List<String> getNumeroTelefoneFuncionario() {
+    public List<String> getNumeroTelefoneFuncionario() {
         return numeroTelefoneFuncionario;
     }
 
@@ -192,18 +176,50 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
     public void setAdmissao(Admissao admissao) {
         this.admissao = admissao;
     }
-    
+
     @Override
     public int compareTo(Funcionario funcionario) {
-        if(this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome()) > 0) {
-            return 1;
-        } else if(this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome()) < 0) {
-            return -1;
+        if (this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome()) != 0) {
+            return this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome());
         }
         
+        if (this.funcionarioIdentidade.getDataDeNascimento().substring(
+                this.funcionarioIdentidade.getDataDeNascimento().length() - 4).compareTo(
+                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(
+                        funcionario.getFuncionarioIdentidade().getDataDeNascimento().length() - 4)) > 0) {
+            return -1;
+        }
+
+        if (this.funcionarioIdentidade.getDataDeNascimento().substring(
+                this.funcionarioIdentidade.getDataDeNascimento().length() - 4).compareTo(
+                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(
+                        funcionario.getFuncionarioIdentidade().getDataDeNascimento().length() - 4)) < 0) {
+            return 1;
+        }
+
+        if (this.funcionarioIdentidade.getDataDeNascimento().substring(3, 5).compareTo(
+                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(3, 5)) > 0) {
+            return -1;
+        }
+
+        if (this.funcionarioIdentidade.getDataDeNascimento().substring(3, 5).compareTo(
+                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(3, 5)) < 0) {
+            return 1;
+        }
+
+        if (this.funcionarioIdentidade.getDataDeNascimento().substring(0, 3).compareTo(
+                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(0, 3)) > 0) {
+            return -1;
+        }
+
+        if (this.funcionarioIdentidade.getDataDeNascimento().substring(0, 3).compareTo(
+                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(0, 3)) < 0) {
+            return 1;
+        }
+
         return 0;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -220,11 +236,10 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
 
     @Override
     public int hashCode() {
-        return Objects.hash(cpf, estadoCivil, funcionarioIdentidade.getNumeroIdentidade(), 
-                funcionarioIdentidade.getNome(), funcionarioIdentidade.getDataDeEmissao(), 
+        return Objects.hash(cpf, estadoCivil, funcionarioIdentidade.getNumeroIdentidade(),
+                funcionarioIdentidade.getNome(), funcionarioIdentidade.getDataDeEmissao(),
                 funcionarioIdentidade.getOrgaoEmissor(), funcionarioIdentidade.getNomeDaMae(),
-                funcionarioIdentidade.getUFIdentidade() ,funcionarioEndereco);
+                funcionarioIdentidade.getUFIdentidade(), funcionarioEndereco);
     }
 
-    
 }
