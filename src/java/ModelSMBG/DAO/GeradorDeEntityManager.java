@@ -16,7 +16,6 @@ import javax.persistence.Persistence;
 public class GeradorDeEntityManager {
     
     private static EntityManagerFactory entityManagerFactory;
-    private static EntityManager entityManager;
     
     public static EntityManager getEntityManager() {
         if(entityManagerFactory == null) {

@@ -19,11 +19,11 @@ public class SecurityFilter implements Filter {
         HttpServletResponse resposta = (HttpServletResponse) resp;
         HttpSession sessao = requisicao.getSession(false);
         
-        String loginURI = requisicao.getContextPath() + "/ViewSMBG/PaginaLoginSMBG.xhtml";
+        String loginURI = requisicao.getContextPath() + "/faces/ViewSMBG/PaginaLoginSMBG.xhtml";
 
         boolean logado = sessao != null && sessao.getAttribute("user") != null;
         boolean requisicaoLogin = requisicao.getRequestURI().equals(loginURI);
-        boolean requisicaoRecurso = requisicao.getRequestURI().contains(requisicao.getContextPath() + ResourceHandler.LOCALE_PREFIX);
+        boolean requisicaoRecurso = requisicao.getRequestURI().contains(requisicao.getContextPath()+ "/faces" + ResourceHandler.LOCALE_PREFIX);
 
         if (logado || requisicaoLogin || requisicaoRecurso) {
             chain.doFilter(requisicao, resposta);
