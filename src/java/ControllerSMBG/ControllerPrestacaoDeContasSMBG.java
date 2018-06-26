@@ -1,7 +1,7 @@
 package controllerSMBG;
 
-import ModelSMBG.Funcionario;
-import ModelSMBG.PrestacaoDeConta;
+import ModelSMBG.Entity.Funcionario;
+import ModelSMBG.Entity.PrestacaoDeConta;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 

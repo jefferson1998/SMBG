@@ -1,6 +1,6 @@
 package ControllerSMBG;
 
-import ModelSMBG.Usuario;
+import ModelSMBG.Entity.Usuario;
 import java.io.IOException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

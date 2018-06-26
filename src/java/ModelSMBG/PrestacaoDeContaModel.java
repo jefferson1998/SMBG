@@ -1,5 +1,9 @@
 package ModelSMBG;
 
+import ModelSMBG.Entity.PrestacaoDeConta;
+import ModelSMBG.DAO.PrestacaoDeContaDAO;
+import ModelSMBG.DAO.DAO;
+import ModelSMBG.DAO.PrestacaoDeContaHibernate;
 import java.util.List;
 
 public class PrestacaoDeContaModel {

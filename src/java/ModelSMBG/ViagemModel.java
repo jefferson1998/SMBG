@@ -1,5 +1,10 @@
 package ModelSMBG;
 
+import ModelSMBG.Entity.Viagem;
+import ModelSMBG.Entity.Rota;
+import ModelSMBG.DAO.ViagemHibernate;
+import ModelSMBG.DAO.DAO;
+import ModelSMBG.DAO.ViagemDAO;
 import java.util.List;
 
 public class ViagemModel {

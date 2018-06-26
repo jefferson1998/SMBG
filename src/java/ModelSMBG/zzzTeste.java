@@ -5,6 +5,12 @@
  */
 package ModelSMBG;
 
+import ModelSMBG.Entity.Identidade;
+import ModelSMBG.Entity.Endereco;
+import ModelSMBG.Entity.Conta;
+import ModelSMBG.Entity.Admissao;
+import ModelSMBG.Entity.Funcionario;
+import ModelSMBG.DAO.GeradorDeEntityManager;
 import java.util.List;
 import javax.persistence.EntityManager;
 import java.util.ArrayList;

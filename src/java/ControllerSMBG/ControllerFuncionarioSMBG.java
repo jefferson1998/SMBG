@@ -5,9 +5,10 @@
  */
 package ControllerSMBG;
 
-import ModelSMBG.Funcionario;
+import ModelSMBG.Entity.Funcionario;
 import ModelSMBG.FuncionarioModel;
-import ModelSMBG.GeradorDeEntityManager;
+import ModelSMBG.DAO.GeradorDeEntityManager;
+import ModelSMBG.IteratorFuncionario;
 import java.util.Collections;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -32,7 +33,7 @@ public class ControllerFuncionarioSMBG {
      public ControllerFuncionarioSMBG() {
         this.entityManager = GeradorDeEntityManager.getEntityManager();
         funcionario =  new Funcionario();
-        funcionarioModel = new FuncionarioModel(entityManager);
+        funcionarioModel = new FuncionarioModel();
     }
 
     public Funcionario getFuncionario() {
@@ -45,12 +46,16 @@ public class ControllerFuncionarioSMBG {
 
     public void cadastrarFuncionario() {
         FacesContext context = FacesContext.getCurrentInstance();
-        funcionarioModel.cadastrarFuncionario(funcionario);
-        context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
-        GeradorDeEntityManager.fecharEntityManager(entityManager);
-        listaTodos();
-        funcionario =  new Funcionario();
-        
+        try {
+            funcionarioModel.cadastrarFuncionario(funcionario);
+            context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
+            GeradorDeEntityManager.fecharEntityManager(entityManager);
+            listaTodos();
+            funcionario = new Funcionario();
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+
     }
     
     public void removerFuncionario() {
@@ -61,8 +66,6 @@ public class ControllerFuncionarioSMBG {
     }
     
     public List<Funcionario> listaTodos() {
-        //pq tu faz mais um model?
-        funcionarioModel = new FuncionarioModel();
         listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
         Collections.sort(listaFuncionario);
         GeradorDeEntityManager.fecharEntityManager(entityManager);
@@ -73,29 +76,25 @@ public class ControllerFuncionarioSMBG {
     
     
     public int totalDeMotoristas() {
-        //pq tu faz mais um model?
-        funcionarioModel = new FuncionarioModel();
         listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
         int contador = 0;
-        for(int i = 0; i < listaFuncionario.size(); i++) {
-            if(listaFuncionario.get(i).getAdmissao().getFuncao().equals("Motorista")) {
-                contador ++;
-            }
+        
+        IteratorFuncionario iteratorFuncionario = new IteratorFuncionario(listaFuncionario);
+        while (iteratorFuncionario.hasNext()){
+            if(iteratorFuncionario.next().getAdmissao().getFuncao().equals("Motorista"))
+                contador++;
         }
         return contador;
     }
     
     public int totalDeCobradores() {
-        //pq tu faz mais um model?
-        funcionarioModel = new FuncionarioModel();
         listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
         int contador = 0;
-        for(int i = 0; i < listaFuncionario.size(); i++) {
-            if(listaFuncionario.get(i).getAdmissao().getFuncao().equals("Cobrador")) {
-                contador ++;
-            }
+        IteratorFuncionario iteratorFuncionario = new IteratorFuncionario(listaFuncionario);
+        while (iteratorFuncionario.hasNext()){
+            if(iteratorFuncionario.next().getAdmissao().getFuncao().equals("Cobrador"))
+                contador++;
         }
         return contador;
     }
-    
 }

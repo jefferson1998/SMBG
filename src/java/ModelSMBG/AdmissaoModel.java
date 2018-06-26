@@ -1,5 +1,9 @@
 package ModelSMBG;
 
+import ModelSMBG.Entity.Admissao;
+import ModelSMBG.DAO.AdmissaoDAO;
+import ModelSMBG.DAO.AdmissaoHibernate;
+import ModelSMBG.DAO.DAO;
 import java.util.List;
 
 public class AdmissaoModel {

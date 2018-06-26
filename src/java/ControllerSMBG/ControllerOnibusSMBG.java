@@ -1,6 +1,6 @@
 package ControllerSMBG;
 
-import ModelSMBG.Onibus;
+import ModelSMBG.Entity.Onibus;
 import ModelSMBG.OnibusModel;
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,5 +1,9 @@
 package ModelSMBG;
 
+import ModelSMBG.Entity.Onibus;
+import ModelSMBG.DAO.OnibusDAO;
+import ModelSMBG.DAO.OnibusHibernate;
+import ModelSMBG.DAO.DAO;
 import java.util.List;
 
 public class OnibusModel {

@@ -1,8 +1,8 @@
 package ControllerSMBG;
 
-import ModelSMBG.Onibus;
+import ModelSMBG.Entity.Onibus;
 import ModelSMBG.OnibusModel;
-import ModelSMBG.SeguroOnibus;
+import ModelSMBG.Entity.SeguroOnibus;
 import ModelSMBG.SeguroOnibusModel;
 import java.util.Collections;
 import java.util.List;

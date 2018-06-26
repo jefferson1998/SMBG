@@ -5,7 +5,7 @@
  */
 package ControllerSMBG;
 
-import ModelSMBG.Rota;
+import ModelSMBG.Entity.Rota;
 import ModelSMBG.RotaModel;
 import java.util.Collections;
 import javax.faces.bean.ManagedBean;

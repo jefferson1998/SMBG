@@ -1,5 +1,9 @@
 package ModelSMBG;
 
+import ModelSMBG.DAO.RotaHibernate;
+import ModelSMBG.DAO.RotaDAO;
+import ModelSMBG.Entity.Rota;
+import ModelSMBG.DAO.DAO;
 import java.util.List;
 
 public class RotaModel {
