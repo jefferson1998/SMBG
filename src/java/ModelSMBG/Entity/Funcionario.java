@@ -1,6 +1,6 @@
 package ModelSMBG.Entity;
 
-import ModelSMBG.DAO.Persistivel;
+import ModelSMBG.Persistivel;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;

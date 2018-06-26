@@ -1,4 +1,4 @@
-package ModelSMBG.DAO;
+package ModelSMBG;
 
 import java.io.Serializable;
 import javax.persistence.Column;
