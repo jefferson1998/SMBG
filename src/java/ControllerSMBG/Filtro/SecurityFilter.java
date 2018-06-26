@@ -19,7 +19,7 @@ public class SecurityFilter implements Filter {
         HttpServletResponse resposta = (HttpServletResponse) resp;
         HttpSession sessao = requisicao.getSession(false);
         
-        String loginURI = requisicao.getContextPath() + "/faces/ViewSMBG/PaginaLoginSMBG.xhtml";
+        String loginURI = requisicao.getContextPath() + "/ViewSMBG/PaginaLoginSMBG.xhtml";
 
         boolean logado = sessao != null && sessao.getAttribute("user") != null;
         boolean requisicaoLogin = requisicao.getRequestURI().equals(loginURI);
