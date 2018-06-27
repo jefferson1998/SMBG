@@ -66,11 +66,6 @@ public class Onibus extends Persistivel implements Serializable, Comparable<Onib
         
     }
 
-    public Onibus(int i, String teste) {
-       id = i;
-       chassi = teste;
-    }
-
     public String getCodigoRenavam() {
         return codigoRenavam;
     }

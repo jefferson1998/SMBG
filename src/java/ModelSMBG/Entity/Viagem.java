@@ -114,7 +114,7 @@ public class Viagem extends Persistivel implements Serializable, Comparable<Viag
         
         Viagem viagem = (Viagem) obj;
         
-        if(this.funcionarioMotorista.getCPF().equals(viagem.funcionarioMotorista.getCPF())){
+        if(this.funcionarioMotorista.getCpf().equals(viagem.funcionarioMotorista.getCpf())){
                 return true;
         }
         

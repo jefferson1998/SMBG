@@ -130,7 +130,7 @@ public class PrestacaoDeConta extends Persistivel implements Serializable {
         }
 
         PrestacaoDeConta prestacaoDeConta = (PrestacaoDeConta) obj;
-        return this.funcionario.getCPF().equals(prestacaoDeConta.funcionario.getCPF())
+        return this.funcionario.getCpf().equals(prestacaoDeConta.funcionario.getCpf())
                 || this.funcionario.getFuncionarioIdentidade().equals(prestacaoDeConta.funcionario.getFuncionarioIdentidade())
                 || this.funcionario.getFuncionarioCNH().equals(prestacaoDeConta.funcionario.getFuncionarioCNH());
     }

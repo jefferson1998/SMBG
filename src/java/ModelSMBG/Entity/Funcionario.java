@@ -26,8 +26,8 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
     @Embedded
     private Identidade funcionarioIdentidade;
 
-    @Embedded
-    private CPF cpf;
+    @Column(name = "cpf", nullable = false, length = 14, unique = true)
+    private String cpf;
 
     @Embedded
     private Endereco funcionarioEndereco;
@@ -72,7 +72,6 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         funcionarioTitulo = new Titulo();
         funcionarioCTPS = new CTPS();
         funcionarioReservista = new Reservista();
-        cpf = new CPF();
         admissao = new Admissao();
 
     }
@@ -93,11 +92,11 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         this.funcionarioIdentidade = funcionarioIdentidade;
     }
 
-    public CPF getCPF() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCPF(CPF cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -243,7 +242,7 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         }
 
         Funcionario funcionario = (Funcionario) o;
-        return this.cpf.equals(funcionario.getCPF());
+        return this.cpf.equals(funcionario.getCpf());
     }
 
     @Override

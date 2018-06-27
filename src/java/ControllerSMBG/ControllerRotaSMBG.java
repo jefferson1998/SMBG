@@ -11,6 +11,8 @@ import java.util.Collections;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -19,15 +21,15 @@ import java.util.List;
 @ManagedBean
 @SessionScoped
 public class ControllerRotaSMBG {
-    
+
     Rota rota;
     RotaModel rotaModel;
     List<Rota> listaRota;
-    
-     public ControllerRotaSMBG() {
-        rota =  new Rota();
+
+    public ControllerRotaSMBG() {
+        rota = new Rota();
         rotaModel = new RotaModel();
-        
+
     }
 
     public Rota getRota() {
@@ -38,37 +40,51 @@ public class ControllerRotaSMBG {
         this.rota = rota;
     }
 
-    
     public void cadastrarRota() {
-        
-        rotaModel.cadastrarRota(rota);
-        listaTodos();
-        rota =  new Rota();
-        
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            rotaModel.cadastrarRota(rota);
+            listaTodos();
+            rota = new Rota();
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+
     }
-    
+
     public void removerRota() {
-        
-       rotaModel.removerRota(rota);
-       listaTodos();
-       rota =  new Rota();
-        
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            rotaModel.removerRota(rota);
+            listaTodos();
+            rota = new Rota();
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+
     }
-    
+
     public void atualizarRota() {
-        
-       rotaModel.atualizarRota(rota);
-       listaTodos();
-       rota =  new Rota();
-        
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            rotaModel.atualizarRota(rota);
+            listaTodos();
+            rota = new Rota();
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
     }
-    
+
     public List<Rota> listaTodos() {
-        rotaModel = new RotaModel();
-        listaRota = rotaModel.listarTodasAsRotas();
-         Collections.sort(listaRota);
-        return listaRota;
-        
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            listaRota = rotaModel.listarTodasAsRotas();
+            Collections.sort(listaRota);
+            return listaRota;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+        return null;
     }
-    
+
 }

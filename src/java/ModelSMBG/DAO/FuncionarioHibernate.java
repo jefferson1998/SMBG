@@ -2,8 +2,6 @@ package ModelSMBG.DAO;
 
 import ModelSMBG.Entity.Funcionario;
 import java.util.List;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 
 public class FuncionarioHibernate implements FuncionarioDAO {
@@ -12,41 +10,59 @@ public class FuncionarioHibernate implements FuncionarioDAO {
 
     @Override
     public void inserir(Funcionario funcionario){
-        em.getTransaction().begin();
-        em.persist(funcionario);
-        em.getTransaction().commit();
+        try {
+            em.getTransaction().begin();
+            em.persist(funcionario);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
             
     }
 
     @Override
     public void atualizar(Funcionario funcionario) {
-        //poe essas coisas da tela no Controller
-        FacesContext context = FacesContext.getCurrentInstance();
         
-        em.getTransaction().begin();
-        em.merge(funcionario);
-        em.getTransaction().commit();
+        try {
+            em.getTransaction().begin();
+            em.merge(funcionario);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        
 
-        //poe essas coisas da tela no Controller
-        context.addMessage(null, new FacesMessage("Alteração Efetuada!"));
     }
 
     @Override
     public void deletar(Funcionario funcionario) {
-        //poe essas coisas da tela no Controller
-        FacesContext context = FacesContext.getCurrentInstance();
         
-        em.getTransaction().begin();
-        em.remove(funcionario);
-        em.getTransaction().commit();
+        try {
+            em.getTransaction().begin();
+            em.remove(funcionario);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         
-        //poe essas coisas da tela no Controller
-        context.addMessage(null, new FacesMessage("Remoção Efetuada!"));
     }
 
     @Override
     public List<Funcionario> listarTodos() {
-        return this.em.createQuery("from Funcionario").getResultList();
+        try {
+            return this.em.createQuery("from Funcionario").getResultList();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        return null;
     }
 
     @Override

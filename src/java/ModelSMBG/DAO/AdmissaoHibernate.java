@@ -13,9 +13,15 @@ public class AdmissaoHibernate implements AdmissaoDAO {
         
         
 	public void inserir(Admissao admissao) {
-            em.getTransaction().begin();
-            em.persist(admissao);
-            em.getTransaction().commit();
+            try {
+                em.getTransaction().begin();
+                em.persist(admissao);
+                em.getTransaction().commit();
+            } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
 		
 	}
 	

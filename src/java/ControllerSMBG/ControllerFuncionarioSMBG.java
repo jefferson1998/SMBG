@@ -24,15 +24,15 @@ import javax.persistence.EntityManager;
 @ManagedBean
 @SessionScoped
 public class ControllerFuncionarioSMBG {
-    
+
     private final EntityManager entityManager;
     private Funcionario funcionario;
     private FuncionarioModel funcionarioModel;
     private List<Funcionario> listaFuncionario;
-    
-     public ControllerFuncionarioSMBG() {
+
+    public ControllerFuncionarioSMBG() {
         this.entityManager = GeradorDeEntityManager.getEntityManager();
-        funcionario =  new Funcionario();
+        funcionario = new Funcionario();
         funcionarioModel = new FuncionarioModel();
     }
 
@@ -57,44 +57,69 @@ public class ControllerFuncionarioSMBG {
         }
 
     }
-    
+
     public void removerFuncionario() {
-        funcionarioModel.removerFuncionario(funcionario);
-        listaTodos();
-        funcionario =  new Funcionario();
-        
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            funcionarioModel.removerFuncionario(funcionario);
+            listaTodos();
+            funcionario = new Funcionario();
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+
     }
-    
+
     public List<Funcionario> listaTodos() {
-        listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
-        Collections.sort(listaFuncionario);
-        GeradorDeEntityManager.fecharEntityManager(entityManager);
-        funcionario =  new Funcionario();
-        return listaFuncionario;
-        
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
+            Collections.sort(listaFuncionario);
+            GeradorDeEntityManager.fecharEntityManager(entityManager);
+            funcionario = new Funcionario();
+            return listaFuncionario;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+            return null;
+        }
+
     }
-    
-    
+
     public int totalDeMotoristas() {
-        listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
-        int contador = 0;
-        
-        IteratorFuncionario iteratorFuncionario = new IteratorFuncionario(listaFuncionario);
-        while (iteratorFuncionario.hasNext()){
-            if(iteratorFuncionario.next().getAdmissao().getFuncao().equals("Motorista"))
-                contador++;
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
+
+            int contador = 0;
+            IteratorFuncionario iteratorFuncionario = new IteratorFuncionario(listaFuncionario);
+            while (iteratorFuncionario.hasNext()) {
+                if (iteratorFuncionario.next().getAdmissao().getFuncao().equals("Motorista")) {
+                    contador++;
+                }
+            }
+            return contador;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
-        return contador;
+        return 0;
     }
-    
+
     public int totalDeCobradores() {
-        listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
-        int contador = 0;
-        IteratorFuncionario iteratorFuncionario = new IteratorFuncionario(listaFuncionario);
-        while (iteratorFuncionario.hasNext()){
-            if(iteratorFuncionario.next().getAdmissao().getFuncao().equals("Cobrador"))
-                contador++;
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
+
+            int contador = 0;
+            IteratorFuncionario iteratorFuncionario = new IteratorFuncionario(listaFuncionario);
+            while (iteratorFuncionario.hasNext()) {
+                if (iteratorFuncionario.next().getAdmissao().getFuncao().equals("Cobrador")) {
+                    contador++;
+                }
+            }
+            return contador;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
-        return contador;
+        return 0;
     }
 }

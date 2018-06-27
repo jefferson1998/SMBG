@@ -47,7 +47,7 @@ public class zzzTeste {
             Endereco e = new Endereco("SP", 0, "Magano", "123");
             Funcionario f = new Funcionario();
 
-            f.getCPF().setCpf("125.225.945/70");
+            f.setCpf("125.225.945/70");
             i.setNome("José");
             i.setNumeroIdentidade("12");
             i.setNomeDaMae("Maria");
