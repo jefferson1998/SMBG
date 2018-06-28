@@ -66,11 +66,6 @@ public class FuncionarioHibernate implements FuncionarioDAO {
     }
 
     @Override
-    public List<Funcionario> listarTodos() {
-        return this.em.createQuery("from Funcionario").getResultList();
-    }
-
-    @Override
     public Funcionario buscarPeloCpf(String cpf) {
         return (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?").setParameter(1, cpf).getSingleResult();
     }
