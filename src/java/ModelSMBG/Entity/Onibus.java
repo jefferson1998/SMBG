@@ -2,7 +2,6 @@ package ModelSMBG.Entity;
 
 import ModelSMBG.Persistivel;
 import java.io.Serializable;
-import java.util.Comparator;
 import java.util.Objects;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Entity;

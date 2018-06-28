@@ -11,12 +11,8 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -96,31 +92,6 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     @Column(name = "ramo", nullable = false)
     private String ramo;
 
-    public SeguroOnibus(Onibus onibus, String codigoSusepDoCorretor, String codigoCpdDoCorretor, String sucursalCorretor, String inspetoriaDoCorretor, String proposta, Date dataEmissao, String apolice, String sucursal, String processoSusep, String codigoSusep, String cnpjSeguradora, String nomeSeguradora, List<String> telefoneDoSegurado, Endereco enderecoDoSegurado, String nomeCorretor, String cpfOuCnpjDoSegurado, String nomeDoSegurado, Date dataInicioDaVigencia, Date dataFinalDaVigencia, String numeroEndosso, String ramo) {
-        this.onibus = onibus;
-        this.codigoSusepDoCorretor = codigoSusepDoCorretor;
-        this.codigoCpdDoCorretor = codigoCpdDoCorretor;
-        this.sucursalCorretor = sucursalCorretor;
-        this.inspetoriaDoCorretor = inspetoriaDoCorretor;
-        this.proposta = proposta;
-        this.dataEmissao = dataEmissao;
-        this.apolice = apolice;
-        this.sucursal = sucursal;
-        this.processoSusep = processoSusep;
-        this.codigoSusep = codigoSusep;
-        this.cnpjSeguradora = cnpjSeguradora;
-        this.nomeSeguradora = nomeSeguradora;
-        this.telefoneDoSegurado = telefoneDoSegurado;
-        this.enderecoDoSegurado = enderecoDoSegurado;
-        this.nomeCorretor = nomeCorretor;
-        this.cpfOuCnpjDoSegurado = cpfOuCnpjDoSegurado;
-        this.nomeDoSegurado = nomeDoSegurado;
-        this.dataInicioDaVigencia = dataInicioDaVigencia;
-        this.dataFinalDaVigencia = dataFinalDaVigencia;
-        this.numeroEndosso = numeroEndosso;
-        this.ramo = ramo;
-    }
-    
     public SeguroOnibus() {
         
     }

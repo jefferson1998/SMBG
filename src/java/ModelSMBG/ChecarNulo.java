@@ -11,13 +11,13 @@ package ModelSMBG;
  */
 public class ChecarNulo {
 
-    public static boolean ehNulo(Object... obj) {
+    public static boolean naoNulo(Object... obj) {
         for (Object obj1 : obj) {
             if (obj1 == null) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 }

@@ -11,7 +11,8 @@ public class FuncionarioModel {
     private DAO daoFuncionario = new FuncionarioHibernate();
 
     public void cadastrarFuncionario(Funcionario funcionario) {
-        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
+        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null && 
+                ChecarNulo.naoNulo(funcionario.getCpf(), funcionario.getFuncionarioIdentidade(), funcionario.getAdmissao())) {
             daoFuncionario.inserir(funcionario);
         }
     }
