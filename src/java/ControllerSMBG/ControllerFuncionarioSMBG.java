@@ -45,9 +45,9 @@ public class ControllerFuncionarioSMBG {
         FacesContext context = FacesContext.getCurrentInstance();
         try {
             funcionarioModel.cadastrarFuncionario(funcionario);
-            context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
             listaTodos();
             funcionario = new Funcionario();
+            context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
@@ -60,6 +60,7 @@ public class ControllerFuncionarioSMBG {
             funcionarioModel.removerFuncionario(funcionario);
             listaTodos();
             funcionario = new Funcionario();
+            context.addMessage(null, new FacesMessage("Remoção Efetuada!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }

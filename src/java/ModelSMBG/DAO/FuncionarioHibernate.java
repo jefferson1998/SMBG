@@ -14,6 +14,7 @@ public class FuncionarioHibernate implements FuncionarioDAO {
             em.getTransaction().begin();
             em.persist(funcionario);
             em.getTransaction().commit();
+            
         } catch (Exception e) {
             em.getTransaction().rollback();
         } finally {
@@ -66,7 +67,13 @@ public class FuncionarioHibernate implements FuncionarioDAO {
 
     @Override
     public Funcionario buscarPeloCpf(String cpf) {
-        return (Funcionario) em.createQuery("from Funcionario WHERE funcionario.cpf = ?").setParameter(1, cpf).getSingleResult();
+        Funcionario funcionario;
+        try {
+            funcionario = (Funcionario) em.createQuery("from Funcionario f WHERE f.cpf = ?1").setParameter(1, cpf).getSingleResult();
+        } catch (Exception e) {
+            funcionario = null;
+        } 
+        return funcionario;
     }
 
     public Funcionario buscarPelaIdentidade(String numeroIdentidade) {

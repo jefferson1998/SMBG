@@ -33,6 +33,16 @@ public class ControllerPaginaAdminitrador {
         }
     }
     
+    public void irPaginaSeguroOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("PaginaSeguroOnibus.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
      public void irPaginaAdmin() {
         FacesContext context = FacesContext.getCurrentInstance();
 
@@ -68,6 +78,16 @@ public class ControllerPaginaAdminitrador {
 
         try {
             context.getExternalContext().redirect("CadastrarFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+     public void irCadastrarSeguroOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("CadastrarSeguroSMBG.xhtml");
         } catch (IOException e) {
 
         }

@@ -67,7 +67,7 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     private List<String> telefoneDoSegurado;
     
     @Embedded
-    private Endereco enderecoDoSegurado;
+    private Endereco endereco;
     
     @Column(name = "nomeCorretor", nullable = false)
     private String nomeCorretor;
@@ -200,12 +200,12 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
         this.telefoneDoSegurado = telefoneDoSegurado;
     }
 
-    public Endereco getEnderecoDoSegurado() {
-        return enderecoDoSegurado;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEnderecoDoSegurado(Endereco enderecoDoSegurado) {
-        this.enderecoDoSegurado = enderecoDoSegurado;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public String getNomeCorretor() {
@@ -301,7 +301,7 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     public int hashCode() {
         return Objects.hash(codigoSusepDoCorretor, codigoCpdDoCorretor, sucursalCorretor, inspetoriaDoCorretor,
                 proposta, dataEmissao, apolice, sucursal, processoSusep, codigoSusep, cnpjSeguradora, nomeSeguradora,
-                enderecoDoSegurado, nomeCorretor, cpfOuCnpjDoSegurado, nomeDoSegurado, dataInicioDaVigencia, dataFinalDaVigencia,
+                endereco, nomeCorretor, cpfOuCnpjDoSegurado, nomeDoSegurado, dataInicioDaVigencia, dataFinalDaVigencia,
                 numeroEndosso, ramo);
     }
      

@@ -8,13 +8,13 @@ import java.util.List;
 
 public class FuncionarioModel {
 
-    private DAO daoFuncionario = new FuncionarioHibernate();
-
+   private DAO<Funcionario> daoFuncionario = new FuncionarioHibernate();
+    //ChecarNulo.naoNulo(funcionario.getCpf(), funcionario.getFuncionarioIdentidade(), funcionario.getAdmissao())
     public void cadastrarFuncionario(Funcionario funcionario) {
-        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null && 
-                ChecarNulo.naoNulo(funcionario.getCpf(), funcionario.getFuncionarioIdentidade(), funcionario.getAdmissao())) {
-            daoFuncionario.inserir(funcionario);
-        }
+//        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
+//            daoFuncionario.inserir(funcionario);
+//        }
+        daoFuncionario.inserir(funcionario);
     }
 
     public void atualizarFuncionario(Funcionario funcionario) {

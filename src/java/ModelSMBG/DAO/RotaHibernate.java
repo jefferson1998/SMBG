@@ -57,15 +57,14 @@ public class RotaHibernate implements RotaDAO {
 
     @Override
     public List<Rota> listarTodos() {
-
+        List<Rota> lista;
         try {
-            return em.createQuery("from Rota").getResultList();
+            lista = em.createQuery("from Rota").getResultList();
+            return lista;
         } catch (Exception e) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-        return null;
+            lista = null;
+        } 
+        return lista;
     }
 
     public List<Rota> buscarPelaOrigem(String origem) {

@@ -20,6 +20,7 @@
                 </p:menuitem>
                 <p:menuitem value="Funcionarios" action="#{controllerPaginaAdminitrador.irPaginaFuncionario()}" />
                 <p:menuitem value="Onibus" action="#{controllerPaginaAdminitrador.irPaginaOnibus()}"/>
+                <p:menuitem value="Seguro" action="#{controllerPaginaAdminitrador.irPaginaSeguroOnibus()}"/>
                 <p:menuitem value="Rotas" action="#{controllerPaginaAdminitrador.irPaginaRota()}"/>
 
                 <f:facet name="options">
@@ -55,11 +56,6 @@
                         <h:outputText value="Quantidade: " style="font-weight: bold"/>
                         <h:outputText value="#{controllerOnibusSMBG.listaTodos().size()}" />
 
-                        <h:outputText value="Motoristas:" style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
-
-                        <h:outputText value="Cobradores:" style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
                     </h:panelGrid>
                 </p:tab>
             </div>
@@ -73,11 +69,6 @@
                         <h:outputText value="Quantidade: " style="font-weight: bold"/>
                         <h:outputText value="#{controllerRotaSMBG.listaTodos().size()}" />
 
-                        <h:outputText value="Motoristas:" style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
-
-                        <h:outputText value="Cobradores:" style="font-weight: bold"/>
-                        <h:outputText value="#{controllerFuncionarioSMBG.funcionario.admissao.funcao}" />
                     </h:panelGrid>
                 </p:tab>
             </div>

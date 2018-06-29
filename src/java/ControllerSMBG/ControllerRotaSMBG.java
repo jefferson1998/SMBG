@@ -46,6 +46,7 @@ public class ControllerRotaSMBG {
             rotaModel.cadastrarRota(rota);
             listaTodos();
             rota = new Rota();
+            context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
