@@ -15,14 +15,18 @@
  */
 package ControllerSMBG;
 
-import ModelSMBG.Entity.Funcionario;
-import ModelSMBG.FuncionarioModel;
 import ModelSMBG.Entity.Usuario;
 import java.io.IOException;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,7 +37,6 @@ import javax.faces.context.FacesContext;
 public class ControllerSessaoUsuario {
 
     private Usuario usuario;
-    private FuncionarioModel fm = new FuncionarioModel();
 
     public ControllerSessaoUsuario() {
         usuario = new Usuario();
@@ -48,26 +51,23 @@ public class ControllerSessaoUsuario {
     }
 
     public String logar() {
-        String ret = "";
         FacesContext context = FacesContext.getCurrentInstance();
-        
-        Funcionario funcionario = fm.buscarFuncionarioPeloCpf(this.usuario.getLogin());
-        
+        String ret = "";
+
         if (this.usuario.getLogin().equals("admin") && this.usuario.getSenha().equals("admin")) {
 
-            context.getExternalContext().getSessionMap().put("adm", this.usuario.getLogin());
-            ret = "/PaginaAdmin.xhtml";
-            //context.getExternalContext().getSessionMap().put("perfil", "adm");
-            //context.getExternalContext().getSessionMap().put("erroLogin", "nao");
-
-            //context.getExternalContext().redirect("PaginaAdmin.xhtml");
-        } else if (funcionario != null && funcionario.getSenha().equals(this.usuario.getSenha())) {
-            context.getExternalContext().getSessionMap().put("user", this.usuario.getLogin());
-            ret = "/PrestacaoDeContaSMBG.xhtml";
+            context.getExternalContext().getSessionMap().put("user", usuario);
+            context.getExternalContext().getSessionMap().put("perfil", "adm");
+            context.getExternalContext().getSessionMap().put("erroLogin", "nao");
+            ret = "PaginaAdmin.xhtml";
         } else {
+            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
             context.addMessage(null, new FacesMessage("A autenticação falhou!!!"));
+
         }
+        
         return ret;
+
     }
 
     public void deslogar() {
@@ -81,6 +81,16 @@ public class ControllerSessaoUsuario {
         }
     }
 
+//    public void logar() throws IOException {
+//        FacesContext context = FacesContext.getCurrentInstance();
+//        if (usuario != null) {
+//            context.getExternalContext().getSessionMap().put("usuarioID", session.getId());
+//            context.getExternalContext().redirect("/SMBG/faces/ViewSMBG/PaginaAdministradorSMBG.xhtml");
+//        } else {
+//            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
+//            context.getExternalContext().redirect("/SMBG/");
+//        }
+//    }
     public boolean checarErro() {
         boolean temErro = false;
 

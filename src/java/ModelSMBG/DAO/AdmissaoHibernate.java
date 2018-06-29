@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 public class AdmissaoHibernate implements AdmissaoDAO {
 
-	private final EntityManager em = GeradorDeEntityManager.getEntityManager();
+	private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
         public AdmissaoHibernate() {
         }

@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 public class FuncionarioHibernate implements FuncionarioDAO {
     
-    private final EntityManager em = GeradorDeEntityManager.getEntityManager();
+    private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     @Override
     public void inserir(Funcionario funcionario){
@@ -55,19 +55,18 @@ public class FuncionarioHibernate implements FuncionarioDAO {
 
     @Override
     public List<Funcionario> listarTodos() {
+        List<Funcionario> funcionarios;
         try {
-            return this.em.createQuery("from Funcionario").getResultList();
+            funcionarios = this.em.createQuery("from Funcionario").getResultList();
         } catch (Exception e) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-        return null;
+            funcionarios = null;
+        } 
+        return funcionarios;
     }
 
     @Override
     public Funcionario buscarPeloCpf(String cpf) {
-        return (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?").setParameter(1, cpf).getSingleResult();
+        return (Funcionario) em.createQuery("from Funcionario WHERE funcionario.cpf = ?").setParameter(1, cpf).getSingleResult();
     }
 
     public Funcionario buscarPelaIdentidade(String numeroIdentidade) {

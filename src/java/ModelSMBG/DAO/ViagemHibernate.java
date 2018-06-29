@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 
 public class ViagemHibernate implements ViagemDAO{
     
-    private final EntityManager em = GeradorDeEntityManager.getEntityManager();
+    private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     @Override
     public void inserir(Viagem viagem) {

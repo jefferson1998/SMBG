@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 public class PrestacaoDeContaHibernate implements PrestacaoDeContaDAO {
 
-    private final EntityManager em = GeradorDeEntityManager.getEntityManager();
+    private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     public void inserir(PrestacaoDeConta objeto) {
         // TODO Auto-generated method stub

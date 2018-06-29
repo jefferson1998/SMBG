@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 public class SeguroOnibusHibernate implements SeguroOnibusDAO {
 
-    private final EntityManager em = GeradorDeEntityManager.getEntityManager();
+    private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     @Override
     public void inserir(SeguroOnibus seguroOnibus) {
@@ -61,37 +61,79 @@ public class SeguroOnibusHibernate implements SeguroOnibusDAO {
 
     @Override
     public SeguroOnibus buscarPeloCodigoSusepDoCorretor(int codigoSusepDoCorretor) {
-        // TODO Auto-generated method stub
+        try {
+            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoSusepDoCorretor = ?").
+                    setParameter(1, codigoSusepDoCorretor).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
     @Override
     public SeguroOnibus buscarPeloCodigoCpdDoCorretor(int codigoCpdDoCorretor) {
-        // TODO Auto-generated method stub
+        try {
+            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoCpdDoCorretor = ?").
+                    setParameter(1, codigoCpdDoCorretor).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
     @Override
     public SeguroOnibus buscarPeloCodigoSusep(int codigoSusep) {
-        // TODO Auto-generated method stub
+       try {
+            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoSusep = ?").
+                    setParameter(1, codigoSusep).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
     @Override
     public SeguroOnibus buscarPeloCnpjDaEmpresaDoSeguro(String cpnj) {
-        // TODO Auto-generated method stub
+       try {
+            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE cpnj = ?").
+                    setParameter(1, cpnj).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
     @Override
     public SeguroOnibus buscarPeloCpfOuCnpjDoSegurado(String cpfOuCnpjDoSegurado) {
-        // TODO Auto-generated method stub
+        try {
+            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE cpfOuCnpjDoSegurado = ?").
+                    setParameter(1, cpfOuCnpjDoSegurado).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
     @Override
     public SeguroOnibus buscarPeloNumeroEndosso(int numeroEndosso) {
-        // TODO Auto-generated method stub
+       try {
+            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE numeroEndosso = ?").
+                    setParameter(1, numeroEndosso).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 

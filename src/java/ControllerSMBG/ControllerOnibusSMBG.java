@@ -12,7 +12,6 @@ import javax.faces.context.FacesContext;
 @ManagedBean
 @SessionScoped
 public class ControllerOnibusSMBG {
-
     OnibusModel onibusModel;
     Onibus onibus;
     List<Onibus> listaOnibus;
@@ -36,6 +35,7 @@ public class ControllerOnibusSMBG {
             onibusModel.cadastrarOnibus(onibus);
             listaTodos();
             onibus = new Onibus();
+        context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
@@ -75,5 +75,40 @@ public class ControllerOnibusSMBG {
         }
         return null;
     }
+    
+    public Onibus BuscarOnibusPelaPlaca(String placa) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            onibus = onibusModel.buscarPelaOnibusPlaca(placa);
+            context.addMessage(null, new FacesMessage("Buscar efetuada!"));
+            return onibus;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+            return null;
+        }
+    }
 
+     public Onibus BuscarOnibusPeloChassi(String chassi) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            onibus = onibusModel.buscarPeloOnibusChassis(chassi);
+            context.addMessage(null, new FacesMessage("Buscar efetuada!"));
+            return onibus;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+            return null;
+        }
+    }
+     
+     public Onibus BuscarOnibusPeloCodigoRenavam(String codigoRenavam) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            onibus = onibusModel.buscarPeloOnibusPeloCodigoRenavam(codigoRenavam);
+            context.addMessage(null, new FacesMessage("Buscar efetuada!"));
+            return onibus;
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+            return null;
+        }
+    }
 }

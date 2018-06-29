@@ -1,5 +1,6 @@
 package ControllerSMBG;
 
+import ModelSMBG.DAO.GeradorDeEntityManager;
 import ModelSMBG.Entity.Onibus;
 import ModelSMBG.Entity.SeguroOnibus;
 import ModelSMBG.SeguroOnibusModel;
@@ -7,12 +8,12 @@ import java.util.Collections;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.persistence.EntityManager;
 
 
 @ManagedBean
 @SessionScoped
 public class ControllerSeguroOnibusSMBG {
-    
     SeguroOnibus seguroOnibus;
     Onibus onibus;
     SeguroOnibusModel seguroModel;
@@ -32,10 +33,11 @@ public class ControllerSeguroOnibusSMBG {
         this.seguroOnibus = seguroOnibus;
     }
     
-    public void cadastrarSeguro() {
+    public String cadastrarSeguro() {
         seguroModel.cadastrarSeguroOnibus(seguroOnibus);
         listaTodos();
         seguroOnibus = new SeguroOnibus();
+        return "";
     }
 
     public List<SeguroOnibus> listaTodos(){
@@ -47,6 +49,12 @@ public class ControllerSeguroOnibusSMBG {
     
     public void removerSeguro() {
         seguroModel.removerSeguroOnibus(seguroOnibus);
+        listaTodos();
+        seguroOnibus = new SeguroOnibus();
+    }
+    
+    public void alterarSeguro() {
+        seguroModel.atualizarSeguroOnibus(seguroOnibus);
         listaTodos();
         seguroOnibus = new SeguroOnibus();
     }

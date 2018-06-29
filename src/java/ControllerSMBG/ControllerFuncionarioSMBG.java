@@ -15,7 +15,6 @@ import javax.faces.bean.SessionScoped;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.persistence.EntityManager;
 
 /**
  *
@@ -25,13 +24,11 @@ import javax.persistence.EntityManager;
 @SessionScoped
 public class ControllerFuncionarioSMBG {
 
-    private final EntityManager entityManager;
     private Funcionario funcionario;
     private FuncionarioModel funcionarioModel;
     private List<Funcionario> listaFuncionario;
 
     public ControllerFuncionarioSMBG() {
-        this.entityManager = GeradorDeEntityManager.getEntityManager();
         funcionario = new Funcionario();
         funcionarioModel = new FuncionarioModel();
     }
@@ -49,7 +46,6 @@ public class ControllerFuncionarioSMBG {
         try {
             funcionarioModel.cadastrarFuncionario(funcionario);
             context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
-            GeradorDeEntityManager.fecharEntityManager(entityManager);
             listaTodos();
             funcionario = new Funcionario();
         } catch (Exception ex) {
@@ -75,7 +71,6 @@ public class ControllerFuncionarioSMBG {
         try {
             listaFuncionario = funcionarioModel.buscaTodosOsFuncionarios();
             Collections.sort(listaFuncionario);
-            GeradorDeEntityManager.fecharEntityManager(entityManager);
             funcionario = new Funcionario();
             return listaFuncionario;
         } catch (Exception ex) {

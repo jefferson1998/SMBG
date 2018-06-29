@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
  */
 public class GeradorDeEntityManager {
     
-    private static EntityManagerFactory entityManagerFactory;
+    private static EntityManagerFactory entityManagerFactory = null;
     
     public static EntityManager getEntityManager() {
         if(entityManagerFactory == null) {
@@ -24,8 +24,4 @@ public class GeradorDeEntityManager {
         return entityManagerFactory.createEntityManager();
     }
     
-    public static void fecharEntityManager(EntityManager em) {
-        em.close();
-    }
-
 }

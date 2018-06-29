@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 public class OnibusHibernate implements OnibusDAO {
 
-    private final EntityManager em = GeradorDeEntityManager.getEntityManager();
+    private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     public OnibusHibernate() {
 
@@ -59,24 +59,50 @@ public class OnibusHibernate implements OnibusDAO {
 
     @Override
     public List<Onibus> listarTodos() {
-        return em.createQuery("from Onibus").getResultList();
+        List<Onibus> lista;
+        try {
+            lista = em.createQuery("from Onibus").getResultList();
+        } catch (Exception e) {
+            lista = null;
+        }
+        return lista;
+       
     }
 
     @Override
     public Onibus buscarPeloOnibusPeloCodigoRenavam(String codigoRenavam) {
-        // TODO Auto-generated method stub
+        
+        try {
+            return (Onibus) em.createQuery("from Onibus WHERE codigoRenavam = ?").setParameter(1, codigoRenavam).getSingleResult();
+        } catch (Exception e) {
+        } finally {
+            em.close();
+        }
         return null;
+     
     }
 
     @Override
     public Onibus buscarPeloOnibusChassis(String chassi) {
-        // TODO Auto-generated method stub
+        try {
+            return (Onibus) em.createQuery("from Onibus WHERE chassi = ?").setParameter(1, chassi).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
     @Override
     public Onibus buscarPelaOnibusPlaca(String placa) {
-        // TODO Auto-generated method stub
+        try {
+            return (Onibus) em.createQuery("from Onibus WHERE placa = ?").setParameter(1, placa).getSingleResult();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
         return null;
     }
 
