@@ -36,17 +36,14 @@ public class zzzTeste {
             c.setNumeroAgencia("12");
             c.setNumeroConta("15");
             ad.setConta(c);
-            
-            em.getTransaction().begin();
-            em.persist(ad);
-            em.getTransaction().commit();
 
             System.out.println("Persistiu Admissao");
             
             Identidade i = new Identidade();
             Endereco e = new Endereco("SP", 0, "Magano", "123");
             Funcionario f = new Funcionario();
-
+            
+            f.setAdmissao(ad);
             f.setCpf("125.225.945/70");
             i.setNome("José");
             i.setNumeroIdentidade("12");

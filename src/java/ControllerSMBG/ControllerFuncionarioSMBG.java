@@ -7,7 +7,6 @@ package ControllerSMBG;
 
 import ModelSMBG.Entity.Funcionario;
 import ModelSMBG.FuncionarioModel;
-import ModelSMBG.DAO.GeradorDeEntityManager;
 import ModelSMBG.IteratorFuncionario;
 import java.util.Collections;
 import javax.faces.bean.ManagedBean;
@@ -45,10 +44,10 @@ public class ControllerFuncionarioSMBG {
         FacesContext context = FacesContext.getCurrentInstance();
         try {
             funcionarioModel.cadastrarFuncionario(funcionario);
-            listaTodos();
             funcionario = new Funcionario();
             context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
         } catch (Exception ex) {
+            ex.printStackTrace();
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
 
@@ -61,6 +60,19 @@ public class ControllerFuncionarioSMBG {
             listaTodos();
             funcionario = new Funcionario();
             context.addMessage(null, new FacesMessage("Remoção Efetuada!"));
+        } catch (Exception ex) {
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+
+    }
+    
+    public void alterarFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            funcionarioModel.atualizarFuncionario(funcionario);
+            listaTodos();
+            funcionario = new Funcionario();
+            context.addMessage(null, new FacesMessage("Alteração Efetuada!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }

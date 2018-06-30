@@ -2,6 +2,7 @@ package ModelSMBG.Entity;
 
 import ModelSMBG.Persistivel;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -41,8 +42,7 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     private String proposta;
     
     @Column(name = "dataEmissao", nullable = false)
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataEmissao;
+    private String dataEmissao;
     
     @Column(name = "apolice", nullable = false)
     private String apolice;
@@ -62,9 +62,9 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     @Column(name = "nomeSeguradora", nullable = false)
     private String nomeSeguradora;
     
-    @ElementCollection
-    @CollectionTable(name="Telefone_Segurado", joinColumns = @JoinColumn(name="Cod_Seguro"))
-    private List<String> telefoneDoSegurado;
+//    @ElementCollection
+//    @CollectionTable(name="Telefone_Segurado", joinColumns = @JoinColumn(name="Cod_Seguro"))
+//    private List<String> telefoneDoSegurado;
     
     @Embedded
     private Endereco endereco;
@@ -79,12 +79,10 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     private String nomeDoSegurado;
     
     @Column(name = "inicioVigencia", nullable = false)
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataInicioDaVigencia;
+    private String dataInicioDaVigencia;
     
     @Column(name = "fimVigencia", nullable = false)
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataFinalDaVigencia;
+    private String dataFinalDaVigencia;
     
     @Column(name = "numeroEndosso", nullable = false)
     private String numeroEndosso;
@@ -93,7 +91,8 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
     private String ramo;
 
     public SeguroOnibus() {
-        
+        endereco = new Endereco();
+        onibus = new Onibus();
     }
     
     public String getCodigoSusepDoCorretor() {
@@ -136,11 +135,11 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
         this.proposta = proposta;
     }
 
-    public Date getDataEmissao() {
+    public String getDataEmissao() {
         return dataEmissao;
     }
 
-    public void setDataEmissao(Date dataEmissao) {
+    public void setDataEmissao(String dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
 
@@ -192,13 +191,13 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
         this.nomeSeguradora = nomeSeguradora;
     }
 
-    public List<String> getTelefoneDoSegurado() {
-        return telefoneDoSegurado;
-    }
-
-    public void setTelefoneDoSegurado(List<String> telefoneDoSegurado) {
-        this.telefoneDoSegurado = telefoneDoSegurado;
-    }
+//    public List<String> getTelefoneDoSegurado() {
+//        return telefoneDoSegurado;
+//    }
+//
+//    public void setTelefoneDoSegurado(List<String> telefoneDoSegurado) {
+//        this.telefoneDoSegurado = telefoneDoSegurado;
+//    }
 
     public Endereco getEndereco() {
         return endereco;
@@ -232,19 +231,19 @@ public class SeguroOnibus extends Persistivel implements Serializable, Comparabl
         this.nomeDoSegurado = nomeDoSegurado;
     }
 
-    public Date getDataInicioDaVigencia() {
+    public String getDataInicioDaVigencia() {
         return dataInicioDaVigencia;
     }
 
-    public void setDataInicioDaVigencia(Date dataInicioDaVigencia) {
+    public void setDataInicioDaVigencia(String dataInicioDaVigencia) {
         this.dataInicioDaVigencia = dataInicioDaVigencia;
     }
 
-    public Date getDataFinalDaVigencia() {
+    public String getDataFinalDaVigencia() {
         return dataFinalDaVigencia;
     }
 
-    public void setDataFinalDaVigencia(Date dataFinalDaVigencia) {
+    public void setDataFinalDaVigencia(String dataFinalDaVigencia) {
         this.dataFinalDaVigencia = dataFinalDaVigencia;
     }
 

@@ -21,13 +21,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 /**
  *
  * @author Rodrigo
@@ -73,7 +66,7 @@ public class ControllerSessaoUsuario {
     public void deslogar() {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().invalidateSession();
-
+        
         try {
             context.getExternalContext().redirect("PaginaLoginSMBG.xhtml");
         } catch (IOException e) {

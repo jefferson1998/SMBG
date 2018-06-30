@@ -9,12 +9,14 @@ import java.util.List;
 public class FuncionarioModel {
 
    private DAO<Funcionario> daoFuncionario = new FuncionarioHibernate();
-    //ChecarNulo.naoNulo(funcionario.getCpf(), funcionario.getFuncionarioIdentidade(), funcionario.getAdmissao())
-    public void cadastrarFuncionario(Funcionario funcionario) {
-//        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
-//            daoFuncionario.inserir(funcionario);
-//        }
-        daoFuncionario.inserir(funcionario);
+    
+    public void cadastrarFuncionario(Funcionario funcionario) throws Exception {
+        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
+            funcionario.setSenha(funcionario.getCpf().substring(funcionario.getCpf().length() - 4));
+            daoFuncionario.inserir(funcionario);
+        } else {
+            throw new Exception("CPF já cadastrado!");
+        }
     }
 
     public void atualizarFuncionario(Funcionario funcionario) {

@@ -14,6 +14,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "Funcionario")
@@ -65,7 +66,6 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
     private Admissao admissao;
 
     public Funcionario() {
-
         funcionarioIdentidade = new Identidade();
         funcionarioEndereco = new Endereco();
         funcionarioCNH = new CNH();
@@ -73,7 +73,6 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         funcionarioCTPS = new CTPS();
         funcionarioReservista = new Reservista();
         admissao = new Admissao();
-
     }
 
     public String getSenha() {
@@ -81,6 +80,7 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
     }
 
     public void setSenha(String senha) {
+        
         this.senha = senha;
     }
 
@@ -193,41 +193,6 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         if (this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome()) != 0) {
             return this.funcionarioIdentidade.getNome().compareTo(funcionario.funcionarioIdentidade.getNome());
         }
-        
-        if (this.funcionarioIdentidade.getDataDeNascimento().substring(
-                this.funcionarioIdentidade.getDataDeNascimento().length() - 4).compareTo(
-                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(
-                        funcionario.getFuncionarioIdentidade().getDataDeNascimento().length() - 4)) > 0) {
-            return -1;
-        }
-
-        if (this.funcionarioIdentidade.getDataDeNascimento().substring(
-                this.funcionarioIdentidade.getDataDeNascimento().length() - 4).compareTo(
-                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(
-                        funcionario.getFuncionarioIdentidade().getDataDeNascimento().length() - 4)) < 0) {
-            return 1;
-        }
-
-        if (this.funcionarioIdentidade.getDataDeNascimento().substring(3, 5).compareTo(
-                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(3, 5)) > 0) {
-            return -1;
-        }
-
-        if (this.funcionarioIdentidade.getDataDeNascimento().substring(3, 5).compareTo(
-                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(3, 5)) < 0) {
-            return 1;
-        }
-
-        if (this.funcionarioIdentidade.getDataDeNascimento().substring(0, 3).compareTo(
-                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(0, 3)) > 0) {
-            return -1;
-        }
-
-        if (this.funcionarioIdentidade.getDataDeNascimento().substring(0, 3).compareTo(
-                funcionario.getFuncionarioIdentidade().getDataDeNascimento().substring(0, 3)) < 0) {
-            return 1;
-        }
-
         return 0;
     }
 

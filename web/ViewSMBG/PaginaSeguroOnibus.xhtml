@@ -61,7 +61,7 @@
                                    onclick="if (!confirm('Deseja realmente remover este produto?')) {
                                                return false;
                                            }">
-                        <f:setPropertyActionListener value="#{seguroOnibus}" target="#{controllerSeguroOnibusSMBG.alterarSeguro()}"/>
+                        <f:setPropertyActionListener value="#{seguroOnibus}" target="#{controllerSeguroOnibusSMBG.seguroOnibus}"/>
                     </h:commandLink>
 
                     <br/>
@@ -75,6 +75,7 @@
             <p:dialog id="dialogAlterar" header="Alterar Seguro Onibus" widgetVar="alterarSeguroOnibusDialog" modal="true" height="100">
                 <h:panelGrid columns="2" >
                     <h3> DADOS CORRETOR </h3>
+                    <br/>
 
                     <p:outputLabel value="Nome do Corretor:*" for="NomeDoCorretor" />
                     <p:inputText class="camposFormulario" id="NomeDoCorretor" value="#{controllerSeguroOnibusSMBG.seguroOnibus.nomeCorretor}"/>
@@ -92,6 +93,7 @@
                     <p:inputText class="camposFormulario" id="InspetoriaDoCorretor" value="#{controllerSeguroOnibusSMBG.seguroOnibus.inspetoriaDoCorretor}"/>
 
                     <h3> DADOS SEGURO </h3>
+                    <br/>
 
                     <p:outputLabel value="Proposta:*" for="PropostaDoSeguro" />
                     <p:inputText class="camposFormulario" id="PropostaDoSeguro" value="#{controllerSeguroOnibusSMBG.seguroOnibus.proposta}"/>
@@ -130,9 +132,7 @@
                     <p:inputText class="camposFormulario" id="RamoSeguradora" value="#{controllerSeguroOnibusSMBG.seguroOnibus.ramo}"/>
 
                     <h3> DADOS SEGURADO </h3>
-
-                    <p:outputLabel value="Telefone da segurado:*" for="TelefoneDoSegurado" />
-                    <p:inputMask class="camposFormulario" id="TelefoneDoSegurado" value="#{controllerSeguroOnibusSMBG.seguroOnibus.telefoneDoSegurado}" mask="(999) 999-9999? x99999"/>
+                    <br/>
 
                     <p:outputLabel value="Rua:*" for="RuaEnderecoDoSegurado"/>
                     <p:inputText class="camposFormulario" id="RuaEnderecoDoSegurado" value="#{controllerSeguroOnibusSMBG.seguroOnibus.endereco.rua}"/>
