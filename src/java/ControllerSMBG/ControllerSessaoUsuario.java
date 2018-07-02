@@ -15,6 +15,7 @@
  */
 package ControllerSMBG;
 
+import ModelSMBG.Entity.Funcionario;
 import ModelSMBG.Entity.Usuario;
 import java.io.IOException;
 import javax.faces.application.FacesMessage;
@@ -30,6 +31,7 @@ import javax.faces.context.FacesContext;
 public class ControllerSessaoUsuario {
 
     private Usuario usuario;
+    private Funcionario funcionario = new ControllerFuncionarioSMBG().buscarFuncionarioPeloCPF();
 
     public ControllerSessaoUsuario() {
         usuario = new Usuario();
@@ -53,6 +55,12 @@ public class ControllerSessaoUsuario {
             context.getExternalContext().getSessionMap().put("perfil", "adm");
             context.getExternalContext().getSessionMap().put("erroLogin", "nao");
             ret = "PaginaAdmin.xhtml";
+        } else if ((this.usuario.getLogin().equals(this.funcionario.getCpf())) && 
+                (this.usuario.getSenha().equals(this.funcionario.getCpf().substring(this.funcionario.getCpf().length() - 4)))) {
+            context.getExternalContext().getSessionMap().put("user", usuario);
+            context.getExternalContext().getSessionMap().put("perfil", "usuario");
+            context.getExternalContext().getSessionMap().put("erroLogin", "nao");
+            ret = "PrestacaoDeContaSMBG.xhtml";
         } else {
             context.getExternalContext().getSessionMap().put("erroLogin", "sim");
             context.addMessage(null, new FacesMessage("A autenticação falhou!!!"));
