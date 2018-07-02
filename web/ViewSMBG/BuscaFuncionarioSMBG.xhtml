@@ -30,11 +30,10 @@
 
                     <p:outputLabel value="CPF" for="BuscaDoFuncionarioPorCPF" />
                     <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPorCPF" value="#{controllerFuncionarioSMBG.cpf}"/>
-                    
-                    <br/><br/>
-                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarFuncionarioPeloCPF" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" onclick="window.location.href=window.location.href">
-                         <p:growl id="growl" showDetail="true" sticky="true" /> 
-                            <p:dataTable id="dtFuncionario" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" var="funcionario">
+
+                    <p:commandButton class="menuCadastrar" value="BUSCAR CPF" id="BuscarFuncionarioPeloCPF" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" onclick="window.location.href = window.location.href">
+                        <p:growl id="growl" showDetail="true" sticky="true" /> 
+                        <p:dataTable id="dtFuncionario" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" var="funcionario">
                             <p:column headerText="Nome">
                                 <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
                             </p:column>
@@ -51,21 +50,66 @@
                                 <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
                             </p:column>
 
-                         </p:dataTable>
-                         <br/><br/>
+                        </p:dataTable>
+                        <br/><br/>
+                        
                     </p:commandButton>
                     <br/>
-                    
-                    
+
                     <p:outputLabel value="RG" for="BuscaDoFuncionarioPeloRG" />
-                    <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPeloRG"/>
+                    <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPeloRG" value="#{controllerFuncionarioSMBG.rg}"/>
                     
+                    <p:commandButton class="menuCadastrar" value="BUSCAR RG" id="BuscarFuncionarioPeloRG" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloRG()}" onclick="window.location.href = window.location.href">
+                        <p:growl id="growl1" showDetail="true" sticky="true" /> 
+                        <p:dataTable id="dtFuncionario1" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloRG()}" var="funcionario">
+                            <p:column headerText="Nome">
+                                <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
+                            </p:column>
+
+                            <p:column headerText="CPF">
+                                <h:outputText value="#{funcionario.cpf}" />
+                            </p:column>
+
+                            <p:column headerText="Identidade">
+                                <h:outputText value="#{funcionario.funcionarioIdentidade.numeroIdentidade}" />
+                            </p:column>
+
+                            <p:column headerText="Nome da Mãe">
+                                <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
+                            </p:column>
+
+                        </p:dataTable>
+                        <br/><br/>
+                    </p:commandButton>
+
+                    <br/>
+
                     <p:outputLabel value="CNH" for="BuscaDoFuncionarioPelaCNH" />
-                    <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPelaCNH"/>
+                    <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPelaCNH" value="#{controllerFuncionarioSMBG.cnh}"/>
                     
-                    
-                    
-                    
+                    <p:commandButton class="menuCadastrar" value="BUSCAR CNH" id="BuscarFuncionarioPeloCNH" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" onclick="window.location.href = window.location.href">
+                        <p:growl id="growl2" showDetail="true" sticky="true" /> 
+                        <p:dataTable id="dtFuncionario2" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" var="funcionario">
+                            <p:column headerText="Nome">
+                                <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
+                            </p:column>
+
+                            <p:column headerText="CPF">
+                                <h:outputText value="#{funcionario.cpf}" />
+                            </p:column>
+
+                            <p:column headerText="Identidade">
+                                <h:outputText value="#{funcionario.funcionarioIdentidade.numeroIdentidade}" />
+                            </p:column>
+
+                            <p:column headerText="Nome da Mãe">
+                                <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
+                            </p:column>
+
+                        </p:dataTable>
+                        <br/><br/>
+                    </p:commandButton>
+
                 </h:form>
 
             </div>

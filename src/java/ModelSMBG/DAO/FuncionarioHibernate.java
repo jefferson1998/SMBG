@@ -69,12 +69,26 @@ public class FuncionarioHibernate implements FuncionarioDAO {
     }
 
     public Funcionario buscarPelaIdentidade(String numeroIdentidade) {
-        return (Funcionario) em.createQuery("from Funcionario WHERE numeroidentidade = ?").setParameter(1, numeroIdentidade).getSingleResult();
+        Funcionario funcionario;
+        try {
+            funcionario = (Funcionario) em.createQuery("from Funcionario WHERE numeroidentidade = ?").setParameter(1, numeroIdentidade).getSingleResult();
+            return funcionario;
+        } catch (Exception erro) {
+            funcionario = null;
+        }
+        return funcionario;
 
     }
 
     public Funcionario buscarPelaCnh(String numeroCnh) {
-        return (Funcionario) em.createQuery("from Funcionario WHERE numerocnh = ?").setParameter(1, numeroCnh).getSingleResult();
+        Funcionario funcionario;
+        try {
+            funcionario = (Funcionario) em.createQuery("from Funcionario WHERE numerocnh = ?").setParameter(1, numeroCnh).getSingleResult();
+            return funcionario;
+        } catch (Exception erro) {
+            funcionario = null;
+        }
+        return funcionario;
     }
 
 }

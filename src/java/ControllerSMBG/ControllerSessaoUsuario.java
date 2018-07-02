@@ -63,27 +63,16 @@ public class ControllerSessaoUsuario {
 
     }
 
-    public void deslogar() {
+    public void deslogar() throws IOException {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().invalidateSession();
         
         try {
             context.getExternalContext().redirect("PaginaLoginSMBG.xhtml");
         } catch (IOException e) {
-
         }
     }
 
-//    public void logar() throws IOException {
-//        FacesContext context = FacesContext.getCurrentInstance();
-//        if (usuario != null) {
-//            context.getExternalContext().getSessionMap().put("usuarioID", session.getId());
-//            context.getExternalContext().redirect("/SMBG/faces/ViewSMBG/PaginaAdministradorSMBG.xhtml");
-//        } else {
-//            context.getExternalContext().getSessionMap().put("erroLogin", "sim");
-//            context.getExternalContext().redirect("/SMBG/");
-//        }
-//    }
     public boolean checarErro() {
         boolean temErro = false;
 

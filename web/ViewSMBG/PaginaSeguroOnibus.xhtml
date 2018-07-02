@@ -72,10 +72,8 @@
 
             </p:dataTable>
 
-            <p:dialog id="dialogAlterar" header="Alterar Seguro Onibus" widgetVar="alterarSeguroOnibusDialog" modal="true" height="100">
+            <p:dialog id="dialogAlterar" header="Alterar Seguro Onibus" widgetVar="alterarSeguroOnibusDialog" modal="true" height="500" draggable="false">
                 <h:panelGrid columns="2" >
-                    <h3> DADOS CORRETOR </h3>
-                    <br/>
 
                     <p:outputLabel value="Nome do Corretor:*" for="NomeDoCorretor" />
                     <p:inputText class="camposFormulario" id="NomeDoCorretor" value="#{controllerSeguroOnibusSMBG.seguroOnibus.nomeCorretor}"/>
@@ -92,8 +90,6 @@
                     <p:outputLabel value="Inspetoria Corretor:*" for="InspetoriaDoCorretor" />
                     <p:inputText class="camposFormulario" id="InspetoriaDoCorretor" value="#{controllerSeguroOnibusSMBG.seguroOnibus.inspetoriaDoCorretor}"/>
 
-                    <h3> DADOS SEGURO </h3>
-                    <br/>
 
                     <p:outputLabel value="Proposta:*" for="PropostaDoSeguro" />
                     <p:inputText class="camposFormulario" id="PropostaDoSeguro" value="#{controllerSeguroOnibusSMBG.seguroOnibus.proposta}"/>
@@ -130,9 +126,6 @@
 
                     <p:outputLabel value="Ramo:*" for="RamoSeguradora" />
                     <p:inputText class="camposFormulario" id="RamoSeguradora" value="#{controllerSeguroOnibusSMBG.seguroOnibus.ramo}"/>
-
-                    <h3> DADOS SEGURADO </h3>
-                    <br/>
 
                     <p:outputLabel value="Rua:*" for="RuaEnderecoDoSegurado"/>
                     <p:inputText class="camposFormulario" id="RuaEnderecoDoSegurado" value="#{controllerSeguroOnibusSMBG.seguroOnibus.endereco.rua}"/>

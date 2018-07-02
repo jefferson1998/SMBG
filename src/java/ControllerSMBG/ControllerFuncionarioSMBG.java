@@ -31,9 +31,6 @@ public class ControllerFuncionarioSMBG {
     public ControllerFuncionarioSMBG() {
         funcionario = new Funcionario();
         funcionarioModel = new FuncionarioModel();
-        cpf = "";
-        rg = "";
-        cnh = "";
     }
     
 
@@ -171,17 +168,28 @@ public class ControllerFuncionarioSMBG {
         return 0;
     }
 
-    /**
-     * @return the cpf
-     */
+   
     public String getCpf() {
         return cpf;
     }
-
-    /**
-     * @param cpf the cpf to set
-     */
+    
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+    
+    public String getCnh() {
+        return cnh;
+    }
+
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
     }
 }
