@@ -19,13 +19,8 @@ public class FuncionarioModel {
         }
     }
 
-    public void atualizarFuncionario(Funcionario funcionario) throws Exception {
-        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
-             daoFuncionario.atualizar(funcionario);
-        } else {
-            throw new Exception("CPF já cadastrado!");
-        }
-       
+    public void atualizarFuncionario(Funcionario funcionario){
+        daoFuncionario.atualizar(funcionario);
     }
 
     public void removerFuncionario(Funcionario funcionario) {

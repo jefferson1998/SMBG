@@ -47,16 +47,22 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
 
     @Embedded
     private Reservista funcionarioReservista;
+    
+    @Column(name = "emailfuncionario")
+    private String emailfuncionario;
+    
+    @Column(name = "telefonefuncionario ")
+    private String telefonefuncionario;
 
-    @ElementCollection
-    @CollectionTable(name = "email_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
-    @Column(name = "email_funcionario")
-    private List<String> emailFuncionario;
-
-    @ElementCollection
-    @CollectionTable(name = "telefone_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
-    @Column(name = "telefone")
-    private List<String> numeroTelefoneFuncionario;
+//    @ElementCollection
+//    @CollectionTable(name = "email_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
+//    @Column(name = "email_funcionario")
+//    private List<String> emailFuncionario;
+//
+//    @ElementCollection
+//    @CollectionTable(name = "telefone_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
+//    @Column(name = "telefone")
+//    private List<String> numeroTelefoneFuncionario;
 
     @Column(name = "estadoCivil")
     private String estadoCivil;
@@ -148,21 +154,6 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
         return funcionarioReservista;
     }
 
-    public List<String> getEmailFuncionario() {
-        return emailFuncionario;
-    }
-
-    public void setEmailFuncionario(List<String> emailFuncionario) {
-        this.emailFuncionario = emailFuncionario;
-    }
-
-    public List<String> getNumeroTelefoneFuncionario() {
-        return numeroTelefoneFuncionario;
-    }
-
-    public void setNumeroTelefoneFuncionario(List<String> numeroTelefoneFuncionario) {
-        this.numeroTelefoneFuncionario = numeroTelefoneFuncionario;
-    }
 
     public String getEstadoCivil() {
         return estadoCivil;
@@ -216,6 +207,34 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
                 funcionarioIdentidade.getNome(), funcionarioIdentidade.getDataDeEmissao(),
                 funcionarioIdentidade.getOrgaoEmissor(), funcionarioIdentidade.getNomeDaMae(),
                 funcionarioIdentidade.getUFIdentidade(), funcionarioEndereco);
+    }
+
+    /**
+     * @return the emailfuncionario
+     */
+    public String getEmailfuncionario() {
+        return emailfuncionario;
+    }
+
+    /**
+     * @param emailfuncionario the emailfuncionario to set
+     */
+    public void setEmailfuncionario(String emailfuncionario) {
+        this.emailfuncionario = emailfuncionario;
+    }
+
+    /**
+     * @return the telefonefuncionario
+     */
+    public String getTelefonefuncionario() {
+        return telefonefuncionario;
+    }
+
+    /**
+     * @param telefonefuncionario the telefonefuncionario to set
+     */
+    public void setTelefonefuncionario(String telefonefuncionario) {
+        this.telefonefuncionario = telefonefuncionario;
     }
 
 }

@@ -72,7 +72,19 @@
                     </h:panelGrid>
                 </p:tab>
             </div>
+            
+             <div id="tableView4">
+                <p:tab title="Seguros" >
+                    <h:panelGrid columns="2" cellpadding="4">
+                        <f:facet name="header">
+                            <p:graphicImage library="imagem" name="seguro.png"/>
+                        </f:facet>                    
+                        <h:outputText value="Quantidade: " style="font-weight: bold"/>
+                        <h:outputText value="#{controllerSeguroOnibusSMBG.listaTodos().size()}"/>
 
+                    </h:panelGrid>
+                </p:tab>
+            </div>
 
         </h:form>
 

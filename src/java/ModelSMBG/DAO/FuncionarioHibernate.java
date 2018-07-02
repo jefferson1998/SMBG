@@ -32,7 +32,6 @@ public class FuncionarioHibernate implements FuncionarioDAO {
         } catch (Exception e) {
             em.getTransaction().rollback();
         }
-
     }
 
     @Override
@@ -50,9 +49,11 @@ public class FuncionarioHibernate implements FuncionarioDAO {
     @Override
     public List<Funcionario> listarTodos() {
         List<Funcionario> funcionarios;
-
-        funcionarios = this.em.createQuery("from Funcionario").getResultList();
-
+        try{
+            funcionarios = this.em.createQuery("from Funcionario").getResultList();
+        }catch(Exception erro) {
+            funcionarios = null;
+        }
         return funcionarios;
     }
 

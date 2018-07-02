@@ -87,7 +87,7 @@
                     <p:outputLabel value="CNH" for="BuscaDoFuncionarioPelaCNH" />
                     <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPelaCNH" value="#{controllerFuncionarioSMBG.cnh}"/>
                     
-                    <p:commandButton class="menuCadastrar" value="BUSCAR CNH" id="BuscarFuncionarioPeloCNH" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" onclick="window.location.href = window.location.href">
+                    <p:commandButton class="menuCadastrar" value="BUSCAR CNH" id="BuscarFuncionarioPeloCNH" action="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" onclick="window.location.href = window.location.href">
                         <p:growl id="growl2" showDetail="true" sticky="true" /> 
                         <p:dataTable id="dtFuncionario2" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" var="funcionario">
                             <p:column headerText="Nome">

@@ -45,62 +45,91 @@ public class SeguroOnibusHibernate implements SeguroOnibusDAO {
     public List<SeguroOnibus> listarTodos() {
         
         List<SeguroOnibus> lista;
-        
-        lista = this.em.createQuery("from SeguroOnibus").getResultList();
-        return lista;
+        try{
+            lista = this.em.createQuery("from SeguroOnibus").getResultList();
+            return lista;
+        } catch (Exception erro) {
+            lista = null;
+        }
+       return lista;
     }
 
     @Override
     public SeguroOnibus buscarPeloCodigoSusepDoCorretor(int codigoSusepDoCorretor) {
+        SeguroOnibus seguroOnibus;
         try {
-            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoSusepDoCorretor = ?").
+            seguroOnibus = (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoSusepDoCorretor = ?").
                     setParameter(1, codigoSusepDoCorretor).getSingleResult();
+            return seguroOnibus;
         } catch (Exception e) {
-            em.getTransaction().rollback();
+            seguroOnibus = null;
         }
-        return null;
+        return seguroOnibus;
     }
 
     @Override
     public SeguroOnibus buscarPeloCodigoCpdDoCorretor(int codigoCpdDoCorretor) {
+        SeguroOnibus seguroOnibus;
         try {
-            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoCpdDoCorretor = ?").
+            seguroOnibus = (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoCpdDoCorretor = ?").
                     setParameter(1, codigoCpdDoCorretor).getSingleResult();
+            return seguroOnibus;
         } catch (Exception e) {
-            em.getTransaction().rollback();
+            seguroOnibus = null;
         }
-        return null;
+        return seguroOnibus;
     }
 
     @Override
     public SeguroOnibus buscarPeloCodigoSusep(int codigoSusep) {
-       
-            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoSusep = ?").
+        SeguroOnibus seguroOnibus;
+        try {
+            seguroOnibus = (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE codigoSusep = ?").
                     setParameter(1, codigoSusep).getSingleResult();
+            return seguroOnibus;
+        } catch (Exception e) {
+            seguroOnibus = null;
+        }
+        return seguroOnibus;
     }
 
     @Override
     public SeguroOnibus buscarPeloCnpjDaEmpresaDoSeguro(String cpnj) {
-      
-            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE cpnj = ?").
+        SeguroOnibus seguroOnibus;
+        try {
+            seguroOnibus = (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE cpnj = ?").
                     setParameter(1, cpnj).getSingleResult();
-        
+            return seguroOnibus;
+        } catch (Exception e) {
+            seguroOnibus = null;
+        }
+        return seguroOnibus;
     }
 
     @Override
     public SeguroOnibus buscarPeloCpfOuCnpjDoSegurado(String cpfOuCnpjDoSegurado) {
-        
-            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE cpfOuCnpjDoSegurado = ?").
+        SeguroOnibus seguroOnibus;
+        try {
+            seguroOnibus = (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE cpfOuCnpjDoSegurado = ?").
                     setParameter(1, cpfOuCnpjDoSegurado).getSingleResult();
-        
+            return seguroOnibus;
+        } catch (Exception e) {
+            seguroOnibus = null;
+        }
+        return seguroOnibus;
     }
 
     @Override
     public SeguroOnibus buscarPeloNumeroEndosso(int numeroEndosso) {
-      
-            return (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE numeroEndosso = ?").
+        SeguroOnibus seguroOnibus;
+        try {
+            seguroOnibus = (SeguroOnibus) em.createQuery("from SeguroOnibus WHERE numeroEndosso = ?").
                     setParameter(1, numeroEndosso).getSingleResult();
-       
+            return seguroOnibus;
+        } catch (Exception e) {
+            seguroOnibus = null;
+        }
+        return seguroOnibus;
     }
 
 }

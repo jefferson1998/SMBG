@@ -73,9 +73,17 @@ public class zzzTeste {
             FuncionarioModel fm =  new FuncionarioModel();
             Funcionario f1 = new Funcionario();
             
-            f1 = (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?").setParameter(1, "125.225.945/70").getSingleResult();
-            System.out.println(f1);
-        
+            f1 = (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?").setParameter(1, "123").getSingleResult();
+            
+            f1.setCpf("456");
+            try{
+                em.getTransaction().begin();
+                em.merge(f1);
+                em.getTransaction().commit();
+            }catch(Exception erro) {
+                erro.getStackTrace();
+                System.out.println(erro.getMessage());
+            }
         
     }
 }

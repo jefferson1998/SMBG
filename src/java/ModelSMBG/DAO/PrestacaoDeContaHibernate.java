@@ -8,39 +8,87 @@ public class PrestacaoDeContaHibernate implements PrestacaoDeContaDAO {
 
     private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
-    public void inserir(PrestacaoDeConta objeto) {
-        // TODO Auto-generated method stub
+    public void inserir(PrestacaoDeConta prestacao) {
+       try {
+            em.getTransaction().begin();
+            em.persist(prestacao);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
 
     }
 
-    public void atualizar(PrestacaoDeConta objeto) {
-        // TODO Auto-generated method stub
+    public void atualizar(PrestacaoDeConta prestacao) {
+       try {
+            em.getTransaction().begin();
+            em.merge(prestacao);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
 
     }
 
-    public void deletar(PrestacaoDeConta objeto) {
-        // TODO Auto-generated method stub
+    public void deletar(PrestacaoDeConta prestacao) {
+       try {
+            em.getTransaction().begin();
+            em.remove(prestacao);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
 
     }
 
     public List<PrestacaoDeConta> listarTodos() {
-        // TODO Auto-generated method stub
-        return null;
+        List<PrestacaoDeConta> prestacoes;
+        try{
+            prestacoes = this.em.createQuery("from Funcionario").getResultList();
+            return prestacoes;
+        }catch(Exception erro) {
+            prestacoes = null;
+        }
+        return prestacoes;
     }
 
     public PrestacaoDeConta buscarPeloCpfDoFuncionario(String cpf) {
-        // TODO Auto-generated method stub
-        return null;
+        PrestacaoDeConta prestacoes;
+        try {
+            prestacoes = (PrestacaoDeConta) em.createQuery("from PrestacaoDeConta p  JOIN Funcionario f\n" +
+            "ON p.cod_funcionario = f.cod_funcionario\n" +
+            "WHERE f.cpf = ?;").setParameter(1, cpf).getSingleResult();
+            return prestacoes;
+        } catch (Exception erro) {
+            prestacoes = null;
+        }
+        return prestacoes;
     }
 
     public PrestacaoDeConta buscarPelaIdentidadeDoFuncionario(String numeroIdentidade) {
-        // TODO Auto-generated method stub
-        return null;
+        PrestacaoDeConta prestacoes;
+        try {
+            prestacoes = (PrestacaoDeConta) em.createQuery("from PrestacaoDeConta p  JOIN Funcionario f\n" +
+            "ON p.cod_funcionario = f.cod_funcionario\n" +
+            "WHERE f.numeroIdentidade = ?;").setParameter(1, numeroIdentidade).getSingleResult();
+            return prestacoes;
+        } catch (Exception erro) {
+            prestacoes = null;
+        }
+        return prestacoes;
     }
 
     public PrestacaoDeConta buscarPelaCnhDoFuncionario(String cnh) {
-        // TODO Auto-generated method stub
-        return null;
+         PrestacaoDeConta prestacoes;
+        try {
+            prestacoes = (PrestacaoDeConta) em.createQuery("from PrestacaoDeConta p  JOIN Funcionario f\n" +
+            "ON p.cod_funcionario = f.cod_funcionario\n" +
+            "WHERE f.cnh = ?;").setParameter(1, cnh).getSingleResult();
+            return prestacoes;
+        } catch (Exception erro) {
+            prestacoes = null;
+        }
+        return prestacoes;
     }
 
 }

@@ -52,27 +52,48 @@ public class RotaHibernate implements RotaDAO {
     @Override
     public List<Rota> listarTodos() {
         List<Rota> lista;
-       
+        try {
             lista = em.createQuery("from Rota").getResultList();
             return lista;
-        
+        } catch (Exception erro) {
+            lista = null;
+        }
+        return lista;
     }
 
     public List<Rota> buscarPelaOrigem(String origem) {
-        // TODO Auto-generated method stub
-        return null;
+        List<Rota> lista;
+        try {
+            lista = em.createQuery("from Rota WHERE origem = ?").setParameter(1, origem).getResultList();
+            return lista;
+        } catch (Exception e) {
+            lista = null;
+        } 
+        return lista;
     }
 
     @Override
     public List<Rota> buscarPeloDestino(String destino) {
-        // TODO Auto-generated method stub
-        return null;
+        List<Rota> lista;
+        try {
+            lista = em.createQuery("from Rota WHERE destino = ?").setParameter(1, destino).getResultList();
+            return lista;
+        } catch (Exception e) {
+            lista = null;
+        } 
+        return lista;
     }
 
     @Override
     public List<Rota> buscarPeloHorarioDeSaida(String horarioDeSaida) {
-        // TODO Auto-generated method stub
-        return null;
+        List<Rota> lista;
+        try {
+            lista = em.createQuery("from Rota WHERE horarioDeSaida = ?").setParameter(1, horarioDeSaida).getResultList();
+            return lista;
+        } catch (Exception e) {
+            lista = null;
+        } 
+        return lista;
     }
 
 }

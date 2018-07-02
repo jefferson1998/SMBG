@@ -71,39 +71,35 @@ public class OnibusHibernate implements OnibusDAO {
 
     @Override
     public Onibus buscarPeloOnibusPeloCodigoRenavam(String codigoRenavam) {
-        
+        Onibus onibus;
         try {
-            return (Onibus) em.createQuery("from Onibus WHERE codigoRenavam = ?").setParameter(1, codigoRenavam).getSingleResult();
+            onibus = (Onibus) em.createQuery("from Onibus WHERE codigoRenavam = ?").setParameter(1, codigoRenavam).getSingleResult();
         } catch (Exception e) {
-        } finally {
-            em.close();
-        }
-        return null;
+            onibus = null;
+        } 
+        return onibus;
      
     }
 
     @Override
     public Onibus buscarPeloOnibusChassis(String chassi) {
+        Onibus onibus;
         try {
-            return (Onibus) em.createQuery("from Onibus WHERE chassi = ?").setParameter(1, chassi).getSingleResult();
+            onibus = (Onibus) em.createQuery("from Onibus WHERE chassi = ?").setParameter(1, chassi).getSingleResult();
         } catch (Exception e) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-        return null;
+            onibus = null;
+        } 
+        return onibus;
     }
 
     @Override
     public Onibus buscarPelaOnibusPlaca(String placa) {
+         Onibus onibus;
         try {
-            return (Onibus) em.createQuery("from Onibus WHERE placa = ?").setParameter(1, placa).getSingleResult();
+            onibus = (Onibus) em.createQuery("from Onibus WHERE placa = ?").setParameter(1, placa).getSingleResult();
         } catch (Exception e) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-        return null;
+            onibus = null;
+        } 
+        return onibus;
     }
-
 }

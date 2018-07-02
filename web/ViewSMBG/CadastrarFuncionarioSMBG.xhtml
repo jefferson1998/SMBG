@@ -40,7 +40,7 @@
                     <p:inputText class="camposFormulario" id="NumeroIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.numeroIdentidade}" required="true" />
 
                     <p:outputLabel value="Órgão Emissor:*" for="OrgaoEmissorIdentidadeFuncionario"/>
-                    <p:inputMask class="camposFormulario" id="OrgaoEmissorIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.orgaoEmissor}" mask="99999" required="true" />
+                    <p:inputText class="camposFormulario" id="OrgaoEmissorIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.orgaoEmissor}" required="true" />
 
                     <p:outputLabel value="Data de Emissão:*" for="DataEmissaoIdentidadeFuncionario"/>
                     <p:inputMask class="camposFormulario" id="DataEmissaoIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.dataDeEmissao}" mask="99/99/9999" required="true" />
@@ -63,6 +63,12 @@
                     <p:outputLabel value="Número do CPF:*" for="CPFDoFuncionario"/> 
                     <p:inputMask class="camposFormulario" id="CPFDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.cpf}" mask="999.999.999-99" required="true" />
                     
+                    <p:outputLabel value="Número do Telefone: " for="TelefoneDoFuncionario"/> 
+                    <p:inputMask class="camposFormulario" id="TelefoneDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.telefonefuncionario}" mask="(99)9999-9999"/>
+                    
+                    <p:outputLabel value="Email do Funcionário:" for="EmailDoFuncionario"/> 
+                    <p:inputText class="camposFormulario" id="EmailDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.emailfuncionario}" />
+                    
                     <h3> DADOS DO ENDEREÇO </h3>
 
                     <p:outputLabel value="Rua:*" for="RuaEnderecoDoFuncionario"/>
@@ -83,7 +89,7 @@
                     <p:inputMask class="camposFormulario" id="NumeroCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.numeroCNH}" mask="99999999999   "/>
 
                     <p:outputLabel value="Categoria: " for="CategoriaCNHDoFuncionario"/>
-                    <p:inputMask class="camposFormulario" id="CategoriaCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.categoriaCNH}" mask="99"/>
+                    <p:inputText class="camposFormulario" id="CategoriaCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.categoriaCNH}" />
 
                     <h3> DADOS DO PIS </h3>
 
@@ -107,10 +113,10 @@
                     <p:inputMask class="camposFormulario" id="NumeroDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.numeroCTPS}" mask="9999999"/>
 
                     <p:outputLabel value="Série: " for="SerieDoCTPSDoFuncionario"/>
-                    <p:inputMask class="camposFormulario" id="SerieDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.serieCTPS}" mask="9999"/>
+                    <p:inputText class="camposFormulario" id="SerieDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.serieCTPS}" />
 
                     <p:outputLabel value="Estado: " for="EstadoDoCTPSDoFuncionario"/>
-                    <p:inputMask class="camposFormulario" id="EstadoDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.estadoCTPS}" mask="99"/>
+                    <p:inputText class="camposFormulario" id="EstadoDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.estadoCTPS}" />
 
                     <h3> DADOS DA RESERVISTA </h3>
 

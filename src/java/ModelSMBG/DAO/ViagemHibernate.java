@@ -12,57 +12,148 @@ public class ViagemHibernate implements ViagemDAO{
 
     @Override
     public void inserir(Viagem viagem) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        try {
+            em.getTransaction().begin();
+            em.persist(viagem);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
     }
 
     @Override
     public void atualizar(Viagem viagem) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            em.getTransaction().begin();
+            em.merge(viagem);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
     }
 
     @Override
     public void deletar(Viagem viagem) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            em.getTransaction().begin();
+            em.remove(viagem);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
     }
 
     @Override
     public List<Viagem> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Viagem> lista;
+        try{
+            lista = this.em.createQuery("from Viagem").getResultList();
+            return lista;
+        } catch (Exception erro) {
+            lista = null;
+        }
+       return lista;
     }
     
     @Override
     public Viagem buscarPelaData(String data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem WHERE data = ?").
+                    setParameter(1, data).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
 
     @Override
     public Viagem buscarPeloCpfDoFuncionario(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem AS v JOIN Funcionario AS f\n" +
+            "ON v.cod_motorista = f.cod_funcionario\n" +
+            "WHERE f.cpf = ?;").
+                    setParameter(1, cpf).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
 
     @Override
     public Viagem buscarPeloDiaDaSemana(String diaDaSemana) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem WHERE diaDaSemana = ?").
+                    setParameter(1, diaDaSemana).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
 
     @Override
     public Viagem buscarPeloRenavaDoOnibus(String codigoRenavam) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem AS v JOIN Onibus AS o\n" +
+                "ON v.cod_motorista = o.cod_onibus\n" +
+                "WHERE o.codigoRenavam = ?;").
+                    setParameter(1, codigoRenavam).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
 
     @Override
     public Viagem buscarPelaPlacaDoOnibus(String placa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem AS v JOIN Onibus AS o\n" +
+                "ON v.cod_motorista = o.cod_onibus\n" +
+                "WHERE o.placa = ?;").
+                    setParameter(1, placa).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
 
     @Override
     public Viagem buscarPeloChassisDoOnibus(String chassi) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem AS v JOIN Onibus AS o\n" +
+                "ON v.cod_motorista = o.cod_onibus\n" +
+                "WHERE o.chassi = ?;").
+                    setParameter(1, chassi).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
 
     @Override
     public Viagem buscarPelaRota(Rota rota) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Viagem viagem;
+        try {
+            viagem = (Viagem) em.createQuery("from Viagem AS v JOIN Rotas AS r\n" +
+            "ON v.cod_rota = r.cod_rota").
+                    setParameter(1, rota).getSingleResult();
+            return viagem;
+        } catch (Exception e) {
+            viagem = null;
+        }
+        return viagem;
     }
     
 }

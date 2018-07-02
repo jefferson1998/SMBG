@@ -47,6 +47,7 @@ public class ControllerFuncionarioSMBG {
         try {
             funcionarioModel.cadastrarFuncionario(funcionario);
             funcionario = new Funcionario();
+            listaTodos();
             context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
@@ -59,7 +60,6 @@ public class ControllerFuncionarioSMBG {
         try {
             funcionarioModel.removerFuncionario(funcionario);
             listaTodos();
-            funcionario = new Funcionario();
             context.addMessage(null, new FacesMessage("Remoção Efetuada!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
@@ -72,7 +72,6 @@ public class ControllerFuncionarioSMBG {
         try {
             funcionarioModel.atualizarFuncionario(funcionario);
             listaTodos();
-            funcionario = new Funcionario();
             context.addMessage(null, new FacesMessage("Alteração Efetuada!"));
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
@@ -85,6 +84,7 @@ public class ControllerFuncionarioSMBG {
         
         try {
             funcionario = funcionarioModel.buscarFuncionarioPeloCpf(cpf);
+            return funcionario;
         } catch (Exception erro) {
             funcionario = null;
             context.addMessage(null, new FacesMessage("Erro ao procurar!"));
@@ -97,6 +97,7 @@ public class ControllerFuncionarioSMBG {
         
         try {
             funcionario = funcionarioModel.buscarFuncionarioPelaCnh(cnh);
+            return funcionario;
         } catch (Exception erro) {
             funcionario = null;
             context.addMessage(null, new FacesMessage("Erro ao procurar!"));
@@ -109,6 +110,7 @@ public class ControllerFuncionarioSMBG {
         
         try {
             funcionario = funcionarioModel.buscarFuncionarioPelaIdentidade(rg);
+            return funcionario;
         } catch (Exception erro) {
             funcionario = null;
             context.addMessage(null, new FacesMessage("Erro ao procurar!"));
@@ -125,9 +127,8 @@ public class ControllerFuncionarioSMBG {
             return listaFuncionario;
         } catch (Exception ex) {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
-            return null;
         }
-
+        return null;
     }
 
     public int totalDeMotoristas() {
