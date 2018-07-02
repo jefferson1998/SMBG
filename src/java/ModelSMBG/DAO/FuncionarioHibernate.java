@@ -6,56 +6,53 @@ import javax.persistence.EntityManager;
 import org.hibernate.HibernateException;
 
 public class FuncionarioHibernate implements FuncionarioDAO {
-    
+
     private EntityManager em = GeradorDeEntityManager.getEntityManager();
 
     @Override
-    public void inserir(Funcionario funcionario){
-        try{
-             em.getTransaction().begin();
+    public void inserir(Funcionario funcionario) {
+        
+        try {
+            em.getTransaction().begin();
             em.persist(funcionario);
             em.getTransaction().commit();
-        }  catch (HibernateException hibernateErro) {
+        } catch (Exception e) {
             em.getTransaction().rollback();
-        }  catch (Exception e) {
-            em.getTransaction().rollback();
-        } 
-            
+        }
+
     }
 
     @Override
     public void atualizar(Funcionario funcionario) {
-        
+
         try {
             em.getTransaction().begin();
             em.merge(funcionario);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
-        } 
+        }
 
     }
 
     @Override
     public void deletar(Funcionario funcionario) {
-        
+
         try {
             em.getTransaction().begin();
             em.remove(funcionario);
             em.getTransaction().commit();
-        } catch (HibernateException hibernateErro) {
-            em.getTransaction().rollback();
         } catch (Exception e) {
             em.getTransaction().rollback();
-        } 
+        }
     }
 
     @Override
     public List<Funcionario> listarTodos() {
         List<Funcionario> funcionarios;
-       
+
         funcionarios = this.em.createQuery("from Funcionario").getResultList();
-       
+
         return funcionarios;
     }
 
@@ -63,7 +60,8 @@ public class FuncionarioHibernate implements FuncionarioDAO {
     public Funcionario buscarPeloCpf(String cpf) {
         Funcionario funcionario;
         try {
-            funcionario = (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?1").setParameter(1, cpf).getSingleResult();
+            funcionario = (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?").setParameter(1, cpf).getSingleResult();
+            return funcionario;
         } catch (Exception erro) {
             funcionario = null;
         }
@@ -72,7 +70,7 @@ public class FuncionarioHibernate implements FuncionarioDAO {
 
     public Funcionario buscarPelaIdentidade(String numeroIdentidade) {
         return (Funcionario) em.createQuery("from Funcionario WHERE numeroidentidade = ?").setParameter(1, numeroIdentidade).getSingleResult();
-        
+
     }
 
     public Funcionario buscarPelaCnh(String numeroCnh) {

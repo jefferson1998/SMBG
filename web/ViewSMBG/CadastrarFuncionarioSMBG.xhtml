@@ -43,7 +43,6 @@
                     <p:inputMask class="camposFormulario" id="OrgaoEmissorIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.orgaoEmissor}" mask="99999" required="true" />
 
                     <p:outputLabel value="Data de Emissão:*" for="DataEmissaoIdentidadeFuncionario"/>
-                    <p:calendar />
                     <p:inputMask class="camposFormulario" id="DataEmissaoIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.dataDeEmissao}" mask="99/99/9999" required="true" />
 
                     <p:outputLabel value="Nome do pai: " for="NomeDoPaiIdentidadeFuncionario"/>
@@ -108,10 +107,10 @@
                     <p:inputMask class="camposFormulario" id="NumeroDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.numeroCTPS}" mask="9999999"/>
 
                     <p:outputLabel value="Série: " for="SerieDoCTPSDoFuncionario"/>
-                    <p:inputText class="camposFormulario" id="SerieDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.serieCTPS}"/>
+                    <p:inputMask class="camposFormulario" id="SerieDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.serieCTPS}" mask="9999"/>
 
                     <p:outputLabel value="Estado: " for="EstadoDoCTPSDoFuncionario"/>
-                    <p:inputText class="camposFormulario" id="EstadoDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.estadoCTPS}"/>
+                    <p:inputMask class="camposFormulario" id="EstadoDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.estadoCTPS}" mask="99"/>
 
                     <h3> DADOS DA RESERVISTA </h3>
 

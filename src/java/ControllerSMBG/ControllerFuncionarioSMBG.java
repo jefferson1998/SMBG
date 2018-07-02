@@ -26,11 +26,16 @@ public class ControllerFuncionarioSMBG {
     private Funcionario funcionario;
     private FuncionarioModel funcionarioModel;
     private List<Funcionario> listaFuncionario;
+    private String cpf,rg, cnh;
 
     public ControllerFuncionarioSMBG() {
         funcionario = new Funcionario();
         funcionarioModel = new FuncionarioModel();
+        cpf = "";
+        rg = "";
+        cnh = "";
     }
+    
 
     public Funcionario getFuncionario() {
         return funcionario;
@@ -47,7 +52,6 @@ public class ControllerFuncionarioSMBG {
             funcionario = new Funcionario();
             context.addMessage(null, new FacesMessage("Cadastro Efetuado!"));
         } catch (Exception ex) {
-            ex.printStackTrace();
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
 
@@ -77,6 +81,42 @@ public class ControllerFuncionarioSMBG {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
 
+    }
+    
+     public Funcionario buscarFuncionarioPeloCPF() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        
+        try {
+            funcionario = funcionarioModel.buscarFuncionarioPeloCpf(cpf);
+        } catch (Exception erro) {
+            funcionario = null;
+            context.addMessage(null, new FacesMessage("Erro ao procurar!"));
+        }
+        return funcionario;
+    }
+    
+    public Funcionario buscarFuncionarioPeloCNH() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        
+        try {
+            funcionario = funcionarioModel.buscarFuncionarioPelaCnh(cnh);
+        } catch (Exception erro) {
+            funcionario = null;
+            context.addMessage(null, new FacesMessage("Erro ao procurar!"));
+        }
+        return funcionario;
+    }
+    
+    public Funcionario buscarFuncionarioPeloRG() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        
+        try {
+            funcionario = funcionarioModel.buscarFuncionarioPelaIdentidade(rg);
+        } catch (Exception erro) {
+            funcionario = null;
+            context.addMessage(null, new FacesMessage("Erro ao procurar!"));
+        }
+        return funcionario;
     }
 
     public List<Funcionario> listaTodos() {
@@ -129,5 +169,19 @@ public class ControllerFuncionarioSMBG {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
         return 0;
+    }
+
+    /**
+     * @return the cpf
+     */
+    public String getCpf() {
+        return cpf;
+    }
+
+    /**
+     * @param cpf the cpf to set
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

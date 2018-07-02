@@ -15,10 +15,12 @@ public class ControllerOnibusSMBG {
     OnibusModel onibusModel;
     Onibus onibus;
     List<Onibus> listaOnibus;
+    private String buscarOnibus;
 
     public ControllerOnibusSMBG() {
         onibusModel = new OnibusModel();
         onibus = new Onibus();
+        buscarOnibus = "";
     }
 
     public Onibus getOnibus() {
@@ -27,6 +29,14 @@ public class ControllerOnibusSMBG {
 
     public void setOnibus(Onibus onibus) {
         this.onibus = onibus;
+    }
+    
+    public String getBuscarOnibus() {
+        return buscarOnibus;
+    }
+
+    public void setBuscarOnibus(String buscarOnibus) {
+        this.buscarOnibus = buscarOnibus;
     }
 
     public void cadastrarOnibus() {
@@ -76,10 +86,10 @@ public class ControllerOnibusSMBG {
         return null;
     }
     
-    public Onibus BuscarOnibusPelaPlaca(String placa) {
+    public Onibus buscarOnibusPelaPlaca() {
         FacesContext context = FacesContext.getCurrentInstance();
         try {
-            onibus = onibusModel.buscarPelaOnibusPlaca(placa);
+            onibus = onibusModel.buscarPelaOnibusPlaca(buscarOnibus);
             context.addMessage(null, new FacesMessage("Buscar efetuada!"));
             return onibus;
         } catch (Exception ex) {
@@ -88,10 +98,10 @@ public class ControllerOnibusSMBG {
         }
     }
 
-     public Onibus BuscarOnibusPeloChassi(String chassi) {
+     public Onibus buscarOnibusPeloChassi() {
         FacesContext context = FacesContext.getCurrentInstance();
         try {
-            onibus = onibusModel.buscarPeloOnibusChassis(chassi);
+            onibus = onibusModel.buscarPeloOnibusChassis(buscarOnibus);
             context.addMessage(null, new FacesMessage("Buscar efetuada!"));
             return onibus;
         } catch (Exception ex) {
@@ -100,10 +110,10 @@ public class ControllerOnibusSMBG {
         }
     }
      
-     public Onibus BuscarOnibusPeloCodigoRenavam(String codigoRenavam) {
+     public Onibus buscarOnibusPeloCodigoRenavam() {
         FacesContext context = FacesContext.getCurrentInstance();
         try {
-            onibus = onibusModel.buscarPeloOnibusPeloCodigoRenavam(codigoRenavam);
+            onibus = onibusModel.buscarPeloOnibusPeloCodigoRenavam(buscarOnibus);
             context.addMessage(null, new FacesMessage("Buscar efetuada!"));
             return onibus;
         } catch (Exception ex) {
@@ -111,4 +121,5 @@ public class ControllerOnibusSMBG {
             return null;
         }
     }
+    
 }

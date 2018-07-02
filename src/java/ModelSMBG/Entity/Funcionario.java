@@ -21,7 +21,7 @@ import javax.persistence.Transient;
 @AttributeOverride(name = "id", column = @Column(name = "Cod_Funcionario"))
 public class Funcionario extends Persistivel implements Serializable, Comparable<Funcionario> {
 
-    @Column(name = "senhaDoUsuario", length = 20)
+    @Column(name = "senhadousuario", length = 20)
     private String senha;
     
     @Embedded

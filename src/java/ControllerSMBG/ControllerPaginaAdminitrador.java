@@ -23,6 +23,7 @@ public class ControllerPaginaAdminitrador {
     }
     
     
+    
     public void irPaginaOnibus() {
         FacesContext context = FacesContext.getCurrentInstance();
 
@@ -63,6 +64,16 @@ public class ControllerPaginaAdminitrador {
         }
     }
     
+    public void irBuscarOnibus() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscaOnibusSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
     public void irPaginaFuncionario() {
         FacesContext context = FacesContext.getCurrentInstance();
 
@@ -72,6 +83,18 @@ public class ControllerPaginaAdminitrador {
 
         }
     }
+    
+     public void irPaginaBuscarFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscaFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    
     
     public void irCadastrarFuncionario() {
         FacesContext context = FacesContext.getCurrentInstance();
