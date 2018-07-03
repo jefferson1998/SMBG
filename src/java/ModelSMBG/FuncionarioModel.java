@@ -12,15 +12,19 @@ public class FuncionarioModel {
     
     public void cadastrarFuncionario(Funcionario funcionario) throws Exception {
         if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
-            funcionario.setSenha(funcionario.getCpf().substring(funcionario.getCpf().length() - 4));
+            funcionario.setSenha(funcionario.getCpf().substring(9,11) + "" + funcionario.getCpf().substring(12,funcionario.getCpf().length()));
             daoFuncionario.inserir(funcionario);
         } else {
             throw new Exception("CPF já cadastrado!");
         }
     }
 
-    public void atualizarFuncionario(Funcionario funcionario){
-        daoFuncionario.atualizar(funcionario);
+    public void atualizarFuncionario(Funcionario funcionario) throws Exception{
+        if (buscarFuncionarioPeloCpf(funcionario.getCpf()) == null) {
+            daoFuncionario.atualizar(funcionario);
+        } else {
+            throw new Exception("CPF já cadastrado!");
+        }
     }
 
     public void removerFuncionario(Funcionario funcionario) {

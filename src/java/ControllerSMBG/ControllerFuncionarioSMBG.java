@@ -79,7 +79,7 @@ public class ControllerFuncionarioSMBG {
 
     }
     
-     public Funcionario buscarFuncionarioPeloCPF() {
+    public Funcionario buscarFuncionarioPeloCPF() {
         FacesContext context = FacesContext.getCurrentInstance();
         
         try {
@@ -167,6 +167,19 @@ public class ControllerFuncionarioSMBG {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
         return 0;
+    }
+    
+    public static Funcionario buscarFuncionarioPeloCpfParaLogin(String cpf) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        
+        try {
+            return new FuncionarioModel().buscarFuncionarioPeloCpf(cpf);
+             
+        } catch (Exception erro) {
+            
+            context.addMessage(null, new FacesMessage("Erro ao procurar!"));
+        }
+        return null;
     }
 
    

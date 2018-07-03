@@ -28,7 +28,7 @@ import javax.faces.context.FacesContext;
 public class ControllerSessaoUsuario {
 
     private Usuario usuario;
-    private Funcionario funcionario = new ControllerFuncionarioSMBG().buscarFuncionarioPeloCPF();
+    private Funcionario funcionario;
 
     public ControllerSessaoUsuario() {
         usuario = new Usuario();
@@ -45,6 +45,7 @@ public class ControllerSessaoUsuario {
     public String logar() {
         FacesContext context = FacesContext.getCurrentInstance();
         String ret = "";
+        funcionario = ControllerFuncionarioSMBG.buscarFuncionarioPeloCpfParaLogin(this.usuario.getLogin());
 
         if (this.usuario.getLogin().equals("admin") && this.usuario.getSenha().equals("admin")) {
 
@@ -53,7 +54,7 @@ public class ControllerSessaoUsuario {
             context.getExternalContext().getSessionMap().put("erroLogin", "nao");
             ret = "PaginaAdmin.xhtml";
         } else if ((this.usuario.getLogin().equals(this.funcionario.getCpf())) && 
-                (this.usuario.getSenha().equals(this.funcionario.getCpf().substring(this.funcionario.getCpf().length() - 4)))) {
+                (this.usuario.getSenha().equals(this.funcionario.getSenha()))) {
             context.getExternalContext().getSessionMap().put("user", usuario);
             context.getExternalContext().getSessionMap().put("perfil", "usuario");
             context.getExternalContext().getSessionMap().put("erroLogin", "nao");
