@@ -26,6 +26,8 @@
                 <p:commandButton value="Cadastrar" action = "#{controllerPaginaAdminitrador.irCadastrarOnibus()}"/>
 
                 <p:commandButton value="Menu" action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/> 
+                
+                <p:commandButton value="Buscar" action="#{controllerPaginaAdminitrador.irBuscarOnibus()}"/> 
 
                 <p:commandButton value="Deslogar" action="#{controllerSessaoUsuario.deslogar()}"/> 
 
@@ -80,7 +82,7 @@
 
             </p:dataTable>
 
-            <p:dialog id="dialogAlterar" header="Alterar Onibus" widgetVar="alterarOnibusDialog" modal="true" height="1000" draggable="false">
+            <p:dialog id="dialogAlterar" header="Alterar Onibus" widgetVar="alterarOnibusDialog" modal="true" height="500" draggable="false">
                 <h:panelGrid columns="2" >
                     <h:outputLabel value="Código Renavam" for="codigoRenavam" />
                     <h:inputText value="#{controllerOnibusSMBG.onibus.codigoRenavam}" id="codigoRenavam" />

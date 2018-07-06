@@ -12,7 +12,7 @@
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
              <h:form>
-                <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
+                <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="deslogar" 
                                  action="#{controllerSessaoUsuario.deslogar()}"/>                 
             </h:form>
         </div>
@@ -32,28 +32,31 @@
                     <h3> PRESTAÇÃO DE CONTAS </h3>
 
                     <p:outputLabel value="Arrecadação total diária:*" for="ArrecadaçãoDiaria" />
-                    <p:inputText class="camposFormulario" id="ArrecadaçãoDiaria" value="#{PrestacaoDeConta.valorTotalArrecadadoNoDia}"/>
+                    <p:inputText class="camposFormulario" id="ArrecadaçãoDiaria" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.valorTotalArrecadadoNoDia}"/>
 
                     <p:outputLabel value="Arrecadação com descontos:*" for="ArrecadaçãoDiariaComDescontos" />
-                    <p:inputText class="camposFormulario" id="ArrecadaçãoDiariaComDescontos" value="#{PrestacaoDeConta.valorArrecadadoDescontado}"/>
+                    <p:inputText class="camposFormulario" id="ArrecadaçãoDiariaComDescontos" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.valorArrecadadoDescontado}"/>
 
                     <p:outputLabel value="Valor total combustível:*" for="ValorTotalDoCombustivel" />
-                    <p:inputText class="camposFormulario" id="ValorTotalDoCombustivel" value="#{PrestacaoDeConta.valorTotalDoCombustivel}"/>
+                    <p:inputText class="camposFormulario" id="ValorTotalDoCombustivel" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.valorTotalDoCombustivel}"/>
 
                     <p:outputLabel value="Valor litro do ombustível:*" for="ValorDoLitroDeCombustivel" />
-                    <p:inputText class="camposFormulario" id="ValorDoLitroDeCombustivel" value="#{PrestacaoDeConta.valorDoLitroDeCombustivel}"/>
+                    <p:inputText class="camposFormulario" id="ValorDoLitroDeCombustivel" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.valorDoLitroDeCombustivel}"/>
 
                     <p:outputLabel value="Litros abastecido:*" for="QuantidadeDeLitrosAbastecido" />
-                    <p:inputText class="camposFormulario" id="QuantidadeDeLitrosAbastecido" value="#{PrestacaoDeConta.quantidadeDeLitrosAbastecido}"/>
+                    <p:inputText class="camposFormulario" id="QuantidadeDeLitrosAbastecido" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.quantidadeDeLitrosAbastecido}"/>
 
                     <p:outputLabel value="Valor em troco:*" for="ValorDoTroco" />
-                    <p:inputText class="camposFormulario" id="ValorDoTroco" value="#{PrestacaoDeConta.valorTroco}"/>
+                    <p:inputText class="camposFormulario" id="ValorDoTroco" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.valorTroco}"/>
 
                     <p:outputLabel value="Salário dia do cobrador:*" for="SalarioDoCobrador" />
-                    <p:inputText class="camposFormulario" id="SalarioDoCobrador" value="#{PrestacaoDeConta.salarioDoCobrador}"/>
+                    <p:inputText class="camposFormulario" id="SalarioDoCobrador" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.salarioDoCobrador}"/>
 
                     <p:outputLabel value="Salário dia do motorista:*" for="SalarioDoMotorista" />
-                    <p:inputText class="camposFormulario" id="SalarioDoMotorista" value="#{PrestacaoDeConta.salarioDoMotorista}"/>
+                    <p:inputText class="camposFormulario" id="SalarioDoMotorista" value="#{controllerPrestacaoDeContasSMBG.prestacaoDeConta.salarioDoMotorista}"/>
+                    
+                    <p:outputLabel value="CPF do funcionário:*" for="CpfDoFuncionario" />
+                    <p:inputText class="camposFormulario" id="CpfDoFuncionario" value="#{controllerPrestacaoDeContasSMBG.cpf}"/>
 
                     <p:commandButton class="menuCadastrar" value="Cadastrar" id="CadastrarRota"/>
                 </h:form>

@@ -9,7 +9,7 @@ import java.util.List;
 public class PrestacaoDeContaModel {
 	
 	private DAO<PrestacaoDeConta> daoPrestacaoDeConta = new PrestacaoDeContaHibernate();
-	
+        
 	public void cadastrarPrestacaoDeConta(PrestacaoDeConta prestacaoDeConta) {
 		daoPrestacaoDeConta.inserir(prestacaoDeConta);
 	}

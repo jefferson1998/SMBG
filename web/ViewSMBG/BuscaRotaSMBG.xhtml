@@ -15,9 +15,9 @@
 
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
-             <h:form>
+            <h:form>
                 <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                  action="#{controllerPaginaAdminitrador.retornarPaginaAdministrador()}"/>                 
+                                 action="#{controllerPaginaAdminitrador.irPaginaRota()}"/>                 
             </h:form>
         </div>
 
@@ -27,20 +27,41 @@
             <div id="titulo"> ROTA </div>
             <div id="formulario">
 
-                <h:form>
+                <h:form id="listaRota">
 
                     <h3> CAMPOS DE BUSCA </h3>
 
                     <p:outputLabel value="Origem" for="BuscaRotaPelaOrigem" />
-                    <p:inputText class="camposFormulario" id="BuscaRotaPelaOrigem"/>
+                    <p:inputText class="camposFormulario" id="BuscaRotaPelaOrigem" value="#{controllerRotaSMBG.origem}"/>
 
-                    <p:outputLabel value="Destino" for="BuscaRotaPelaDestino" />
-                    <p:inputText class="camposFormulario" id="BuscaRotaPelaDestino"/>
 
-                    <p:outputLabel value="Horário Saída" for="BuscaRotaPeloHorarioSaida" />
-                    <p:inputText class="camposFormulario" id="BuscaRotaPeloHorarioSaida"/>
-                    
-                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarOnibus"/>
+                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarOnibus" action="#{controllerRotaSMBG.buscarPelaOrigemDaRota()}" update=":listaRota:dtRota"/>
+
+                    <p:growl id="growl" showDetail="true" sticky="true" /> 
+                    <p:dataTable id="dtRota" value="#{controllerRotaSMBG.buscarPelaOrigemDaRota()}" var="rota">
+
+                        <p:column headerText="Origem">
+                            <h:outputText value="#{rota.origem}" />
+                        </p:column>
+
+                        <p:column headerText="Destino">
+                            <h:outputText value="#{rota.destino}" />
+                        </p:column>
+
+                        <p:column headerText="Horário Saída">
+                            <h:outputText value="#{rota.horarioSaida}" />
+                        </p:column>
+
+                        <p:column headerText="Horário Previsto de Chegada">
+                            <h:outputText value="#{rota.horarioPrevistoDeChegada}" />
+                        </p:column>
+
+                        <p:column headerText="Ônibus">
+                            <h:outputText value="#{rota.onibusQueFazemEstaRota.placa}" />
+                        </p:column>
+
+                    </p:dataTable>
+
                 </h:form>
 
             </div>

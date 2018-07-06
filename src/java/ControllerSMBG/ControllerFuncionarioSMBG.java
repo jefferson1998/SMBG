@@ -206,4 +206,13 @@ public class ControllerFuncionarioSMBG {
     public void setCnh(String cnh) {
         this.cnh = cnh;
     }
+
+    public List<Funcionario> getListaFuncionario() {
+        return listaFuncionario;
+    }
+
+    public void setListaFuncionario(List<Funcionario> listaFuncionario) {
+        this.listaFuncionario = listaFuncionario;
+    }
+
 }

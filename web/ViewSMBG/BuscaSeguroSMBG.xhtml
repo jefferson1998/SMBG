@@ -27,29 +27,35 @@
             <div id="titulo"> SEGURO </div>
             <div id="formulario">
 
-                <h:form>
+                <h:form id="listaSeguroOnibus">
 
                     <h3> CAMPOS DE BUSCA </h3>
 
                     <p:outputLabel value="Codigo Susep Do Corretor" for="BuscarPeloCodigoSusepDoCorretor" />
-                    <p:inputText class="camposFormulario" id="BuscarPeloCodigoSusepDoCorretor"/>
+                    <p:inputText class="camposFormulario" id="BuscarPeloCodigoSusepDoCorretor" value="#{controllerSeguroOnibusSMBG.codigoSusepDoCorretor}"/>
 
-                    <p:outputLabel value="Codigo Cpd Do Corretor" for="BuscarPeloCodigoCpdDoCorretor" />
-                    <p:inputText class="camposFormulario" id="BuscarPeloCodigoCpdDoCorretor"/>
+                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarOnibus" actionListener="#{controllerSeguroOnibusSMBG.buscarSeguroPeloCodigoSusepDoCorretor()}" update=":listaSeguroOnibus:dtSeguro"/>
+                    
+                    <p:growl id="growl" showDetail="true" sticky="true" /> 
+                    <p:dataTable id="dtSeguro" value="#{controllerSeguroOnibusSMBG.seguroOnibus}" var="seguroOnibus">
 
-                    <p:outputLabel value="Codigo Susep" for="BuscarPeloCodigoSusep" />
-                    <p:inputText class="camposFormulario" id="BuscarPeloCodigoSusep"/>
+                        <p:column headerText="Marca Ônibus">
+                            <h:outputText value="#{seguroOnibus.onibus.marca}" />
+                        </p:column>
 
-                    <p:outputLabel value="Cnpj Da Empresa Do Seguro" for="BuscarPeloCnpjDaEmpresaDoSeguro" />
-                    <p:inputText class="camposFormulario" id="BuscarPeloCnpjDaEmpresaDoSeguro"/>
+                        <p:column headerText="Chassis">
+                            <h:outputText value="#{seguroOnibus.onibus.chassi}" />
+                        </p:column>
 
-                    <p:outputLabel value="Cpf/Cnpj Do Segurado" for="BuscarPeloCpfOuCnpjDoSegurado" />
-                    <p:inputText class="camposFormulario" id="BuscarPeloCpfOuCnpjDoSegurado"/>
+                        <p:column headerText="Modelo">
+                            <h:outputText value="#{seguroOnibus.onibus.modelo}" />
+                        </p:column>
 
-                    <p:outputLabel value="Número Endosso" for="BuscarPeloNumeroEndosso" />
-                    <p:inputText class="camposFormulario" id="BuscarPeloNumeroEndosso"/>
+                        <p:column headerText="CNPJ da empresa">
+                            <h:outputText value="#{seguroOnibus.cnpj}" />
+                        </p:column>
 
-                    <p:commandButton class="menuCadastrar" value="Buscar" id="BuscarOnibus"/>
+                    </p:dataTable>
                 </h:form>
             </div>
         </div>

@@ -58,7 +58,7 @@
                     <p:inputMask class="camposFormulario" id="DataDeNascimentoIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.dataDeNascimento}"  mask="99/99/9999"/>
 
                     <p:outputLabel value="UF da identidade:*" for="UFIdentidadeDoFuncionario"/>
-                    <p:inputMask class="camposFormulario" id="UFIdentidadeDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.UFIdentidade}" mask="99" required="true" />
+                    <p:inputText class="camposFormulario" id="UFIdentidadeDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.UFIdentidade}" required="true" />
 
                     <p:outputLabel value="Número do CPF:*" for="CPFDoFuncionario"/> 
                     <p:inputMask class="camposFormulario" id="CPFDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.cpf}" mask="999.999.999-99" required="true" />
@@ -86,7 +86,7 @@
                     <h3> DADOS DA CNH </h3>
 
                     <p:outputLabel value="Número: " for="NumeroCNHDoFuncionario"/>
-                    <p:inputMask class="camposFormulario" id="NumeroCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.numeroCNH}" mask="99999999999   "/>
+                    <p:inputMask class="camposFormulario" id="NumeroCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.numeroCNH}" mask="99999999999"/>
 
                     <p:outputLabel value="Categoria: " for="CategoriaCNHDoFuncionario"/>
                     <p:inputText class="camposFormulario" id="CategoriaCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.categoriaCNH}" />
@@ -165,7 +165,7 @@
                     <p:outputLabel value="Número Conta:*" for="ContaNumeroContaDaAdmissaoDoFuncionario"/>
                     <p:inputMask class="camposFormulario" id="ContaNumeroContaDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.conta.numeroConta}" mask="9999999999" required="true" />
                     
-                    <p:commandButton class="menuCadastrar" value="Cadastrar" actionListener="#{controllerFuncionarioSMBG.cadastrarFuncionario()}" update="growl"/>
+                    <p:commandButton class="menuCadastrar" value="Cadastrar" actionListener="#{controllerFuncionarioSMBG.cadastrarFuncionario()}" update="@form" />
 
                 </h:form>
             </div>

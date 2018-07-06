@@ -14,8 +14,8 @@
         <div id="faixa">
             <h1 id="textoFaixa">SMBG</h1>
             <h:form>
-                <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="menu" 
-                                 action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/>                 
+                <p:commandButton style="position: relative; top: 212px; left: 93.5%" value="Menu" 
+                                 action="#{controllerPaginaAdminitrador.irPaginaFuncionario()}"/>                 
             </h:form>
         </div>
 
@@ -31,84 +31,28 @@
                     <p:outputLabel value="CPF" for="BuscaDoFuncionarioPorCPF" />
                     <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPorCPF" value="#{controllerFuncionarioSMBG.cpf}"/>
 
-                    <p:commandButton class="menuCadastrar" value="BUSCAR CPF" id="BuscarFuncionarioPeloCPF" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" onclick="window.location.href = window.location.href">
-                        <p:growl id="growl" showDetail="true" sticky="true" /> 
-                        <p:dataTable id="dtFuncionario" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" var="funcionario">
-                            <p:column headerText="Nome">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
-                            </p:column>
-
-                            <p:column headerText="CPF">
-                                <h:outputText value="#{funcionario.cpf}" />
-                            </p:column>
-
-                            <p:column headerText="Identidade">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.numeroIdentidade}" />
-                            </p:column>
-
-                            <p:column headerText="Nome da Mãe">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
-                            </p:column>
-
-                        </p:dataTable>
-                        <br/><br/>
+                    <p:commandButton class="menuCadastrar" value="BUSCAR CPF" id="BuscarFuncionarioPeloCPF" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCPF()}" update="@form" />
                         
-                    </p:commandButton>
-                    <br/>
+                    <p:growl id="growl" showDetail="true" sticky="true" /> 
+                    <p:dataTable id="dtFuncionario" value="#{controllerFuncionarioSMBG.funcionario}" var="funcionario">
+                        <p:column headerText="Nome">
+                            <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
+                        </p:column>
 
-                    <p:outputLabel value="RG" for="BuscaDoFuncionarioPeloRG" />
-                    <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPeloRG" value="#{controllerFuncionarioSMBG.rg}"/>
-                    
-                    <p:commandButton class="menuCadastrar" value="BUSCAR RG" id="BuscarFuncionarioPeloRG" actionListener="#{controllerFuncionarioSMBG.buscarFuncionarioPeloRG()}" onclick="window.location.href = window.location.href">
-                        <p:growl id="growl1" showDetail="true" sticky="true" /> 
-                        <p:dataTable id="dtFuncionario1" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloRG()}" var="funcionario">
-                            <p:column headerText="Nome">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
-                            </p:column>
+                        <p:column headerText="CPF">
+                            <h:outputText value="#{funcionario.cpf}" />
+                        </p:column>
 
-                            <p:column headerText="CPF">
-                                <h:outputText value="#{funcionario.cpf}" />
-                            </p:column>
+                        <p:column headerText="Identidade">
+                            <h:outputText value="#{funcionario.funcionarioIdentidade.numeroIdentidade}" />
+                        </p:column>
 
-                            <p:column headerText="Identidade">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.numeroIdentidade}" />
-                            </p:column>
+                        <p:column headerText="Nome da Mãe">
+                            <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
+                        </p:column>
 
-                            <p:column headerText="Nome da Mãe">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
-                            </p:column>
-
-                        </p:dataTable>
-                        <br/><br/>
-                    </p:commandButton>
-
-                    <br/>
-
-                    <p:outputLabel value="CNH" for="BuscaDoFuncionarioPelaCNH" />
-                    <p:inputText class="camposFormulario" id="BuscaDoFuncionarioPelaCNH" value="#{controllerFuncionarioSMBG.cnh}"/>
-                    
-                    <p:commandButton class="menuCadastrar" value="BUSCAR CNH" id="BuscarFuncionarioPeloCNH" action="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" onclick="window.location.href = window.location.href">
-                        <p:growl id="growl2" showDetail="true" sticky="true" /> 
-                        <p:dataTable id="dtFuncionario2" value="#{controllerFuncionarioSMBG.buscarFuncionarioPeloCNH()}" var="funcionario">
-                            <p:column headerText="Nome">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
-                            </p:column>
-
-                            <p:column headerText="CPF">
-                                <h:outputText value="#{funcionario.cpf}" />
-                            </p:column>
-
-                            <p:column headerText="Identidade">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.numeroIdentidade}" />
-                            </p:column>
-
-                            <p:column headerText="Nome da Mãe">
-                                <h:outputText value="#{funcionario.funcionarioIdentidade.nomeDaMae}" />
-                            </p:column>
-
-                        </p:dataTable>
-                        <br/><br/>
-                    </p:commandButton>
+                    </p:dataTable>
+                    <br/><br/>
 
                 </h:form>
 

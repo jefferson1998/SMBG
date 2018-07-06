@@ -15,6 +15,7 @@ public class ControllerOnibusSMBG {
     OnibusModel onibusModel;
     Onibus onibus;
     List<Onibus> listaOnibus;
+    List<Onibus> listaOnibusBuscar;
     private String buscarOnibus;
 
     public ControllerOnibusSMBG() {
@@ -121,5 +122,13 @@ public class ControllerOnibusSMBG {
             return null;
         }
     }
-    
+
+    public List<Onibus> getListaOnibusBuscar() {
+        return listaOnibusBuscar;
+    }
+
+    public void setListaOnibusBuscar(List<Onibus> listaOnibusBuscar) {
+        this.listaOnibusBuscar = listaOnibusBuscar;
+    }
+
 }

@@ -54,16 +54,6 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
     @Column(name = "telefonefuncionario ")
     private String telefonefuncionario;
 
-//    @ElementCollection
-//    @CollectionTable(name = "email_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
-//    @Column(name = "email_funcionario")
-//    private List<String> emailFuncionario;
-//
-//    @ElementCollection
-//    @CollectionTable(name = "telefone_Funcionario", joinColumns = @JoinColumn(name = "Cod_Funcionario"))
-//    @Column(name = "telefone")
-//    private List<String> numeroTelefoneFuncionario;
-
     @Column(name = "estadoCivil")
     private String estadoCivil;
 
@@ -209,32 +199,27 @@ public class Funcionario extends Persistivel implements Serializable, Comparable
                 funcionarioIdentidade.getUFIdentidade(), funcionarioEndereco);
     }
 
-    /**
-     * @return the emailfuncionario
-     */
     public String getEmailfuncionario() {
         return emailfuncionario;
     }
 
-    /**
-     * @param emailfuncionario the emailfuncionario to set
-     */
     public void setEmailfuncionario(String emailfuncionario) {
         this.emailfuncionario = emailfuncionario;
     }
 
-    /**
-     * @return the telefonefuncionario
-     */
     public String getTelefonefuncionario() {
         return telefonefuncionario;
     }
 
-    /**
-     * @param telefonefuncionario the telefonefuncionario to set
-     */
     public void setTelefonefuncionario(String telefonefuncionario) {
         this.telefonefuncionario = telefonefuncionario;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "senha=" + senha + ", funcionarioIdentidade=" + funcionarioIdentidade + ", cpf=" + cpf + ", funcionarioEndereco=" + funcionarioEndereco + ", funcionarioCNH=" + funcionarioCNH + ", pis=" + pis + ", funcionarioTitulo=" + funcionarioTitulo + ", funcionarioCTPS=" + funcionarioCTPS + ", funcionarioReservista=" + funcionarioReservista + ", emailfuncionario=" + emailfuncionario + ", telefonefuncionario=" + telefonefuncionario + ", estadoCivil=" + estadoCivil + ", admissao=" + admissao + '}';
+    }
+    
+    
 
 }

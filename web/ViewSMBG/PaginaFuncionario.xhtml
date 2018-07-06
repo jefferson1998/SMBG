@@ -27,6 +27,8 @@
 
                 <p:commandButton value="Menu" action="#{controllerPaginaAdminitrador.irPaginaAdmin()}"/> 
                 
+                <p:commandButton value="Buscar" action="#{controllerPaginaAdminitrador.irBuscarFuncionario()}"/>    
+                
                 <p:commandButton value="Deslogar" action="#{controllerSessaoUsuario.deslogar()}"/>    
 
             </div>
@@ -34,7 +36,7 @@
 
         <h:form id="lista">
             <p:growl id="growl" showDetail="true" sticky="true" /> 
-            <p:dataTable id="dtOnibus" value="#{controllerFuncionarioSMBG.listaTodos()}" var="funcionario">
+            <p:dataTable id="dtFuncionario" value="#{controllerFuncionarioSMBG.listaTodos()}" var="funcionario">
 
                 <p:column headerText="Nome">
                     <h:outputText value="#{funcionario.funcionarioIdentidade.nome}" />
@@ -68,14 +70,16 @@
                     </h:commandLink>
 
                     <br/>
-                    <p:commandLink value="Editar" oncomplete="PF('alterarFuncionarioDialog').show()" update=":lista:dialogAlterar">
+                    <p:commandLink  value="Editar"  oncomplete="PF('alterarFuncionarioDialog').show()" update=":dialogAlterar">
                         <f:setPropertyActionListener value="#{funcionario}" target="#{controllerFuncionarioSMBG.funcionario}"/>
                     </p:commandLink>
                 </p:column>
 
             </p:dataTable>
-
-            <p:dialog id="dialogAlterar" header="Alterar Funcionario" widgetVar="alterarFuncionarioDialog" modal="true" height="500" draggable="false">
+            </h:form>
+        
+            <p:dialog id="dialogAlterar"  header="Alterar Funcionario" widgetVar="alterarFuncionarioDialog" modal="true" height="500" draggable="false">
+                <h:form>
                 <h:panelGrid columns="2" >
                     
                     <p:outputLabel value="Nome:*" for="NomeIdentidadeFuncionario" />
@@ -103,7 +107,7 @@
                     <p:inputMask id="DataDeNascimentoIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.dataDeNascimento}"  mask="99/99/9999"/>
 
                     <p:outputLabel value="UF da identidade:*" for="UFIdentidadeDoFuncionario"/>
-                    <p:inputMask id="UFIdentidadeDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.UFIdentidade}" mask="99" />
+                    <p:inputText id="UFIdentidadeDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.UFIdentidade}" />
 
                     <p:outputLabel value="Número do CPF:*" for="CPFDoFuncionario"/> 
                     <p:inputMask id="CPFDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.cpf}" mask="999.999.999-99" />
@@ -195,10 +199,12 @@
                     <p:outputLabel value="Número Conta:*" for="ContaNumeroContaDaAdmissaoDoFuncionario"/>
                     <p:inputMask id="ContaNumeroContaDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.conta.numeroConta}" mask="9999999999" />
                 </h:panelGrid>
-
+                
                 <h:commandButton value="Alterar" actionListener="#{controllerFuncionarioSMBG.alterarFuncionario()}" />
+                
+                </h:form>
 
             </p:dialog>
-        </h:form>
+        
     </h:body>
 </html>

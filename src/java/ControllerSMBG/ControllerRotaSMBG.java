@@ -25,6 +25,8 @@ public class ControllerRotaSMBG {
     Rota rota;
     RotaModel rotaModel;
     List<Rota> listaRota;
+    List<Rota> listaDeBusca;
+    String origem;
 
     public ControllerRotaSMBG() {
         rota = new Rota();
@@ -87,5 +89,33 @@ public class ControllerRotaSMBG {
         }
         return null;
     }
+    
+     public List<Rota>  buscarPelaOrigemDaRota() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            listaDeBusca = rotaModel.buscarPelaOrigem(origem);
+            return listaDeBusca;
+        } catch (Exception ex) {
+            listaDeBusca = null;
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+        return listaDeBusca;
+    }
 
+    public String getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(String origem) {
+        this.origem = origem;
+    }
+
+    public List<Rota> getListaDeBusca() {
+        return listaDeBusca;
+    }
+
+    public void setListaDeBusca(List<Rota> listaDeBusca) {
+        this.listaDeBusca = listaDeBusca;
+    }
+     
 }

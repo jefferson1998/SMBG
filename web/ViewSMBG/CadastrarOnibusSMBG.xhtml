@@ -40,7 +40,7 @@
                     <p:inputText class="camposFormulario" id="ChassisDoOnibus" value="#{controllerOnibusSMBG.onibus.chassi}" required="true" />
 
                     <p:outputLabel value="Placa:*" for="PlacaDoOnibus" />
-                    <p:inputMask class="camposFormulario" id="PlacaDoOnibus" value="#{controllerOnibusSMBG.onibus.placa}" required="true" mask="9999999"/>
+                    <p:inputText class="camposFormulario" id="PlacaDoOnibus" value="#{controllerOnibusSMBG.onibus.placa}" required="true"/>
 
                     <p:outputLabel value="Ano:*" for="AnoDoOnibus" />
                     <p:inputMask class="camposFormulario" id="AnoDoOnibus" value="#{controllerOnibusSMBG.onibus.ano}" required="true" mask="9999"/>
@@ -86,7 +86,7 @@
                         <p:selectBooleanCheckbox value="#{controllerOnibusSMBG.onibus.freioABS}" />
                         
                     </h:panelGrid>
-                    <p:commandButton class="menuCadastrar" value="Finalizar" actionListener="#{controllerOnibusSMBG.cadastrarOnibus()}" update="growl"/>
+                    <p:commandButton class="menuCadastrar" value="Finalizar" actionListener="#{controllerOnibusSMBG.cadastrarOnibus()}" update="@form"/>
 
                 </h:form>
             </div>

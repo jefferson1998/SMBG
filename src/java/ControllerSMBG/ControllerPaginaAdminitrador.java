@@ -74,6 +74,37 @@ public class ControllerPaginaAdminitrador {
         }
     }
     
+    public void irBuscarSeguro() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscaSeguroSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irBuscarRota() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscaRotaSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    public void irBuscarFuncionario() {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        try {
+            context.getExternalContext().redirect("BuscaFuncionarioSMBG.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    
+    
     public void irPaginaFuncionario() {
         FacesContext context = FacesContext.getCurrentInstance();
 

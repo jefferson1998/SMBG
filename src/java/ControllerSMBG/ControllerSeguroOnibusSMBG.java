@@ -17,17 +17,11 @@ public class ControllerSeguroOnibusSMBG {
     SeguroOnibus seguroOnibus;
     SeguroOnibusModel seguroModel;
     List<SeguroOnibus> listaSeguro;
+    int codigoSusepDoCorretor;
+    
     public ControllerSeguroOnibusSMBG() {
         seguroModel  = new SeguroOnibusModel();
         seguroOnibus = new SeguroOnibus();
-    }
-
-    public SeguroOnibus getSeguroOnibus() {
-        return seguroOnibus;
-    }
-
-    public void setSeguroOnibus(SeguroOnibus seguroOnibus) {
-        this.seguroOnibus = seguroOnibus;
     }
     
     public void cadastrarSeguro() {
@@ -77,5 +71,33 @@ public class ControllerSeguroOnibusSMBG {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
         
+    }
+    
+    public SeguroOnibus buscarSeguroPeloCodigoSusepDoCorretor() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            seguroOnibus = seguroModel.buscarSeguroDoOnibusPeloCodigoCpdDoCorretor(codigoSusepDoCorretor);
+            return seguroOnibus;
+        } catch (Exception ex) {
+            seguroOnibus = null;
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+        return seguroOnibus;
+    }
+
+    public int getCodigoSusepDoCorretor() {
+        return codigoSusepDoCorretor;
+    }
+
+    public void setCodigoSusepDoCorretor(int codigoSusepDoCorretor) {
+        this.codigoSusepDoCorretor = codigoSusepDoCorretor;
+    }
+    
+    public SeguroOnibus getSeguroOnibus() {
+        return seguroOnibus;
+    }
+
+    public void setSeguroOnibus(SeguroOnibus seguroOnibus) {
+        this.seguroOnibus = seguroOnibus;
     }
 }
