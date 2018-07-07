@@ -1,5 +1,6 @@
 package ModelSMBG.DAO;
 
+import ModelSMBG.Entity.Funcionario;
 import ModelSMBG.Entity.PrestacaoDeConta;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -50,6 +51,17 @@ public class PrestacaoDeContaHibernate implements PrestacaoDeContaDAO {
             prestacoes = null;
         }
         return prestacoes;
+    }
+    
+    public Funcionario buscarPeloCpf(String cpf) {
+        Funcionario funcionario;
+        try {
+            funcionario = (Funcionario) em.createQuery("from Funcionario WHERE cpf = ?").setParameter(1, cpf).getSingleResult();
+            return funcionario;
+        } catch (Exception erro) {
+            funcionario = null;
+        }
+        return funcionario;
     }
 
     public PrestacaoDeConta buscarPeloCpfDoFuncionario(String cpf) {

@@ -89,7 +89,7 @@
                     <p:inputText id="NumeroIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.numeroIdentidade}" />
 
                     <p:outputLabel value="Órgão Emissor:*" for="OrgaoEmissorIdentidadeFuncionario"/>
-                    <p:inputMask id="OrgaoEmissorIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.orgaoEmissor}" mask="99999" />
+                    <p:inputText id="OrgaoEmissorIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.orgaoEmissor}" />
 
                     <p:outputLabel value="Data de Emissão:*" for="DataEmissaoIdentidadeFuncionario"/>
                     <p:inputMask id="DataEmissaoIdentidadeFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioIdentidade.dataDeEmissao}" mask="99/99/9999" />
@@ -130,7 +130,7 @@
                     <p:inputMask id="NumeroCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.numeroCNH}" mask="99999999999   "/>
 
                     <p:outputLabel value="Categoria: " for="CategoriaCNHDoFuncionario"/>
-                    <p:inputMask id="CategoriaCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.categoriaCNH}" mask="99"/>
+                    <p:inputText id="CategoriaCNHDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCNH.categoriaCNH}" />
 
 
                     <p:outputLabel value="Número: " for="NumeroDoPISDoFuncionario"/>
@@ -151,10 +151,10 @@
                     <p:inputMask id="NumeroDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.numeroCTPS}" mask="9999999"/>
 
                     <p:outputLabel value="Série: " for="SerieDoCTPSDoFuncionario"/>
-                    <p:inputMask id="SerieDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.serieCTPS}" mask="9999"/>
+                    <p:inputText id="SerieDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.serieCTPS}" />
 
                     <p:outputLabel value="Estado: " for="EstadoDoCTPSDoFuncionario"/>
-                    <p:inputMask id="EstadoDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.estadoCTPS}" mask="99"/>
+                    <p:inputText id="EstadoDoCTPSDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.funcionarioCTPS.estadoCTPS}" />
 
 
                     <p:outputLabel value="Número: " for="NumeroReservistaDoFuncionario"/>
@@ -190,7 +190,7 @@
                     <p:inputText id="InstrucaoDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.instrucao}" />
 
                     <p:outputLabel value="Número de filhos:*" for="NumeroDeFilhosDaAdmissaoDoFuncionario"/>
-                    <p:inputMask id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.numeroDeFilhos}" mask="99" />
+                    <p:inputMask id="NumeroDeFilhosDaAdmissaoDoFuncionario" value="#{controllerFuncionarioSMBG.funcionario.admissao.numeroDeFilhos}" mask="9" />
 
 
                     <p:outputLabel value="Número Agência:*" for="ContaAgenciaDaAdmissaoDoFuncionario"/>

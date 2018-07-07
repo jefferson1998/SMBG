@@ -66,6 +66,19 @@ public class ControllerPrestacaoDeContasSMBG {
             context.addMessage(null, new FacesMessage(ex.getMessage()));
         }
     }
+    
+    public PrestacaoDeConta buscarFuncionarioPeloCPF() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        try {
+            prestacaoDeConta = prestacaoDeContaModel.buscarPrestacaoDeContaPeloCpfDoFuncionario(cpf);
+            context.addMessage(null, new FacesMessage("Busca Efetuada!"));
+            return prestacaoDeConta;
+        } catch (Exception ex) {
+            prestacaoDeConta = null;
+            context.addMessage(null, new FacesMessage(ex.getMessage()));
+        }
+        return prestacaoDeConta;
+    }
 
     public void removerPrestacaoDeConta() {
         FacesContext context = FacesContext.getCurrentInstance();
